@@ -33,8 +33,8 @@
           </span>
           <div class='thumb-star-wrapper'>
 
-            <%= product.actual_price.amount %>
-            <%= product.prices.first.currency.sign %>
+            <%= product.actual_price.amount if product.actual_price %>
+            <%= product.actual_price.currency.sign if product.actual_price %>
           </div>
         </div>
         <div class='thumb-description text-left'>
