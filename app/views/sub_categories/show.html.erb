@@ -17,11 +17,11 @@
 
   <!-- MAIN CONTENTS LAYOUT -->
   <main class="main-content-wrapper b-l-320">
-    <div>
+    <%= render partial: 'products', locals: { products: @products } %>
+
+    <%= render partial: 'load_more_button', locals: { products: @products } %>
 
 
-        <%= render partial: 'products', locals: { products: @products } %>
 
-    </div>
   </main>
 </div>

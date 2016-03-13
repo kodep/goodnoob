@@ -1,10 +1,23 @@
-
-
 (function() {
+    var $html = $("<%=j render partial: 'sub_categories/products', locals: { products: @products } %>");
+    var $html_button = $("<%=j render partial: 'sub_categories/load_more_button', locals: { products: @products } %>");
 
-    var $html = $('<%=j render partial: "sub_categories/products", locals: { products: @products } %>');
+    <% if params[:page].present? %>
+      $('#products_goes_here').append($html);
+      $('#load_more_but').replaceWith($html_button);
+    <% else %>
+      $('#products_goes_here').replaceWith($html);
+      $('#load_more_but').replaceWith($html_button);
+    <% end %>
 
-    $('#products_goes_here').replaceWith($html);
 
+  var nextPageProducts = $('.search-results-have-more').attr('data-hasmore');
+
+
+  if(nextPageProducts.length === 0){
+    $('#load_more_but').hide();
+  } else if(nextPageProducts.length > 0) {
+    $('#load_more_but').show();
+  }
 }());
 
