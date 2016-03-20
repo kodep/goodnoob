@@ -6,22 +6,24 @@
 </h1>
 <address>
   <% if distributor.email? %>
-    <p>
-      <strong>Contact Email: </strong><%= distributor.email %>
-    </p>
+      <p>
+        <strong>Contact Email:</strong>
+        <%= distributor.email %>
+      </p>
   <% end %>
 
-  <% unless distributor.address == nil %>
-    <p>
-      <strong>Address :</strong><%= distributor.address.street %> <%= distributor.address.city %> <%= distributor.address.postcode %>
-    </p>
+  <% if distributor.address.present? %>
+      <p>
+        <strong>Address:</strong>
+        <%= distributor.address.street %>
+        <%= distributor.address.city %>
+        <%= distributor.address.postcode %>
+      </p>
   <% end %>
-
 
   <% if distributor.phone? %>
-    <p>
-      <strong>Contact Phone: </strong><%= distributor.phone %>
-    </p>
+      <p>
+        <strong>Contact Phone: </strong><%= distributor.phone %>
+      </p>
   <% end %>
-
 </address>
