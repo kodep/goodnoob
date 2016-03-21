@@ -191,6 +191,7 @@ $(document).ready(function(){
 
     // Update block position
     function setBlockPosition(button, block) {
+      if(!$(button).is('*')) return true;
       var topPos = $(button).offset().top + 42;
       var rightOffset = $(document).width() - ($(button).offset().left + $(button).width())
       if (rightOffset > ($(block).outerWidth() - $(button).outerWidth())) {
