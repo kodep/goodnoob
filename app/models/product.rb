@@ -60,7 +60,7 @@ class Product < ActiveRecord::Base
   end
 
   def picture
-    pictures.recent.first || default_picture
+    pictures.recent.last || default_picture
   end
 
   def picture_url *args
