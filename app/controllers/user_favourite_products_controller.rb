@@ -1,18 +1,15 @@
 class UserFavouriteProductsController < ApplicationController
-  before_action :set_product, only: [:add, :remove]
+
+  before_action :set_product, only:[:add, :remove]
 
   def add
-    UserFavourite.add_to_favourites(user: current_user, element: @product)
+    UserFavourite.add_to_favourites(user:current_user, element:@product)
     redirect_to :back
   end
 
   def remove
-    UserFavourite.remove_from_favourites(user: current_user, element: @product)
-    if request.xhr?
-      head 200
-    else
-      redirect_to :back
-    end
+    UserFavourite.remove_from_favourites(user:current_user, element:@product)
+    redirect_to :back
   end
 
   private
@@ -20,4 +17,5 @@ class UserFavouriteProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:product_id])
   end
+
 end

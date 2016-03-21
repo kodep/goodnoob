@@ -1,14 +1,27 @@
-<div class="compare-button-wrapper">
-    <button id="categories-button" type="button" class="btn btn-default">Categories</button>
-</div>
-<div class="categories-block-wrapper">
-  <%= render 'layouts/buying_guides' %>
-</div> 
+<div class="input-group">
+  <div class="input-group-btn search-panel">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <span id="search_concept">Categories</span> <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="#contains">Contains</a></li>
+ 
+<!--      <li><a href="#its_equal">It's equal</a></li>
+      <li><a href="#greather_than">Greather than ></a></li>
+      <li><a href="#less_than">Less than < </a></li>
+      <li class="divider"></li>
+      <li><a href="#all">Anything</a></li>
+-->
+     </ul>
+ </div>
 <%= form_tag search_index_path, method: :get do %>
-  <div class="search-field-wrapper">
-    <%= text_field_tag :search, params[:search], class: 'search-field form-control', placeholder: 'Search...' %>
-    <%= button_tag class: "submit-icon" do %>
-      <i class="glyphicon glyphicon-search"></i>
-    <% end %>
-  </div>
+  <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search...' %>      
+ <span class="input-group-btn">
+    <button  style="padding:6px 2px 6px 2px;" class="btn btn-default" type="button">
+    <label class="search-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+</button>
+</span>
 <% end %>
+</div>
+
+
