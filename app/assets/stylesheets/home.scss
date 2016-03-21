@@ -1,22 +1,30 @@
 
 .home-page {
   min-height: 900px;
-  background: image-url('homepage-background.jpg') no-repeat top left;
+  background: image-url('homepage-background.png') no-repeat top left;
   background-size: cover;
-  padding-top: 200px;
+  padding-top: 20px;
+
 
   .home-page-text {
     text-align: center;
-    padding-top: 200px;
-    font-size: 18px;
-    line-height: 26px;
-    color: #fff;
+    padding-top: 50px;    
 
+    font-family: "Gloucester MT Extra Condensed";
+    font-style: bold;
+    font-size: 0.725em;
+    line-height: 17px;
+    letter-spacing:-0.5px;	
+    color: #fff;
+    
     p {
-      margin-bottom: 20px;
+	margin: auto;
+	width: 90%;
+        margin-bottom: 20px;
+  	font-weight: bold;
     }
 
-    background-color: rgba( 0, 0, 0, 0.4 );
+    background-color: rgba( 0, 0, 0, 0.0 );
     border: 0 solid #000;
     border-radius: 6px;
     padding: 30px;
@@ -24,26 +32,43 @@
     margin: auto;
   }
 
-  .search-box {
-    display: inline-block;
-    .compare-button-wrapper, .search-field-wrapper {
-      display: inline-block;
-      margin-top: 15px;
-    }
-    .search-field-wrapper {
-      margin-right: 0;
-      .submit-icon {
-        top: 5px;
-      }
-    }
-    form {
-      display: inline-block;
-    }
-  }
+ 
 }
 
+.shiny-button, .shiny-button:focus {
+   width: 70%;
+   margin-bottom: 20px;
+   -webkit-border-radius: 0px;
+   -moz-border-radius: 0px;
+   border-radius: 0px;
+   color: #FFFFFF;
+    font-family: "Gloucester MT Extra Condensed";
+    font-style: bold;
+    font-size: 1.11em;
+    line-height: 17px;
+    font-color:#FFFFFF;
+   padding: 7px;
+   background-color: #073274;
+ 
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+}
+
+.shiny-button:hover {	
+   color: #FFFFFF;
+   background: #1E62D0;
+   text-decoration: none;
+}
 #categories-button {
   margin-top: 3px;
+}
+
+.search-icon{	    
+  	background: image-url('search-icon-small.png') no-repeat;
+	padding:0;
+	background-position: center center;
+ 	background-size: 18px 20px;
 }
 
 @media( max-width: 499px ) {
