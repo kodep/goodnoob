@@ -62,7 +62,11 @@ Rails.application.routes.draw do
   get 'ajax_get_filter_options/:id' => 'products#set_filter_options', as: :set_filter_options
 
   resources :home, only: [:index]
-  resources :search, only: [:index]
+  resources :search, only: [:index] do
+    member do
+      get 'remove'
+    end
+  end
   resources :sub_categories, only: [:show]
   resources :products, only: [:show] do
     resources :reviews, only:[:new, :create], defaults: {format: :json}
