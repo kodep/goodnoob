@@ -10,18 +10,12 @@
 <% end %>
 
 <%= render 'filters_header' %>
-
 <div class="main-container">
-
   <%= render 'left_filters' %>
-
   <!-- MAIN CONTENTS LAYOUT -->
   <main class="main-content-wrapper b-l-320">
+    <%= render partial: 'sort' %>
     <%= render partial: 'products', locals: { products: @products } %>
-
     <%= render partial: 'load_more_button', locals: { products: @products } %>
-
-
-
   </main>
 </div>

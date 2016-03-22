@@ -24,22 +24,21 @@
           max: <%= prices.max.to_i %>,
           values: [<%= prices.min.to_i %>, <%= prices.max.to_i %>],
           slide: function(event, ui) {
-              $("#price_from").val(ui.values[0]);
-              $("#price_to").val(ui.values[1]);
-              $("#label_min").text(ui.values[0]);
-              $("#label_max").text(ui.values[1]);
+              $("#price_from").val(slider.slider("values")[0]);
+              $("#price_to").val(slider.slider("values")[1]);
+              $("#label_min").text(slider.slider("values")[0]);
+              $("#label_max").text(slider.slider("values")[1]);
+          },
+          change: function() {
+            $('#filter_form').submit();
           }
       });
-      $("#price_from").val(slider.slider("values")[0]);
-      $("#price_to").val(slider.slider("values")[1]);
+      $("#price_from").val('');
+      $("#price_to").val('');
 
       $("#label_min").text(slider.slider("values")[0]);
       $("#label_max").text(slider.slider("values")[1]);
       $(".ui-slider-handle").focus();
-
-      $('body').on('mouseup', '#slider', function() {
-        $('#filter_form').submit();
-       });
   });
 </script>
 

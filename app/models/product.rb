@@ -35,13 +35,31 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :pictures, allow_destroy: true
 
   scope :filter, ->(filters) { includes(:filter_options)
-                              .where(filter_options: { id: filters }) if filters.present? }
+                                 .where(filter_options: { id: filters }) if filters.present? }
 
-  scope :companies, ->(companies) { where(company_id: companies ) if companies.present? }
-  scope :year_from, ->(year_from) { where('year >= ?', year_from ) if year_from.present? }
-  scope :year_to, ->(year_to) { where('year <= ?', year_to ) if year_to.present? }
-  scope :price_from, ->(price_from) { joins(:actual_price).where('prices.amount >= ?', price_from ) if price_from.present? }
-  scope :price_to, ->(price_to) { joins(:actual_price).where('prices.amount <= ?', price_to ) if price_to.present? }
+  scope :companies, ->(companies) { where(company_id: companies) if companies.present? }
+  scope :year_from, ->(year_from) { where('year >= ?', year_from) if year_from.present? }
+  scope :year_to, ->(year_to) { where('year <= ?', year_to) if year_to.present? }
+  scope :price_from, ->(price_from) { joins(:actual_price).where('prices.amount >= ?', price_from) if price_from.present? }
+  scope :price_to, ->(price_to) { joins(:actual_price).where('prices.amount <= ?', price_to) if price_to.present? }
+  scope :sort_by, ->(field, desc) {
+    direction = desc ? 'DESC' : 'ASC'
+    case field
+      when 'price'
+        joins(:actual_price).order("prices.amount #{direction}")
+      when 'year'
+        order(year: direction)
+      when 'rating'
+        joins(:ratings)
+          .select('products.*, avg(ratings.value) as average_raiting, count(ratings.id) as number_of_ratings')
+          .group('products.id')
+          .order("average_raiting #{direction}, average_raiting #{direction}")
+      when 'name'
+        order("LOWER(name) #{direction}")
+      else
+        order(created_at: direction)
+    end
+  }
 
   def title
     "#{name} - #{sub_category_name}"
@@ -60,7 +78,7 @@ class Product < ActiveRecord::Base
   end
 
   def picture
-    pictures.recent.first || default_picture
+    pictures.recent.last || default_picture
   end
 
   def picture_url *args
@@ -70,9 +88,9 @@ class Product < ActiveRecord::Base
 
   def self.media
     media = []
-    media += Photo.where(product_id:self.ids)
-    media += Video.where(product_id:self.ids)
-    media += Review.where(product_id:self.ids)
+    media += Photo.where(product_id: self.ids)
+    media += Video.where(product_id: self.ids)
+    media += Review.where(product_id: self.ids)
     media
   end
 
@@ -92,11 +110,11 @@ class Product < ActiveRecord::Base
     prods
   end
 
-  def self.search( search, sub_categories, companies, start_row_index, take_count )
-    prods = self.base_search( search, sub_categories, companies ).offset( start_row_index ).limit( take_count )
+  def self.search(search, sub_categories, companies, start_row_index, take_count)
+    prods = self.base_search(search, sub_categories, companies).offset(start_row_index).limit(take_count)
   end
 
-  def self.search_count( search, sub_categories, companies )
-    prods = self.base_search( search, sub_categories, companies ).count
+  def self.search_count(search, sub_categories, companies)
+    prods = self.base_search(search, sub_categories, companies).count
   end
 end

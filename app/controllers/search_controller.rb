@@ -1,5 +1,4 @@
 class SearchController < ApplicationController
-
   def index
     @filters = SearchFilter.build params
     @media = Kaminari.paginate_array(ProductSearchService.new(params).search.media)
@@ -16,4 +15,12 @@ class SearchController < ApplicationController
     end
   end
 
+  def remove
+    current_user.remove_search(params[:id]) if current_user
+    if request.xhr?
+      head 200
+    else
+      redirect_to :back
+    end
+  end
 end

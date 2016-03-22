@@ -1,4 +1,3 @@
-@import "bootstrap";
 /*RESETTING STYLES*/
 
 html, body, div, span, applet, object, iframe,
@@ -1311,7 +1310,7 @@ $upload-button-color: #70B29F;
 
         .glyphicon-time{
           font-size: $thumbs-clock-fontsize;
-          margin-right: 0;
+          margin-right: 6px;
           top: 3px;
         }
       }
@@ -1361,7 +1360,7 @@ $upload-button-color: #70B29F;
 
       .thumb-moreinfo-link{
         font-size: $thumbs-moreinfolink-fontsize;
-        margin-top: 50px;
+        margin-top: 0px;
         padding: 0 15px;
         text-align: right;
 

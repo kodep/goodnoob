@@ -11,6 +11,7 @@ class Rating < ActiveRecord::Base
 
   before_save :set_product
   before_save :set_user
+  after_save :update_average
 
   def set_product
     self.product_id = review.product.id
@@ -20,4 +21,7 @@ class Rating < ActiveRecord::Base
     self.user_id = review.user.id
   end
 
+  def update_average
+
+  end
 end
