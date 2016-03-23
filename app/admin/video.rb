@@ -1,8 +1,8 @@
 ActiveAdmin.register Video do
 
-  permit_params :category_id, :product_id, :user_id, :title,
+  permit_params :category_id, :product_id, :user_id,
                 :url, :main, :comment, :day, :caption,
-                picture_attributes: [:id, :title, :url, :imageable_id, :imageable_type]
+                picture_attributes: [:id, :url, :imageable_id, :imageable_type]
 
   controller do
     belongs_to :user, :category, :product, optional: true
@@ -14,7 +14,6 @@ ActiveAdmin.register Video do
 
   filter :main
   filter :day
-  filter :title_cont, label: 'Title'
   filter :comment_cont, label: 'Comment'
   filter :caption_cont, label: 'Caption'
   filter :created_at
@@ -22,7 +21,6 @@ ActiveAdmin.register Video do
   index do
     selectable_column
     id_column
-    column :title
     column :url
     column :main
     column :comment
@@ -40,7 +38,6 @@ ActiveAdmin.register Video do
       f.input :category
       f.input :product
       f.input :user
-      f.input :title
       f.input :url
       f.input :main
       f.input :comment
@@ -51,7 +48,6 @@ ActiveAdmin.register Video do
       picture.input :id, as: :hidden, value: picture.object.id
       picture.input :imageable_id, as: :hidden, value: f.object.id
       picture.input :imageable_type, as: :hidden, value: 'Video'
-      picture.input :title
       picture.input :url
     end
     actions
