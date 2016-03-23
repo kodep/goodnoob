@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only:[:show]
 
   def show
-    @pictures = product.pictures.recent.first(6)
+    @pictures = product.pictures.order(created_at: :asc).first(6)
     @reviews = product.reviews.recent.first(3)
     @simpage = (params[:similar] || '1').to_i
     if @simpage == 1
