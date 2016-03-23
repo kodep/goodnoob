@@ -52,11 +52,13 @@
   <%= render 'reviews', reviews: reviews unless reviews.empty? %>
   <div class='buttons text-center'>
     <%= link_to 'Read More Reviews', '#', class: 'btn btn-default', role: 'button' %>
-    <%= modal_button_tag 'Add a review',
-                         new_product_review_path(@product),
-                         method: :get,
-                         link: true,
-                         class: 'btn btn-default' %>
+    <% if user_signed_in? %>
+        <%= modal_button_tag 'Add a review',
+                             new_product_review_path(@product),
+                             method: :get,
+                             link: true,
+                             class: 'btn btn-default' %>
+    <% end %>
   </div>
 </div>
 
