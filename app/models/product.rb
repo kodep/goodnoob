@@ -43,23 +43,38 @@ class Product < ActiveRecord::Base
   scope :price_from, ->(price_from) { joins(:actual_price).where('prices.amount >= ?', price_from) if price_from.present? }
   scope :price_to, ->(price_to) { joins(:actual_price).where('prices.amount <= ?', price_to) if price_to.present? }
   scope :sort_by, ->(field, desc) {
-    direction = desc ? 'DESC' : 'ASC'
+    direction = desc == 'true' ? 'DESC' : 'ASC'
     case field
       when 'price'
         joins(:actual_price).order("prices.amount #{direction}")
       when 'year'
         order(year: direction)
       when 'rating'
-        joins(:ratings)
-          .select('products.*, avg(ratings.value) as average_raiting, count(ratings.id) as number_of_ratings')
-          .group('products.id')
-          .order("average_raiting #{direction}, average_raiting #{direction}")
+        hits = self.joins(:ratings)
+                 .select('products.id, avg(ratings.value) as average_raiting, count(ratings.id) as number_of_ratings')
+                 .group('products.id')
+                 .order("average_raiting #{direction}, average_raiting #{direction}").map &:id
+        order_clause = get_order_clause(hits)
+        if order_clause
+          reorder(order_clause)
+        else
+          self
+        end
       when 'name'
         order("LOWER(name) #{direction}")
       else
         order(created_at: direction)
     end
   }
+
+  def self.get_order_clause(hits)
+    if hits
+      s = "case products.id "
+      hits.each_with_index { |n, i| s << "when #{n} then #{i} " }
+      s << "else #{hits.size} "
+      s << 'end'
+    end
+  end
 
   def title
     "#{name} - #{sub_category_name}"

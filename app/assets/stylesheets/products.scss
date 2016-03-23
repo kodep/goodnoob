@@ -19,6 +19,16 @@
     &:hover {
       text-decoration: none;
     }
+
+    .glyphicon {
+      visibility: hidden;
+      margin-right: -20px;
+      margin-left: 10px;
+    }
+
+    &.active .glyphicon {
+      visibility: visible;
+    }
   }
 }
 

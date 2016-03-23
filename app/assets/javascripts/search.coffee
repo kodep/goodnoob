@@ -31,6 +31,22 @@ $ ->
       when 'price_from' then reset_price_from()
       when 'price_to' then reset_price_to()
 
+  $(document).on 'click', '.sort-by-panel a', (e) ->
+    e.preventDefault()
+    $this = $(@)
+    field = $this.data 'field'
+    desc = $this.data('desc') != true
+    $this.data('desc', desc)
+    if desc
+      $this.find('.glyphicon').removeClass('glyphicon-triangle-top').addClass('glyphicon-triangle-bottom')
+    else
+      $this.find('.glyphicon').removeClass('glyphicon-triangle-bottom').addClass('glyphicon-triangle-top')
+    $('.sort-by-panel a').removeClass('active')
+    $this.addClass('active')
+    $('#search_field').val field
+    $('#search_direction').val desc
+    $('#filter_form').submit()
+
 reset_price_from = ->
   $slider = $('#slider')
   prices = $slider.slider('option', 'values')
