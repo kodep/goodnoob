@@ -16,9 +16,6 @@
         </div>
       </div>
     </div>
-    <div class='product-description text-center'>
-      <%== simple_format product.description %>
-    </div>
   </main>
   <aside class='side-panel-wrapper'>
     <div class='product-brief'>
@@ -44,5 +41,23 @@
         <% end %>
       </p>
     </div>
+  </aside>
+</div>
+<div style="display: table-footer-group; width: 100%; height: 10px;"></div>
+<div class='main-container product-properties-wrapper'>
+  <main class='main-content-wrapper'>
+    <div class='product-description text-center'>
+      <%== simple_format product.description %>
+    </div>
+  </main>
+  <aside class='side-panel-wrapper product-properties'>
+    <% @filters.each do |filter| %>
+        <div class="row">
+          <div class="col-md-6 filter_name"><span><%= filter.name %></span></div>
+          <div class="col-md-6 filter_values">
+            <%== product.filter_options.where(filter: filter).map(&:name).join '<br>' %>
+          </div>
+        </div>
+    <% end %>
   </aside>
 </div>

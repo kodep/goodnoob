@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
     @pictures = product.pictures.order(created_at: :asc).first(6)
     @reviews = product.reviews.recent.first(3)
     @simpage = (params[:similar] || '1').to_i
+    @filters = product.filter_options.map(&:filter).uniq.sort { |x, y| x['name'] <=> y['name'] }
     if @simpage == 1
       @similars = Kaminari.paginate_array(product.similars.recent)
                      .page(@simpage)

@@ -9,6 +9,28 @@
   }
 }
 
+.product-properties-wrapper {
+  background-color: #EFEFEF;
+}
+
+.product-properties {
+  background-color: #4D4D4D;
+  color: white;
+  padding: 13px 35px 13px 35px;
+
+  .filter_name {
+    border-bottom: 1px dotted white;
+    padding: 0;
+    span {
+      background-color: #4D4D4D;
+    }
+  }
+
+  .filter_values {
+    line-height: 1.5em;
+  }
+}
+
 .product-description {
   padding: 4.5em 5em 3.5em 5em;
   color: #7a7a7a;
