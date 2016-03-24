@@ -47,7 +47,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'home#index'
-  devise_for :users, :controllers => { registrations: 'registrations'}
+  devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users do
     collection do
       get :review
@@ -69,8 +69,8 @@ Rails.application.routes.draw do
   end
   resources :sub_categories, only: [:show]
   resources :products, only: [:show] do
-    resources :reviews, only:[:new, :create], defaults: {format: :json}
-    resources :user_favourite_products, only:[:add, :remove] do
+    resources :reviews, only: [:index, :new, :create], defaults: { formats: [:json, :html] }
+    resources :user_favourite_products, only: [:add, :remove] do
       collection do
         get 'add'
         get 'remove'

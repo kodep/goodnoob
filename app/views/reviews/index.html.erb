@@ -1,0 +1,52 @@
+<%= render partial: 'products/about', locals: { product: @product, pictures: @pictures } %>
+
+<div class="row product_reviews">
+  <div class="col-md-7">
+    <h2>Most Popular Reviews</h2>
+    <% @reviews.each_with_index do |review, index| %>
+        <div class='review'>
+          <h3>
+            <%= render partial: 'products/rating', locals: { rating: review.rating && review.rating.value || 0 } %>
+            <%= review.title %>
+          </h3>
+          <div class="text">
+            <%== simple_format review.review %>
+          </div>
+
+          <div class="row more_info">
+            <div class="col-md-4"><%= review.user_name %> - <%= review.date_string %></div>
+            <div class="col-md-4 useful">67 out of 70 think this review is useful</div>
+            <div class="col-md-4">
+              is this information useful?
+              <span class='glyphicon glyphicon-thumbs-up'></span>
+              <span class='glyphicon glyphicon-thumbs-down'></span>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+  <div class="col-md-5">
+    <h2>Latest reviews</h2>
+    <% @reviews.recent.each_with_index do |review, index| %>
+        <div class='review'>
+          <h3>
+            <%= render partial: 'products/rating', locals: { rating: review.rating && review.rating.value || 0 } %>
+            <%= review.title %>
+          </h3>
+          <div class="text">
+            <%== simple_format review.review %>
+          </div>
+
+          <div class="row more_info">
+            <div class="col-md-4"><%= review.user_name %> - <%= review.date_string %></div>
+            <div class="col-md-4 useful">67 out of 70 think this review is useful</div>
+            <div class="col-md-4">
+              is this information useful?
+              <span class='glyphicon glyphicon-thumbs-up'></span>
+              <span class='glyphicon glyphicon-thumbs-down'></span>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

@@ -1,57 +1,10 @@
-<div class='main-container'>
-  <main class='main-content-wrapper'>
-    <%= render 'breadcrumbs' %>
-    <div class='page-header text-center'>
-      <h1>
-        <%= product.name %>
-      </h1>
-    </div>
-    <div class='container-fluid'>
-      <div class='row'>
-        <div class='col-md-2 visible-md visible-lg'>
-          <%= picture_thumbnails pictures %>
-        </div>
-        <div class='col-md-10'>
-          <%= image_tag product.picture_url, alt: '', id: 'large-image', class: 'img-responsive center-block' %>
-        </div>
-      </div>
-    </div>
-    <div class='product-description text-center'>
-      <%== simple_format product.description %>
-    </div>
-  </main>
-  <aside class='side-panel-wrapper'>
-    <div class='product-brief'>
-      <h1>
-        Price: <%= product.price_string %>
-      </h1>
-      <p>
-        <%= render 'rating', rating: product.rating %>
-      </p>
-      <% if product.url.present? %>
-          <p>
-            <%= link_to 'Product Website', product.url, :target => "_blank" %>
-          </p>
-      <% end %>
-      <p>
-        <% if user_signed_in? %>
-            <% if product.users.include? current_user %>
-                Added to
-                Favourites <%= link_to '(Remove)', remove_product_user_favourite_products_path(@product) %>
-            <% else %>
-                <%= link_to 'Add to Favourites', add_product_user_favourite_products_path(@product) %>
-            <% end %>
-        <% end %>
-      </p>
-    </div>
-  </aside>
-</div>
+<%= render partial: 'about', locals: { product: @product } %>
 
 <!-- reviews section -->
 <div class='product-reviews'>
   <%= render 'reviews', reviews: reviews unless reviews.empty? %>
   <div class='buttons text-center'>
-    <%= link_to 'Read More Reviews', '#', class: 'btn btn-default', role: 'button' %>
+    <%= link_to 'Read More Reviews', product_reviews_path(product_id: @product.id), class: 'btn btn-default', role: 'button' %>
     <% if user_signed_in? %>
         <%= modal_button_tag 'Add a review',
                              new_product_review_path(@product),

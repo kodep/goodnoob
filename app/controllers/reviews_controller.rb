@@ -1,6 +1,13 @@
 class ReviewsController < ApplicationController
 
-  before_action :set_product, only:[:new, :create]
+  before_action :set_product, only: [:index, :new, :create]
+
+  def index
+    @product = Product.find params[:product_id]
+    @pictures = @product.pictures.order(created_at: :asc).first(6)
+    @reviews = @product.reviews #.recent.first(3)
+    @simpage = (params[:similar] || '1').to_i
+  end
 
   def new
     @review = Review.new
@@ -32,5 +39,4 @@ class ReviewsController < ApplicationController
       product_id: @product.id,
       language_id: current_user.language_id }
   end
-
 end

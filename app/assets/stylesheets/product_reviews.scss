@@ -1,3 +1,60 @@
 // Place all the styles related to the ProductReviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.product_reviews {
+  background-color: #F5F7F7;
+  padding-top: 65px;
+  color: #4D4D4D;
+
+  .col-md-7, .col-md-5 {
+    padding: 20px 65px 65px 65px;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+
+  .review {
+    margin: 50px 0 20px 0;
+
+    h3 {
+      font-size: 1em;
+      font-weight: bold;
+
+      span {
+        font-size: 1.2em;
+        letter-spacing: -5px;
+
+        &:last-child {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .text {
+      font-size: .9em;
+      padding: 15px 0 20px 0;
+    }
+
+    .more_info {
+      font-size: .75em;
+
+      div {
+        line-height: 1.9em;
+      }
+
+      .useful {
+        color: #0A3295;
+      }
+
+      .glyphicon {
+        color: #3BAEE4;
+        margin-left: 20px;
+        font-size: 1.9em;
+      }
+    }
+  }
+}
