@@ -41,6 +41,7 @@ module SearchHelper
     html_options = {} if html_options.nil?
 
     p = params.dup
+    p['filter'] = true
     param_changes.each do |change|
       p = update_params( p, change[:action], change[:key], change[:value] )
     end
