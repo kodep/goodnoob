@@ -1,7 +1,7 @@
 <div class="background-wrapper" style="<%= sub_category_cover(@sub_category) %>">
     <%= render 'breadcrumbs' %>
     <div class="flex main-heading-wrapper">
-        <h1 class="main-heading"><%= @sub_category.name %></h1>
         <span class="heading-sub-text">Use the filters to find your perfect</span>
+        <h1 class="main-heading"><%= @sub_category.name.singularize %></h1>
     </div>
 </div>
