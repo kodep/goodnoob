@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   belongs_to :language
   has_one :address, as: :addressable, dependent: :destroy
   has_many :ratings
-  
+
   has_many :favourites, foreign_key: 'user_id', class_name: 'UserFavourite', dependent: :destroy
 
   has_many :user_favourite_categories, -> { UserFavourite.categories }, class_name: 'UserFavourite'
@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   has_one :picture, as: :imageable, dependent: :destroy
 
   accepts_nested_attributes_for :address
-  accepts_nested_attributes_for :picture
+  accepts_nested_attributes_for :picture, reject_if: proc { |attributes| attributes['image'].blank? }
 
   def save_search( search_string )
     if ( searches.last.nil? or searches.last.text != search_string ) and !search_string.blank?
