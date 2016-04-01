@@ -136,7 +136,6 @@ ActiveAdmin.register User do
       picture.input :id, as: :hidden, value: picture.object.id
       picture.input :imageable_id, as: :hidden, value: f.object.id
       picture.input :imageable_type, as: :hidden, value: 'User'
-      picture.input :title
       picture.input :url
     end
     f.inputs 'Favourite Categories' do
