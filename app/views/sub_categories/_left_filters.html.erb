@@ -41,7 +41,7 @@
 
     <%= render layout: 'left_filter',
         locals: { filter_name: 'Price', filter_type: 'prive', icon_class: 'glyphicon glyphicon-plane' } do %>
-        <%= render partial: 'price_filter', locals: { prices: @sub_category.prices.map {|p| p.amount}.uniq } %>
+        <%= render partial: 'price_filter', locals: { prices: @sub_category.prices.map {|p| p.amount}.select(&:present?).uniq } %>
     <% end %>
 
     <%= render layout: 'left_filter',
