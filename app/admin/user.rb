@@ -10,7 +10,7 @@ ActiveAdmin.register User do
       :role, :currency_id, :language_id, :last_name,
       :dob, :sex, :company,
       address_attributes: [:id, :street, :city, :postcode, :country, :latitude, :longitude, :addressable_type, :addressable_id],
-      picture_attributes: [:id, :title, :url, :imageable_id, :imageable_type],
+      picture_attributes: [:id, :image, :url, :imageable_id, :imageable_type],
       category_ids: [], company_ids: [], product_ids: []
     ]
     if params[:user] && params[:user][:password].blank?
@@ -108,6 +108,7 @@ ActiveAdmin.register User do
   end
 
   form do |f|
+    f.semantic_errors *f.object.errors.keys
     f.inputs do
       f.input :role, as: :select, collection: User.roles.keys
       f.input :email
@@ -137,6 +138,7 @@ ActiveAdmin.register User do
       picture.input :imageable_id, as: :hidden, value: f.object.id
       picture.input :imageable_type, as: :hidden, value: 'User'
       picture.input :url, input_html: { disabled: true }
+      picture.input :image
     end
     f.inputs 'Favourite Categories' do
       f.input :categories, as: :check_boxes
