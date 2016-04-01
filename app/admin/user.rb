@@ -6,12 +6,12 @@ ActiveAdmin.register User do
 
   permit_params do
     basic_params = [
-        :email, :name, :password, :password_confirmation,
-        :role, :currency_id, :language_id, :last_name,
-        :dob, :sex, :company,
-        address_attributes: [:id, :street, :city, :postcode, :country, :latitude, :longitude, :addressable_type, :addressable_id],
-        picture_attributes: [:id, :title, :url, :imageable_id, :imageable_type],
-        category_ids: [], company_ids: [], product_ids: []
+      :email, :name, :password, :password_confirmation,
+      :role, :currency_id, :language_id, :last_name,
+      :dob, :sex, :company,
+      address_attributes: [:id, :street, :city, :postcode, :country, :latitude, :longitude, :addressable_type, :addressable_id],
+      picture_attributes: [:id, :title, :url, :imageable_id, :imageable_type],
+      category_ids: [], company_ids: [], product_ids: []
     ]
     if params[:user] && params[:user][:password].blank?
       params[:user].delete :password
@@ -136,7 +136,7 @@ ActiveAdmin.register User do
       picture.input :id, as: :hidden, value: picture.object.id
       picture.input :imageable_id, as: :hidden, value: f.object.id
       picture.input :imageable_type, as: :hidden, value: 'User'
-      picture.input :url
+      picture.input :url, input_html: { disabled: true }
     end
     f.inputs 'Favourite Categories' do
       f.input :categories, as: :check_boxes
