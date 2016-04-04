@@ -7,14 +7,11 @@
           <span id="search_concept">Categories</span> <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
-          <li><a href="#contains">Contains</a></li>
-
-          <!--      <li><a href="#its_equal">It's equal</a></li>
-                <li><a href="#greather_than">Greather than ></a></li>
-                <li><a href="#less_than">Less than < </a></li>
-                <li class="divider"></li>
-                <li><a href="#all">Anything</a></li>
-          -->
+          <% Category.all.in_groups(2, false) do |cats| %>
+              <% cats.each do |cat|%>
+               <li> <%= link_to cat.name  %></li>
+              <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
