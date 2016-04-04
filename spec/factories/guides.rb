@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :guide do
-    
+    header { Faker::Lorem.words(2).split '' }
+    description Faker::Lorem.paragraph
+    video_url { Faker::Internet.url('youtube.com') }
   end
 
 end
