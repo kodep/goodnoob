@@ -12,6 +12,8 @@ class SubCategory < ActiveRecord::Base
   accepts_nested_attributes_for :picture
 
   delegate :url, to: :picture, prefix: true, allow_nil: true # .picture_url
+
+  scope :with_guides, -> { where id: Guide.all.map(&:sub_category_id).uniq }
 end
 
 # == Schema Information
