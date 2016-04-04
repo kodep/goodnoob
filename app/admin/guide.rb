@@ -2,7 +2,7 @@ ActiveAdmin.register Guide do
 
   belongs_to :sub_category, optional: true
 
-  permit_params :header, :description, :sub_category_id
+  permit_params :header, :description, :sub_category_id, :video_url
 
   filter :header
   filter :sub_category
