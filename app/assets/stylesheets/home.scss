@@ -1,30 +1,29 @@
 
 .home-page {
   min-height: 900px;
-  background: image-url('homepage-background.png') no-repeat top left;
+  background: image-url('homepage-background.jpg') no-repeat top left;
   background-size: cover;
   padding-top: 20px;
 
-
   .home-page-text {
     text-align: center;
-    padding-top: 50px;    
+    padding-top: 50px;
 
     font-family: "Gloucester MT Extra Condensed";
     font-style: bold;
-    font-size: 0.725em;
+    font-size: 1em;
     line-height: 17px;
-    letter-spacing:-0.5px;	
+    letter-spacing: -0.5px;
     color: #fff;
-    
+
     p {
-	margin: auto;
-	width: 90%;
-        margin-bottom: 20px;
-  	font-weight: bold;
+      margin: auto;
+      width: 90%;
+      margin-bottom: 20px;
+      font-weight: bold;
     }
 
-    background-color: rgba( 0, 0, 0, 0.0 );
+    background-color: rgba(0, 0, 0, 0.0);
     border: 0 solid #000;
     border-radius: 6px;
     padding: 30px;
@@ -32,63 +31,78 @@
     margin: auto;
   }
 
- 
+  .row {
+    .col-md-8, .col-md-4 {
+      padding: 0 0 0 0;
+    }
+
+  }
+
+  .search-btn{
+    background-color: rgba(220, 146, 159, 0);
+    border: none;
+  }
 }
 
 .shiny-button, .shiny-button:focus {
-   width: 70%;
-   margin-bottom: 20px;
-   -webkit-border-radius: 0px;
-   -moz-border-radius: 0px;
-   border-radius: 0px;
-   color: #FFFFFF;
-    font-family: "Gloucester MT Extra Condensed";
-    font-style: bold;
-    font-size: 1.11em;
-    line-height: 17px;
-    font-color:#FFFFFF;
-   padding: 7px;
-   background-color: #073274;
- 
-   text-decoration: none;
-   display: inline-block;
-   cursor: pointer;
+  width: 70%;
+  margin-bottom: 20px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  color: #FFFFFF;
+  font-family: "Gloucester MT Extra Condensed";
+  font-style: bold;
+  font-size: 1.11em;
+  line-height: 17px;
+  font-color: #FFFFFF;
+  padding: 7px;
+  background-color: #073274;
+
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 }
 
-.shiny-button:hover {	
-   color: #FFFFFF;
-   background: #1E62D0;
-   text-decoration: none;
+.shiny-button:hover {
+  color: #FFFFFF;
+  background: #1E62D0;
+  text-decoration: none;
 }
+
 #categories-button {
   margin-top: 3px;
 }
 
-.search-icon{	    
-  	background: image-url('search-icon-small.png') no-repeat;
-	padding:0;
-	background-position: center center;
- 	background-size: 18px 20px;
+.search-icon {
+  background: image-url('search-icon-small.png') no-repeat;
+  padding: 0;
+  background-position: center center;
+  background-size: 18px 20px;
+  background-color: rgba(220, 146, 159, 0);
 }
 
-@media( max-width: 499px ) {
+@media(max-width: 499px) {
   .search-box .search-field-wrapper {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
   }
 }
-@media( min-width: 500px ) and ( max-width: 768px ) {
+
+@media(min-width: 500px) and (max-width: 768px) {
   .search-box .compare-button-wrapper .btn {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
 }
-@media( min-width: 769px ) {
+
+@media(min-width: 769px) {
   .home-page .home-page-text {
     width: 75%;
   }
 }
-@media( min-width: 1025px ) {
+
+@media(min-width: 1025px) {
   .search-box .compare-button-wrapper .btn {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
