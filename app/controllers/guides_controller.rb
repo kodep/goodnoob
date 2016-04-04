@@ -8,10 +8,10 @@ class GuidesController < ApplicationController
   private
 
   def set_sub_category
-
+    @sub_category = SubCategory.find(params[:sub_category_id])
   end
 
   def set_guide
-
+    @guide = Guide.find(params[:id])
   end
 end
