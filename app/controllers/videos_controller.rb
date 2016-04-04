@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: videos
+#
+#  id          :integer          not null, primary key
+#  url         :string
+#  main        :boolean
+#  comment     :text
+#  day         :boolean
+#  caption     :string
+#  product_id  :integer
+#  user_id     :integer
+#  category_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  host        :string(10)
+#  code        :string(20)
+#
+
 class VideosController < ApplicationController
   include ImitateDelay
   imitate_delay only: :create

@@ -15,3 +15,21 @@ class Address < ActiveRecord::Base
   end
 
 end
+
+# == Schema Information
+#
+# Table name: addresses
+#
+#  id               :integer          not null, primary key
+#  street           :string
+#  postcode         :string
+#  city             :string
+#  country          :string
+#  latitude         :float
+#  longitude        :float
+#  addressable_id   :integer
+#  addressable_type :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  country_code     :string
+#

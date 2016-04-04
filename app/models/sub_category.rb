@@ -12,3 +12,14 @@ class SubCategory < ActiveRecord::Base
 
   delegate :url, to: :picture, prefix: true, allow_nil: true # .picture_url
 end
+
+# == Schema Information
+#
+# Table name: sub_categories
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  category_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#

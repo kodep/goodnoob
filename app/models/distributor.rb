@@ -7,3 +7,16 @@ class Distributor < ActiveRecord::Base
   accepts_nested_attributes_for :address
 
 end
+
+# == Schema Information
+#
+# Table name: distributors
+#
+#  id          :integer          not null, primary key
+#  information :text
+#  phone       :string
+#  url         :string
+#  email       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
