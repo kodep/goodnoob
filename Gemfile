@@ -21,7 +21,6 @@ gem 'aws-sdk', '< 2'
 gem 'kaminari'
 gem 'pg'
 gem 'pry'
-
 gem 'gon'
 gem 'active_model_serializers'
 
@@ -40,6 +39,7 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
+  gem 'annotate'
 end
 
 group :test do
