@@ -13,6 +13,7 @@ $(document).ready(function(){
     var showMoreVideo = $('#show-video');
     var plusIcon = $('.filter-plus-icon');
     var checkBox = $('.checkbox-inline');
+    var catclicker ;
     var submitButtonSelector = 'a[data-submit-button="true"]';
     window.filterStatus = window.filterStatus || {
       'favourites': 'hide',
@@ -233,24 +234,40 @@ $(document).ready(function(){
 
     // 'Compare' toggle block
     $("#compare-button").click(function(e){
+        catclicker = "#"+this.id;
       $(".buying-guides-block-wrapper").hide(300);
       $(".categories-block-wrapper").hide(300);
-      setBlockPosition("#compare-button", ".compare-block-wrapper");
+      setBlockPosition(catclicker, ".compare-block-wrapper");
       $(".compare-block-wrapper").toggle(300);
       e.stopPropagation();
+       
     });
+    
+    // 'Category  button on home page' toggle block
+    $("#cat-btn").click(function(e){
+        catclicker = "#"+this.id;
+        $(".buying-guides-block-wrapper").hide(300);
+        $(".categories-block-wrapper").hide(300);
+        setBlockPosition(catclicker, ".compare-block-wrapper");
+        $(".compare-block-wrapper").toggle(300);
+        e.stopPropagation();
+
+    });
+
     $(document).click(function(){
-      $('.compare-block-wrapper').hide(300);
+        $('.compare-block-wrapper').hide(300);
     });
     $(window).resize(function() {
-      setBlockPosition("#compare-button", ".compare-block-wrapper");
+        setBlockPosition(catclicker, ".compare-block-wrapper");
     });
     $(window).scroll(function() {
-      setBlockPosition("#compare-button", ".compare-block-wrapper");
+        setBlockPosition(catclicker, ".compare-block-wrapper");
     });
     $('.compare-block-wrapper').click(function(e){
-      e.stopPropagation();
+        e.stopPropagation();
     });
+
+
 
     // 'Categories' toggle block
     $("#categories-button").click(function(e){

@@ -3,16 +3,30 @@
 
     <div class="col-md-4 col-sm-4">
       <div class="input-group-btn search-panel  ">
-        <button type="button" class="btn btn-default dropdown-toggle" style="width: 100%;" data-toggle="dropdown">
+        <button type="button" id="cat-btn" class="btn btn-default dropdown-toggle" style="width: 100%;" data-toggle="dropdown">
           <span id="search_concept">Categories</span> <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu" role="menu">
-          <% Category.all.in_groups(2, false) do |cats| %>
-              <% cats.each do |cat|%>
-               <li> <%= link_to cat.name  %></li>
-              <% end %>
+
+          <%
+            Category.all.in_groups(2, false) do |cats|
+              col = col == 'left' ? 'right' : 'left'
+          %>
+              <div class="buying-guides-<%= col %>-column">
+                <% cats.each do |cat| %>
+                    <div class="buying-list">
+                      <span class="buying-list-header"><%= cat.name %></span>
+                      <ul>
+                        <% cat.sub_categories.each do |sub_cat| %>
+                            <!-- <li><a href="<%= search_index_path( sub_categories: [sub_cat.id] ) %>"><%= sub_cat.name %></a></li> -->
+                            <li><%= link_to sub_cat.name, sub_cat %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                <% end %>
+              </div>
           <% end %>
-        </ul>
+
+
       </div>
     </div>
     <div class="col-md-8 col-sm-8">
