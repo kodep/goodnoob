@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id              :integer          not null, primary key
+#  name            :string
+#  description     :text
+#  year            :integer
+#  url             :string
+#  sub_category_id :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  company_id      :integer
+#
+
 class ProductsController < ApplicationController
   include HelperAttr
   helper_attr :product, :pictures, :reviews, :photos, :videos, :similars

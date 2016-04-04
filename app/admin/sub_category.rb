@@ -14,6 +14,10 @@ ActiveAdmin.register SubCategory do
     link_to 'Products', admin_sub_category_products_path(sub_category)
   end
 
+  action_item :guides, only: :show do
+    link_to 'Guides', admin_sub_category_guides_path(sub_category)
+  end
+
   index do
     id_column
     column :name

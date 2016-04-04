@@ -9,6 +9,8 @@ class Category < ActiveRecord::Base
   has_many :user_favourites, as: :favouriteable
   has_many :users, through: :user_favourites
 
+  scope :with_guides, -> { where id: SubCategory.with_guides.map(&:category_id).uniq }
+
   # Searched by subcategories
   def searched_for?(sub_categories_ids)
     sub_categories_ids ||= []
@@ -21,3 +23,12 @@ class Category < ActiveRecord::Base
   end
 
 end
+
+# == Schema Information
+#
+# Table name: categories
+#
+#  id                 :integer          not null, primary key
+#  name               :string
+#  father_category_id :integer
+#

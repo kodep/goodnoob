@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: photos
+#
+#  id          :integer          not null, primary key
+#  main        :boolean
+#  comment     :text
+#  day         :boolean
+#  product_id  :integer
+#  user_id     :integer
+#  category_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class PhotosController < ApplicationController
   include ImitateDelay
   imitate_delay only: :create

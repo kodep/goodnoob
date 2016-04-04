@@ -1,0 +1,24 @@
+<div class="main-container">
+  <aside class="side-panel-wrapper search-side-panel side-panel-wrapper-fix">
+    <% @sub_category.guides.each do |guide| %>
+        <div class="guide-block">
+          <%= link_to guide.header, sub_category_guide_path(@sub_category, guide), class: 'filter-group-heading' %>
+        </div>
+    <% end %>
+  </aside>
+
+  <main class="main-content-wrapper b-l-320 no-padding">
+    <div class="guide-details">
+      <h1><%= @guide.header %></h1>
+      <%== simple_format @guide.description %>
+    </div>
+
+    <% if @guide.video_url.present? %>
+        <div class="guide-video">
+          <iframe width="840" height="400"
+                  src="<%= @guide.video_url %>">
+          </iframe>
+        </div>
+    <% end %>
+  </main>
+</div>

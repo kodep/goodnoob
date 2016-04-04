@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'guides/show'
+
   ActiveAdmin.routes(self)
 
   namespace :admin do
@@ -67,7 +69,9 @@ Rails.application.routes.draw do
       get 'remove'
     end
   end
-  resources :sub_categories, only: [:show]
+  resources :sub_categories, only: [:show] do
+    resources :guides, only: [:show]
+  end
   resources :products, only: [:show] do
     resources :reviews, only: [:index, :new, :create], defaults: { formats: [:json, :html] }
     resources :user_favourite_products, only: [:add, :remove] do

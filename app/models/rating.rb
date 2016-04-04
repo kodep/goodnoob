@@ -25,3 +25,16 @@ class Rating < ActiveRecord::Base
 
   end
 end
+
+# == Schema Information
+#
+# Table name: ratings
+#
+#  id         :integer          not null, primary key
+#  value      :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  product_id :integer
+#  user_id    :integer
+#  review_id  :integer
+#

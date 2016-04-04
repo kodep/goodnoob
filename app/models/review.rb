@@ -17,3 +17,17 @@ class Review < ActiveRecord::Base
     created_at.to_date.to_s(:long)
   end
 end
+
+# == Schema Information
+#
+# Table name: reviews
+#
+#  id          :integer          not null, primary key
+#  title       :string
+#  review      :text
+#  language_id :integer
+#  user_id     :integer
+#  product_id  :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
