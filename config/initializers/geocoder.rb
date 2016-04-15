@@ -1,3 +1,3 @@
 Geocoder.configure(
-  ip_lookup: :ipapi_com
+  ip_lookup: :google
 )
