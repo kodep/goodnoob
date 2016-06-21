@@ -80,10 +80,10 @@ $buying-list-font: sans-serif;
 $header-simple-btn-fontsize: 1.1rem;
 $upload-btn-fontsize: 1rem;
 
-$flores-heading-fontsize: 3em;
+$flores-heading-fontsize: 3.375em;
 $flores-heading-weight: 700;
 
-$heading-subtext-fontsize: 1.2em;
+$heading-subtext-fontsize: 1.6875em;
 $heading-subtext-weight: 700;
 
 $heading-button-fontsize: 1em;
@@ -311,21 +311,23 @@ $menu-line-color: #ffffff;
   }
 }
 .background-wrapper{
-  background: image-url('header-background.jpg') no-repeat top left;
+  background: #4b7c7f image-url('header-background.jpg') no-repeat top left;
   background-size: cover;
-  height: 635px;
+  height: 450px;
   position: relative;
   width: 100%;
 
   .main-heading-wrapper{
-    align-items: flex-start;
+    align-items: flex-end;
     display: flex;
     flex-flow: column nowrap;
     -ms-flex-flow: column nowrap;
     -webkit-flex-flow: column nowrap;
-    margin-left: 160px;
+    margin-right: 90px;
     position: relative;
-    top: 360px;
+    text-align: right;
+    height: 450px;
+    justify-content: space-between;
 
     .main-heading{
       color: $flores-heading-text;
@@ -624,11 +626,9 @@ $menu-line-color: #ffffff;
     min-height: 200px;
 
     .main-heading-wrapper{
-      bottom: 0;
+      height: auto;
       margin: 0;
       text-align: center;
-      top: inherit;
-      position: absolute;
 
       .main-heading{
         font-size: 1.2em;
