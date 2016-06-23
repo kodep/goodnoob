@@ -314,6 +314,7 @@ DEPENDENCIES
   active_model_serializers
   activeadmin!
   annotate
+  autoprefixer-rails
   aws-sdk (< 2)
   better_errors
   bootstrap-sass

@@ -23,6 +23,7 @@ gem 'pg'
 gem 'pry'
 gem 'gon'
 gem 'active_model_serializers'
+gem 'autoprefixer-rails'
 
 group :development, :test do
   gem 'byebug'
