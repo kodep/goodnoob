@@ -181,14 +181,11 @@ $(document).ready(function(){
     function repositionHeaderSideDropdowns() {
         var bodyWidth = $('body').width();
         if (bodyWidth < (893 + 82) && bodyWidth > (691 + 60)) {
-            $('.header-side-dropdown-button').removeClass('pull-left');
-            $('.header-side-dropdown-button').addClass('pull-right');
+            $('.header-side-dropdown-button').removeClass('pull-left').addClass('pull-right');
         } else if (bodyWidth <= (691 + 60)) {
-            $('.header-side-dropdown-button').removeClass('pull-right');
-            $('.header-side-dropdown-button').addClass('pull-left');
+            $('.header-side-dropdown-button').removeClass('pull-right').addClass('pull-left');
         } else {
-            $('.header-side-dropdown-button').removeClass('pull-right');
-            $('.header-side-dropdown-button').removeClass('pull-left');
+            $('.header-side-dropdown-button').removeClass('pull-right').removeClass('pull-left');
         }
     }
     repositionHeaderSideDropdowns();
