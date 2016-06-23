@@ -3,9 +3,6 @@
 <% end %>
 
 <% content_for :mobile_icons do %>
-  <div class="mobile-burger-menu">
-    <span></span><span></span><span></span>
-  </div>
 <!--  <div class="mobile-filter-button"></div>-->
 <% end %>
 
@@ -13,13 +10,10 @@
 
 <div class="main-container">
 
-  <%= render 'left_filters' %>
-
   <!-- MAIN CONTENTS LAYOUT -->
   <main class="main-content-wrapper">
     <div>
-      <div class="flex applied-filters-wrapper">
-        <div></div>
+      <div class="flex applied-filters-wrapper" style="display: none;">
         <% @filters.each do |filter| %>
           <div class="applied-filter">
             <%= link_to search_index_path(update_params(params, :remove, filter.type, filter.id)), data: { 'turbolinks-scroll': false }  do %>

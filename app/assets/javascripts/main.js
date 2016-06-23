@@ -167,9 +167,15 @@ $(document).ready(function(){
 
         });
     });
-    $('.applied-filters-wrapper').on('click','.applied-filter', function(){
+
+    var appliedFiltersSelector = $('.applied-filters-wrapper');
+    appliedFiltersSelector.on('click','.applied-filter', function(){
         $(this).hide();
     });
+    var appliedFiltersCount = appliedFiltersSelector.children().length;
+    if ( appliedFiltersCount ) {
+      appliedFiltersSelector.show();
+    }
 
     // Add pull-right and pull-left to side buttons in the header depending on the window size
     function repositionHeaderSideDropdowns() {

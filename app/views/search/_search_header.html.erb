@@ -1,9 +1,43 @@
 <div class="background-wrapper">
-    <div class="flex main-heading-wrapper">
-        <h1 class="main-heading">FIND YOUR NEW BOARD,
-          <br>BIKE,
-          <br>BOOTS&hellip;
-          </h1>
-        <span class="heading-sub-text">COMPARE, FILTER AND REVIEW YOUR EXTREME SPORT PRODUCTS </span>
-    </div>
+  <div class="flex main-heading-wrapper">
+    <h1 class="main-heading">FIND YOUR NEW BOARD, <br>BIKE, <br>BOOTS&hellip;
+    </h1>
+    <span class="heading-sub-text">COMPARE, FILTER AND REVIEW YOUR EXTREME SPORT PRODUCTS</span>
+  </div>
+</div>
+
+<div class="flex main-filters-wrapper">
+  <% @categories.all.each do |category| %>
+      <%= render partial: 'category_filter', locals: {category: category} %>
+  <% end %>
+</div>
+
+<div class="flex main-tabs-wrapper">
+  <div class="social-feed-button-wrapper vertical-divider">
+    <button id="social-feed-button" type="button" class="btn btn-link text-uppercase active">Social Feed</button>
+  </div>
+  <div class="compare-button-wrapper vertical-divider">
+    <button id="compare-button" type="button" class="btn btn-link text-uppercase"><%= defined?(@category) ? @category.name : 'Compare Products' %></button>
+  </div>
+  <div class="bying-guides-btn-wrapper">
+    <button id="buying-guides" type="button" class="btn btn-link text-uppercase">Buying Guides</button>
+  </div>
+
+  <div class="buying-guides-block-wrapper">
+    <%= render 'layouts/buying_guides' %>
+  </div>
+  <div class="compare-block-wrapper">
+    <%= render 'layouts/compare_products' %>
+  </div>
+</div>
+
+<div class="flex main-search-wrapper">
+  <%= form_tag search_index_path, method: :get, class: 'search-form--inline' do %>
+      <div class="search-field-wrapper">
+        <%= text_field_tag :search, params[:search], class: 'search-field form-control', placeholder: 'Search...' %>
+        <%= button_tag class: 'submit-icon' do %>
+            <i class="glyphicon glyphicon-search"></i>
+        <% end %>
+      </div>
+  <% end %>
 </div>

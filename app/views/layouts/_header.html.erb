@@ -1,30 +1,19 @@
 <header>
-  <div class="flex black-header-stripe">
-    <%= yield(:mobile_icons) %>
-    <div class="red-man-logo">
-      <%= link_to image_tag("white_logo.png", alt: 'main-background'), root_path %>
+  <div class="flex white-header-stripe">
+    <div class="flex header-start">
+      <div class="mobile-burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <%= yield(:mobile_icons) %>
     </div>
 
     <div class="flex header-center">
-      <div class="compare-button-wrapper">
-        <button id="compare-button" type="button" class="btn btn-default"><%= defined?(@category) ? @category.name : 'Compare Products' %></button>
-      </div>
-      <%= form_tag search_index_path, method: :get do %>
-          <div class="search-field-wrapper">
-            <%= text_field_tag :search, params[:search], class: 'search-field form-control', placeholder: 'Search...' %>
-            <%= button_tag class: 'submit-icon' do %>
-                <i class="glyphicon glyphicon-search"></i>
-            <% end %>
-          </div>
-      <% end %>
-      <div class="bying-guides-btn-wrapper">
-        <button id="buying-guides" type="button" class="btn btn-default">Buying
-          Guides
-        </button>
-      </div>
+      <%= link_to image_tag("good-noob.png", alt: 'main-background', width: 48, height: 28), root_path %>
     </div>
 
-    <div class="flex header-right">
+    <div class="flex header-end">
       <% if user_signed_in? %>
           <div class="upload-btn-wrapper">
             <%= render 'layouts/upload_button' %>
@@ -32,11 +21,5 @@
       <% end %>
       <%= render 'layouts/nav_links_for_auth' %>
     </div>
-  </div>
-  <div class="buying-guides-block-wrapper">
-    <%= render 'layouts/buying_guides' %>
-  </div>
-  <div class="compare-block-wrapper">
-    <%= render 'layouts/compare_products' %>
   </div>
 </header>

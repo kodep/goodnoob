@@ -147,7 +147,7 @@ module SearchHelper
         end
       end
     end
-    search_link param_changes, {}, &block
+    search_link param_changes, { class: 'category-link' }, &block
   end
 
   def search_sub_category_link( sub_category, params_sub_categories, &block )

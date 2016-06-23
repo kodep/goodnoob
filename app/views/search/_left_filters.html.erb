@@ -29,11 +29,4 @@
       <% end %>
     <% end %>
   <% end %>
-
-  <%= render layout: 'left_filter',
-      locals: { filter_name: 'Your Categories', filter_type: 'your-categories', icon_class: 'glyphicon glyphicon-home' } do %>
-    <% @categories.all.each do |category| %>
-      <%= render partial: 'category_filter', locals: { category: category } %>
-    <% end %>
-  <% end %>
 </aside>
