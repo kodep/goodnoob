@@ -67,14 +67,16 @@ html, body, .main-wrapper{
 /* HEADER FONTS AND COLORS SETUP*/
 /********************************/
 
+$font-family-sans-serif: 'Myriad Pro', sans-serif;
+$headings-font-family: 'DIN Alternate', sans-serif;
 // Font-families
-$header-button-font: serif;
-$flores-heading-font: sans-serif;
-$heading-subtext-font: sans-serif;
-$heading-button-font: sans-serif;
-$mainmenu-link-font: sans-serif;
+$header-button-font: 'Myriad Pro', serif;
+$flores-heading-font: 'DIN Alternate', sans-serif;
+$heading-subtext-font: 'Myriad Pro', sans-serif;
+$heading-button-font: 'Myriad Pro', sans-serif;
+$mainmenu-link-font: 'Myriad Pro', sans-serif;
 
-$buying-list-font: sans-serif;
+$buying-list-font: 'Myriad Pro', sans-serif;
 
 // Font-sizes
 $header-simple-btn-fontsize: 1.1rem;
