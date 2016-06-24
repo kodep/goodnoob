@@ -14,7 +14,7 @@
 
 <div class="flex main-tabs-wrapper">
   <div class="social-feed-button-wrapper vertical-divider">
-    <button id="social-feed-button" type="button" class="btn btn-link text-uppercase active">Social Feed</button>
+    <%= link_to "Social Feed", root_path, {id: 'social-feed-button', class: 'btn btn-link text-uppercase active'} %>
   </div>
   <div class="compare-button-wrapper vertical-divider">
     <button id="compare-button" type="button" class="btn btn-link text-uppercase"><%= defined?(@category) ? @category.name : 'Compare Products' %></button>
