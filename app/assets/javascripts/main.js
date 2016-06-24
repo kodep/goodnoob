@@ -197,7 +197,7 @@ $(document).ready(function(){
     function setBlockPosition(button, block) {
         if(!$(button).is('*')) return true;
         var topPos = $(button).offset().top + 42;
-        var rightOffset = $(document).width() - ($(button).offset().left + $(button).width())
+        var rightOffset = $(document).width() - ($(button).offset().left + $(button).width());
         if (rightOffset > ($(block).outerWidth() - $(button).outerWidth())) {
             var leftPos = $(button).offset().left;
             $(block).css({
