@@ -511,26 +511,6 @@ $menu-line-color: #ffffff;
   justify-content: center;
   align-items: center;
   background-color: #2b3339;
-
-  .btn-link {
-    color: #fff;
-    font-size: 1.25em;
-    &.active {
-      color: #3ce1e6;
-    }
-  }
-
-  .vertical-divider {
-    &:after {
-      content: "|";
-      display: inline-block;
-      margin: 0;
-      padding: 0;
-      border-left: 1px solid #fff;
-      border-right: 1px solid #fff;
-      width: 2px;
-    }
-  }
 }
 
 .main-search-wrapper {
@@ -2003,4 +1983,40 @@ $footer-links-color: #333333;
 
 .flex-third {
   flex-basis: 32%;
+}
+
+.tabs-list {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  width: 100%;
+  margin: 0;
+  padding: 0 10px;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+.tabs-item {
+  position: relative;
+  text-align: center;
+}
+.tabs-link {
+  color: #fff;
+  font-size: 14px;
+  padding: 6px 4px;
+  text-transform: uppercase;
+  @media only screen and (min-width: 768px) {
+    font-size: 20px;
+    padding: 6px 12px;
+  }
+  &.active {
+    color: #3ce1e6;
+  }
+}
+.tabs-divider {
+  color: #fff;
+  width: 2px;
 }

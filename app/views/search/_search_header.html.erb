@@ -12,22 +12,27 @@
   <% end %>
 </div>
 
-<div class="flex main-tabs-wrapper">
-  <div class="social-feed-button-wrapper vertical-divider">
-    <%= link_to "Social Feed", root_path, {id: 'social-feed-button', class: 'btn btn-link text-uppercase active'} %>
+<div class="main-tabs-wrapper">
+  <div class="flex hidden">
+    <div class="buying-guides-block-wrapper">
+      <%= render 'layouts/buying_guides' %>
+    </div>
+    <div class="compare-block-wrapper">
+      <%= render 'layouts/compare_products' %>
+    </div>
   </div>
-  <div class="compare-button-wrapper vertical-divider">
-    <button id="compare-button" type="button" class="btn btn-link text-uppercase"><%= defined?(@category) ? @category.name : 'Compare Products' %></button>
-  </div>
-  <div class="bying-guides-btn-wrapper">
-    <button id="buying-guides" type="button" class="btn btn-link text-uppercase">Buying Guides</button>
-  </div>
-
-  <div class="buying-guides-block-wrapper">
-    <%= render 'layouts/buying_guides' %>
-  </div>
-  <div class="compare-block-wrapper">
-    <%= render 'layouts/compare_products' %>
+  <div class="flex tabs-list">
+    <span class="tabs-item social-feed-button-wrapper">
+      <%= link_to "Social Feed", root_path, {id: 'social-feed-button', class: 'btn btn-link tabs-link active'} %>
+    </span>
+    <span class="tabs-divider">|</span>
+    <span class="tabs-item compare-button-wrapper">
+      <button id="compare-button" type="button" class="btn btn-link tabs-link"><%= defined?(@category) ? @category.name : 'Compare Products' %></button>
+    </span>
+    <span class="tabs-divider">|</span>
+    <span class="tabs-item bying-guides-btn-wrapper">
+      <button id="buying-guides" type="button" class="btn btn-link tabs-link">Buying Guides</button>
+    </span>
   </div>
 </div>
 
