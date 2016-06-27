@@ -2008,6 +2008,19 @@ $footer-links-color: #333333;
   font-size: 14px;
   padding: 6px 4px;
   text-transform: uppercase;
+  &:hover {
+    color: #fff;
+  }
+  &:focus,
+  &:active {
+    color: #fff;
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
   @media only screen and (min-width: 768px) {
     font-size: 20px;
     padding: 6px 12px;
@@ -2019,4 +2032,15 @@ $footer-links-color: #333333;
 .tabs-divider {
   color: #fff;
   width: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+  .header-side-dropdown-button {
+    position: fixed;
+    top: 36px;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    border: none;
+  }
 }
