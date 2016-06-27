@@ -449,6 +449,10 @@ $menu-line-color: #ffffff;
   background: #ccc no-repeat center/cover;
   overflow: hidden;
   transition: 0.3s all ease-in-out;
+  opacity: 0.5;
+  &.active {
+    opacity: 1;
+  }
 
   .category-link {
     transition: 0.3s all ease-in-out;
