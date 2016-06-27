@@ -370,6 +370,7 @@ $menu-line-color: #ffffff;
   min-height: 400px;
   position: relative;
   width: 100%;
+  margin-top: 38px;
 
   .main-heading-wrapper{
     align-items: flex-end;
@@ -744,15 +745,15 @@ $menu-line-color: #ffffff;
   .background-wrapper{
     background-size: cover;
     height: auto;
-    min-height: 200px;
+    min-height: 120px;
 
     .main-heading-wrapper{
       height: auto;
       margin: 0;
-      text-align: center;
+      text-align: right;
 
       .main-heading{
-        font-size: 1.2em;
+        font-size: 1.75em;
         width: 100%;
       }
       .heading-sub-text{
@@ -772,7 +773,6 @@ $menu-line-color: #ffffff;
           height: 30px;
           line-height: 30px;
         }
-
       }
     }
     .main-menu-wrapper:after{
