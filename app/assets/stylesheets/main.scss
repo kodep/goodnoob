@@ -423,7 +423,7 @@ $menu-line-color: #ffffff;
     a {
       display: block;
       color: inherit;
-      padding: 25px 20px;
+      padding: 24px 20px;
     }
     .checkbox-inline {
       display: none;
@@ -451,42 +451,59 @@ $menu-line-color: #ffffff;
 
   .category-link {
     transition: 0.3s all ease-in-out;
+    background-position: center;
+    background-size: 48px;
+    background-repeat: no-repeat;
     &:hover {
       transform: scale(1.1);
+    }
+    @media only screen and (min-width: 768px) {
+      background-image: none !important;
     }
   }
   &:nth-child(1) {
     background-image: image-url('category-bike.jpg');
     .category-link {
       background-color: rgba(53, 65, 124, 0.7);
+      background-image: image-url('icon-category-bike.svg');
     }
   }
   &:nth-child(2) {
     background-image: image-url('category-snowboard.jpg');
     .category-link {
       background-color: rgba(49, 125, 220, 0.7);
+      background-image: image-url('icon-category-snowboard.svg');
     }
   }
   &:nth-child(3) {
     background-image: image-url('category-surf.jpg');
     .category-link {
       background-color: rgba(0, 177, 255, 0.7);
+      background-image: image-url('icon-category-surf.svg');
     }
   }
   &:nth-child(4) {
     background-image: image-url('category-ski.jpg');
     .category-link {
       background-color: rgba(22, 112, 180, 0.7);
+      background-image: image-url('icon-category-ski.svg');
     }
   }
   &:nth-child(5) {
     background-image: image-url('category-longboard.jpg');
     .category-link {
       background-color: rgba(8, 86, 131, 0.7);
+      background-image: image-url('icon-category-longboard.svg');
     }
   }
   .filter-name {
     cursor: pointer;
+  }
+  @media only screen and (max-width: 767px) {
+    .filter-name {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 }
 
