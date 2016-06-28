@@ -3,7 +3,9 @@
     <span class='thumb-header-abbr'>
       <%= photo.product && photo.product.company && photo.product.company.name %>
     </span>
-    <span class='thumb-time-date'><%= photo.created_at.strftime("%d %b %H:%M") %></span>
+    <span class='thumb-menu-stripe'>
+      <%= image_tag "three-dots-menu.svg", width: '20', height: '16', class: 'img-responsive' %>
+    </span>
   </div>
   <%= link_to photo do %>
       <div class='embed-responsive embed-responsive-16by9'>

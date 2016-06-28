@@ -3,7 +3,9 @@
     <span class='thumb-header-abbr'>
       <%= video.product && video.product.company && video.product.company.name %>
     </span>
-    <span class='thumb-time-date'><%= video.created_at.strftime("%d %b %H:%M") %></span>
+    <span class='thumb-menu-stripe'>
+      <%= image_tag "three-dots-menu.svg", width: '20', height: '16', class: 'img-responsive' %>
+    </span>
   </div>
   <div class='embed-responsive embed-responsive-16by9'>
     <%= link_to video do %>
