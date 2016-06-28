@@ -1428,7 +1428,7 @@ $upload-button-color: #70B29F;
     .thumb-wrapper{
       background: $thumb-background;
       font-family: $thumbs-main-font;
-      margin: 15px;
+      margin: 15px 15px 15px 0;
       padding: 0;
       width: 470px;
 
@@ -2046,5 +2046,21 @@ $footer-links-color: #333333;
     right: 0;
     border-radius: 0;
     border: none;
+  }
+}
+
+.sub-filters-wrapper {
+  background-color: #63a5d9;
+  padding: 10px 15px;
+  justify-content: center;
+  align-items: center;
+  .applied-filter {
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 0 10px;
+  }
+  .glyphicon {
+    font-size: 14px;
   }
 }

@@ -243,9 +243,8 @@ $(document).ready(function(){
         setBlockPosition(catclicker, ".compare-block-wrapper");
         $(".compare-block-wrapper").toggle(300);
         e.stopPropagation();
-
     });
-
+  
     // 'Category  button on home page' toggle block
     $("#cat-btn").click(function(e){
         catclicker = "#"+this.id;

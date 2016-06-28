@@ -12,6 +12,17 @@
   <% end %>
 </div>
 
+<div class="flex applied-filters-wrapper sub-filters-wrapper">
+  <% @filters.each do |filter| %>
+      <span class="applied-filter">
+        <%= link_to search_index_path(update_params(params, :remove, filter.type, filter.id)), data: {'turbolinks-scroll': false }  do %>
+            <span class="glyphicon glyphicon-remove"></span>
+        <% end %>
+        <span class="applied-filter-text"><%= filter.name %></span>
+        </span>
+  <% end %>
+</div>
+
 <div class="main-tabs-wrapper">
   <div class="flex hidden">
     <div class="buying-guides-block-wrapper">
