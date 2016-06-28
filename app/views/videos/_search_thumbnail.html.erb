@@ -22,9 +22,6 @@
           <%= video.product.name %> <%= "(#{video.product.year})" if video.product.year %>
       <% end %>
     </div>
-    <div class='thumb-moreinfo-link'>
-      <%= link_to 'More Info...', video.product %>
-    </div>
     <div class='thumb-star-wrapper'>
       <%= render 'products/rating', rating: video.product.rating %>
     </div>

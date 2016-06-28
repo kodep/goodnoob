@@ -21,9 +21,6 @@
           <%= photo.product.name %> <%= "(#{photo.product.year})" if photo.product.year %>
       <% end %>
     </div>
-    <div class='thumb-moreinfo-link'>
-      <%= link_to 'More Info...', photo.product %>
-    </div>
     <div class='thumb-star-wrapper'>
       <%= render 'products/rating', rating: photo.product.rating %>
     </div>
