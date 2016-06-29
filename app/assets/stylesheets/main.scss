@@ -1339,9 +1339,10 @@ $upload-button-color: #70b29f;
 }
 
 .main-content-wrapper {
-  background: #efefef;
+  background: #dcdfe9;
   margin-top: 0;
   padding-bottom: 0;
+  padding-left: 0;
   display: block;
 
   .applied-filters-wrapper {
@@ -1392,7 +1393,7 @@ $upload-button-color: #70b29f;
   }
 
   .thumbs-matrix-wrapper {
-    background: $thumbscotnainer-background;
+    //background: $thumbscotnainer-background;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -1401,7 +1402,7 @@ $upload-button-color: #70b29f;
     .thumb-wrapper {
       background: $thumb-background;
       font-family: $thumbs-main-font;
-      margin: 15px 15px 15px 0;
+      margin: 0 15px 15px 0;
       padding: 0;
       width: 470px;
 
