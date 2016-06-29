@@ -1405,6 +1405,39 @@ $upload-button-color: #70b29f;
       padding: 0;
       width: 470px;
 
+      &.thumb-product {
+        width: 300px;
+        .thumb-header {
+          border-bottom: 1px solid $main-background-color;
+        }
+        .thumb-footer {
+          border-top: 1px solid $main-background-color;
+        }
+        .thumb-moreinfo-link {
+          text-transform: uppercase;
+          a {
+            &, &:hover, &:focus, &:active {
+              color: #79b9e7;
+            }
+          }
+        }
+        .thumb-header-abbr {
+          a {
+            &, &:hover, &:focus, &:active {
+              color: #000;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      &.thumb-photo,
+      &.thumb-video {
+        .thumb-description {
+          padding: 30px;
+          min-height: 145px;
+        }
+      }
+
       .thumb-header {
         align-items: center;
         display: flex;
@@ -1457,16 +1490,27 @@ $upload-button-color: #70b29f;
         }
       }
 
+      .thumb-preview {
+        display: block;
+      }
+      .thumb-bg {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
       .thumb-description {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         font-size: $thumbs-description-fontsize;
         line-height: 1.4em;
-        padding: 30px;
-        border-bottom: 4px solid $main-background-color;
+        padding: 10px;
         letter-spacing: -0.25px;
-        min-height: 145px;
+      }
+
+      .thumb-brd-btm-4 {
+        border-bottom: 4px solid $main-background-color;
       }
 
       .thumb-moreinfo-link {

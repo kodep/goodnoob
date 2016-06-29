@@ -7,42 +7,34 @@
           Sorry, your search returned no products.
         </div>
     <% else %>
-
         <% products.each do |product| %>
-
-            <div class='thumb-wrapper'>
+            <div class='thumb-wrapper thumb-product'>
               <div class='flex thumb-header'>
                 <span class='thumb-header-abbr'>
-                    <%= product.name && product.company && product.company.name %>
+                  <%= link_to product do %>
+                      <%= product.name %> <%= "(#{product.year})" if product.year %>
+                      <% if false %>
+                          <!-- commented -->
+                          <%= "(#{product.company.name})" if product.company.name %>
+                      <% end %>
+                  <% end %>
                 </span>
-                <span class='thumb-time-date'>
-                  <span class='glyphicon glyphicon-time'></span>
-                  <span>
-                    <%= product.created_at.strftime("%d %b %H:%M") %>
-                  </span>
-                </span>
-
               </div>
-              <%= link_to product do %>
-                  <div class='embed-responsive embed-responsive-16by9'>
-                    <%= image_tag product.picture.url, alt: product.name, class: 'img-responsive center-block' %>
-                  </div>
+              <%= link_to product, class: 'thumb-preview' do %>
+                  <div class='embed-responsive embed-responsive-16by9 thumb-bg' style="background-image: url(<%= image_url(product.picture.url) %>);"></div>
               <% end %>
               <div class='flex thumb-footer'>
-                  <span class='thumb-footer-model'>
-                    <%= link_to product do %>
-                      <%= product.name %> <%= "(#{product.year})" if product.year %>
-                    <% end %>
-                  </span>
+                <span class='thumb-star-wrapper'>
+                  <%= render 'products/rating', rating: product.rating %>
+                </span>
                 <div class='thumb-star-wrapper'>
-
                   <%= product.actual_price.amount if product.actual_price %>
                   <%= product.actual_price.currency.sign if product.actual_price %>
                 </div>
               </div>
               <div class='thumb-description text-left'>
                 <p>
-                  <%= truncate product.description, length: 250, separator: ' ' %>
+                  <%= truncate product.description, length: 160, separator: ' ' %>
                 </p>
               </div>
               <div class='thumb-moreinfo-link'>
@@ -52,9 +44,4 @@
         <% end %>
     <% end %>
   </div>
-
 </div>
-
-
-
-
