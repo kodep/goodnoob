@@ -26,6 +26,8 @@ class SubCategoriesController < ApplicationController
 
     @filters = @sub_category.filters
 
+    @categories = Category.includes(:sub_categories).all
+
     respond_to do |format|
       format.js { render 'success', layout: false }
       format.html
