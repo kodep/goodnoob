@@ -797,23 +797,24 @@ $menu-line-color: #fff;
 /************************************/
 
 // Colors
-$sidepanel-background: #232323;
+$sidepanel-background: #fff;
+$sidepanel-heading-background: #f6f6f6;
 $glyphicon-main-color: #c0c0c0;
-$glyphicon-arrow-color: #fff;
+$glyphicon-arrow-color: #2d2d2d;
 $glyphicon-home-color: #ff6624;
 
-$filtername-color: #fff;
-$filterplus-color: #c0c0c0;
+$filtername-color: #2d2d2d;
+$filterplus-color: #2d2d2d;
 $subfilter-color: #888;
 
 $custom-scrollbar-color: #eee;
 
 // Fonts
 $sidepanel-main-font: 'Myriad Pro', sans-serif;
-$sidepanel-heading-size: 1em;
-$sidepanel-heading-weight: 700;
+$sidepanel-heading-size: 1.25em;
+$sidepanel-heading-weight: 400;
 
-$filtername-size: .8em;
+$filtername-size: 1em;
 $filterplus-size: .6em;
 $subfilter-size: .8em;
 
@@ -833,10 +834,9 @@ $subfilter-size: .8em;
   top: 685px;
   width: 320px;
   display: table-cell;
+  border-bottom: 1px solid #f6f6f6;
 
   .filter-group {
-    border-bottom: 1px solid #fff;
-    padding: 10px 34px 10px 10px;
 
     .glyphicon, .zmdi {
       color: $glyphicon-main-color;
@@ -851,21 +851,27 @@ $subfilter-size: .8em;
       color: $glyphicon-home-color;
     }
     .filter-heading-wrapper {
+      background-color: $sidepanel-heading-background;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      padding: 25px;
       cursor: pointer;
 
       .filter-group-icon {
+        display: none;
         width: 50px;
       }
       .filter-group-heading {
+        color: #2d2d2d;
         display: inline-block;
         font-size: $sidepanel-heading-size;
         font-weight: $sidepanel-heading-weight;
         width: 200px;
       }
-      .filter-group-arrow, .filter-group-heading {
-        color: $glyphicon-arrow-color;
-      }
       .filter-group-arrow {
+        color: $glyphicon-arrow-color;
         right: -2px;
         transition: all .2s;
       }
@@ -887,9 +893,9 @@ $subfilter-size: .8em;
       }
 
       .filter-wrapper {
+        font-size: 1.125em;
 
         .checkbox-style {
-
           span {
             background: image-url('checkbox_style_small_white.jpg') no-repeat center center;
             background-size: 15px 15px;
@@ -917,8 +923,8 @@ $subfilter-size: .8em;
           color: $filtername-color;
           cursor: pointer;
           display: inline-block;
-          margin: 10px 0;
           width: 155px;
+          margin: 10px 0;
 
           a, a:hover, a:visited, a:active, &label {
             color: $filtername-color;
@@ -991,7 +997,6 @@ $subfilter-size: .8em;
         display: inline-block;
         font-size: $filtername-size;
         margin: 10px 0;
-        padding-left: 38px;
         width: 164px;
       }
     }
@@ -1335,7 +1340,7 @@ $upload-button-color: #70b29f;
 }
 
 .b-l-320 {
-  border-left: 320px solid #232323;
+  border-left: 320px solid $sidepanel-background;
 }
 
 .main-content-wrapper {
