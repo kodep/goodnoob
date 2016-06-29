@@ -1,4 +1,4 @@
-<div class='thumb-wrapper'>
+<div class='thumb-wrapper thumb-photo'>
   <div class='flex thumb-header'>
     <span class='thumb-header-abbr'>
       <%= photo.product && photo.product.company && photo.product.company.name %>
@@ -12,7 +12,7 @@
         <%= image_tag photo.picture.image.url(:thumbnail), alt: '', class: 'img-responsive center-block' %>
       </div>
   <% end %>
-  <div class='thumb-description text-left'>
+  <div class='thumb-description thumb-brd-btm-4 text-left'>
     <p>
       <%= truncate photo.comment, length: 200, separator: ' ' %>
     </p>

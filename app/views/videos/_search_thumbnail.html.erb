@@ -1,4 +1,4 @@
-<div class='thumb-wrapper'>
+<div class='thumb-wrapper thumb-video'>
   <div class='flex thumb-header'>
     <span class='thumb-header-abbr'>
       <%= video.product && video.product.company && video.product.company.name %>
@@ -13,7 +13,7 @@
         <iframe class='embed-responsive-item' src='<%= video.url %>'></iframe>
     <% end %>
   </div>
-  <div class='thumb-description text-left'>
+  <div class='thumb-description thumb-brd-btm-4 text-left'>
     <p>
       <%= truncate video.comment, length: 250, separator: ' ' %>
     </p>
