@@ -53,7 +53,7 @@ table {
 /* FINISHED RESETTING */
 
 // Some very basic styles
-$main-background-color: #efefef;
+$main-background-color: #dcdfe9;
 
 html, body, .main-wrapper {
   min-height: 100%;
@@ -293,11 +293,16 @@ $menu-line-color: #fff;
 
 .search-form--inline {
   width: 470px;
+  max-width: 100%;
+  margin: 0;
+  @media only screen and (min-width: 768px) {
+    margin: 0 15px 0 0;
+  }
 }
 
 .search-field-wrapper {
   position: relative;
-  margin: 0 15px;
+  margin: 0;
   padding: 4px 0;
 
   .search-field {
@@ -525,8 +530,7 @@ $menu-line-color: #fff;
 }
 
 .main-search-wrapper {
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding: 16px;
   justify-content: center;
   align-items: center;
 }
@@ -621,10 +625,6 @@ $menu-line-color: #fff;
     margin: 0px;
   }
 
-  .search-field-wrapper {
-    margin: 0 10px;
-  }
-
   .header-btn-bg {
     margin-left: 10px;
   }
@@ -663,7 +663,6 @@ $menu-line-color: #fff;
     .red-man-logo,
     .bying-guides-btn-wrapper,
     .compare-button-wrapper,
-    .search-field-wrapper,
     .upload-btn-wrapper {
       margin-right: 0;
       margin-bottom: 5px;
@@ -1352,7 +1351,7 @@ $upload-button-color: #70b29f;
 }
 
 .main-content-wrapper {
-  background: #dcdfe9;
+  background: $main-background-color;
   margin-top: 0;
   padding-bottom: 0;
   padding-left: 0;
@@ -1406,18 +1405,21 @@ $upload-button-color: #70b29f;
   }
 
   .thumbs-matrix-wrapper {
-    //background: $thumbscotnainer-background;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 30px;
+    padding: 0 16px;
 
     .thumb-wrapper {
       background: $thumb-background;
       font-family: $thumbs-main-font;
-      margin: 0 15px 15px 0;
+      margin: 0;
       padding: 0;
       width: 470px;
+      max-width: 100%;
+      @media only screen and (min-width: 768px) {
+        margin: 0 15px 15px 0;
+      }
 
       &.thumb-product {
         width: 300px;
@@ -1547,9 +1549,12 @@ $upload-button-color: #70b29f;
     flex-flow: column nowrap;
     justify-content: center;
     margin-top: 75px;
+    margin-bottom: 75px;
 
     .plus-button-wrapper {
-
+      a {
+        display: inline-block;
+      }
       .zmdi-plus-circle-o {
         color: $morelisting-color;
         font-size: $morelisting-plus-fontsize;
@@ -1557,10 +1562,12 @@ $upload-button-color: #70b29f;
     }
 
     .showmore-text-wrapper {
+      margin-top: 5px;
       .show-more-text {
         color: $morelisting-color;
         font-family: $morelisting-text-font;
         font-size: $morelisting-text-fontsize;
+        margin-top: 5px;
       }
       .show-more-text:hover {
         text-decoration: none;
@@ -2036,7 +2043,7 @@ $footer-links-color: #333;
     padding: 6px 12px;
   }
   &.active {
-    color: #3ce1e6;
+    color: #87e0e5;
   }
 }
 
