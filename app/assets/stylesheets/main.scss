@@ -812,6 +812,7 @@ $glyphicon-home-color: #ff6624;
 
 $filtername-color: #2d2d2d;
 $filterplus-color: #2d2d2d;
+$filter-link-seemore: #64b0fc;
 $subfilter-color: #888;
 
 $custom-scrollbar-color: #eee;
@@ -931,7 +932,7 @@ $subfilter-size: .8em;
           cursor: pointer;
           display: inline-block;
           width: 155px;
-          margin: 10px 0;
+          margin: 10px 0 10px 5px;
 
           a, a:hover, a:visited, a:active, &label {
             color: $filtername-color;
@@ -961,6 +962,7 @@ $subfilter-size: .8em;
           }
 
           .sub-filter-checkbox {
+            text-decoration: none;
             margin-left: 20px;
             display: block;
           }
@@ -986,11 +988,10 @@ $subfilter-size: .8em;
 
     .filter-group-contents.visible {
       opacity: 1;
-      margin-top: 20px;
+      padding-top: 20px;
     }
     .showmore-link-wrapper {
       display: none;
-      margin-top: 10px;
       position: relative;
 
       .invisible-span {
@@ -999,12 +1000,12 @@ $subfilter-size: .8em;
         width: 27px;
       }
       .more-link {
-        color: $filtername-color;
+        color: $filter-link-seemore;
         cursor: pointer;
-        display: inline-block;
+        display: block;
         font-size: $filtername-size;
-        margin: 10px 0;
-        width: 164px;
+        text-align: right;
+        padding: 10px 25px 10px 10px;
       }
     }
   }
@@ -1408,7 +1409,7 @@ $upload-button-color: #70b29f;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0 16px;
+    padding: 16px;
 
     .thumb-wrapper {
       background: $thumb-background;
@@ -2076,5 +2077,11 @@ $footer-links-color: #333;
   }
   .glyphicon {
     font-size: 14px;
+  }
+}
+
+.sub-filter-checkbox {
+  &, &:hover, &:focus, &:active {
+    text-decoration: none;
   }
 }
