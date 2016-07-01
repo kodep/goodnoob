@@ -18,7 +18,9 @@
     text-align: center;
     line-height: 1.42;
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
       text-decoration: none;
     }
 
@@ -26,6 +28,7 @@
       visibility: hidden;
       margin-right: -20px;
       margin-left: 10px;
+      top: 3px;
     }
 
     &.active .glyphicon {
