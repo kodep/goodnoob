@@ -182,6 +182,7 @@ $navbar-height: 50px;
   justify-content: space-between;
   align-items: center;
   min-height: $navbar-height;
+  border-bottom: 1px solid #e3e5e5;
   position: fixed;
   width: 100%;
   z-index: 9;
@@ -1415,7 +1416,7 @@ $upload-button-color: #70b29f;
     .thumb-wrapper {
       background: $thumb-background;
       font-family: $thumbs-main-font;
-      margin: 0;
+      margin: 0 0 15px 0;
       padding: 0;
       width: 470px;
       max-width: 100%;
