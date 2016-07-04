@@ -45,7 +45,7 @@ module SearchHelper
     param_changes.each do |change|
       p = update_params( p, change[:action], change[:key], change[:value] )
     end
-    html_options[:data] = { 'turbolinks-scroll': false }
+    html_options[:data] = { 'turbolinks-scroll' => false }
     if name.nil?
       link_to search_index_path( p ), html_options, &block
     else
@@ -67,7 +67,7 @@ module SearchHelper
     param_changes.each do |change|
       p = update_params( p, change[:action], change[:key], change[:value] )
     end
-    html_options[:data] = { 'turbolinks-scroll': false }
+    html_options[:data] = { 'turbolinks-scroll' => false }
     if name.nil?
       link_to review_users_path( p ), html_options, &block
     else
@@ -89,7 +89,7 @@ module SearchHelper
     param_changes.each do |change|
       p = update_params( p, change[:action], change[:key], change[:value] )
     end
-    html_options[:data] = { 'turbolinks-scroll': false }
+    html_options[:data] = { 'turbolinks-scroll' => false }
     if name.nil?
       link_to photo_users_path( p ), html_options, &block
     else
@@ -111,7 +111,7 @@ module SearchHelper
     param_changes.each do |change|
       p = update_params( p, change[:action], change[:key], change[:value] )
     end
-    html_options[:data] = { 'turbolinks-scroll': false }
+    html_options[:data] = { 'turbolinks-scroll' => false }
     if name.nil?
       link_to video_users_path( p ), html_options, &block
     else
