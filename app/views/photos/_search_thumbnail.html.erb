@@ -2,6 +2,7 @@
   <div class='flex thumb-header'>
     <span class='thumb-header-abbr'>
       <%= photo.user.name %>
+      <%= photo.user.last_name if photo.user.last_name %>
     </span>
     <span class='thumb-menu-stripe'>
       <%= image_tag "three-dots-menu.svg", width: '20', height: '16', class: 'img-responsive' %>
