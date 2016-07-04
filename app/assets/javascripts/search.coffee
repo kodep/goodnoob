@@ -1,4 +1,12 @@
 $ ->
+  $('.search-results-container').infinitescroll
+    loading: {
+      img: 'assets/spinner.svg'
+    },
+    navSelector: '.showmore-thumbs-row' # selector for the paged navigation (it will be hidden)
+    nextSelector: '.showmore-thumbs-row .show-more-text' # selector for the NEXT link (to page 2)
+    itemSelector: '.search-results-container .thumb-wrapper' # selector for all items you'll retrieve
+
   $(document).on 'click', '.remove-from-favorites', (event) ->
     event.preventDefault()
     $this = $(@)

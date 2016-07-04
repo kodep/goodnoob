@@ -1555,6 +1555,7 @@ $upload-button-color: #70b29f;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    text-align: center;
     margin-top: 75px;
     margin-bottom: 75px;
 
@@ -2091,3 +2092,15 @@ $footer-links-color: #333;
     text-decoration: none;
   }
 }
+
+/* start styles for inifite loading */
+#infscr-loading {
+  flex-basis: 100%;
+  text-align: center;
+  img {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+  }
+}
+/* end styles for infinite loading */
