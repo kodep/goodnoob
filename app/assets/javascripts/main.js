@@ -236,7 +236,7 @@ $(document).ready(function(){
     });
 
     // 'Compare' toggle block
-    $("#compare-button").click(function(e){
+    $("#compare-button").hover(function(e){
         catclicker = "#"+this.id;
         $(".buying-guides-block-wrapper").hide(300);
         $(".categories-block-wrapper").hide(300);
@@ -244,7 +244,7 @@ $(document).ready(function(){
         $(".compare-block-wrapper").toggle(300);
         e.stopPropagation();
     });
-  
+
     // 'Category  button on home page' toggle block
     $("#cat-btn").click(function(e){
         catclicker = "#"+this.id;
