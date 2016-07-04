@@ -305,7 +305,6 @@ $navbar-height: 50px;
 .search-field-wrapper {
   position: relative;
   margin: 0;
-  padding: 4px 0;
 
   .search-field {
     border: 1px solid #000;
@@ -532,7 +531,7 @@ $navbar-height: 50px;
 }
 
 .main-search-wrapper {
-  padding: 16px;
+  padding: 16px 16px 0;
   justify-content: center;
   align-items: center;
 }
