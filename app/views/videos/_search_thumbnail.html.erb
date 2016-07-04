@@ -1,7 +1,7 @@
 <div class='thumb-wrapper thumb-video'>
   <div class='flex thumb-header'>
     <span class='thumb-header-abbr'>
-      <%= video.product && video.product.company && video.product.company.name %>
+      <%= video.user.name %>
     </span>
     <span class='thumb-menu-stripe'>
       <%= image_tag "three-dots-menu.svg", width: '20', height: '16', class: 'img-responsive' %>
@@ -21,7 +21,9 @@
   <div class='flex thumb-footer'>
     <div class='thumb-footer-model'>
       <%= link_to video.product do %>
-          <%= video.product.name %> <%= "(#{video.product.year})" if video.product.year %>
+          <%= "#{video.product.company.name} – " if video.product.company %>
+          <%= video.product.name %>
+          <%= "(#{video.product.year})" if video.product.year %>
       <% end %>
     </div>
     <div class='thumb-star-wrapper'>
