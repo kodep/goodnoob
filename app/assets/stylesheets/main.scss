@@ -244,17 +244,17 @@ $navbar-height: 50px;
   flex-flow: row nowrap;
 }
 
-.categories-block-wrapper, .buying-guides-block-wrapper, .compare-block-wrapper {
+.categories-block-wrapper,
+.buying-guides-block-wrapper,
+.compare-block-wrapper {
   background: #000;
   border-radius: 2px;
   border: 1px solid #fff;
   border-top: none;
-  display: none;
   padding: 30px 50px 5px 50px;
-  position: absolute;
-  top: 50px;
   z-index: 999;
   min-width: 502px;
+  margin: 0;
 
   .buying-guides-left-column, .buying-guides-right-column {
     float: left;
@@ -2126,3 +2126,9 @@ $footer-links-color: #333;
   z-index: 1030; // $zindex-navbar-fixed
 }
 /* end search affix container */
+
+.dropdown-on-hover {
+  &:hover .dropdown-menu {
+    display: block;
+  }
+}
