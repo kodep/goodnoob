@@ -23,7 +23,7 @@
           </span>
       <% end %>
       <span class="applied-filter js-clear-all">
-        <%= link_to search_index_path(clear_params), data: {'turbolinks-scroll' => false} do %>
+        <%= link_to search_index_path(clear_sub_categories(params)), data: {'turbolinks-scroll' => false} do %>
             <span class="glyphicon glyphicon-remove"></span>
             <span class="applied-filter-text">Clear All</span>
         <% end %>

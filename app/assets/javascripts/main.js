@@ -169,10 +169,7 @@ $(document).ready(function(){
     });
 
     var appliedFiltersSelector = $('.applied-filters-wrapper');
-    appliedFiltersSelector.on('click','.applied-filter', function(){
-        $(this).hide();
-    });
-    var appliedFiltersCount = appliedFiltersSelector.children().length;
+    var appliedFiltersCount = appliedFiltersSelector.children().length > 1; // Skip 'Clear All' from counter
     if ( appliedFiltersCount ) {
       appliedFiltersSelector.show();
     }

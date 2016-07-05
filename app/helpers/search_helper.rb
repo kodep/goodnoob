@@ -30,6 +30,15 @@ module SearchHelper
     end
   end
 
+  def clear_sub_categories(params)
+    p = params.dup
+    p.delete(:controller)
+    p.delete(:action)
+    p.delete(:delete_search)
+    p.delete(:sub_categories)
+    p
+  end
+
   def search_link( name = nil, param_changes = nil, html_options = nil, &block )
 
     # Handle the case where param_changes is the first argument (block provided so no name)
