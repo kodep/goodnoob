@@ -427,6 +427,10 @@ $navbar-height: 50px;
       display: block;
       color: inherit;
       padding: 24px 20px;
+      transition: padding 0.25s ease-in-out;
+      .affix & {
+        padding: 12px 20px;
+      }
     }
     .checkbox-inline {
       display: none;
@@ -534,6 +538,9 @@ $navbar-height: 50px;
   padding: 16px 16px 0;
   justify-content: center;
   align-items: center;
+  .affix + & {
+    margin-top: 100px;
+  }
 }
 
 .main-menu-wrapper {
@@ -2104,3 +2111,12 @@ $footer-links-color: #333;
   }
 }
 /* end styles for infinite loading */
+
+/* search affix container */
+.affix {
+  top: 50px;
+  left: 0;
+  right: 0;
+  z-index: 1030; // $zindex-navbar-fixed
+}
+/* end search affix container */

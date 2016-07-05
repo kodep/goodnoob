@@ -459,4 +459,12 @@ $(document).ready(function(){
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
     });
+
+    $('.js-search-affix').affix({
+      offset: {
+        top: function() {
+          return (this.top = $('.background-wrapper').outerHeight(false))
+        }
+      }
+    });
 });
