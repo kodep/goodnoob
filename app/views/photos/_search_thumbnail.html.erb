@@ -10,7 +10,7 @@
   </div>
   <%= link_to photo do %>
       <div class='embed-responsive embed-responsive-16by9'>
-        <%= image_tag photo.picture.image.url(:thumbnail), alt: '', class: 'img-responsive center-block' %>
+        <%= image_tag photo.picture.image.url(:thumbnail), alt: photo.picture.image_file_name, class: 'embed-responsive-item' %>
       </div>
   <% end %>
   <div class='thumb-description thumb-brd-btm-4 text-left'>
