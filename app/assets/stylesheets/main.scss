@@ -1713,6 +1713,20 @@ $upload-button-color: #70b29f;
 
       .thumb-preview {
         display: block;
+        position: relative;
+      }
+      .thumb-preview-button {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: rgba(0, 0, 0, 0.5);
+        transition: all 0.25s ease-in-out;
+        transform: scale(1);
+        padding: 10px 15px;
+        &:hover {
+          color: rgba(0, 0, 0, 0.75);
+          transform: scale(1.1);
+        }
       }
 
       .thumb-bg {

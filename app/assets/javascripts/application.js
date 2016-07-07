@@ -17,5 +17,6 @@
 //= require jquery-ui
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require magnific-popup
 //= require third-party
 //= require_directory .

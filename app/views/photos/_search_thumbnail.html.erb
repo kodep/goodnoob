@@ -8,11 +8,12 @@
       <%= image_tag "three-dots-menu.svg", width: '20', height: '16', class: 'img-responsive' %>
     </span>
   </div>
-  <%= link_to photo do %>
-      <div class='embed-responsive embed-responsive-16by9'>
-        <%= image_tag photo.picture.image.url(:thumbnail), alt: photo.picture.image_file_name, class: 'embed-responsive-item' %>
-      </div>
-  <% end %>
+  <div class="thumb-preview">
+    <%= link_to photo.picture.image_file_name, photo, { class: 'embed-responsive embed-responsive-16by9 text-hide thumb-bg', style: "background-image: url(#{image_url(photo.picture.image.url(:thumbnail))});"} %>
+    <%= link_to photo.picture.image.url, class: 'btn btn-link btn-xs thumb-preview-button js-zoom-photo' do %>
+      <span class="glyphicon glyphicon-resize-full"></span>
+    <% end %>
+  </div>
   <div class='thumb-description thumb-brd-btm-4 text-left'>
     <p>
       <%= truncate photo.comment, length: 200, separator: ' ' %>
