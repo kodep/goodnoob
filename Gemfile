@@ -31,6 +31,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -42,6 +44,7 @@ group :development do
   gem 'rails_layout'
   gem 'spring-commands-rspec'
   gem 'annotate'
+  gem 'thin'
 end
 
 group :test do
