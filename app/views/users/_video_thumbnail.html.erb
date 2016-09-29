@@ -23,7 +23,7 @@
       <% end %>
     </span>
     <div class='thumb-star-wrapper col-md-7 col-sm-7 col-xs-7'>
-      <%= render 'products/rating', rating: video.product.rating %>
+      <%= render 'products/rating', rating: video.product.rating, product_id: video.product.id %>
     </div>
   </div>
   <div class='thumb-description text-left'>

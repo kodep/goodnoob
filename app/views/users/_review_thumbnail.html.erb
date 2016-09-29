@@ -4,7 +4,7 @@
   </div>
   <div class="row review-rating-body">
     <div class="col-md-8 review-rating">
-      <%= render 'products/rating', rating: review.product.rating %>
+      <%= render 'products/rating', rating: review.product.rating, product_id: review.product.id %>
       <p>It works very well...</p>
     </div>
     <div class="col-md-4 review-date">

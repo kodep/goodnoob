@@ -18,7 +18,7 @@
         <%= product.name %>
       </span>
       <div class='thumb-star-wrapper'>
-        <%= render 'products/rating', rating: product.rating %>
+        <%= render 'products/rating', rating: product.rating, product_id: product.id %>
       </div>
     </div>
     <div class='thumb-description text-left'>

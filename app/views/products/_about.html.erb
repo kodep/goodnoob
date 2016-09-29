@@ -23,7 +23,7 @@
         Price: <%= product.price_string %>
       </h1>
       <p>
-        <%= render 'products/rating', rating: product.rating %>
+        <%= render 'products/rating', rating: product.rating, product_id: product.id %>
       </p>
       <% if product.url.present? %>
           <p>

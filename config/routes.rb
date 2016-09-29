@@ -63,6 +63,8 @@ Rails.application.routes.draw do
   get 'ajax_destroy_recent_searches', to: 'users#ajax_destroy_recent_searches', as: :ajax_destroy_recent_searches
   get 'ajax_get_filter_options/:id' => 'products#set_filter_options', as: :set_filter_options
 
+  post 'ajax_set_product_rating', to: 'products#ajax_set_product_rating', as: :ajax_set_product_rating
+
   resources :home, only: [:index]
   resources :search, only: [:index] do
     member do
