@@ -4,9 +4,19 @@
       <%= video.user.name %>
       <%= video.user.last_name %>
     </span>
-    <span class='thumb-menu-stripe'>
-      <%= image_tag "three-dots-menu.svg", width: '20', height: '16', class: 'img-responsive' %>
-    </span>
+    <div class="thumb-menu-stripe">
+      <a href="javascript:;" onclick="showProductMenu(this)" class="social-share"></a>
+      <!-- social share tool window -->
+      <span class="social_share_group">
+        <span class="share_items">
+          <a class="share_item share-button-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= video.url %>"></a>
+          <a class="share_item share-button-twitter"  href="https://twitter.com/intent/tweet?url=<%= video.url %>"></a>
+          <a class="share_item share-button-whatsapp" href="whatsapp://send?text=<%= video.url %>"></a>
+          <span class="share_item share-button-separator"></span>
+          <a class="share_item share-button-copylink" onclick="copyToClipboard('<%= video.url %>')"></a>
+        </span>
+      </span>
+    </div>
   </div>
   <div class='embed-responsive embed-responsive-16by9'>
     <iframe class='embed-responsive-item' src='<%= video.url %>' allowfullscreen></iframe>

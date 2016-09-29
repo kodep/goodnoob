@@ -13,3 +13,106 @@
         }
     }
 }
+
+/*.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}*/
+
+.thumb-menu-stripe {
+    position: relative;
+    display: inline-block;
+}
+
+.thumb-menu-stripe a:hover {background-color: #f1f1f1}
+
+.social-share {
+    /*background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;*/
+    background: url('three-dots-menu.svg') no-repeat scroll center center transparent;
+    width: 32px;
+    height:20px;
+    margin: 0px;
+    background-size: 20px;
+    display: block;
+    outline: none;
+}
+
+.social_share_group {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1000;   
+    /*margin-right: 15px;*/
+}
+
+.share_items {
+    background-color: #fff;
+    /* add in vendor rules */
+    position: relative;
+    text-align: center;
+    /* adjust social share window position */
+    display: inline-block;
+    margin-left: -5px;
+    margin-top: 15px;
+}
+
+.social_share_group > .share_items {
+    display: inline-block;
+    float: none;
+    /*font-size: 18px;
+    margin-right: 12px;
+    margin-bottom: 12px;*/
+    padding: 1px 1px;
+}
+
+.share_items:before {
+    content: '';
+    display: block;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    width: 0;
+    padding: 0px;
+}
+
+.social_share_group > .share_items:before {
+  border: solid 10px transparent;
+  right: -10px;
+  margin-top: -10px;
+  margin-left: -10px;
+  top: -10px;
+  border-color: transparent transparent #fff transparent;
+}
+
+.share_items > .share_item {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin: 4px;
+}
+
+.share_items > .share-button-facebook {    
+    background: url('share-icon-facebook.png') no-repeat center center;
+}
+
+.share_items > .share-button-twitter {
+    background: url('share-icon-twitter.png') no-repeat center center;
+}
+
+.share_items > .share-button-whatsapp {
+    background: url('share-icon-whatsapp.png') no-repeat center center;
+}
+
+.share_items > .share-button-separator {
+    background: url('share-icon-separator.png') no-repeat center center;
+    height: 9px;
+    opacity: 12%;
+}
+
+.share_items > .share-button-copylink {
+    background: url('share-icon-copylink.png') no-repeat center center;
+}
