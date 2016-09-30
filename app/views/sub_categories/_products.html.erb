@@ -26,7 +26,7 @@
               <% end %>
               <div class='flex thumb-footer'>
                 <span class='thumb-star-wrapper'>
-                  <%= render 'products/rating', rating: product.rating, product_id: video.product.id %>
+                  <%= render 'products/rating', rating: product.rating, product_id: product.id %>
                 </span>
                 <div class='thumb-star-wrapper'>
                   <%= product.actual_price.amount if product.actual_price %>
