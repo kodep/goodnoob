@@ -7,6 +7,31 @@
 <% end %>
 
 <%= render 'filters_header' %>
+<div class="flex main-subfilters-wrapper">
+  <div class="subcategory-wrapper">
+    <% cur_category = @categories.where(id: @sub_category.category_id).first %>
+    <% if cur_category != nil %>
+      <% subcategory_first = true %>
+      <% cur_category.sub_categories.each do |sub_cat| %>
+
+        <!-- subcategory separator -->
+        <% if subcategory_first == false %>
+          <div class="subcategory-separator"></div>
+        <% end %>
+
+        <% class_name = 'subcategory-name' %>
+        <% if @sub_category.id == sub_cat.id %>
+          <% class_name << ' subcategory-selected' %>
+        <% end %>
+        <% link_body = '<label class="' + class_name + '">' + sub_cat.name + '</label>' %>
+        <%= link_to raw(link_body), sub_cat, class: 'subcategory-link' %>
+
+        <% subcategory_first = false %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
 <div class="main-container">
   <%= render 'left_filters' %>
   <!-- MAIN CONTENTS LAYOUT -->
