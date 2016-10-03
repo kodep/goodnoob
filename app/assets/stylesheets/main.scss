@@ -1103,7 +1103,7 @@ $subfilter-size: 0.8em;
       }
 
       .filter-group-arrow.rotated {
-        transform: rotate(-90deg);
+        transform: rotate(90deg);
       }
     }
 
@@ -1147,6 +1147,13 @@ $subfilter-size: 0.8em;
           .checkbox-inline:checked + span.dash {
             background: image-url('checkbox_style_small_dash.png') no-repeat center center;
             background-size: 15px 15px;
+          }
+
+          .checkitem-inline {
+            background: image-url('checkitem_style_empty.png') no-repeat center center;
+          }
+          .checkitem-inline:checked {
+            background: image-url('checkitem_style_fill.png') no-repeat center center;
           }
         }
 
@@ -1198,6 +1205,20 @@ $subfilter-size: 0.8em;
 
         .sub-filter-wrapper:not(.display) {
           display: none;
+        }
+
+        .no-underline {
+          text-decoration: none;
+        }
+
+        .filter-group-arrow {
+          color: $glyphicon-arrow-color;
+          right: -2px;
+          transition: all 0.2s;
+        }
+
+        .filter-group-arrow.rotated {
+          transform: rotate(90deg);
         }
       }
     }

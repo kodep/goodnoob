@@ -142,7 +142,7 @@ module SearchHelper
     search_link param_changes, {}, &block
   end
 
-  def search_category_link( category, params_sub_categories, &block )
+  def search_category_link( category, params_sub_categories, classes = nil, &block )
     sub_categories_ids = category.sub_categories.ids.map(&:to_s)
     params_sub_categories ||= []
     # Sub categories not selected? add!
@@ -156,7 +156,7 @@ module SearchHelper
         end
       end
     end
-    search_link param_changes, { class: 'category-link' }, &block
+    search_link param_changes, { class: 'category-link' + (classes != nil ? (' ' + classes) : '') }, &block
   end
 
   def search_sub_category_link( sub_category, params_sub_categories, &block )
