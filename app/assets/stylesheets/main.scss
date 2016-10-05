@@ -447,9 +447,35 @@ $navbar-height: 50px;
   bottom: 25%;
 }
 
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+
 .authform {
+  max-width: 515px;
+
   form {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 1.0);
+    border-radius: 0px;
+    padding: 20px 50px;
+  }
+
+  .form-header {
+    height: 58px;
+    display: block;
+    background: #80e2ce;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0px;
+    padding: 0px;
+
+    h1 {
+      display: block;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
   }
 
   h3 {
@@ -459,6 +485,84 @@ $navbar-height: 50px;
 
   .form-group {
     margin-bottom: 25px;
+  }
+
+  .btn-social {
+    position:relative;
+    padding-left:44px;
+    text-align:left;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display: inline;
+    margin: 6px;
+    border-radius: 0px
+  }
+  .btn-social :first-child{
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:32px;
+    line-height:32px;
+    font-size:1.6em;
+    text-align:center;
+    border-right:1px solid rgba(0,0,0,0.2)
+  }
+
+  .btn-facebook {
+    color:#fff;
+    background-color:#3b5998;
+    border-color:rgba(0,0,0,0.2)
+  }
+  .btn-facebook:hover,.btn-facebook:focus,.btn-facebook:active,.btn-facebook.active,.open .dropdown-toggle.btn-facebook {
+    color:#fff;
+    background-color:#30487b;
+    border-color:rgba(0,0,0,0.2)
+  }
+  .btn-facebook:active,.btn-facebook.active,.open .dropdown-toggle.btn-facebook {
+    background-image:none
+  }
+
+  .btn-google-plus {
+    color:#fff;
+    background-color:#dd4b39;
+    border-color:rgba(0,0,0,0.2);
+  }
+  .btn-google-plus:hover,.btn-google-plus:focus,.btn-google-plus:active,.btn-google-plus.active,.open .dropdown-toggle.btn-google-plus {
+    color:#fff;
+    background-color:#ca3523;
+    border-color:rgba(0,0,0,0.2);
+  }
+  .btn-google-plus:active,.btn-google-plus.active,.open .dropdown-toggle.btn-google-plus {
+    background-image:none;
+  }
+
+  .btn-commit {
+    position:relative;
+    text-align:center;
+    white-space:nowrap;
+    overflow:hidden;
+    display: inline;
+    margin: 6px;
+    border-radius: 0px;
+    background-color: #80e2ce;
+    border-color: #6fb9d6;
+    color: #fff;
+  }
+
+  .btn-login {
+    text-decoration: underline;
+    margin: 0px 12px;
+    cursor: pointer;
+    color: #3f3f3f;
+  }
+
+  .btn-register {
+    background-color: #fff;
+    border-color: #969696;
+    color: #969696;
+    padding: 8px 12px;
   }
 }
 
