@@ -342,6 +342,26 @@ $navbar-height: 50px;
   padding-top: 80px;
 }
 
+.btn-social-circle {
+  position:relative;
+  display: inline-block;
+  margin: 0px 6px;
+  border-radius: 50%;
+  background: white;
+  width: 32px;
+  height: 32px;
+}
+.btn-social-circle :first-child{
+  position:absolute;
+  left: 4px;
+  top: 4px;
+  width:24px;
+  line-height:24px;
+  font-size:1.2em;
+  text-align:center;
+  color: #35e8d1;
+}
+
 .categories-block-wrapper,
 .buying-guides-block-wrapper,
 .compare-block-wrapper {

@@ -1,11 +1,6 @@
 <header>
   <div class="flex white-header-stripe">
     <div class="flex header-start">
-      <div class="mobile-burger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
       <%= yield(:mobile_icons) %>
     </div>
 
@@ -22,4 +17,49 @@
       <%= render 'layouts/nav_links_for_auth' %>
     </div>
   </div>
+
+  <!-- burger menu -->
+  <div class="fat-nav">
+    <div class="fat-nav__wrapper">
+      <ul>
+        <li><div align="center"><%= link_to image_tag("good-noob.png", alt: 'main-background', width: 70), root_path %></div></li>
+        <li><%= link_to "Social Feed", search_index_path %></li>
+        <% default_cat = SubCategory.find_by(name: "Surfboards") %>
+        <% if default_cat == nil %>
+        <%  default_cat = SubCategory.first %>
+        <% end %>
+        <li><%= link_to "Compare Products", default_cat %></li>
+        <% default_guide = default_cat.guides.first %>
+        <% if default_guide == nil %>
+        <%  default_guide = Guide.first %>
+        <%  default_cat = default_guide.sub_category %>
+        <% end %>
+        <li><%= link_to "Buying Guides", sub_category_guide_path(default_cat, default_guide) %></li>
+        <hr style="border: none; border-bottom: 1px solid white; width: 100px">
+        <li><a href="#">+New Post</a></li>
+        <li><a href="#">My Profile</a></li>
+        <li>
+          <div>
+            <a class="btn-social-circle" href="#">
+              <span class="fa fa-facebook"></span>
+            </a>
+            <a class="btn-social-circle" href="#">
+              <span class="fa fa-twitter"></span>
+            </a>
+            <a class="btn-social-circle" href="#">
+              <span class="fa fa-instagram"></span>
+            </a>
+          </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+      $.fatNav();
+  }());
+  </script>
+
 </header>
