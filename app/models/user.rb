@@ -86,6 +86,7 @@ end
 #  dob                    :date
 #  sex                    :integer
 #  company                :boolean
+#  bio                    :text
 #
 # Indexes
 #

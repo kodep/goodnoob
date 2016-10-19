@@ -15,7 +15,7 @@ father_category = FatherCategory.create(name: "Default father category")
 category = Category.create(name: "Default category", father_category: father_category)
 user.favourite_categories << category
 
-video = Video.create(title: "New video", url: "http://yahoo.com", main: false, comment: "New comment for video", day: false, caption: "New caption")
+video = Video.create(caption: "New video", url: "http://yahoo.com", main: false, comment: "New comment for video", day: false)
 user.videos << video
 
 address = Address.create(street: "Default address", postcode: "000000", city: "Vologda", country: "Australia", latitude: 43.0, longitude: 131)
@@ -25,13 +25,14 @@ company.address = address
 
 user.favourite_companies << company
 
-picture = Picture.create(title: "Default title for picture")
+picture = Picture.create image: File.new(Rails.root.join('spec', 'fixtures', 'bg.jpg'))
 
 language = Language.create(name: "EN")
 
 currency = Currency.create(name: "Dollar", exchange_rate: 0.1, sign: "$", code: "USD")
 
 sub_category = SubCategory.create(name: "Sub-category", category: category)
+guide = Guide.create header: "header", sub_category: sub_category
 
 product = Product.create(name: "Product name", description: "Description for product", year: 2016, url: "http://product.url")
 
@@ -41,11 +42,14 @@ product.sub_category = sub_category
 attribute = Attribute.create(title: "Title for attr", value: "111")
 product.attrs << attribute
 
-rating = Rating.create(value: 4)
+rating = Rating.new(value: 4)
+review = Review.create!(title: "Review title", review: "Review text", language: language,
+  rating: rating, user: user, product: product)
 
-review = Review.create(title: "Review title", review: "Review text")
+rating.review = review
+rating.save!
 
-video = Video.create(title: "Video.title", url: "video@yahoo.com", main: true, comment: "Comment", day: true, caption: "caption")
+video = Video.create!(caption: "Video.title", url: "https://www.youtube.com/embed/abc", main: true, comment: "Comment", day: true)
 photo = Photo.create(main: true, comment: "Comment text", day: true)
 distributor = Distributor.create(information: "Information", phone: "+7000000", url: "ahoo.com", email: "d@yahoo.com")
 search = Search.create(text: "search text fff")
