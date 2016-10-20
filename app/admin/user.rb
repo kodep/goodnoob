@@ -8,7 +8,7 @@ ActiveAdmin.register User do
     basic_params = [
       :email, :name, :password, :password_confirmation,
       :role, :currency_id, :language_id, :last_name,
-      :dob, :sex, :company,
+      :dob, :sex, :company, :bio,
       address_attributes: [:id, :street, :city, :postcode, :country, :latitude, :longitude, :addressable_type, :addressable_id],
       picture_attributes: [:id, :image, :url, :imageable_id, :imageable_type],
       category_ids: [], company_ids: [], product_ids: []
@@ -72,6 +72,9 @@ ActiveAdmin.register User do
       attributes_table_for user do
         row :id
         row :email
+        row :name
+        row :last_name
+        row :bio
         row :reset_password_sent_at
         row :remember_created_at
         row :sign_in_count
@@ -81,14 +84,12 @@ ActiveAdmin.register User do
         row :last_sign_in_ip
         row :created_at
         row :updated_at
-        row :name
         row :confirmed_at
         row :confirmation_sent_at
         row :unconfirmed_email
         row :role
         row :currency
         row :language
-        row :last_name
         row :dob
         row :sex
         row :company
@@ -116,6 +117,7 @@ ActiveAdmin.register User do
       f.input :password_confirmation
       f.input :name
       f.input :last_name
+      f.input :bio
       f.input :currency
       f.input :language
       f.input :dob
