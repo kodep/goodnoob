@@ -1,20 +1,26 @@
 <nav class="navbar navbar-default" id="nav-filters">
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <% if user_signed_in? %>
-        <ul class="nav navbar-nav col-md-4 nav-center">
-          <li class="navbar-btn col-md-3">
-            <%= link_to 'Profile', edit_user_registration_path %>
+        <ul class="nav navbar-nav nav-center">
+          <li class="navbar-btn">
+            <%= link_to(edit_user_registration_path, class:"btn-icon profile-icon") do %>
+              <label type="text">Profile</label>
+            <% end %>
           </li>
-          <li class="navbar-btn col-md-3">
-            <%= link_to 'Reviews', review_users_path %>
+          <li class="navbar-btn">
+            <%= link_to(review_users_path, class:"btn-icon reviews-icon") do %>
+            <label type="text">Reviews</label>           
+            <% end %>
           </li>
-          <li class="navbar-btn col-md-3">
-            <%= link_to 'Photos', photo_users_path %>
+          <li class="navbar-btn">
+            <%= link_to(photo_users_path, class:"btn-icon photos-icon") do %>
+            <label type="text">Social</label>
+            <% end %>
           </li>
-          <li class="navbar-btn col-md-3">
-            <%= link_to 'Videos', video_users_path %>
+          <li class="navbar-btn">
+            <%= link_to(video_users_path, class:"btn-icon favourites-icon") do %>
+            <label type="text">Favorites</label>
+            <% end %>
           </li>
         </ul>
     <% end %>
-  </div>
 </nav>
