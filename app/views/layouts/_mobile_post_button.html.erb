@@ -1,0 +1,13 @@
+<div class='mobile-post-buttons visible-xs'>
+  <span class='mobile-post-button video'>
+    <%= modal_button_tag image_tag('camera.png', class: 'camera'), modals_path(action: :add_photo), link: true %>
+  </span>
+
+  <span class='mobile-post-button photo'>
+    <%= modal_button_tag image_tag('image.png', class: 'image'), modals_path(action: :add_video), link: true %>
+  </span>
+
+  <span class='mobile-post-button'>
+    <a href="#" class="toggle-mobile-post-buttons">+</a>
+  </span>
+</div>

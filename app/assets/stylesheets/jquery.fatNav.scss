@@ -17,7 +17,7 @@
 }
 .hamburger__icon {
   position: relative;
-  margin-top: 7px;
+  margin-top: 11px;
   margin-bottom: 7px;
 }
 .hamburger__icon, .hamburger__icon:before, .hamburger__icon:after {
@@ -48,7 +48,7 @@
   background-color: transparent;
 }
 .hamburger.active .hamburger__icon:before, .hamburger.active .hamburger__icon:after {
-  background-color: #fff;
+  background-color: #222;
 }
 .hamburger.active .hamburger__icon:before {
   -moz-transform: translateY(7px) rotate(45deg);
@@ -93,6 +93,11 @@
   height: 100%;
   display: table;
   table-layout: fixed;
+
+  hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 }
 .fat-nav.active {
   -moz-transform: scale(1);
@@ -105,16 +110,31 @@
   vertical-align: middle;
   margin: 0;
   padding: 0;
+  .logo {
+    img {
+      width: 70px;
+      margin-bottom: 35px;
+    }
+  }
+  .social-links {
+  }
 }
 .fat-nav li {
   list-style-type: none;
   text-align: center;
   text-transform: uppercase;
-  padding: 10px;
   font-size: 1.2em;
+  letter-spacing: 5px;
+  font-weight: 600;
+  margin-bottom: 10px;
+
 }
 .fat-nav li, .fat-nav li a {
   color: #fff;
+
+  &:hover {
+    opacity: .8;
+  }
 }
 .fat-nav li a {
   text-decoration: none;

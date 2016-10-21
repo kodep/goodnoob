@@ -10,9 +10,11 @@
 
     <div class="flex header-end">
       <% if user_signed_in? %>
-          <div class="upload-btn-wrapper">
-            <%= render 'layouts/upload_button' %>
-          </div>
+        <%= render 'layouts/upload_button' %>
+        <div class='buttons-separator hidden-xs'></div>
+        <div class="user-name visible-md visible-lg">
+          <%= current_user.name %>
+        </div>
       <% end %>
       <%= render 'layouts/nav_links_for_auth' %>
     </div>
@@ -22,7 +24,9 @@
   <div class="fat-nav">
     <div class="fat-nav__wrapper">
       <ul>
-        <li><div align="center"><%= link_to image_tag("good-noob.png", alt: 'main-background', width: 70), root_path %></div></li>
+        <li class="logo">
+          <div align="center"><%= link_to image_tag("logo2.png", alt: 'main-background', width: 70), root_path %></div>
+        </li>
         <li><%= link_to "Social Feed", search_index_path %></li>
         <% default_cat = SubCategory.find_by(name: "Surfboards") %>
         <% if default_cat == nil %>
@@ -38,7 +42,7 @@
         <hr style="border: none; border-bottom: 1px solid white; width: 100px">
         <li><a href="#">+New Post</a></li>
         <li><a href="#">My Profile</a></li>
-        <li>
+        <li clas="social-links">
           <div>
             <a class="btn-social-circle" href="#">
               <span class="fa fa-facebook"></span>
