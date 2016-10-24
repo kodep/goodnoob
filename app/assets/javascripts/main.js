@@ -404,4 +404,10 @@ $(document).on('turbolinks:load', function() {
     $('#btnRegister').on('click', function(e) {
         $('#SignUpModal').modal({show: true});
     });
+
+    $('.toggle-mobile-post-buttons').on('click', function(e){
+      e.preventDefault();
+      $('.mobile-post-button.photo').toggle();
+      $('.mobile-post-button.video').toggle();
+    })
 });

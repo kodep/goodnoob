@@ -1,17 +1,19 @@
 <div class="login-btn-wrapper">
-<% if user_signed_in? %>
+  <% if user_signed_in? %>
   <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      <p class="visible-md visible-lg"><%= current_user.name %> <span class="caret"></span></p>
-      <span class="visible-xs visible-sm">&nbsp;<i class="glyphicon glyphicon-user"></i>&nbsp;</span>
+      <span class="user-profile">
+        <%= image_tag('profile-icon.png') %>
+      </span>
     </button>
+
     <ul class="dropdown-menu header-side-dropdown-button" aria-labelledby="dropdownMenu1">
       <li><%= link_to 'Account', edit_user_registration_path %></li>
       <li role="separator" class="divider"></li>
       <li><%= link_to 'Log out', destroy_user_session_path, method: 'delete' %></li>
     </ul>
   </div>
-<% else %>
+  <% else %>
   <button type="button" class="btn login-btn" data-toggle='modal' data-target='#SignInModal'>Log in</button>
-<% end%>
+  <% end%>
 </div>

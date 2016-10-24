@@ -1,0 +1,40 @@
+.modal-dialog {
+  .modal-content {
+    border-radius: 0;
+    border: none;
+    padding-bottom: 30px;
+    .modal-header {
+      font-family: "DIN Alternate", sans-serif;
+      font-size: 2rem;
+      color: white;
+      font-weight: bolder;
+      background-color: #20b0ff;
+      text-align: center;
+      text-transform: uppercase;
+
+      .close {
+        opacity: 1;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+
+        &:hover {
+          opacity: 0.2;
+        }
+      }
+    }
+
+    .form-control {
+      border-radius: 0;
+    }
+
+    .modal-footer {
+      padding-top: 0;
+      .btn {
+        background-color: #20b0ff;
+        border-radius: 0;
+      }
+    }
+  }
+}

@@ -10,14 +10,14 @@ class SearchController < ApplicationController
     if request.query_string.present?
       session[:search_query] = request.query_string
     elsif session[:search_query].present?
-      redirect_to "/search?#{session[:search_query]}" and return
+      return redirect_to "/search?#{session[:search_query]}"
     end
 
-    if request.xhr?
-      render partial: 'search_results', locals: { results: @media }
-    else
-      @categories = Category.includes(:sub_categories).all
-      render
+    respond_to do |format|
+      format.js { render 'search_results_callback', layout: false }
+      format.html do
+        @categories = Category.includes(:sub_categories).all
+      end
     end
   end
 
