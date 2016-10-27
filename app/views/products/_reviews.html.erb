@@ -15,7 +15,7 @@
           <%= review.review %>
         </h2>
         <p>
-          <%= render partial:'rating', locals:{rating: review.rating && review.rating.value || 0} %>
+          <%= render partial:'rating', locals:{product_id: review.product_id, rating: review.rating && review.rating.value || 0} %>
           &nbsp;
           <%= review.user_name %> - <%= review.date_string %>
         </p>

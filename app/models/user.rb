@@ -55,6 +55,9 @@ class User < ActiveRecord::Base
     searches.delete( s ) if s
   end
 
+  def full_name
+    "#{name} #{last_name}"
+  end
 end
 
 # == Schema Information

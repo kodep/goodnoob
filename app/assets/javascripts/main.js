@@ -345,7 +345,7 @@ $(document).on('turbolinks:load', function() {
         event.preventDefault();
         var targetButtonSelector = $(this).data('submit-target');
         if (targetButtonSelector && $(targetButtonSelector)) {
-            $(targetButtonSelector).click();
+          $(targetButtonSelector).click();
         }
     });
 
@@ -409,5 +409,32 @@ $(document).on('turbolinks:load', function() {
       e.preventDefault();
       $('.mobile-post-button.photo').toggle();
       $('.mobile-post-button.video').toggle();
+    })
+
+    $('.toggle-product-menu').on('click', function(e){
+      $(this).next('.menu-group').toggle();
+    })
+
+    $(document).on('click', function(){
+      if($(event.target).is('.toggle-product-menu')) return;
+
+      $('.menu-group').hide();
+    })
+
+    $('.remove-favourite').on('ajax:success', function(){
+      $(this).closest('.thumb-product').remove();
+    })
+
+    $('.review-body-link').on('click', function(e) {
+      e.preventDefault();
+      url = $(this).data('url');
+      body = $.get(
+        {
+          url: url,
+          success: function(obj){
+            $(e.target).closest('p').html(obj.body);
+          }
+        }
+      )
     })
 });
