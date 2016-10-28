@@ -1,16 +1,23 @@
 <div id="profile">
   <div class="background-wrapper">
     <div class="flex main-heading-wrapper">
-        <% picture_image = current_user.picture ? "Change your Profile image" : "Upload your Profile image" %>
       <div id="profile-card">
+        <div class='profile-edit'>
+          <% edit_content = "#{image_tag('edit-icon-white.png', class: 'edit-icon')}Edit info" %>
+          <%= modal_button_tag edit_content.html_safe, modals_path(action: :edit_user), link: true %>
+        </div>
+
         <div class="user-avatar">
-        <% user_avatar = image_tag(current_user.picture.url(:thumbnail), alt: "profile photo", style: "width:100%; height:100%; display:block; float:left;") if current_user.picture %>
-        <%= modal_button_tag("#{user_avatar}".html_safe, modals_path(action: :add_picture), { link: true, imageable_type: "User", imageable_id: current_user.id  }) %>
+          <% user_avatar = image_tag(current_user.picture.url(:thumbnail), alt: "profile photo") if current_user.picture %>
+          <% picture_image = current_user.picture ? user_avatar : '<div class="no-photo"><span class="glyphicon glyphicon-camera"></span></div>' %>
+          <%= modal_button_tag(picture_image.html_safe, modals_path(action: :add_picture), { link: true, imageable_type: "User", imageable_id: current_user.id  }) %>
         </div>
         <div class="user-info">
-          <h1><%= current_user.name if current_user.name %></h1>
-          <h2><%= current_user.address.city+", "+current_user.address.country if current_user.address %></h2>
-          <p>Surfing the wild side of life</p>
+          <h1><%= current_user.full_name %></h1>
+          <% if current_user.address %>
+            <h2><%= [current_user.address.city, current_user.address.country].compact.join(', ') %></h2>
+          <% end %>
+          <p><%= current_user.bio%></p>
         </div>
       </div>
     </div>

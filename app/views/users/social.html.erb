@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
+<div class="sides-indents">
+<%= render partial: 'registrations/profile_top' %>
+<%= render partial: 'registrations/nav_filters' %>
+<div class="center-block">
+  <main class="main-content-wrapper social">
+  <div id="user_social">
+    <div class="flex thumbs-matrix-wrapper search-results-container">
+      <% if @media.length == 0 %>
+        you have no social activity yet
+      <% end %>
+      <%= render 'social_bunch' %>
+      <div class="flex showmore-thumbs-row">
+          <div class="plus-button-wrapper">
+            <%= search_link [param_change(:update, :page, @media.next_page)], { "data-remote" => true } do %>
+              <i class="zmdi zmdi-plus-circle-o"></i>
+            <% end %>
+          </div>
+          <div class="showmore-text-wrapper">
+            <%= search_link [param_change(:update, :page, @media.next_page)], { class: "show-more-text", 'data-remote' => true } do %>
+              <span>More Listing</span>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+  </main>
+</div>
+</div>

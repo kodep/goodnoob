@@ -1,16 +1,22 @@
-<div class="review-unit">
-  <div class="row review-rating-body">
-    <div class="col-md-12 review-rating">
-      <%= render 'products/rating', rating: review.product.rating, product_id: review.product.id %>
-      <p>Great Bike</p>
+<% if review.product %>
+  <div class="review-unit">
+    <div class="row review-rating-body">
+      <div class="col-md-12 review-rating">
+          <%= render 'products/rating', rating: review.product.rating, product_id: review.product.id %>
+        <p>Great Bike</p>
+      </div>
+    </div>
+    <div class="review-title">
+      <h3>Skeleton Key - DHD</h3>
+    </div>
+    <div class="review-description">
+      <p>
+        <%= truncate review.review, length: 250, separator: ' ' %>
+
+        <% if review.review.length > 250 %>
+          <%= link_to '(Read more)', '#', class: 'review-body-link', data: {url: product_review_url(review.product.id, review.id)} %>
+        <% end %>
+      </p>
     </div>
   </div>
-  <div class="review-title">
-    <h3>Skeleton Key - DHD</h3>
-  </div>
-  <div class="review-description">
-    <p>
-      <%= truncate review.review, length: 250, separator: ' ' %>
-    </p>
-  </div>
-</div>
+<% end %>

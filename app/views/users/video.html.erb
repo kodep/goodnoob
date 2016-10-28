@@ -24,6 +24,14 @@
                       <% end %>
                   <% end %>
                 </span>
+                <div class="thumb-menu-stripe">
+                  <a href="javascript:;" class="toggle-product-menu"></a>
+                  <div class="menu-group">
+                    <span class="menu-item">
+                      <%= link_to 'Remove', remove_product_user_favourite_products_path(product_id: product.id), remote: true, class: 'remove-favourite' %>
+                    </span>
+                  </div>
+                </div>
               </div>
               <%= link_to product, class: 'thumb-preview' do %>
               <div class='embed-responsive embed-responsive-16by9 thumb-bg' style="background-image: url('/assets/thumb-img-1.png');"></div>
@@ -39,7 +47,7 @@
               </div>
               <div class='thumb-description text-left'>
                 <p>
-                  <%= truncate product.description, length: 320, separator: ' ' %>
+                  <%= truncate product.description, length: 50, separator: ' ' %>
                 </p>
               </div>
               <div class='thumb-moreinfo-link'>

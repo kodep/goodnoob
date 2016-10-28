@@ -36,7 +36,7 @@
 
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin_only, :except => [:review, :photo, :video, :show, :ajax_destroy_favourite, :ajax_destroy_recent_search,
+  before_action :admin_only, :except => [:reviews, :social, :favourites, :update, :review, :photo, :video, :show, :ajax_destroy_favourite, :ajax_destroy_recent_search,
                                           :ajax_destroy_all_favourites, :ajax_destroy_recent_searches]
 
   def index
@@ -53,11 +53,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(secure_params)
-      redirect_to users_path, :notice => "User updated."
+    if current_user.update_attributes(secure_params)
+      redirect_to edit_user_registration_path, :notice => "User updated."
     else
-      redirect_to users_path, :alert => "Unable to update user."
+      redirect_to edit_user_registration_path, :alert => "Unable to update user."
     end
   end
 
@@ -115,6 +114,38 @@ class UsersController < ApplicationController
     end
   end
 
+  def reviews
+    @media = current_user.reviews
+
+    @media = Kaminari.paginate_array(@media)
+                 .page(params[:page])
+                 .per(16)
+
+    respond_to do |format|
+      format.html { @categories = Category.includes(:sub_categories).all }
+      format.js { render partial: 'review_result' }
+    end
+  end
+
+  def favourites
+    @products = current_user.favourite_products
+  end
+
+  def social
+    @media = ProductSearchService.new(params).search.media.select do
+      |media| media.user_id == current_user.id
+    end
+
+    @media = Kaminari.paginate_array(@media)
+                 .page(params[:page])
+                 .per(16)
+
+    respond_to do |format|
+      format.html
+      format.js { render partial: 'social_bunch' }
+    end
+  end
+
   def review
     @media = ProductSearchService.new(params).search.media.select { |media| media.is_a?(Review) }
 
@@ -167,7 +198,9 @@ class UsersController < ApplicationController
   end
 
   def secure_params
-    params.require(:user).permit(:role)
+    params.require(:user).permit(
+      :role, :name, :last_name, :bio,
+      address_attributes: [:country, :city, :street]
+    )
   end
-
 end

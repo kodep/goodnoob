@@ -37,6 +37,15 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def show
+    product = Product.find params[:product_id]
+    @review = product.reviews.find(params[:id])
+
+    respond_to do |format|
+      format.json
+    end
+  end
+
   private
 
   def set_product
