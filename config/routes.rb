@@ -79,7 +79,7 @@ Rails.application.routes.draw do
     resources :guides, only: [:show]
   end
   resources :products, only: [:show] do
-    resources :reviews, only: [:show, :index, :new, :create], defaults: { formats: [:json, :html] }
+    resources :reviews, defaults: { formats: [:json, :html] }
     resources :user_favourite_products, only: [:add, :remove] do
       collection do
         get 'add'
