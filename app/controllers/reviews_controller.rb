@@ -13,8 +13,8 @@
 #
 
 class ReviewsController < ApplicationController
-
-  before_action :set_product, only: [:index, :new, :create]
+  before_action :set_product
+  before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   def index
     @product = Product.find params[:product_id]
@@ -38,18 +38,35 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    product = Product.find params[:product_id]
-    @review = product.reviews.find(params[:id])
-
     respond_to do |format|
       format.json
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @review.update(review_params)
+      redirect_to product_reviews_path(@product)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @review.destroy!
+    redirect_to product_reviews_path(@product)
   end
 
   private
 
   def set_product
     @product = Product.find(params[:product_id])
+  end
+
+  def set_review
+    @review = @product.reviews.find(params[:id])
   end
 
   def review_params
