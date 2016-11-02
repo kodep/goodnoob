@@ -16,7 +16,7 @@
     font-size: 16px;
     border: none;
     cursor: pointer;*/
-    background: url('three-dots-menu.svg') no-repeat scroll center center transparent;
+    background: asset-url('three-dots-menu.svg') no-repeat scroll center center transparent;
     width: 32px;
     height:20px;
     margin: 0px;
@@ -28,7 +28,7 @@
 .social_share_group {
     visibility: hidden;
     position: absolute;
-    z-index: 1000;   
+    z-index: 1000;
     /*margin-right: 15px;*/
 }
 
@@ -80,23 +80,23 @@
 }
 
 .share_items > .share-button-facebook {
-    background: url('share-icon-facebook.png') no-repeat center center;
+    background: asset-url('share-icon-facebook.png') no-repeat center center;
 }
 
 .share_items > .share-button-twitter {
-    background: url('share-icon-twitter.png') no-repeat center center;
+    background: asset-url('share-icon-twitter.png') no-repeat center center;
 }
 
 .share_items > .share-button-whatsapp {
-    background: url('share-icon-whatsapp.png') no-repeat center center;
+    background: asset-url('share-icon-whatsapp.png') no-repeat center center;
 }
 
 .share_items > .share-button-separator {
-    background: url('share-icon-separator.png') no-repeat center center;
+    background: asset-url('share-icon-separator.png') no-repeat center center;
     height: 9px;
     opacity: 12%;
 }
 
 .share_items > .share-button-copylink {
-    background: url('share-icon-copylink.png') no-repeat center center;
+    background: asset-url('share-icon-copylink.png') no-repeat center center;
 }
