@@ -36,6 +36,28 @@ class VideosController < ApplicationController
     end
   end
 
+  # GET /videos/:id/edit
+  def edit
+    @video = current_user.videos.find params[:id]
+  end
+
+  # PATCH /videos/:id
+  def update
+    @video = current_user.videos.find params[:id]
+    if @video.update_attributes(creation_params)
+      redirect_to :back
+    else
+      render 'shared/errors', locals: { errors: @video.errors }
+    end
+  end
+
+  # DELETE /videos/:id
+  def destroy
+    video = current_user.videos.find params[:id]
+    video.destroy!
+    redirect_to :back
+  end
+
   private
 
   def set_video

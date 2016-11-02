@@ -89,18 +89,8 @@ Rails.application.routes.draw do
   end
 
   resource :pictures, format: false, only: :create
-  resources :photos, format: false, only: [:create, :show]
-  resources :videos, format: false, only: [:create, :show]
-
-  # controller :favourites, as: :favourite, path: :favourites,
-  #            format: true, constraints: { format: :json } do
-  #   %i(products photos videos).each do |type|
-  #     defaults type: type do
-  #       post type, to: :create
-  #       delete type, to: :destroy
-  #     end
-  #   end
-  # end
+  resources :photos, format: false, only: [:create, :show, :edit, :update, :destroy]
+  resources :videos, format: false, only: [:create, :show, :edit, :update, :destroy]
 
   post '/modals/:action', controller: :modals, format: false, as: :modals
   get '/modals/fetch' => 'modals#fetch', format: :json

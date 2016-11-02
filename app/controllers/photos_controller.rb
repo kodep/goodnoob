@@ -32,6 +32,28 @@ class PhotosController < ApplicationController
     end
   end
 
+  # GET /photos/:id/edit
+  def edit
+    @photo = current_user.photos.find params[:id]
+  end
+
+  # PATCH /photos/:id
+  def update
+    @photo = current_user.photos.find params[:id]
+    if @photo.update_attributes(creation_params)
+      redirect_to :back
+    else
+      render 'shared/errors', locals: { errors: @photo.errors }
+    end
+  end
+
+  # DELETE /photos/:id
+  def destroy
+    photo = current_user.photos.find params[:id]
+    photo.destroy!
+    redirect_to :back
+  end
+
   private
 
   def set_photo
