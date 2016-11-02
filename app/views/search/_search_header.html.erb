@@ -7,54 +7,67 @@
 </div>
 
 <div class="js-search-affix">
-    <div class="main-tabs-wrapper">
-      <div class="flex tabs-list">
-        <span class="tabs-item social-feed-button-wrapper">
-          <%= link_to "Social Feed", search_index_path, {id: 'social-feed-button', class: 'btn btn-link tabs-link'} %>
-        </span>
+  <div class="main-tabs-wrapper">
+    <div class="flex tabs-list">
+      <span class="tabs-item social-feed-button-wrapper">
+        <%= link_to "Social Feed", search_index_path, {id: 'social-feed-button', class: 'btn btn-link tabs-link'} %>
+      </span>
 
-        <span class="tabs-divider">|</span>
+      <span class="tabs-divider">|</span>
 
-        <span class="dropdown dropdown-on-hover tabs-item compare-button-wrapper">
-          <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown"><%= defined?(@category) ? @category.name : 'Compare Products' %></button>
-          <div class="dropdown-menu compare-block-wrapper">
-            <%= render 'layouts/compare_products' %>
-          </div>
-        </span>
+      <span class="dropdown dropdown-on-hover tabs-item compare-button-wrapper">
+        <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown"><%= defined?(@category) ? @category.name : 'Compare Products' %></button>
+        <div class="dropdown-menu compare-block-wrapper">
+          <%= render 'layouts/compare_products' %>
+        </div>
+      </span>
 
-        <span class="tabs-divider">|</span>
+      <span class="tabs-divider">|</span>
 
-        <span class="dropdown dropdown-on-hover tabs-item">
-          <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown">Buying Guides</button>
-          <div class="dropdown-menu buying-guides-block-wrapper">
-            <%= render 'layouts/buying_guides' %>
-          </div>
-        </span>
-      </div>
+      <span class="dropdown dropdown-on-hover tabs-item">
+        <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown">Buying Guides</button>
+        <div class="dropdown-menu buying-guides-block-wrapper">
+          <%= render 'layouts/buying_guides' %>
+        </div>
+      </span>
     </div>
+  </div>
 
-    <div class="flex main-filters-wrapper">
-      <% @categories.all.each do |category| %>
-          <%= render partial: 'search/category_filter', locals: {category: category} %>
+  <div class="flex main-filters-wrapper">
+    <% @categories.reverse.each do |category| %>
+        <%= render partial: 'search/category_filter', locals: {category: category} %>
+    <% end %>
+  </div>
+
+  <% if @filters.length > 0 %>
+    <div class="show-filters">
+      <a href="#" class="show-filters-button">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+        <span class="applied-filter-text">View filters</span>
+      </a>
+      <%= link_to search_index_path(clear_sub_categories(params)), data: {'turbolinks-scroll' => false} do %>
+        <span class="glyphicon glyphicon-remove"></span>
+        <span class="applied-filter-text">Clear all</span>
       <% end %>
     </div>
 
-    <div class="flex applied-filters-wrapper sub-filters-wrapper" style="display: none;">
+    <div class="flex applied-filters-wrapper sub-filters-wrapper">
       <% @filters.each do |filter| %>
-          <span class="applied-filter">
+          <div class="applied-filter">
             <%= link_to search_index_path(update_params(params, :remove, filter.type, filter.id)), data: {'turbolinks-scroll' => false} do %>
                 <span class="glyphicon glyphicon-remove"></span>
                 <span class="applied-filter-text"><%= filter.name %></span>
             <% end %>
-          </span>
+          </div>
       <% end %>
-      <span class="applied-filter js-clear-all">
+      <span class="applied-filter js-clear-all clear-filters-filter">
         <%= link_to search_index_path(clear_sub_categories(params)), data: {'turbolinks-scroll' => false} do %>
-            <span class="glyphicon glyphicon-remove"></span>
-            <span class="applied-filter-text">Clear All</span>
+          <span class="glyphicon glyphicon-remove"></span>
+          <span class="applied-filter-text">Clear All</span>
         <% end %>
       </span>
     </div>
+  <% end %>
 </div>
 
 <div class="flex main-search-wrapper">

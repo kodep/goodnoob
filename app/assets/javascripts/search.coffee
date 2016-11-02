@@ -1,4 +1,4 @@
-$ ->
+$(document).on 'turbolinks:load', ->
   $('.search-results-container').infinitescroll
     loading:
       img: 'assets/spinner.svg'

@@ -41,7 +41,7 @@
         <li><%= link_to "Buying Guides", sub_category_guide_path(default_cat, default_guide) %></li>
         <hr style="border: none; border-bottom: 1px solid white; width: 100px">
         <li><a href="#">+New Post</a></li>
-        <li><a href="#">My Profile</a></li>
+        <li><%= link_to('My Profile', edit_user_registration_path) %></li>
         <li clas="social-links">
           <div>
             <a class="btn-social-circle" href="#">

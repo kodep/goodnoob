@@ -168,12 +168,6 @@ $(document).on('turbolinks:load', function() {
         });
     });
 
-    var appliedFiltersSelector = $('.applied-filters-wrapper');
-    var appliedFiltersCount = appliedFiltersSelector.children().length > 1; // Skip 'Clear All' from counter
-    if ( appliedFiltersCount ) {
-      appliedFiltersSelector.show();
-    }
-
     // Add pull-right and pull-left to side buttons in the header depending on the window size
     function repositionHeaderSideDropdowns() {
         var bodyWidth = $('body').width();
@@ -436,5 +430,13 @@ $(document).on('turbolinks:load', function() {
           }
         }
       )
+    })
+
+    $('.show-filters-button').on('click', function(e){
+      var label;
+      e.preventDefault();
+      // label = $(this).html() == 'show filters' ? 'hide filters' : 'show filters'
+      // $(this).html(label);
+      $(this).parent().siblings('.applied-filters-wrapper').toggle();
     })
 });

@@ -48,7 +48,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'home#index'
+  root to: 'search#index'
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users do
     collection do
