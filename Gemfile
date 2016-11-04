@@ -25,6 +25,7 @@ gem 'gon'
 gem 'active_model_serializers'
 gem 'autoprefixer-rails'
 gem 'magnific-popup-rails', '~> 1.1.0'
+gem 'rollbar'
 
 group :development, :test do
   gem 'byebug'
