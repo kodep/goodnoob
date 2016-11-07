@@ -26,7 +26,7 @@
           </label>
         </div>
       <% end -%> -->
-
+      <%= render "devise/shared/social_login" %>
       <div align="center">
         <a type="button" class="btn btn-commit btn-register" data-dismiss='modal' data-target='#SignUpModal' id='btnRegister'>Register</a>
         <%= f.submit 'Login', :class => 'btn btn-commit' %>
