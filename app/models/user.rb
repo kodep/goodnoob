@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
-    :trackable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
+    :trackable, :validatable, :omniauthable,
+    omniauth_providers: [:google_oauth2, :facebook]
 
   belongs_to :currency
   belongs_to :language

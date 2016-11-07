@@ -233,6 +233,8 @@ GEM
     omniauth (1.3.1)
       hashie (>= 1.2, < 4)
       rack (>= 1.0, < 3)
+    omniauth-facebook (4.0.0)
+      omniauth-oauth2 (~> 1.2)
     omniauth-google-oauth2 (0.4.1)
       jwt (~> 1.5.2)
       multi_json (~> 1.3)
@@ -426,6 +428,7 @@ DEPENDENCIES
   kaminari
   launchy
   magnific-popup-rails (~> 1.1.0)
+  omniauth-facebook
   omniauth-google-oauth2
   paperclip (~> 4.3)
   pg
