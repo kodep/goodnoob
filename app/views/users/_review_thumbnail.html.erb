@@ -4,6 +4,22 @@
       <div class="col-md-12 review-rating">
           <%= render 'products/rating', rating: review.product.rating, product_id: review.product.id %>
         <p>Great Bike</p>
+        <div class="thumb-menu-stripe">
+          <a href="javascript:;" class="toggle-product-menu"></a>
+          <div class="menu-group">
+            <div class="menu-item">
+              <%= modal_button_tag 'Edit',
+                edit_product_review_path(review.product, review),
+                method: :get,
+                link: true,
+                class: '' %>
+            </div>
+            <hr>
+            <div class="menu-item">
+              <%= link_to 'Remove', product_review_path(review.product, review), method: :delete, remote: true %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="review-title">
@@ -19,4 +35,5 @@
       </p>
     </div>
   </div>
+
 <% end %>

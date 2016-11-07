@@ -406,6 +406,7 @@ $(document).on('turbolinks:load', function() {
     })
 
     $('.toggle-product-menu').on('click', function(e){
+      $('.social_share_group').hide();
       $(this).next('.menu-group').toggle();
     })
 
@@ -421,6 +422,7 @@ $(document).on('turbolinks:load', function() {
 
     $('.review-body-link').on('click', function(e) {
       e.preventDefault();
+      var url, body;
       url = $(this).data('url');
       body = $.get(
         {
@@ -433,10 +435,38 @@ $(document).on('turbolinks:load', function() {
     })
 
     $('.show-filters-button').on('click', function(e){
-      var label;
       e.preventDefault();
-      // label = $(this).html() == 'show filters' ? 'hide filters' : 'show filters'
-      // $(this).html(label);
       $(this).parent().siblings('.applied-filters-wrapper').toggle();
     })
+
+    $('.toggle-social-share-menu').on('click', function(e){
+      e.preventDefault
+      $(this).parent().parent().parent().find('.social_share_group').toggle();
+    })
+
+    // hide social share menu
+    window.onclick = function(event) {
+      if (!event.target.matches('.social-share')) {
+        $('.social_share_group').hide();
+      }
+    }
+
+    $('.js-copylink').on('click', function(e){
+      e.preventDefault
+      var textField = document.createElement('textarea');
+      textField.innerText = $('.js-copylink').last().data('copyUrl');
+      document.body.appendChild(textField);
+      textField.select();
+      document.execCommand('copy');
+      textField.remove();
+    })
+
+    function copyToClipboard(text) {
+        var textField = document.createElement('textarea');
+        textField.innerText = text;
+        document.body.appendChild(textField);
+        textField.select();
+        document.execCommand('copy');
+        textField.remove();
+    }
 });

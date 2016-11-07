@@ -1,3 +1,5 @@
+<% profile ||= false %>
+
 <div class='thumb-wrapper thumb-video'>
   <div class='flex thumb-header'>
     <span class='thumb-header-name'>
@@ -5,15 +7,32 @@
       <%= video.user.last_name %>
     </span>
     <div class="thumb-menu-stripe">
-      <a href="javascript:;" onclick="showProductMenu(this)" class="social-share"></a>
+      <a class="toggle-product-menu social-share"></a>
       <!-- social share tool window -->
+
+      <div class="menu-group">
+        <div class="menu-item">
+          <a class="social-share toggle-social-share-menu">Share</a>
+        </div>
+        <hr>
+        <% if profile%>
+          <div class="menu-item">
+            <%= link_to 'Delete', video_path(video), method: :delete %>
+          </div>
+          <hr>
+        <% end %>
+        <div class="menu-item">
+          <a class="share-button-copylink js-copylink" data-copy-url="<%= video.url %>">Copy Url</a>
+        </div>
+      </div>
+
       <span class="social_share_group">
         <span class="share_items">
           <a class="share_item share-button-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= video.url %>"></a>
           <a class="share_item share-button-twitter"  href="https://twitter.com/intent/tweet?url=<%= video.url %>"></a>
           <a class="share_item share-button-whatsapp" href="whatsapp://send?text=<%= video.url %>"></a>
           <span class="share_item share-button-separator"></span>
-          <a class="share_item share-button-copylink" onclick="copyToClipboard('<%= video.url %>')"></a>
+          <a class="share_item share-button-copylink js-copylink" data-copy-url="<%= video.url %>"></a>
         </span>
       </span>
     </div>

@@ -48,7 +48,8 @@ class ReviewsController < ApplicationController
 
   def update
     if @review.update(review_params)
-      redirect_to product_reviews_path(@product)
+      # redirect_to product_reviews_path(@product)
+      redirect_to edit_user_registration_path
     else
       render :edit
     end
@@ -56,7 +57,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review.destroy!
-    redirect_to product_reviews_path(@product)
+    redirect_to edit_user_registration_path
   end
 
   private

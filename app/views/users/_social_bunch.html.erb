@@ -1,7 +1,7 @@
 <% @media.each do |media_object| %>
   <% if media_object.is_a?(Photo) %>
-    <%= render partial: 'photos/search_thumbnail', locals: { photo: media_object } %>
+    <%= render partial: 'photos/search_thumbnail', locals: { photo: media_object, profile: true } %>
   <% elsif media_object.is_a?(Video) %>
-    <%= render partial: 'videos/search_thumbnail', locals: { video: media_object } %>
+    <%= render partial: 'videos/search_thumbnail', locals: { video: media_object, profile: true } %>
   <% end %>
 <%end %>

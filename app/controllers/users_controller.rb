@@ -132,8 +132,8 @@ class UsersController < ApplicationController
   end
 
   def social
-    @media = ProductSearchService.new(params).search.media.select do
-      |media| media.user_id == current_user.id
+    @media = ProductSearchService.new(params).search.media.select do |media|
+      media.user_id == current_user.id
     end
 
     @media = Kaminari.paginate_array(@media)

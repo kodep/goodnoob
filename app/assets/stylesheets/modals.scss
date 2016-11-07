@@ -20,6 +20,9 @@
     border-radius: 0;
     border: none;
     padding-bottom: 20px;
+    .modal-body {
+      padding: 10px 30px;
+    }
     .modal-header {
       font-family: "DIN Alternate", sans-serif;
       font-size: 2rem;
@@ -44,6 +47,11 @@
     }
 
     .form-group {
+      &.c-rating {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       overflow: hidden;
     }
 
