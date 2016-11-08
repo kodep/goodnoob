@@ -17,13 +17,7 @@
         <hr>
         <% if profile%>
           <div class="menu-item">
-            <% if locals[:video] %>
-              <%= link_to 'Delete', video_path(video), method: :delete %>
-            <% end %>
-
-            <% if locals[:photo] %>
-              <%= link_to 'Delete', photo_path(photo), method: :delete %>
-            <% end %>
+            <%= link_to 'Delete', photo_path(video), method: :delete %>
           </div>
           <hr>
         <% end %>
