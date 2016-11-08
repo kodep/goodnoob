@@ -2426,6 +2426,9 @@ $footer-links-color: #7f7f7f;
       .review-rating-body {
         margin-top: 10px;
 
+        .thumb-menu-stripe {
+          float: right;
+        }
         .review-rating {
           p {
             font-family: $flores-heading-font;
@@ -3228,6 +3231,7 @@ $footer-links-color: #7f7f7f;
 }
 
 .thumb-menu-stripe {
+  position: relative;
   .toggle-product-menu {
     background: url('three-dots-menu.svg') no-repeat scroll center center transparent;
     width: 32px;
@@ -3243,20 +3247,39 @@ $footer-links-color: #7f7f7f;
     z-index: 1000;
     display: none;
     position: absolute;
-    padding: 10px;
+    padding: 0 10px;
     background-color: #fff;
-    width: 100px;
-    right: 0;
+    right: -20px;
     margin-left: auto;
     margin-right: auto;
     opacity: 1;
+    top: 25px;
+    width: 90px;
 
     &:before {
-      position: absolute
+      content: ' ';
+      position: absolute;
+      border-bottom: 10px solid #fff;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      display: inline-block;
+      right: 0;
+      left: 0;
+      margin: auto;
+      top: -10px;
+      width: 20px;
     }
 
+    hr {
+      margin: 0;
+    }
+
+
     .menu-item {
-      margin: 5px;
+      text-align: center;
+      font-weight: 400;
+      margin: 10px 0;
+      font-size: 1rem;
       a {
         text-decoration: none;
         color: #000;
@@ -3272,5 +3295,12 @@ $footer-links-color: #7f7f7f;
       height: 9px;
       opacity: 12%;
     }
+  }
+}
+
+.c-rating {
+  width: 24px*5;
+  .c-rating__item {
+    line-height: 24px;
   }
 }

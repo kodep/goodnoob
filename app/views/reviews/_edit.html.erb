@@ -1,4 +1,4 @@
-<%= form_for @review, url: {action: "create"} do |f| %>
+<%= form_for @review, url: {action: 'update'} do |f| %>
   <div class='form-group'>
     <%= f.text_field :title, class: 'form-control', placeholder: 'Title', required: true %>
   </div>
@@ -10,4 +10,8 @@
                              required: true %>
   </div>
   <%= f.submit "", id:'submit-review', class:'btn btn-default', style:"display:none;"%>
+<% end %>
+
+<% content_for :action do %>
+  <%= link_to "Upload", '#', class:'btn upload-button', data:{submit_button:true, submit_target:'#submit-review'} %>
 <% end %>
