@@ -1,65 +1,69 @@
-<div class='row product-info'>
-  <main class='col-md-10 main-content-wrapper'>
-    <%= render partial: 'breadcrumbs', locals: { product: product } %>
-    <div class='page-header text-center'>
-      <h1>
-        <%= product.name %>
-      </h1>
+<section class="product-about-wrapper">
+  <div class="product-about row col-md-10 center-block">
+    <div class="product-about-photos-wrapper col-md-6">
+      <div class="product-photos">
+        <ul class="photos-container bxslider">
+          <% product.pictures.each do |picture| %>
+            <li class="product-photo"><%= image_tag picture.url %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="bx-slider-pager">
+        <% product.pictures.each_with_index do |index, picture| %>
+          <a href="" data-slide-index="<%= index %>"></a>
+        <% end %>
+      </div>
     </div>
-    <div class='container-fluid'>
-      <div class='row'>
-        <div class='col-md-2 visible-md visible-lg'>
-          <%= picture_thumbnails pictures %>
+    <div class="product-info-wrapper col-md-6">
+      <div class="product-info">
+        <h1 class="product-name">
+          <%= product.name %> <%= "(#{product.year})" if product.year %>
+        </h1>
+        <div class="product-review-bar">
+          <%= render 'products/rating', rating: product.rating, product_id: product.id %>
+          (<%= product.ratings.length %>)
+          <%= link_to 'Official Website', product.url, :target => "_blank", class: 'official-link' %>
         </div>
-        <div class='col-md-10'>
-          <%= image_tag product.picture_url, alt: '', id: 'large-image', class: 'img-responsive center-block' %>
+        <div class="product-about-text">
+          <%= simple_format product.description %>
+        </div>
+        <div class="product-buttons">
+          <span class="product-price"><%= product.price_string %></span>
+          <button type='button' id='upload-menu' class='btn product-button product-post hidden-xs dropdown-toggle'
+                  data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
+            post photo / video
+          </button>
+
+          <ul class='dropdown-menu header-side-dropdown-button' aria-labelledby='upload-menu'>
+            <li>
+              <%= modal_button_tag 'Photo', modals_path(action: :add_photo), link: true %>
+            </li>
+            <li role='separator' class='divider'></li>
+            <li>
+              <%= modal_button_tag 'Video', modals_path(action: :add_video), link: true %>
+            </li>
+          </ul>
+
+          <%= modal_button_tag 'Add a review',
+             new_product_review_path(product),
+             method: :get,
+             link: true,
+             class: 'product-button visible-xs-inline-block' %>
+
+          <% if product.users.include? current_user %>
+            <%= link_to 'Added(Remove)', remove_product_user_favourite_products_path(@product),
+            class: 'product-button product-add-favourites hidden-xs' %>
+          <% else %>
+
+            <%= link_to 'Add to Favourites', add_product_user_favourite_products_path(@product), class:
+              'product-button product-add-favourites hidden-xs' %>
+          <% end %>
+
+          <%= link_to '', add_product_user_favourite_products_path(@product), class:
+            'glyphicon glyphicon-star product-button visible-xs-inline-block product-add-favourites'%>
+          <a href="#" class="product-button product-buy">buy</a>
         </div>
       </div>
     </div>
-  </main>
-  <aside class='col-md-2 right-column'>
-    <div class='product-brief'>
-      <h1>
-        Price: <%= product.price_string %>
-      </h1>
-      <p>
-        <%= render 'products/rating', rating: product.rating, product_id: product.id %>
-      </p>
-      <% if product.url.present? %>
-          <p>
-            <%= link_to 'Product Website', product.url, :target => "_blank" %>
-          </p>
-      <% end %>
-      <p>
-        <% if user_signed_in? %>
-            <% if product.users.include? current_user %>
-                Added to
-                Favourites <%= link_to '(Remove)', remove_product_user_favourite_products_path(@product) %>
-            <% else %>
-                <%= link_to 'Add to Favourites', add_product_user_favourite_products_path(@product) %>
-            <% end %>
-        <% end %>
-      </p>
-    </div>
-  </aside>
-</div>
-<div class='row product-properties-wrapper'>
-  <main class='col-md-10 main-content-wrapper product-description'>
-    <div class='product-description text-center'>
-      <%== simple_format product.description %>
-    </div>
-  </main>
-  <aside class='col-md-2 product-properties right-column'>
-    <% @filters.each do |filter| %>
-        <div class="row">
-          <div class="col-md-6 filter_name">
-            <div class="bg"></div>
-            <span><%= filter.name %>: </span>
-          </div>
-          <div class="col-md-6 filter_values">
-            <%== product.filter_options.where(filter: filter).map(&:name).join '<br>' %>
-          </div>
-        </div>
-    <% end %>
-  </aside>
-</div>
+  </div>
+</section>

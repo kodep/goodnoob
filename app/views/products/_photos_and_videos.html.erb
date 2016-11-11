@@ -1,0 +1,54 @@
+<section class="product-photos-wrapper col-md-12">
+  <div class="product-photos">
+    <div class="product-photos-header">
+      photos and videos
+    </div>
+
+    <% if @photos.any? || @videos.any? %>
+<!--       <div class="main-container">
+        <div class="main-content-wrapper">
+          <div class="flex thumbs-matrix-wrapper photo-wrapper">
+            <%= render partial: 'product_photo', locals: { results: @photos } %>
+          </div>
+
+          <div class="flex thumbs-matrix-wrapper video-wrapper">
+            <%= render partial: 'product_video', locals: { results: @videos } %>
+          </div>
+        </div>
+      </div>
+
+     <%= link_to "Show more (#{product.videos_count - 2})",
+              product_path(product, video: @videos.next_page),
+              { class: 'btn btn-default', role: 'button', 'data-remote': true } %>
+
+      <%= link_to "Show more (#{product.photos_count - 2})",
+            product_path(product, photo: @photos.next_page),
+            { class: 'btn btn-default', role: 'button', 'data-remote': true } %> -->
+    <% else %>
+      <div class="no-media-block-wrapper">
+        <div class="no-media-block">
+          <div class="no-media-title">no photos or videos yet, <b>be the first!</b></div>
+          <div>
+            <% if user_signed_in? %>
+              <div class="dropdown">
+                <button type='button' id='upload-menu' class='btn new-post hidden-xs dropdown-toggle'
+                  data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
+                  +new post
+                </button>
+                <ul class='dropdown-menu header-side-dropdown-button' aria-labelledby='upload-menu'>
+                  <li>
+                    <%= modal_button_tag 'Photo', modals_path(action: :add_photo), link: true %>
+                  </li>
+                  <li role='separator' class='divider'></li>
+                  <li>
+                    <%= modal_button_tag 'Video', modals_path(action: :add_video), link: true %>
+                  </li>
+                </ul>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
