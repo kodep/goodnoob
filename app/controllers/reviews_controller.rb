@@ -78,6 +78,6 @@ class ReviewsController < ApplicationController
   def review_extra_params
     { user_id: current_user.id,
       product_id: @product.id,
-      language_id: current_user.language_id }
+      language_id: current_user.language_id || 1 }
   end
 end

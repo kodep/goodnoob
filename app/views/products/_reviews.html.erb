@@ -1,25 +1,80 @@
-<div id='reviews-carousel' class='carousel slide' data-ride='carousel'>
-  <ol class='carousel-indicators'>
-    <% reviews.each_index do |index| %>
-      <li data-target='#reviews-carousel' data-slide-to='<%= index %>'
-          class='<%= 'active' if index.zero? %>'></li>
-    <% end %>
-  </ol>
-  <div class='carousel-inner' role='listbox'>
-    <% reviews.each_with_index do |review, index| %>
-      <div class='item <%= 'active' if index.zero? %> text-center'>
-        <h1>
-          <%= review.title %>
-        </h1>
-        <h2>
-          <%= review.review %>
-        </h2>
-        <p>
-          <%= render partial:'rating', locals:{product_id: review.product_id, rating: review.rating && review.rating.value || 0} %>
-          &nbsp;
-          <%= review.user_name %> - <%= review.date_string %>
-        </p>
+<section class="product-reviews-wrapper">
+  <div class="product-reviews">
+    <div class="filters pull-right col-md-3">
+      <% filter_options = product.filter_options %>
+      <div class="filters-content short">
+        <% @filters.each do |filter| %>
+          <strong><%= filter.name %>: </strong>
+          <%== filter_options.select{|f| f.filter == filter}.map(&:name).join '<br>' %>
+          <br>
+        <% end %>
       </div>
-    <% end %>
+
+      <div class="row visible-xs">
+        <div class="toggle-block col-md-3 center-block">
+          <span class="glyphicon glyphicon-menu-down js-toggle-product-details-block" data-block-selector=".filters-content"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-wrapper col-md-9 pull-left <%= product.reviews.length > 0 ? '' : 'no-reviews'%>">
+      <div class="reviews">
+        <div class="product-reviews-header">
+          <span>reviews</span>
+          <% if product.reviews.length > 0 %>
+            <%= link_to 'Read More Reviews', product_reviews_path(product_id: product.id) %>
+          <% end %>
+        </div>
+
+        <% if product.reviews.length > 0 %>
+          <div class="reviews-container col-md-9 center-block">
+            <% if user_signed_in? %>
+              <%= modal_button_tag '+Add a review',
+                           new_product_review_path(product),
+                           method: :get,
+                           link: true,
+                           class: 'add-review hidden-xs' %>
+            <% end %>
+
+            <% product.reviews.last(2).each do |review|%>
+              <div class="product-review">
+                <span class="product-review-bar">
+                  <%= render partial:'rating', locals:{product_id: review.product_id, rating: review.rating && review.rating.value || 0} %>
+                </span>
+                <span class="review-title">
+                  <%= review.title %>
+                </span>
+                <div class="review-author-name">
+                  <%= review.user.full_name %>
+                </div>
+                <div class="review-body">
+                  <p>
+                    <%= truncate review.review, length: 150, separator: ' ' %>
+                    <% if review.review.length > 250 %>
+                      <%= link_to '(Read more)', '#', class: 'review-body-link', data: {url: product_review_url(review.product.id, review.id)} %>
+                    <% end %>
+                  </p>
+                </div>
+              </div>
+            <%end%>
+          </div>
+        <% else %>
+          <div class="no-reviews-block-wrapper col-md-9 center-block">
+            <div class="no-reviews-block">
+              <div class="no-review-title">no reviews yet, <b>be ther first!</b></div>
+              <div>
+                <% if user_signed_in? %>
+                  <%= modal_button_tag '+Add a review',
+                    new_product_review_path(product),
+                    method: :get,
+                    link: true,
+                    class: 'add-review hidden-xs' %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
+</section>

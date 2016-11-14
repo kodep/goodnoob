@@ -37,5 +37,4 @@ module ThumbnailsHelper
   def video_thumbnails videos
     capture { render partial: 'videos/thumbnail', collection: videos, as: :video }
   end
-
 end
