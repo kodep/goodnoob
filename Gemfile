@@ -16,7 +16,7 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'high_voltage'
-gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'activeadmin', github: 'activeadmin'
 gem 'geocoder'
 gem 'paperclip', '~> 4.3'
 gem 'aws-sdk', '< 2'
@@ -34,7 +34,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
   gem 'pry-byebug'
 end
 
