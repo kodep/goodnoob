@@ -19,6 +19,9 @@ class ProductsController < ApplicationController
   before_action :set_product, only:[:show]
 
   def show
+    @medias = Kaminari.paginate_array(product.photos + product.videos)
+      .page(params[:page]).per(params[:per_page])
+
     @pictures = product.pictures.order(created_at: :asc).first(6)
     @reviews = product.reviews.recent.first(3)
     @simpage = (params[:similar] || '1').to_i
