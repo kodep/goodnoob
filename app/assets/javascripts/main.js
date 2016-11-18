@@ -498,4 +498,9 @@ $(document).on('turbolinks:load', function() {
     $('.bxslider').bxSlider({
       pagerCustom: '.bx-slider-pager'
     });
+
+    $('.chart').horizBarChart({
+      selector: '.chart-bar',
+      speed: 1000
+    });
 });

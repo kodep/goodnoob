@@ -1,0 +1,6 @@
+<div class="load-more-button">
+  <%= link_to "",
+    product_path(@product, media: true, page: @media.next_page),
+    remote: true,
+    class: 'glyphicon glyphicon-menu-down' %>
+</div>

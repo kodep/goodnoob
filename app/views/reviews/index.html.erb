@@ -1,52 +1,127 @@
-<%= render partial: 'products/about', locals: { product: @product, pictures: @pictures } %>
+<%= render partial: 'breadcrumbs', locals: { product: @product } %>
 
-<div class="row product_reviews">
-  <div class="col-md-7">
-    <h2>Most Popular Reviews</h2>
-    <% @reviews.each_with_index do |review, index| %>
-        <div class='review'>
-          <h3>
-            <%= render partial: 'products/rating', locals: { rating: review.rating && review.rating.value || 0 } %>
+<section class="product-statistics-wrapper">
+  <div class="product-statistics center-block">
+    <div class="product-thumbnail pull-left col-md-4">
+      <!-- <%= image_tag @product.pictures.first.url %> -->
+      <%= image_tag 'test-bike.png' %>
+    </div>
+    <div class="product-stats pull-right">
+      <h1 class="product-name">
+        <%= @product.name %> <%= "(#{@product.year})" if @product.year %>
+      </h1>
+      <div class="product-review-bar">
+        <%= render 'products/rating', rating: @product.rating, product_id: @product.id %>
+        (<%= @product.ratings.length %>)
+      </div>
+      <div class="product-reviews-charts">
+        <ul class="chart">
+          <% ratings = Array.new(6, 0) %>
+          <% @product.ratings.each {|r|ratings[r.value]+=r.value} %>
+          <li>
+            <span class="chart-title">5 stars</span>
+            <span class="chart-bar-wrapper">
+              <span class="chart-bar" data-number="<%=ratings[5]%>"></span>
+            </span>
+          </li>
+          <li>
+            <span class="chart-title">4 stars</span>
+            <span class="chart-bar-wrapper">
+              <span class="chart-bar" data-number="<%=ratings[4]%>"></span>
+            </span>
+          </li>
+          <li>
+            <span class="chart-title">3 stars</span>
+            <span class="chart-bar-wrapper">
+              <span class="chart-bar" data-number="<%=ratings[3]%>"></span>
+            </span>
+          </li>
+          <li>
+            <span class="chart-title">2 stars</span>
+            <span class="chart-bar-wrapper">
+              <span class="chart-bar" data-number="<%=ratings[2]%>"></span>
+            </span>
+          </li>
+          <li>
+            <span class="chart-title">1 star</span>
+            <span class="chart-bar-wrapper">
+              <span class="chart-bar" data-number="<%=ratings[1]%>"></span>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="product-buttons">
+        <span class="product-price"><%= @product.price_string %></span>
+        <button type='button' id='upload-menu' class='btn product-button product-post hidden-xs dropdown-toggle'
+                data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
+          post photo / video
+        </button>
+
+        <ul class='dropdown-menu header-side-dropdown-button' aria-labelledby='upload-menu'>
+          <li>
+            <%= modal_button_tag 'Photo', modals_path(action: :add_photo), link: true %>
+          </li>
+          <li role='separator' class='divider'></li>
+          <li>
+            <%= modal_button_tag 'Video', modals_path(action: :add_video), link: true %>
+          </li>
+        </ul>
+
+        <% if @product.users.include? current_user %>
+          <%= link_to 'Added(Remove)', remove_product_user_favourite_products_path(@product),
+          class: 'product-button product-add-favourites hidden-xs' %>
+        <% else %>
+
+          <%= link_to 'Add to Favourites', add_product_user_favourite_products_path(@product), class:
+            'product-button product-add-favourites hidden-xs' %>
+        <% end %>
+
+        <%= link_to '', add_product_user_favourite_products_path(@product), class:
+          'glyphicon glyphicon-star product-button visible-xs-inline-block product-add-favourites'%>
+        <% if @product.distributors.any? %>
+          <%= link_to 'buy', @product.distributors.first.url, class: 'product-button product-buy' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-reviews-all-wrapper">
+  <div class="product-reviews-all col-md-7 center-block">
+    <div class="product-reviews-header">
+      <span>reviews</span>
+    </div>
+
+    <div class="reviews-container">
+      <% if user_signed_in? %>
+        <%= modal_button_tag '+Add a review',
+                     new_product_review_path(@product),
+                     method: :get,
+                     link: true,
+                     class: 'add-review hidden-xs' %>
+      <% end %>
+
+      <% @product.reviews.each do |review|%>
+        <div class="product-review">
+          <span class="product-review-bar">
+            <%= render partial:'products/rating', locals:{product_id: review.product_id, rating: review.rating && review.rating.value || 0} %>
+          </span>
+          <span class="review-title">
             <%= review.title %>
-          </h3>
-          <div class="text">
-            <%== simple_format review.review %>
+          </span>
+          <div class="review-author-name">
+            <%= review.user.full_name %>
           </div>
-
-          <div class="row more_info">
-            <div class="col-md-4"><%= review.user_name %> - <%= review.date_string %></div>
-            <div class="col-md-4 useful">67 out of 70 think this review is useful</div>
-            <div class="col-md-4">
-              is this information useful?
-              <span class='glyphicon glyphicon-thumbs-up'></span>
-              <span class='glyphicon glyphicon-thumbs-down'></span>
-            </div>
+          <div class="review-body">
+            <p>
+              <%= truncate review.review, length: 150, separator: ' ' %>
+              <% if review.review.length > 250 %>
+                <%= link_to '(Read more)', '#', class: 'review-body-link', data: {url: product_review_url(review.product.id, review.id)} %>
+              <% end %>
+            </p>
           </div>
         </div>
-    <% end %>
+      <%end%>
+    </div>
   </div>
-  <div class="col-md-5">
-    <h2>Latest reviews</h2>
-    <% @reviews.recent.each_with_index do |review, index| %>
-        <div class='review'>
-          <h3>
-            <%= render partial: 'products/rating', locals: { rating: review.rating && review.rating.value || 0 } %>
-            <%= review.title %>
-          </h3>
-          <div class="text">
-            <%== simple_format review.review %>
-          </div>
-
-          <div class="row more_info">
-            <div class="col-md-4"><%= review.user_name %> - <%= review.date_string %></div>
-            <div class="col-md-4 useful">67 out of 70 think this review is useful</div>
-            <div class="col-md-4">
-              is this information useful?
-              <span class='glyphicon glyphicon-thumbs-up'></span>
-              <span class='glyphicon glyphicon-thumbs-down'></span>
-            </div>
-          </div>
-        </div>
-    <% end %>
-  </div>
-</div>
+</section>

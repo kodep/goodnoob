@@ -9,7 +9,7 @@
         </ul>
       </div>
       <div class="bx-slider-pager">
-        <% product.pictures.each_with_index do |index, picture| %>
+        <% product.pictures.each_with_index do |picture, index| %>
           <a href="" data-slide-index="<%= index %>"></a>
         <% end %>
       </div>
@@ -61,7 +61,9 @@
 
           <%= link_to '', add_product_user_favourite_products_path(@product), class:
             'glyphicon glyphicon-star product-button visible-xs-inline-block product-add-favourites'%>
-          <a href="#" class="product-button product-buy">buy</a>
+          <% if product.distributors.any? %>
+            <%= link_to 'buy', product.distributors.first.url, class: 'product-button product-buy' %>
+          <% end %>
         </div>
       </div>
     </div>

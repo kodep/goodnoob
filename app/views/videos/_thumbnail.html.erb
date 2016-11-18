@@ -1,11 +1,42 @@
-<div class='thumb-wrapper'>
+<div class="thumb-wrapper">
+  <div class='flex thumb-header'>
+    <span class='thumb-header-name'>
+      <%= video.user.name %>
+      <%= video.user.last_name %>
+    </span>
+    <div class="thumb-menu-stripe">
+      <a class="toggle-product-menu social-share"></a>
+      <!-- social share tool window -->
+
+      <div class="menu-group">
+        <div class="menu-item">
+          <a class="social-share toggle-social-share-menu">Share</a>
+        </div>
+        <hr>
+
+        <div class="menu-item">
+          <a class="share-button-copylink js-copylink" data-copy-url="<%= video.url %>">Copy Url</a>
+        </div>
+      </div>
+
+      <span class="social_share_group">
+        <span class="share_items">
+          <a class="share_item share-button-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= video.url %>"></a>
+          <a class="share_item share-button-twitter"  href="https://twitter.com/intent/tweet?url=<%= video.url %>"></a>
+          <a class="share_item share-button-whatsapp" href="whatsapp://send?text=<%= video.url %>"></a>
+          <span class="share_item share-button-separator"></span>
+          <a class="share_item share-button-copylink js-copylink" data-copy-url="<%= video.url %>"></a>
+        </span>
+      </span>
+    </div>
+  </div>
   <%= link_to video do %>
-    <div class='embed-responsive embed-responsive-16by9'>
+    <div class="embed-responsive embed-responsive-16by9">
       <div class="media-overlay"></div>
-      <iframe class='embed-responsive-item' src='<%= video.url %>'></iframe>
+      <iframe class="embed-responsive-item" src="<%= video.url %>"></iframe>
     </div>
   <% end %>
-  <div class='thumb-description text-center'>
+  <div class="thumb-description text-center">
     <%=truncate video.comment, length: 110, separator: ' '%>
   </div>
 </div>
