@@ -1,0 +1,9 @@
+var content = "<%=j render 'product_media' %>";
+$('.thumbs-matrix-wrapper.product-media').append(content);
+
+<% if @media.next_page.present? %>
+  $('.load-more-button').remove()
+<% else %>
+  var button = "<%=j render 'close_product_button' %>"
+  $('.load-more-button').replaceWith(button);
+<% end %>

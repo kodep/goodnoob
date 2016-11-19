@@ -2223,6 +2223,7 @@ $footer-links-color: #7f7f7f;
   justify-content: space-between;
   height: 100px;
   color: $footer-links-color;
+  width: 100%;
 
   .footer-mainlinks-wrapper {
     display: flex;
@@ -2962,7 +2963,7 @@ $footer-links-color: #7f7f7f;
         padding-top: 20px;
         color: black;
         font-family: Myriad Pro;
-        font-size: 1em;
+        font-size: 0.9em;
         font-weight: 300;
         overflow: auto;
       }
@@ -3116,19 +3117,19 @@ $footer-links-color: #7f7f7f;
 
   #nav-filters > ul > li.navbar-btn.active > a{
       &.profile-icon{
-        background: white url(/assets/profile_hover.png) no-repeat center;
+        background: white image-url('profile_hover.png') no-repeat center;
         background-size: 40%;
       }
       &.reviews-icon{
-        background: white url(/assets/reviews_hover.png) no-repeat center;
+        background: white image-url('reviews_hover.png') no-repeat center;
         background-size: 50%;
       }
       &.photos-icon{
-        background: white url(/assets/photosandvideos_hover.png) no-repeat center;
+        background: white image-url('photosandvideos_hover.png') no-repeat center;
         background-size: 50%;
       }
       &.favourites-icon{
-        background: white url(/assets/favourites_hover.png) no-repeat center;
+        background: white image-url('favourites_hover.png') no-repeat center;
         background-size: 50%;
       }
   }
@@ -3138,19 +3139,19 @@ $footer-links-color: #7f7f7f;
     padding: 25px 27px;
 
     &.profile-icon{
-    background: #3fa9f5 url(/assets/profile.png) no-repeat center;
+    background: #3fa9f5 image-url('profile.png') no-repeat center;
     background-size: 40%;
     }
     &.reviews-icon{
-    background: #3fa9f5 url(/assets/reviews.png) no-repeat center;
+    background: #3fa9f5 image-url('reviews.png') no-repeat center;
     background-size: 50%;
     }
     &.photos-icon{
-    background: #3fa9f5 url(/assets/photosandvideos.png) no-repeat center;
+    background: #3fa9f5 image-url('photosandvideos.png') no-repeat center;
     background-size: 50%;
     }
     &.favourites-icon{
-    background: #3fa9f5 url(/assets/favourites.png) no-repeat center;
+    background: #3fa9f5 image-url('favourites.png') no-repeat center;
     background-size: 50%;
     }
   }
@@ -3233,7 +3234,7 @@ $footer-links-color: #7f7f7f;
 .thumb-menu-stripe {
   position: relative;
   .toggle-product-menu {
-    background: url('three-dots-menu.svg') no-repeat scroll center center transparent;
+    background: image-url('three-dots-menu.svg') no-repeat scroll center center transparent;
     width: 32px;
     height:20px;
     margin: 0px;

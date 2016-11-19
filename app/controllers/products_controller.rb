@@ -15,13 +15,14 @@
 
 class ProductsController < ApplicationController
   include HelperAttr
+  PER_PAGE = 4.freeze
+
   helper_attr :product, :pictures, :reviews, :photos, :videos, :similars
   before_action :set_product, only:[:show]
 
   def show
-    @medias = Kaminari.paginate_array(product.photos + product.videos)
-      .page(params[:page]).per(params[:per_page])
-
+    @media = Kaminari.paginate_array(product.photos + product.videos)
+      .page(params[:page]).per(PER_PAGE)
     @pictures = product.pictures.order(created_at: :asc).first(6)
     @reviews = product.reviews.recent.first(3)
     @simpage = (params[:similar] || '1').to_i
@@ -55,19 +56,23 @@ class ProductsController < ApplicationController
                      .page(@videopage)
                      .per(10).padding(-8)
     end
-    if request.xhr?
-      if params[:similar]
-        render partial: 'product_similar', locals: { results: @similars }
-      end
-      if params[:photo]
-        render partial: 'product_photo', locals: { results: @photos }
-      end
-      if params[:video]
-        render partial: 'product_video', locals: { results: @videos }
+    respond_to do |format|
+      format.js do
+        if params[:media].present?
+          render 'product_media_callback', layout: false
+        end
+        if params[:similar]
+          render partial: 'product_similar', locals: { results: @similars }
+        end
+        if params[:photo]
+          render partial: 'product_photo', locals: { results: @photos }
+        end
+        if params[:video]
+          render partial: 'product_video', locals: { results: @videos }
+        end
       end
 
-    else
-      render
+      format.html
     end
   end
 
