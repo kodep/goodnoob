@@ -24,7 +24,7 @@
                     <a href="javascript:;" class="toggle-product-menu"></a>
                     <div class="menu-group">
                       <div class="menu-item">
-                        <%= link_to 'Remove', remove_product_user_favourite_products_path(product_id: product.id), remote: true, class: 'remove-favourite' %>
+                        <%= link_to 'Remove', product_user_favourite_products_path(product), method: :delete, remote: true, class: 'remove-favourite' %>
                       </div>
                     </div>
                   </div>
