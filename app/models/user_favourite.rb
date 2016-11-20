@@ -13,7 +13,7 @@ class UserFavourite < ActiveRecord::Base
   scope :videos, -> { where( favouriteable_type: 'Video' ) }
 
   def self.get_favourites(user:, element:)
-    where(user_id:user.id, favouriteable_type:element.class, favouriteable_id: element.id)
+    where(user_id: user.id, favouriteable: element)
   end
 
   def self.in_favourites?(user:, element:)
@@ -21,9 +21,8 @@ class UserFavourite < ActiveRecord::Base
   end
 
   def self.add_to_favourites(user:, element:)
-    unless in_favourites?(user:user, element:element)
-    create(user_id:user.id, favouriteable_type:element.class, favouriteable_id: element.id)
-    end
+    return if in_favourites?(user:user, element:element)
+    create user_id: user.id, favouriteable: element
   end
 
   def self.remove_from_favourites(user:, element:)

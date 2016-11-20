@@ -83,12 +83,7 @@ Rails.application.routes.draw do
   end
   resources :products, only: [:show] do
     resources :reviews, defaults: { formats: [:json, :html] }
-    resources :user_favourite_products, only: [:add, :remove] do
-      collection do
-        get 'add'
-        get 'remove'
-      end
-    end
+    resource :user_favourite_products, only: [:create, :destroy]
   end
 
   resource :pictures, format: false, only: :create

@@ -1,17 +1,18 @@
 class UserFavouriteProductsController < ApplicationController
-  before_action :set_product, only:[:add, :remove]
+  before_action :authenticate_user!
+  before_action :set_product, only: [:create, :destroy]
 
-  def add
-    UserFavourite.add_to_favourites(user:current_user, element:@product)
-    redirect_to :back
+  def create
+    UserFavourite.add_to_favourites(user: current_user, element: @product)
+    redirect_to @product
   end
 
-  def remove
+  def destroy
     UserFavourite.remove_from_favourites(user: current_user, element: @product)
     if request.xhr?
       head 200
     else
-      redirect_to :back
+      redirect_to @product
     end
   end
 
