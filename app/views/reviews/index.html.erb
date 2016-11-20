@@ -68,15 +68,15 @@
         </ul>
 
         <% if @product.users.include? current_user %>
-          <%= link_to 'Added(Remove)', product_user_favourite_products(@product), method: :delete,
+          <%= link_to 'Added(Remove)', product_user_favourite_products_path(@product), method: :delete,
           class: 'product-button product-add-favourites hidden-xs' %>
         <% else %>
 
-          <%= link_to 'Add to Favourites', product_user_favourite_products(@product), method: :post,  class:
+          <%= link_to 'Add to Favourites', product_user_favourite_products_path(@product), method: :post,  class:
             'product-button product-add-favourites hidden-xs' %>
         <% end %>
 
-        <%= link_to '', product_user_favourite_products(@product), method: :post, class:
+        <%= link_to '', product_user_favourite_products_path(@product), method: :post, class:
           'glyphicon glyphicon-star product-button visible-xs-inline-block product-add-favourites'%>
         <% if @product.distributors.any? %>
           <%= link_to 'buy', @product.distributors.first.url, class: 'product-button product-buy' %>
