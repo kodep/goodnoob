@@ -5,7 +5,7 @@
         locals: { filter_name: 'Favourites', filter_type: 'favourites', icon_class: 'glyphicon glyphicon-star' } do %>
       <% current_user.favourite_products.last(10).each do |product| %>
         <div class="filter-wrapper">
-          <%= link_to remove_product_user_favourite_products_path(product_id: product.id), class: 'remove-from-favorites' do %>
+          <%= link_to product_user_favourite_products_path(product), method: :delete, class: 'remove-from-favorites' do %>
               <span class="glyphicon glyphicon-trash"></span>
           <% end %>
             <span class="filter-name">
