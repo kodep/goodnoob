@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   belongs_to :currency
   belongs_to :language
   has_one :address, as: :addressable, dependent: :destroy
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
 
   has_many :favourites, foreign_key: 'user_id', class_name: 'UserFavourite', dependent: :destroy
 
@@ -34,11 +34,11 @@ class User < ActiveRecord::Base
   has_many :user_favourite_videos, -> { UserFavourite.videos }, class_name: 'UserFavourite'
   has_many :favourite_videos, through: :user_favourite_videos, source: :favouriteable, source_type: 'Video'
 
-  has_many :videos
-  has_many :photos
+  has_many :videos, dependent: :destroy
+  has_many :photos, dependent: :destroy
 
-  has_many :reviews
-  has_many :searches
+  has_many :reviews, dependent: :destroy
+  has_many :searches, dependent: :destroy
   has_one :picture, as: :imageable, dependent: :destroy
 
   accepts_nested_attributes_for :address
