@@ -1,3 +1,6 @@
+<% content_for(:title) { @product.name } %>
+<% content_for(:description) { @product.description.truncate 80 } %>
+
 <%= render partial: 'breadcrumbs', locals: { product: @product } %>
 <%= render partial: 'about', locals: { product: @product } %>
 <%= render partial: 'reviews', product: @product %>
