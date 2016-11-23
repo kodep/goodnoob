@@ -105,7 +105,7 @@
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-.fat-nav ul {
+.fat-nav .list {
   display: table-cell;
   vertical-align: middle;
   margin: 0;
@@ -127,15 +127,32 @@
   letter-spacing: 5px;
   font-weight: 600;
   margin-bottom: 10px;
+  a, button {
+    color: #fff;
+    text-decoration: none;
 
-}
-.fat-nav li, .fat-nav li a {
-  color: #fff;
+    &:hover {
+      opacity: .8;
+    }
+  }
 
-  &:hover {
-    opacity: .8;
+  button {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  .dropdown-menu {
+    left: 50%;
+    right: 50%;
+    li {
+      margin: 0;
+    }
+    a {
+      color: #222;
+    }
   }
 }
-.fat-nav li a {
-  text-decoration: none;
-}
+

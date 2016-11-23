@@ -440,8 +440,8 @@ $(document).on('turbolinks:load', function() {
     })
 
     $('.toggle-social-share-menu').on('click', function(e){
-      e.preventDefault
-      $(this).parent().parent().parent().find('.social_share_group').toggle();
+      e.preventDefault()
+      $(this).closest('.thumb-menu-stripe').find('.social_share_group').toggle();
     })
 
     // hide social share menu
@@ -503,4 +503,8 @@ $(document).on('turbolinks:load', function() {
       selector: '.chart-bar',
       speed: 1000
     });
+
+    $('.dropdown-toggle').on('click', function(e){
+      e.preventDefault();
+    })
 });
