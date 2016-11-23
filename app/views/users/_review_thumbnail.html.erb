@@ -3,7 +3,7 @@
     <div class="row review-rating-body">
       <div class="col-md-12 review-rating">
           <%= render 'products/rating', rating: review.product.rating, product_id: review.product.id %>
-        <p>Great Bike</p>
+        <p><%=review.title%></p>
         <div class="thumb-menu-stripe">
           <a href="javascript:;" class="toggle-product-menu"></a>
           <div class="menu-group">

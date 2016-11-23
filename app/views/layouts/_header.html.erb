@@ -23,7 +23,7 @@
   <!-- burger menu -->
   <div class="fat-nav">
     <div class="fat-nav__wrapper">
-      <ul>
+      <ul class="list">
         <li class="logo">
           <div align="center"><%= link_to image_tag("logo2.png", alt: 'main-background', width: 70), root_path %></div>
         </li>
@@ -40,7 +40,25 @@
         <% end %>
         <li><%= link_to "Buying Guides", sub_category_guide_path(default_cat, default_guide) %></li>
         <hr style="border: none; border-bottom: 1px solid white; width: 100px">
-        <li><a href="#">+New Post</a></li>
+        <% if user_signed_in?%>
+          <li>
+            <div class="dropdown">
+              <button class="dropdown-toggle" data-toggle="dropdown">
+                +New post
+              </button>
+
+              <ul class='dropdown-menu'>
+                <li>
+                  <%= modal_button_tag 'Photo', modals_path(action: :add_photo), link: true %>
+                </li>
+                <li role='separator' class='divider'></li>
+                <li>
+                  <%= modal_button_tag 'Video', modals_path(action: :add_video), link: true %>
+                </li>
+              </ul>
+            </div>
+          </li>
+        <% end %>
         <li><%= link_to('My Profile', edit_user_registration_path) %></li>
         <li clas="social-links">
           <div>
