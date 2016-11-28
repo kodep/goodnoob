@@ -1,20 +1,6 @@
-<div class='form-group'>
-  <%= f.label :category, class: 'col-sm-2 control-label' %>
-  <div class='col-sm-10'>
-    <%= f.collection_select :category_id, @categories, :id, :name, { prompt: true }, class: 'form-control leader select-former', 'data-select' => 'category' %>
-  </div>
-</div>
-
-<div class='form-group'>
-  <%= f.label :brand, class: 'col-sm-2 control-label' %>
-  <div class='col-sm-10'>
-    <%= f.collection_select :company_id, @companies, :id, :name, { prompt: true }, class: 'form-control leader select-former', 'data-select' => 'company' %>
-  </div>
-</div>
-
-<div class='form-group'>
-  <%= f.label :product, class: 'col-sm-2 control-label' %>
-  <div class='col-sm-10'>
-    <%= f.collection_select :product_id, [], :id, :name, { prompt: true }, class: 'form-control leader', 'data-select' => 'product' %>
+<div class='form-group producct-select'>
+  <div class="col-md-11 center-block">
+    <%= f.select :product_id, Product.all.map {|p| [p.name, p.id]}, {}, {class: 'selectpicker', data: {live_search: true, size: 5},
+      title: "Search your product..."} %>
   </div>
 </div>

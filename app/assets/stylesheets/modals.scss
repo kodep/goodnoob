@@ -21,6 +21,37 @@
     border: none;
     padding-bottom: 20px;
     .modal-body {
+      .bootstrap-select {
+        border-radius: 0;
+        border: 1px solid #777;
+        width: 100%;
+        .dropdown-menu {
+          width: 100%;
+          li {
+            a {
+              font-size: 1rem;
+            }
+          }
+        }
+        .dropdown-toggle {
+          height: 32px;
+          font-weight: 200;
+          font-size: 1.1rem;
+          box-shadow: none;
+          .caret {
+            border: none;
+            top: 0;
+            font-family: 'Glyphicons Halflings';
+            font-size: 1.4rem;
+            &:before {
+              position: absolute;
+              right: -7px;
+              top: 3px;
+              content: "\e003";
+            }
+          }
+        }
+      }
       padding: 10px 30px;
     }
     .modal-header {
@@ -52,9 +83,25 @@
         margin-right: auto;
       }
 
-      overflow: hidden;
+      .center-block {
+        float: none;
+      }
     }
 
+    .file-upload-button + label {
+      cursor: pointer;
+      color: white;
+      background-color: #64b0fc;
+      display: inline-block;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 10px;
+    }
+
+    .file-upload-button:focus + label,
+    .file-upload-button + label:hover {
+      background-color: #3297fb;
+    }
 
     input[type="text"], textarea, select {
       &.form-control {
@@ -70,6 +117,11 @@
           box-shadow: none;
         }
       }
+    }
+
+    textarea {
+      height: 150px;
+      max-height: 150px;
     }
 
     .modal-footer {

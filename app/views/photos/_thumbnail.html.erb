@@ -33,6 +33,9 @@
   <%= link_to photo do %>
   <div class="embed-responsive embed-responsive-16by9">
     <%= image_tag photo.picture.image.url(:original), alt: '', class: 'img-responsive center-block' %>
+    <%= link_to photo.picture.image.url, class: 'btn btn-link btn-xs thumb-preview-button js-zoom-photo' do %>
+      <span class="glyphicon glyphicon-resize-full"></span>
+    <% end %>
   </div>
   <% end %>
   <div class="thumb-description text-center">
