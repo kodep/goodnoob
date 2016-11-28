@@ -24,7 +24,11 @@ class PhotosController < ApplicationController
   end
 
   def create
-    photo = Photo.new creation_params.merge! main: false, day: false, user: current_user
+    product = Product.find(creation_params[:product_id])
+    photo = Photo.new creation_params.merge \
+                      main: false, day: false, user: current_user,
+                      category_id: product.category.id
+
     if photo.save
       redirect_to :back
     else
@@ -65,7 +69,7 @@ class PhotosController < ApplicationController
   end
 
   def creation_params
-    params.require(:photo).permit %i(comment product_id category_id),
+    params.require(:photo).permit %i(comment product_id),
                                   picture_attributes: %i(title image)
   end
 end

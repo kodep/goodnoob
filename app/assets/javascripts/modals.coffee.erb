@@ -72,6 +72,7 @@ $ ->
     attach_events modal, data.events
     modal.modal 'handleUpdate'
     inintSelect modal
+    initHandlers modal
     true
 
   update_title = (modal, title) ->
@@ -108,12 +109,14 @@ $ ->
           update_modal $(this), data, owner
           true
 
-      modal.one name, handler
+      modal.on name, handler
       true
 
     true
 
   inintSelect = (modal) ->
+    $('.selectpicker').selectpicker()
+
     modal.find('.select-former').change (e) ->
       $this = $(this)
       val = $this.val()
@@ -145,6 +148,10 @@ $ ->
             html += '>' + obj.name + '</option>'
           $select.html(html)
           $select.val('') unless existing
+
+  initHandlers = (modal) ->
+    $('.file-upload-button').on 'change', (e) ->
+      $(@).next().html(@files[0].name)
 
   $(document).on 'hide.bs.modal', modal_selector, ->
     $(this).data modal_active_key, false

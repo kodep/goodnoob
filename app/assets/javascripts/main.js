@@ -507,4 +507,8 @@ $(document).on('turbolinks:load', function() {
     $('.dropdown-toggle').on('click', function(e){
       e.preventDefault();
     })
+
+    $('#modal').on('shown.bs.modal', function (e) {
+      $('.selectpicker').selectpicker();
+    });
 });

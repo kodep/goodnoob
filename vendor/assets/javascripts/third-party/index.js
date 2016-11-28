@@ -2,3 +2,4 @@
 //= require ./jquery.infinitescroll
 //= require ./jquery.bxslider
 //= require ./horizBarChart
+//= require ./bootstrap-select.min
