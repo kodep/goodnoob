@@ -1,34 +1,51 @@
-﻿<section id="guide-info">
-  <div id="guide-description">
-    <h1><%= @guide.header %></h1>
-    <%= simple_format @guide.description.truncate 400 %>
-  </div>
-
-  <!-- <div id="photo">
-    <img src="http://i.piccy.info/i9/52155b7ac6f450fd8d791d8ce9908032/1480425746/456627/1094652/goodnoob.jpg" />
-  </div> -->
-</section>
-
-
-<section id="guide-chapters" class="row">
-  <div id="guide-chapters-list">
-    <div>CHAPTERS</div>
-    <% @sub_category.guides.each do |guide| %>
-      <%= link_to guide.header, sub_category_guide_path(@sub_category, guide) %><br/>
-    <% end %>
-    <div>OTHER GUIDES</div>
-    <% Category.all.each do |category| %>
-      <ul class="category-guides">
-      <% category.sub_categories.each do |s_category| %>
-        <li><a href="#"><%= "#{s_category.name}" %> Guide</a></li>
-      <% end %>
-      </ul>
-    <% end %> 
-  </div>
-  <div id="guide-text">
-    <h1><%= @guide.header.upcase %></h1>
-    <div class="col-md-5 center-block">
-      <%= simple_format @guide.description %>
+<div class="main-content-wrapper">
+  <section class="guide-info row">
+    <div class="guide-video-wrapper col-md-8">
+      <div class="guide-video">
+      </div>
     </div>
-  </div>
-</section>
+
+    <div class="guide-description-wrapper">
+      <div class="guide-description">
+        <h1><%= @guide.header %></h1>
+        <%= simple_format @guide.description.truncate(500) %>
+        <div class="compare-products">
+          <%= link_to "compare #{@sub_category.name}", sub_category_path(@sub_category) %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guide-chapters row">
+    <div class="guide-chapters-list-wrapper">
+      <div class="guide-chapters-list short">
+        <div class="guides-list-header">CHAPTERS</div>
+        <% @sub_category.guides.each do |guide| %>
+          <%= link_to guide.header, sub_category_guide_path(@sub_category, guide) %><br/>
+        <% end %>
+        <div class="guides-list-header">OTHER GUIDES</div>
+        <% Category.all.each do |category| %>
+          <ul class="category-guides">
+          <% category.sub_categories.each do |s_category| %>
+            <li>
+              <a href="#"><%= "#{s_category.name}" %> Guide</a>
+              <!-- <%# link_to "#{s_category.name} Guide", sub_category_guide_path(s_category.id, s_category.guides.first.id) %> -->
+            </li>
+          <% end %>
+          </ul>
+        <% end %>
+      </div>
+      <div class="row visible-xs">
+        <div class="toggle-block col-md-3 center-block">
+          <span class="glyphicon glyphicon-menu-down js-toggle-product-details-block" data-block-selector=".guide-chapters-list"></span>
+        </div>
+      </div>
+    </div>
+    <div class="guide-text-wrapper">
+      <h1><%= @guide.header.upcase %></h1>
+      <div class="guide-text col-md-10 center-block">
+        <%= simple_format @guide.description %>
+      </div>
+    </div>
+  </section>
+</div>
