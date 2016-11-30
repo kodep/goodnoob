@@ -1,5 +1,3 @@
-<% profile ||= false %>
-
 <div class='thumb-wrapper thumb-video'>
   <div class='flex thumb-header'>
     <span class='thumb-header-name'>
@@ -7,11 +5,15 @@
       <%= video.user.last_name %>
     </span>
     <div class="thumb-menu-stripe">
-      <% if profile%>
+      <% if local_assigns[:for_profile].present? %>
         <a class="toggle-product-menu social-share thumb-more-button"></a>
         <div class="menu-group">
           <div class="menu-item">
             <a class="social-share toggle-social-share-menu">Share</a>
+          </div>
+          <hr>
+          <div class="menu-item">
+            <%= modal_button_tag 'Edit', edit_video_path(video), link: true, method: :get %>
           </div>
           <hr>
           <div class="menu-item">
@@ -34,7 +36,6 @@
         </span>
       <% else %>
         <a href="#" class="toggle-social-share-menu thumb-more-button social-share"></a>
-        <!-- social share tool window -->
         <span class="social_share_group">
           <span class="share_items">
             <a class="share_item share-button-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= video.url %>"></a>
@@ -56,15 +57,17 @@
     </p>
   </div>
   <div class='flex thumb-footer'>
-    <div class='thumb-footer-model'>
-      <%= link_to video.product do %>
-          <%= "#{video.product.company.name} – " if video.product.company %>
-          <%= video.product.name %>
-          <%= "(#{video.product.year})" if video.product.year %>
-      <% end %>
-    </div>
-    <div class='thumb-star-wrapper'>
-      <%= render 'products/rating', rating: video.product.rating, product_id: video.product.id %>
-    </div>
+    <% if video.product.present? %>
+      <div class='thumb-footer-model'>
+        <%= link_to video.product do %>
+            <%= "#{video.product.company.name} – " if video.product.company %>
+            <%= video.product.name %>
+            <%= "(#{video.product.year})" if video.product.year %>
+        <% end %>
+      </div>
+      <div class='thumb-star-wrapper'>
+        <%= render 'products/rating', rating: video.product.rating, product_id: video.product.id %>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -1,24 +1,34 @@
-<div class="main-container">
-  <aside class="side-panel-wrapper search-side-panel side-panel-wrapper-fix">
+﻿<section id="guide-info">
+  <div id="guide-description">
+    <h1><%= @guide.header %></h1>
+    <%= simple_format @guide.description.truncate 400 %>
+  </div>
+
+  <!-- <div id="photo">
+    <img src="http://i.piccy.info/i9/52155b7ac6f450fd8d791d8ce9908032/1480425746/456627/1094652/goodnoob.jpg" />
+  </div> -->
+</section>
+
+
+<section id="guide-chapters" class="row">
+  <div id="guide-chapters-list">
+    <div>CHAPTERS</div>
     <% @sub_category.guides.each do |guide| %>
-        <div class="guide-block">
-          <%= link_to guide.header, sub_category_guide_path(@sub_category, guide), class: 'filter-group-heading' %>
-        </div>
+      <%= link_to guide.header, sub_category_guide_path(@sub_category, guide) %><br/>
     <% end %>
-  </aside>
-
-  <main class="main-content-wrapper b-l-320 no-padding">
-    <div class="guide-details">
-      <h1><%= @guide.header %></h1>
-      <%== simple_format @guide.description %>
+    <div>OTHER GUIDES</div>
+    <% Category.all.each do |category| %>
+      <ul class="category-guides">
+      <% category.sub_categories.each do |s_category| %>
+        <li><a href="#"><%= "#{s_category.name}" %> Guide</a></li>
+      <% end %>
+      </ul>
+    <% end %> 
+  </div>
+  <div id="guide-text">
+    <h1><%= @guide.header.upcase %></h1>
+    <div class="col-md-5 center-block">
+      <%= simple_format @guide.description %>
     </div>
-
-    <% if @guide.video_url.present? %>
-        <div class="guide-video">
-          <iframe width="840" height="400"
-                  src="<%= @guide.video_url %>">
-          </iframe>
-        </div>
-    <% end %>
-  </main>
-</div>
+  </div>
+</section>

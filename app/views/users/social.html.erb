@@ -10,17 +10,8 @@
         you have no social activity yet
       <% end %>
       <%= render 'social_bunch' %>
-      <div class="flex showmore-thumbs-row">
-          <div class="plus-button-wrapper">
-            <%= search_link [param_change(:update, :page, @media.next_page)], { "data-remote" => true } do %>
-              <i class="zmdi zmdi-plus-circle-o"></i>
-            <% end %>
-          </div>
-          <div class="showmore-text-wrapper">
-            <%= search_link [param_change(:update, :page, @media.next_page)], { class: "show-more-text", 'data-remote' => true } do %>
-              <span>More Listing</span>
-            <% end %>
-          </div>
+      <div class="showmore-thumbs-row">
+        <%= link_to '', social_users_path(page: @media.next_page), remote: true, data: {turbolinks_scroll: false}, class: 'show-more-text' %>
       </div>
     </div>
   </div>

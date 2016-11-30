@@ -24,7 +24,8 @@ class VideosController < ApplicationController
   before_action :set_product, only:[:show]
 
   def show
-    @more_videos = @product.videos.last_videos(except:@video, limit:7)
+    @other_media = @product.photos + @product.videos
+    @other_media = @other_media.sort_by(&:created_at).reverse!
   end
 
   def create
@@ -39,6 +40,10 @@ class VideosController < ApplicationController
   # GET /videos/:id/edit
   def edit
     @video = current_user.videos.find params[:id]
+
+    respond_to do |format|
+      format.json {}
+    end
   end
 
   # PATCH /videos/:id

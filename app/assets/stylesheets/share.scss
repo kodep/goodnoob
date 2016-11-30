@@ -1,0 +1,48 @@
+.main-content-wrapper {
+  .product-media {
+    padding: 20px;
+    padding-bottom: 0;
+    &.background-surf {
+      background: asset-url('surf-bg-test.png') no-repeat center center;
+      background-size: cover;
+    }
+
+    .thumb-wrapper {
+      width: 620px;
+    }
+  }
+
+  .other-product-medias {
+    background-color: #e0e0e7;
+    .other-product-medias-header {
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 20px;
+      font-size: 1.5rem;
+      font-weight: bolder;
+    }
+    .thumbs-matrix-wrapper {
+      .thumb-wrapper {
+        width: 335px;
+      }
+    }
+  }
+}
+
+@media(max-width: 769px) {
+  .main-content-wrapper {
+    margin-top: 50px;
+    .product-media {
+      .thumb-wrapper {
+        .thumb-description {
+          min-height: 0px !important;
+        }
+      }
+    }
+    .other-product-medias {
+      .other-product-medias-header {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

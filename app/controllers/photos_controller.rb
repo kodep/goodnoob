@@ -20,7 +20,8 @@ class PhotosController < ApplicationController
   before_action :set_product, only:[:show]
 
   def show
-    @more_photos = @product.photos.last_photos(except:@photo, limit:7)
+    @other_media = @product.photos + @product.videos
+    @other_media = @other_media.sort_by(&:created_at).reverse!
   end
 
   def create
@@ -39,12 +40,18 @@ class PhotosController < ApplicationController
   # GET /photos/:id/edit
   def edit
     @photo = current_user.photos.find params[:id]
+
+    respond_to do |format|
+      format.json {}
+    end
   end
 
   # PATCH /photos/:id
   def update
+    binding.pry
     @photo = current_user.photos.find params[:id]
-    if @photo.update_attributes(creation_params)
+
+    if @photo.update(creation_params)
       redirect_to :back
     else
       render 'shared/errors', locals: { errors: @photo.errors }
