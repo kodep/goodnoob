@@ -15,3 +15,4 @@ class GuidesController < ApplicationController
     @guide = Guide.find(params[:id])
   end
 end
+

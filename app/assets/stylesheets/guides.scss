@@ -1,37 +1,129 @@
-.no-padding {
-  padding: 0 !important;
-}
-
-.side-panel-wrapper {
-  .guide-block {
-    border-bottom: 1px solid #ffffff;
-    padding: 15px 34px 15px 10px;
-    margin-left: 25px;
-
-    a {
-      color: #FFFFFF;
-      display: inline-block;
-      font-size: .9em;
-      font-weight: 700;
-      width: 200px;
-      text-decoration: none;
-    }
-  }
-}
-
 .main-content-wrapper {
-  .guide-details {
-    padding: 50px 50px 50px 100px;
+  .guide-info {
+    display: flex;
+    background: asset-url('bike-bg-test.png') no-repeat;
+    background-size: cover;
 
-    h1 {
-      color: red;
-      font-size: 1.3em;
+    .guide-description-wrapper {
+      order: 1;
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      .guide-description {
+        margin: auto;
+        width: 600px;
+        padding: 100px;
+        h1 {
+          font-weight: bolder;
+          font-size: 1.5rem;
+          text-transform: uppercase;
+        }
+        p {
+          font-weight: 200;
+          margin-bottom: 20px;
+        }
+        .compare-products {
+          text-align: right;
+          a {
+            cursor: pointer;
+            text-transform: uppercase;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0 10px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #232323;
+            &:hover {
+              color: #232323;
+              background-color: white;
+            }
+          }
+        }
+      }
+    }
+
+    .guide-video-wrapper {
+      order: 2;
     }
   }
 
-  .guide-video {
-    padding: 50px 50px 50px 100px;
-    border-top: 2px #D6DCD6 solid;
-    text-align: center;
+  .guide-chapters {
+    background: #232323;
+    display: flex;
+    .guide-chapters-list-wrapper {
+      background: #232323;
+      text-align: right;
+      color: white;
+      .guide-chapters-list {
+        padding: 30px;
+        width: 300px;
+        overflow: hidden;
+        .guides-list-header {
+          margin: 20px 0;
+          text-transform: uppercase;
+        }
+        .category-guides {
+          margin-bottom: 20px;
+        }
+        a {
+          color: white;
+          font-size: .9em;
+        }
+      }
+    }
+    .guide-text-wrapper {
+      padding: 20px;
+      background-color: #f0f2f6;
+      font-weight: 200;
+      h1 {
+        font-weight: bolder;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .guide-text {
+        float: none;
+        p {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 769px) {
+  .main-content-wrapper {
+    margin-top: 50px;
+
+    .guide-info {
+      display: block;
+      .guide-description-wrapper {
+        .guide-description {
+          width: 100%;
+          padding: 40px;
+        }
+      }
+    }
+    .guide-chapters {
+      display: block;
+      .guide-chapters-list-wrapper {
+        width: 100%;
+        text-align: center;
+        .guide-chapters-list {
+          padding: 10px;
+          margin: auto;
+          &.short {
+            height: 45px;
+          }
+        }
+      }
+      .guide-text-wrapper {
+        padding: 10px 20px;
+        h1 {
+          margin-bottom: 10px;
+          font-size: 1.2rem;
+        }
+      }
+    }
   }
 }

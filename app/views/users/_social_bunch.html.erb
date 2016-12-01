@@ -1,7 +1,8 @@
 <% @media.each do |media_object| %>
-  <% if media_object.is_a?(Photo) %>
-    <%= render partial: 'photos/search_thumbnail', locals: { photo: media_object, profile: true } %>
-  <% elsif media_object.is_a?(Video) %>
-    <%= render partial: 'videos/search_thumbnail', locals: { video: media_object, profile: true } %>
+  <% case media_object %>
+  <% when Video %>
+    <%= render partial: 'videos/search_thumbnail', locals: {video: media_object, for_profile: true} %>
+  <% when Photo %>
+    <%= render partial: 'photos/search_thumbnail', locals: {photo: media_object, for_profile: true} %>
   <% end %>
-<%end %>
+<% end %>

@@ -87,7 +87,7 @@ Rails.application.routes.draw do
   end
 
   resource :pictures, format: false, only: :create
-  resources :photos, format: false, only: [:create, :show, :edit, :update, :destroy]
+  resources :photos, only: [:create, :show, :edit, :update, :destroy]
   resources :videos, format: false, only: [:create, :show, :edit, :update, :destroy]
 
   post '/modals/:action', controller: :modals, format: false, as: :modals
