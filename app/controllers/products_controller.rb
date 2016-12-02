@@ -15,14 +15,13 @@
 
 class ProductsController < ApplicationController
   include HelperAttr
-  PER_PAGE = 4.freeze
 
   helper_attr :product, :pictures, :reviews, :photos, :videos, :similars
-  before_action :set_product, only:[:show]
 
   def show
-    @media = Kaminari.paginate_array(product.photos + product.videos)
-      .page(params[:page]).per(PER_PAGE)
+    @product = Product.find params[:id]
+    @media = Kaminari.paginate_array((product.photos + product.videos).sort_by(&:created_at).reverse)
+      .page(params[:page]).per 6
     @pictures = product.pictures.order(created_at: :asc).first(6)
     @reviews = product.reviews.recent.first(3)
     @simpage = (params[:similar] || '1').to_i
@@ -115,11 +114,5 @@ class ProductsController < ApplicationController
       render json: { error: error_msg, status: 400}, status: 400
     end
 
-  end
-
-  private
-
-  def set_product
-    @product = Product.find params[:id]
   end
 end
