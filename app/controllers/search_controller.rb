@@ -7,12 +7,6 @@ class SearchController < ApplicationController
     current_user.remove_search(params[:delete_search]) if params[:delete_search]
     current_user.save_search(params[:search]) if user_signed_in? and params[:search]
 
-    if request.query_string.present?
-      session[:search_query] = request.query_string
-    elsif session[:search_query].present?
-      return redirect_to "/search?#{session[:search_query]}"
-    end
-
     respond_to do |format|
       format.js { render 'search_results_callback', layout: false }
       format.html do
