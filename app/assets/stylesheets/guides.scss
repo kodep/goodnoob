@@ -1,4 +1,4 @@
-.main-content-wrapper {
+.main-content-guides-wrapper {
   .guide-info {
     display: flex;
     background: asset-url('bike-bg-test.png') no-repeat;
@@ -92,7 +92,7 @@
 }
 
 @media(max-width: 769px) {
-  .main-content-wrapper {
+  .main-content-guides-wrapper {
     margin-top: 50px;
 
     .guide-info {

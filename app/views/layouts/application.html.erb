@@ -11,8 +11,8 @@
   </head>
   <body>
     <%= render 'modals/modal' %>
+    <%= render 'layouts/header' %>
     <section class="main-wrapper">
-      <%= render 'layouts/header' %>
       <%= content_for?(:messages) ? yield(:messages) : render( 'layouts/messages' ) %>
       <%= yield %>
       <%= render 'layouts/footer' %>

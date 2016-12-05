@@ -7,4 +7,19 @@
         <% end %>
       </div>
   <% end %>
+
+  <div class="sort-by-field js-sort-by-dropdown hidden-xs dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      Sort by
+      <span class="sort-by-value">Name</span>
+      <i class="down-arrow">▼</i>
+    </a>
+
+    <ul class="dropdown-menu">
+      <li><a href="#" class="js-apply-sort" data-field="price" data-desc="true">Price</a></li>
+      <li><a href="#" class="js-apply-sort" data-field="year" data-desc="false">Year</a></li>
+      <li><a href="#" class="js-apply-sort" data-field="rating" data-desc="false">Popularity</a></li>
+      <li><a href="#" class="js-apply-sort" data-field="name" data-desc="true">A-Z</a></li>
+    </ul>
+  </div>
 </div>

@@ -321,15 +321,15 @@ $(document).on('turbolinks:load', function() {
 
     // Behaviour of 'Show more' button
     $(showMoreLink).click(function(event){
-        if($(this).children('.more-link').text() == 'More...'){
+        if($(this).children('.more-link').text() == 'See more...'){
             $(this).siblings('.filter-group-contents').children('.filter-wrapper:gt(4)').show(400);
             $(this).siblings('.filter-group-contents').children('.ps-scrollbar-y-rail:first').css('display', 'block');
-            $(this).children('.more-link').text('Less...');
+            $(this).children('.more-link').text('See less...');
         }
         else{
             $(this).siblings('.filter-group-contents').children('.filter-wrapper:gt(4)').hide(400)
             $(this).siblings('.filter-group-contents').children('.ps-scrollbar-y-rail:first').css('display', 'none');
-            $(this).children('.more-link').text('More...');
+            $(this).children('.more-link').text('See more...');
 
         }
     });
@@ -511,4 +511,33 @@ $(document).on('turbolinks:load', function() {
     $('#modal').on('shown.bs.modal', function (e) {
       $('.selectpicker').selectpicker();
     });
+
+    if($('.main-search-container').length > 0) {
+      $('.filter-heading-wrapper').click();
+
+      $('.js-activate-filters-sidebar').on('click', function(e){
+        $(".bottom-bar").addClass('hidden-xs');
+        $('.side-panel-wrapper').addClass('visible-mobile');
+        $('.container-mask').removeClass('hidden');
+        // $("main").toggleClass("move-to-left");
+        // $(".sidebar-item").toggleClass("hidden");
+      })
+
+      $('.container-mask').on('click', function(){
+        $(".bottom-bar").removeClass('hidden-xs');
+        $('.side-panel-wrapper').removeClass('visible-mobile');
+        $(this).addClass('hidden');
+      })
+
+      $('.js-activate-mobile-sort-by').on('click', function(){
+        $(".bottom-bar").addClass('hidden-xs');
+        $(".mobile-sort-bar").removeClass('hidden');
+      })
+
+      $('.mobile-sort-bar-item').on('click', function(){
+        $(".bottom-bar").removeClass('hidden-xs');
+        $(".mobile-sort-bar").addClass('hidden');
+        $(".sort-by-value").html($(this).data('field'));
+      })
+    }
 });
