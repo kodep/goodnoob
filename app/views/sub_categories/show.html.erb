@@ -1,3 +1,4 @@
+<div class='container-mask hidden'></div>
 <% content_for :messages do %>
   <%= render partial: 'layouts/messages', locals: { flash_class: 'floating' } %>
 <% end %>
@@ -32,12 +33,34 @@
   </div>
 </div>
 
-<div class="main-container">
+<div class="main-search-container">
   <%= render 'left_filters' %>
   <!-- MAIN CONTENTS LAYOUT -->
-  <main class="main-content-wrapper b-l-320">
-    <%= render partial: 'sort' %>
+  <main class="main-content-wrapper">
+    <!-- <%= render partial: 'sort' %> -->
     <%= render partial: 'products', locals: { products: @products } %>
     <%= render partial: 'load_more_button', locals: { products: @products } %>
   </main>
+</div>
+
+<div class="bottom-bar">
+  <div class="bottom-bar-button js-activate-filters-sidebar">filters</div>
+  |
+  <div class="bottom-bar-button js-activate-mobile-sort-by">
+    sort by:
+    <span class="sort-by-value">Name</span>
+    <i class="down-arrow">▼</i>
+  </div>
+</div>
+
+<div class="mobile-sort-bar hidden">
+  <div class="mobile-sort-bar-header">
+    sort by:
+    <span class="sort-by-value">Name</span>
+    <i class="down-arrow">▼</i>
+  </div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="price" data-desc="true">Price</div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="year" data-desc="false">Year</div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="rating" data-desc="false">Popularity</div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="name" data-desc="true">A-Z</div>
 </div>

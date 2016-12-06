@@ -54,6 +54,15 @@ $(document).on 'turbolinks:load', ->
     $('#search_direction').val desc
     $('#filter_form').submit()
 
+  $('.js-apply-sort').on 'click', (e) ->
+    e.preventDefault()
+    $this = $(@)
+    field = $this.data 'field'
+    desc = $this.data('desc') != true
+    $('#search_field').val field
+    $('#search_direction').val desc
+    $('#filter_form').submit()
+
 reset_price_from = ->
   $slider = $('#slider')
   prices = $slider.slider('option', 'values')

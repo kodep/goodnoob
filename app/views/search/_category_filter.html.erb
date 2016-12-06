@@ -21,9 +21,9 @@
     <% end %>
     <% category.sub_categories.each do |sub_cat| %>
         <%= search_sub_category_link(sub_cat, params[:sub_categories]) do %>
-            <label class="checkbox-style">
+            <label class="checkbox-style checkbox">
               <input id="<%= "category-#{sub_cat.id}" %>" type="checkbox" class="checkbox-inline" <%= params[:sub_categories].is_a?(Array) && params[:sub_categories].include?(sub_cat.id.to_s) ? "checked='checked'" : "" %>>
-              <span></span>
+              <span class="checkbox-indicator"></span>
             </label>
             <label for="<%= "category-#{sub_cat.id}" %>" class="filter-name"><%= sub_cat.name %></label>
         <% end %>
