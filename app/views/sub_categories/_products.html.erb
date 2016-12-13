@@ -22,7 +22,7 @@
                 </span>
               </div>
               <%= link_to product, class: 'thumb-preview' do %>
-                  <div class='embed-responsive embed-responsive-16by9 thumb-bg' style="background-image: url(<%= image_url(product.picture.url) %>);"></div>
+                  <%= image_tag product.picture.url, class: 'thumb-bg' %>
               <% end %>
               <div class='flex thumb-footer'>
                 <span class='thumb-star-wrapper'>

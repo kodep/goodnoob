@@ -37,7 +37,6 @@ class PhotosController < ApplicationController
     end
   end
 
-  # GET /photos/:id/edit
   def edit
     @photo = current_user.photos.find params[:id]
 
@@ -46,19 +45,16 @@ class PhotosController < ApplicationController
     end
   end
 
-  # PATCH /photos/:id
   def update
-    binding.pry
     @photo = current_user.photos.find params[:id]
 
-    if @photo.update(creation_params)
+    if @photo.update(update_params)
       redirect_to :back
     else
       render 'shared/errors', locals: { errors: @photo.errors }
     end
   end
 
-  # DELETE /photos/:id
   def destroy
     photo = current_user.photos.find params[:id]
     photo.destroy!
@@ -78,5 +74,13 @@ class PhotosController < ApplicationController
   def creation_params
     params.require(:photo).permit %i(comment product_id),
                                   picture_attributes: %i(title image)
+  end
+
+  def update_params
+    if creation_params[:picture_attributes].empty?
+      creation_params.except 'picture_attributes'
+    else
+      creation_params
+    end
   end
 end

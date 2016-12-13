@@ -8,6 +8,17 @@
 
 <div class="flex main-filters-wrapper">
   <% @categories.all.each do |category| %>
-      <%= render partial: 'search/category_filter', locals: {category: category} %>
+    <div class="filter-wrapper category-item active">
+      <%= link_to category.sub_categories.first, class: 'category-link' do %>
+        <label class="checkbox-style">
+          <input id="<%= "category-#{category.id}" %>" type="checkbox" class="checkbox-inline" <%= category.searched_for?(params[:sub_categories]) ? "checked='checked'" : "" %>>
+          <% if category.searched_not_for_all?(params[:sub_categories]) %>
+              <span class="dash"></span>
+          <% else %>
+              <span></span>
+          <% end %>
+        </label><label for="<%= "category-#{category.id}" %>" class="filter-name"><%= category.name %></label>
+      <% end %>
+    </div>
   <% end %>
 </div>
