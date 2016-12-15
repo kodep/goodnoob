@@ -48,7 +48,7 @@
   |
   <div class="bottom-bar-button js-activate-mobile-sort-by">
     sort by:
-    <span class="sort-by-value">Name</span>
+    <span class="sort-by-value"><%= params[:search_field].try(:titleize) || 'Name'%></span>
     <i class="down-arrow">▼</i>
   </div>
 </div>
@@ -56,7 +56,7 @@
 <div class="mobile-sort-bar hidden">
   <div class="mobile-sort-bar-header">
     sort by:
-    <span class="sort-by-value">Name</span>
+    <span class="sort-by-value"><%= params[:search_field].try(:titleize) || 'Name'%></span>
     <i class="down-arrow">▼</i>
   </div>
   <div class="mobile-sort-bar-item js-apply-sort" data-field="price" data-desc="true">Price</div>

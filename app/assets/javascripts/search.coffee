@@ -1,4 +1,7 @@
 $(document).on 'turbolinks:load', ->
+  $('.check__form').on 'change', ->
+    $('#filter_form').submit()
+
   $('.search-results-container').infinitescroll
     loading:
       img: 'assets/spinner.svg'
