@@ -20,8 +20,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find params[:id]
-    @media = Kaminari.paginate_array((product.photos + product.videos).sort_by(&:created_at).reverse)
-      .page(params[:page]).per 6
+    @media = (product.photos + product.videos).sort_by(&:created_at).reverse
     @pictures = product.pictures.order(created_at: :asc).first(6)
     @reviews = product.reviews.recent.first(3)
     @simpage = (params[:similar] || '1').to_i
