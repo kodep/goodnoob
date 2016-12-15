@@ -16,6 +16,8 @@
 class PhotosController < ApplicationController
   include ImitateDelay
   imitate_delay only: :create
+
+  before_action :authenticate_user!, only: [:create]
   before_action :set_photo, only:[:show]
   before_action :set_product, only:[:show]
 
