@@ -34,6 +34,7 @@ module SearchHelper
     p = params.dup
     p.delete(:controller)
     p.delete(:action)
+    p.delete(:search)
     p.delete(:delete_search)
     p.delete(:sub_categories)
     p
