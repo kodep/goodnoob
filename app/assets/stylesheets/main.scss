@@ -452,15 +452,6 @@ header {
         }
       }
     }
-
-    .item-separator {
-      content: '|';
-      margin: 0 10px;
-
-      &:last-child {
-        display: none;
-      }
-    }
   }
 
   @media only screen and (min-width: 768px) {
@@ -476,6 +467,16 @@ header {
     .buying-list-item {
       font-size: 1.5em;
     }
+  }
+}
+
+.item-separator {
+  content: '|';
+  margin: 0 10px;
+  color: #fff;
+
+  &:last-child {
+    display: none;
   }
 }
 
@@ -813,6 +814,7 @@ header {
 
       .affix & {
         padding: 12px 20px;
+        background-size: 30px;
       }
     }
 
@@ -2736,6 +2738,7 @@ $footer-links-color: #7f7f7f;
 
 .thumb-star-wrapper {
   white-space: nowrap;
+  flex: 0 0 94px;
 }
 
 .flex-third {
@@ -2766,7 +2769,7 @@ $footer-links-color: #7f7f7f;
 .tabs-link {
   color: #fff;
   font-size: 14px;
-  padding: 6px 4px;
+  padding: 6px 4px 3px 4px;
   text-transform: uppercase;
 
   &:hover {
@@ -2789,7 +2792,10 @@ $footer-links-color: #7f7f7f;
     font-size: 20px;
     padding: 6px 12px;
   }
-
+  @media only screen and (max-width: 400px) {
+    font-size: 10px;
+    line-height: 20px
+  }
   &.active {
     color: #87e0e5;
   }
