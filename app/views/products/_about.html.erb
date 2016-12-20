@@ -37,11 +37,19 @@
 
           <ul class='dropdown-menu header-side-dropdown-button' aria-labelledby='upload-menu'>
             <li>
-              <%= modal_button_tag 'Photo', modals_path(action: :add_photo), link: true %>
+              <% if current_user.present? %>
+                  <%= modal_button_tag 'Photo', modals_path(action: :add_photo), link: true %>
+              <% else %>
+                  <%= modal_link('Photo') %>
+              <% end %>
             </li>
             <li role='separator' class='divider'></li>
             <li>
-              <%= modal_button_tag 'Video', modals_path(action: :add_video), link: true %>
+              <% if current_user.present? %>
+                  <%= modal_button_tag 'Video', modals_path(action: :add_video), link: true %>
+              <% else %>
+                  <%= modal_link('Video') %>
+              <% end %>
             </li>
           </ul>
 
@@ -56,10 +64,14 @@
               class: 'product-button product-add-favourites hidden-xs' %>
           <% else %>
 
-            <%= link_to 'Add to Favourites', product_user_favourite_products_path(@product), method: :post,
-              class: 'product-button product-add-favourites hidden-xs' %>
-          <% end %>
 
+            <% if current_user.present? %>
+                  <%= link_to 'Add to Favourites', product_user_favourite_products_path(@product), method: :post,
+                              class: 'product-button product-add-favourites hidden-xs' %>
+            <% else %>
+              <%= modal_link('Add to Favourites', 'product-button product-add-favourites hidden-xs') %>
+            <% end %>
+          <% end %>
           <%= link_to '', product_user_favourite_products_path(@product), method: :post, class:
             'glyphicon glyphicon-star product-button visible-xs-inline-block product-add-favourites'%>
           <% if product.distributors.any? %>

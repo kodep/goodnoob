@@ -4,10 +4,14 @@
   </div>
   <%= render partial: 'reviews/review_rating_form' , locals:{form:f}%>
   <div class='form-group'>
-    <%= f.text_area :review, class: 'form-control',
+    <%= f.text_area :review, class: 'form-control wysihtml5',
                              placeholder: 'Post your review and help others...',
                              rows: 7,
                              required: true %>
   </div>
   <%= f.submit "", id:'submit-review', class:'btn btn-default', style:"display:none;"%>
 <% end %>
+
+<script>
+  $('.wysihtml5').wysihtml5({'toolbar': {'blockquote': false, 'html': true}})
+</script>

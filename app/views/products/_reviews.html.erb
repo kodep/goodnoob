@@ -50,12 +50,9 @@
                   <%= review&.user&.full_name %>
                 </div>
                 <div class="review-body">
-                  <p>
-                    <%= truncate review.review, length: 150, separator: ' ' %>
-                    <% if review.review.length > 250 %>
-                      <%= link_to '(Read more)', '#', class: 'review-body-link', data: {url: product_review_url(review.product.id, review.id)} %>
-                    <% end %>
-                  </p>
+                  <div class="more-less-text">
+                    <%= review.review.html_safe %>
+                  </div>
                 </div>
               </div>
             <%end%>

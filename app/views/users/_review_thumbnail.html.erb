@@ -27,11 +27,9 @@
     </div>
     <div class="review-description">
       <p>
-        <%= truncate review.review, length: 250, separator: ' ' %>
-
-        <% if review.review.length > 250 %>
-          <%= link_to '(Read more)', '#', class: 'review-body-link', data: {url: product_review_url(review.product.id, review.id)} %>
-        <% end %>
+        <div class="more-less-text">
+          <%= review.review.html_safe %>
+        </div>
       </p>
     </div>
   </div>

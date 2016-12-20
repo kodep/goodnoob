@@ -28,6 +28,9 @@ gem 'active_model_serializers'
 gem 'autoprefixer-rails'
 gem 'magnific-popup-rails', '~> 1.1.0'
 gem 'rollbar'
+gem 'toastr-rails'
+gem 'readmorejs-rails'
+gem 'bootstrap-wysihtml5-rails'
 
 group :development, :test do
   gem 'byebug'
