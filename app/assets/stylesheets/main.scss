@@ -101,6 +101,10 @@ section {
   display: block;
 }
 
+button {
+  padding: 2px 6px 3px;
+}
+
 body {
   line-height: 1;
   background-color: #303030;
@@ -609,9 +613,11 @@ header {
 
 .authform {
   max-width: 515px;
+  margin-top: 50px;
 
   .form-control {
     border-radius: 0;
+    margin-top: 5px;
   }
 
   form {
@@ -1255,6 +1261,7 @@ header {
       height: auto;
       margin: 0;
       text-align: right;
+      padding-right: 10px;
 
       .main-heading {
         font-size: 1.75em;
@@ -1944,12 +1951,14 @@ $upload-button-color: #64b0fc;
 //**       FLASH MESSAGES      **//
 //*******************************//
 .flash.alert {
-  margin-top: 30px;
 }
 
-.flash-messages.floating {
-  position: absolute;
-  width: 100%;
+.flash-messages {
+  margin-top: 50px;
+  .floating {
+    position: absolute;
+    width: 100%;
+  }
 }
 
 //*******************************//
@@ -2111,7 +2120,7 @@ $upload-button-color: #64b0fc;
       &.thumb-photo,
       &.thumb-video {
         .thumb-description {
-          padding: 15px 30px;
+          padding: 15px 20px;
           min-height: 150px;
         }
 
@@ -2159,6 +2168,7 @@ $upload-button-color: #64b0fc;
 
         .thumb-footer-model {
           font-size: $thumbs-model-fontsize;
+          padding-right: 5px;
 
           a,
           a:hover,
@@ -2214,7 +2224,7 @@ $upload-button-color: #64b0fc;
         align-items: center;
         font-size: $thumbs-description-fontsize;
         line-height: 1.4em;
-        padding: 10px;
+        padding: 10px 20px 20px 20px;
         letter-spacing: -0.25px;
       }
 
@@ -2739,6 +2749,7 @@ $footer-links-color: #7f7f7f;
 .thumb-star-wrapper {
   white-space: nowrap;
   flex: 0 0 94px;
+  text-align: right;
 }
 
 .flex-third {
@@ -3375,7 +3386,7 @@ $footer-links-color: #7f7f7f;
   position: relative;
   .thumb-more-button {
     background: image-url('three-dots-menu.svg') no-repeat scroll center center transparent;
-    width: 32px;
+    width: 20px;
     height:20px;
     margin: 0px;
     background-size: 20px;

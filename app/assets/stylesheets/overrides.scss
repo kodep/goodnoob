@@ -8,9 +8,13 @@
     font-family: 'Glyphicons Halflings';
     content: "\e080";
     padding: 0 5px;
+    vertical-align: middle;
   }
 }
 
 .breadcrumb {
   margin-bottom: 0;
+  &:not(.cover) {
+    margin-top: 50px;
+  }
 }

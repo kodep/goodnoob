@@ -122,6 +122,9 @@ $main-padding: 30px;
           height: 30px;
           line-height: 25px;
           width: 100%;
+          .glyphicon {
+            font-size: 1.2rem;
+          }
           .product-price {
             color: #4eb9e8;
             font-size: 1.6rem;
@@ -145,6 +148,7 @@ $main-padding: 30px;
             color: #fff;
             text-align: center;
             text-transform: uppercase;
+            margin-right: 5px;
             &:hover {
               background-color: #333;
             }
@@ -156,6 +160,21 @@ $main-padding: 30px;
           .dropdown-menu {
             right: auto;
             left: 110px;
+          }
+          @media only screen and (max-width: 350px) {
+            .product-price {
+              font-size: 1.3rem;
+              width:90px;
+            }
+            .product-button {
+              font-size: 0.9rem;
+              height: 25px;
+              line-height: 20px;
+              font-weight: 500;
+            }
+            .glyphicon {
+              font-size: 0.9em;
+            }
           }
         }
       }
@@ -332,7 +351,7 @@ $main-padding: 30px;
       text-align: center;
       .product-tab-button {
         @include black-button;
-        width: 120px;
+        min-width: 120px;
         margin: 0 5px;
         background-color: transparent;
         color: #333;
@@ -390,6 +409,7 @@ $main-padding: 30px;
       padding: 0;
       .thumb-wrapper {
         width: 300px;
+        height: 370px;
         .thumb-header, .thumb-image {
           border-bottom: 1px solid #ccc;
         }
@@ -528,7 +548,7 @@ $main-padding: 30px;
     .product-similar {
       .product-similars {
         &.short {
-          height: 360px;
+          height: 375px;
         }
         overflow: hidden;
       }
