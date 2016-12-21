@@ -31,4 +31,5 @@ end
 #  id                 :integer          not null, primary key
 #  name               :string
 #  father_category_id :integer
+#  image              :string
 #

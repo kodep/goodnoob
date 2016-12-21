@@ -51,7 +51,10 @@
   </div>
   <div class="thumb-preview">
     <% if photo.picture.present? %>
-      <%= link_to photo.picture.image_file_name, photo, { class: 'embed-responsive embed-responsive-16by9 text-hide thumb-bg', style: "background-image: url(#{image_url(photo.picture.image.url(:thumbnail))});"} %>
+      <%= link_to photo.picture.image.url, class: 'embed-responsive embed-responsive-16by9 text-hide thumb-bg js-zoom-photo' do %>
+          <%= image_tag photo.picture.image.url, width: '100%' %>
+      <% end %>
+
       <%= link_to photo.picture.image.url, class: 'btn btn-link btn-xs thumb-preview-button js-zoom-photo' do %>
         <span class="glyphicon glyphicon-resize-full"></span>
       <% end %>
