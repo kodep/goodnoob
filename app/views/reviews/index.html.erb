@@ -78,8 +78,10 @@
             'product-button product-add-favourites hidden-xs' %>
         <% end %>
 
-        <%= link_to '', product_user_favourite_products_path(@product), method: :post, class:
-          'glyphicon glyphicon-star product-button visible-xs-inline-block product-add-favourites'%>
+        <%= link_to product_user_favourite_products_path(@product), method: :post, class:
+          'product-button visible-xs-inline-block product-add-favourites' do %>
+          <%= content_tag :i, '', class: 'glyphicon glyphicon-star ' %>
+        <% end %>
         <% if @product.distributors.any? %>
           <%= link_to 'buy', @product.distributors.first.url, class: 'product-button product-buy' %>
         <% end %>

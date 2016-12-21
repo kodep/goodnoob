@@ -1954,7 +1954,8 @@ $upload-button-color: #64b0fc;
 }
 
 .flash-messages {
-  margin-top: 50px;
+  top: 50px;
+  position: absolute;
   .floating {
     position: absolute;
     width: 100%;
