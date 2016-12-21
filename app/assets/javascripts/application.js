@@ -19,4 +19,11 @@
 //= require bootstrap-sprockets
 //= require magnific-popup
 //= require third-party
+//= require toastr
+//= require readmore
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales
+//= require bootstrap-wysihtml5/wysihtml5x-toolbar
+//= require bootstrap-wysihtml5/handlebars.runtime.min
+//= require bootstrap-wysihtml5/minimum
 //= require_directory .

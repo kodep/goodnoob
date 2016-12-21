@@ -420,6 +420,20 @@ $(document).on('turbolinks:load', function() {
       $(this).closest('.thumb-product').remove();
     })
 
+    // GreenTree
+    $('.more-less-text').readmore({
+        collapsedHeight: 20,
+        moreLink: '<a href="#">(Read more)</a>',
+        lessLink: '<a href="#">(Read less)</a>'
+    });
+
+    $(document).ready(function(){
+        $('.wysihtml5').each(function(i, elem) {
+            $(elem).wysihtml5();
+        });
+    })
+    // GreenTree
+
     $('.review-body-link').on('click', function(e) {
       e.preventDefault();
       var url, body;

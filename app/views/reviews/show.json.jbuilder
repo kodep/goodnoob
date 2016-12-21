@@ -1,1 +1,1 @@
-json.body @review.review
+json.body @review.review.html_safe
