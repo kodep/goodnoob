@@ -60,6 +60,7 @@ section.product-statistics-wrapper {
         margin: 0 auto;
         margin-bottom: 20px;
         .chart {
+          padding: 0 5px;
           li {
             display: flex;
             margin: auto;
@@ -122,8 +123,8 @@ section.product-statistics-wrapper {
             background-color: #333;
           }
 
-          &.glyphicon {
-            font-size: 0.7rem;
+          .glyphicon {
+            font-size: 1.2rem;
           }
         }
         .dropdown-menu {

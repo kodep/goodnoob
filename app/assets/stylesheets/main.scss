@@ -101,6 +101,10 @@ section {
   display: block;
 }
 
+button {
+  padding: 2px 6px 3px;
+}
+
 body {
   line-height: 1;
   background-color: #303030;
@@ -452,15 +456,6 @@ header {
         }
       }
     }
-
-    .item-separator {
-      content: '|';
-      margin: 0 10px;
-
-      &:last-child {
-        display: none;
-      }
-    }
   }
 
   @media only screen and (min-width: 768px) {
@@ -476,6 +471,16 @@ header {
     .buying-list-item {
       font-size: 1.5em;
     }
+  }
+}
+
+.item-separator {
+  content: '|';
+  margin: 0 10px;
+  color: #fff;
+
+  &:last-child {
+    display: none;
   }
 }
 
@@ -608,9 +613,11 @@ header {
 
 .authform {
   max-width: 515px;
+  margin-top: 50px;
 
   .form-control {
     border-radius: 0;
+    margin-top: 5px;
   }
 
   form {
@@ -813,6 +820,7 @@ header {
 
       .affix & {
         padding: 12px 20px;
+        background-size: 30px;
       }
     }
 
@@ -1253,6 +1261,7 @@ header {
       height: auto;
       margin: 0;
       text-align: right;
+      padding-right: 10px;
 
       .main-heading {
         font-size: 1.75em;
@@ -1942,12 +1951,15 @@ $upload-button-color: #64b0fc;
 //**       FLASH MESSAGES      **//
 //*******************************//
 .flash.alert {
-  margin-top: 30px;
 }
 
-.flash-messages.floating {
+.flash-messages {
+  top: 50px;
   position: absolute;
-  width: 100%;
+  .floating {
+    position: absolute;
+    width: 100%;
+  }
 }
 
 //*******************************//
@@ -2109,7 +2121,7 @@ $upload-button-color: #64b0fc;
       &.thumb-photo,
       &.thumb-video {
         .thumb-description {
-          padding: 15px 30px;
+          padding: 15px 20px;
           min-height: 150px;
         }
 
@@ -2157,6 +2169,7 @@ $upload-button-color: #64b0fc;
 
         .thumb-footer-model {
           font-size: $thumbs-model-fontsize;
+          padding-right: 5px;
 
           a,
           a:hover,
@@ -2212,7 +2225,7 @@ $upload-button-color: #64b0fc;
         align-items: center;
         font-size: $thumbs-description-fontsize;
         line-height: 1.4em;
-        padding: 10px;
+        padding: 10px 20px 20px 20px;
         letter-spacing: -0.25px;
       }
 
@@ -2736,6 +2749,8 @@ $footer-links-color: #7f7f7f;
 
 .thumb-star-wrapper {
   white-space: nowrap;
+  flex: 0 0 94px;
+  text-align: right;
 }
 
 .flex-third {
@@ -2766,7 +2781,7 @@ $footer-links-color: #7f7f7f;
 .tabs-link {
   color: #fff;
   font-size: 14px;
-  padding: 6px 4px;
+  padding: 6px 4px 3px 4px;
   text-transform: uppercase;
 
   &:hover {
@@ -2789,7 +2804,10 @@ $footer-links-color: #7f7f7f;
     font-size: 20px;
     padding: 6px 12px;
   }
-
+  @media only screen and (max-width: 400px) {
+    font-size: 10px;
+    line-height: 20px
+  }
   &.active {
     color: #87e0e5;
   }
@@ -3369,7 +3387,7 @@ $footer-links-color: #7f7f7f;
   position: relative;
   .thumb-more-button {
     background: image-url('three-dots-menu.svg') no-repeat scroll center center transparent;
-    width: 32px;
+    width: 20px;
     height:20px;
     margin: 0px;
     background-size: 20px;
