@@ -1,7 +1,6 @@
 (function() {
     var $html = $("<%=j render partial: 'sub_categories/products', locals: { products: @products } %>");
     var $html_button = $("<%=j render partial: 'sub_categories/load_more_button', locals: { products: @products } %>");
-
     <% if params[:page].present? %>
       $('#products_goes_here').append($html);
       $('#load_more_but').replaceWith($html_button);
@@ -20,4 +19,3 @@
     $('#load_more_but').show();
   }
 }());
-

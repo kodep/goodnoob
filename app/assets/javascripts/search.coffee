@@ -4,10 +4,13 @@ $(document).on 'turbolinks:load', ->
 
   $('.search-results-container').infinitescroll
     loading:
-      img: 'assets/spinner.svg'
+      img: '../assets/spinner.svg'
     navSelector: '.showmore-thumbs-row' # selector for the paged navigation (it will be hidden)
     nextSelector: '.showmore-thumbs-row .show-more-text' # selector for the NEXT link (to page 2)
     itemSelector: '.search-results-container .thumb-wrapper' # selector for all items you'll retrieve
+    path: (pageNumber) ->
+      console.log pageNumber
+      return $('.showmore-thumbs-row .show-more-text').attr("href")
 
   $(document).on 'click', '.remove-from-favorites', (event) ->
     event.preventDefault()
@@ -57,7 +60,7 @@ $(document).on 'turbolinks:load', ->
     $('#search_direction').val desc
     $('#filter_form').submit()
 
-  $('.js-apply-sort').on 'click', (e) ->
+  $(document).on 'click', '.js-apply-sort', (e) ->
     e.preventDefault()
     $this = $(@)
     field = $this.data 'field'
