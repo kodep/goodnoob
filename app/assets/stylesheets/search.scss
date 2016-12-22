@@ -103,3 +103,25 @@
     width: 100px;
   }
 }
+.year-select-control-wrapper {
+  position: relative;
+  display: inline-block;
+  .year-select-control {
+    appearance: none;
+    border-radius: 20px;
+    border-color: #e6e5e5;
+    background-color: transparent;
+    padding: 3px 30px 1px 15px;
+    width: 85px;
+  }
+
+  &:after {
+    pointer-events: none;
+    background: transparent;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    content: "▼";
+    display: inline-block;
+  }
+}

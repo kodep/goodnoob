@@ -51,6 +51,7 @@ $(document).on 'turbolinks:load', ->
   $(document).on 'click', '.applied-sub-filter', (event) ->
     event.preventDefault()
     $this = $(@)
+    $(@).fadeOut()
     id = $this.data('id')
     switch $this.data( 'type')
       when 'filter' then $("#checkbox_#{id}").attr('checked', null).change()
