@@ -4,7 +4,6 @@
     padding: 20px;
     padding-bottom: 0;
     &.background-surf {
-      background: asset-url('surf-bg-test.png') no-repeat center center;
       background-size: cover;
     }
 
@@ -44,6 +43,57 @@
       .other-product-medias-header {
         font-size: 1.2rem;
       }
+    }
+  }
+}
+
+.close-share-video {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 15px 45px 15px 45px;
+  background: black;
+  color: white;
+  font-size: 150%;
+  cursor: pointer;
+  z-index: 1;
+
+  &:hover {
+    background: #CC181E;
+  }
+}
+
+.share-video {
+  z-index: 2;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  display: none;
+
+  i {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: white;
+    font-size: 150%;
+    cursor: pointer;
+  }
+
+  .share-video-text {
+    display: table-cell;
+    vertical-align: middle;
+
+    p {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 100%;
+    }
+
+    a {
+      color: white;
+      font-size: 200%;
     }
   }
 }
