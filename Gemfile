@@ -50,6 +50,9 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'annotate'
   gem 'thin'
+  gem 'jazz_hands',
+      github: 'nixme/jazz_hands',
+      branch: 'bring-your-own-debugger'
 end
 
 group :test do

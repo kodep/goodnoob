@@ -423,15 +423,23 @@ $(document).on('turbolinks:load', function() {
     // GreenTree
     $('.more-less-text').readmore({
         collapsedHeight: 20,
-        moreLink: '<a href="#">(Read more)</a>',
-        lessLink: '<a href="#">(Read less)</a>'
+        moreLink: '<a>(Read more)</a>',
+        lessLink: '<a>(Read less)</a>'
     });
 
     $(document).ready(function(){
         $('.wysihtml5').each(function(i, elem) {
             $(elem).wysihtml5();
         });
-    })
+    });
+
+    $('.close-share-video').on('click', function(){
+        $('.share-video').css('display', 'table')
+    });
+
+    $('.reclose-share-video').on('click', function(){
+        $('.share-video').css('display', 'none')
+    });
     // GreenTree
 
     $('.review-body-link').on('click', function(e) {

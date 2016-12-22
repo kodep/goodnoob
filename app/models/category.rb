@@ -1,4 +1,7 @@
 class Category < ActiveRecord::Base
+
+  include Paperclip::Glue
+
   belongs_to :father_category
   has_many :sub_categories
   has_many :videos
@@ -9,7 +12,12 @@ class Category < ActiveRecord::Base
   has_many :user_favourites, as: :favouriteable
   has_many :users, through: :user_favourites
 
+  delegate :url, to: :image
+
   scope :with_guides, -> { where id: SubCategory.with_guides.map(&:category_id).uniq }
+
+  has_attached_file :image, default_url: 'surf-bg-test.png'
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   # Searched by subcategories
   def searched_for?(sub_categories_ids)
@@ -31,4 +39,8 @@ end
 #  id                 :integer          not null, primary key
 #  name               :string
 #  father_category_id :integer
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #

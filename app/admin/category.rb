@@ -3,7 +3,7 @@ ActiveAdmin.register Category do
   # belongs_to :father_category, optional: true
   belongs_to :user, optional: true
 
-  permit_params :name, :father_category_id
+  permit_params :name, :father_category_id, :image
 
   action_item :sub_categories, only: :show do
     link_to 'Sub Categories', admin_category_sub_categories_path(category)
@@ -32,6 +32,15 @@ ActiveAdmin.register Category do
     column :created_at
     column :updated_at
     actions
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :name
+      f.input :father_category
+      f.input :image, as: :file
+    end
+    f.actions
   end
 
 end
