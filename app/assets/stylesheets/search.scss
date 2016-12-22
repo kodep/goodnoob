@@ -96,3 +96,10 @@
 .share_items > .share-button-copylink {
     background: asset-url('share-icon-copylink.png') no-repeat center center;
 }
+
+.loading-spinner {
+  display: none;
+  img {
+    width: 100px;
+  }
+}

@@ -2,6 +2,7 @@ $(document).on 'turbolinks:load', ->
   $('.check__form').on 'change', ->
     $('#filter_form').submit()
 
+  ###
   $('.search-results-container').infinitescroll
     loading:
       img: '../assets/spinner.svg'
@@ -9,8 +10,23 @@ $(document).on 'turbolinks:load', ->
     nextSelector: '.showmore-thumbs-row .show-more-text' # selector for the NEXT link (to page 2)
     itemSelector: '.search-results-container .thumb-wrapper' # selector for all items you'll retrieve
     path: (pageNumber) ->
-      console.log pageNumber
       return $('.showmore-thumbs-row .show-more-text').attr("href")
+
+  ###
+
+  $(window).on 'scroll', ->
+    showmore = $('.showmore-thumbs-row')
+    if showmore.offset().top < $(window).scrollTop() + $(window).height()
+      if !window.ajax and $('.search-results-have-more').data('hasmore')
+        window.ajax = true
+        showmore.find('.loading-spinner').show()
+        showmore.find('.plus-button-wrapper').hide()
+        showmore.find('.showmore-text-wrapper').hide()
+        $.ajax
+          url: showmore.find('.show-more-text').attr('href')
+          dataType: 'script'
+          success: (data) ->
+            window.ajax = false
 
   $(document).on 'click', '.remove-from-favorites', (event) ->
     event.preventDefault()

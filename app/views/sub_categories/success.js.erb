@@ -2,7 +2,7 @@
     var $html = $("<%=j render partial: 'sub_categories/products', locals: { products: @products } %>");
     var $html_button = $("<%=j render partial: 'sub_categories/load_more_button', locals: { products: @products } %>");
     <% if params[:page].present? %>
-      $('#products_goes_here').append($html);
+      $('.search-results-container').append($html.find('.search-results-container .thumb-wrapper'));
       $('#load_more_but').replaceWith($html_button);
     <% else %>
       $('#products_goes_here').replaceWith($html);
