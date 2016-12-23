@@ -127,9 +127,15 @@
   letter-spacing: 5px;
   font-weight: 600;
   margin-bottom: 10px;
-  a, button {
-    color: #fff;
+  &.whiteli {
+    a, button, span {
+      color: #fff;
+    }
+  }
+  a, button, span {
+    color: #aef4e8;
     text-decoration: none;
+
 
     &:hover {
       opacity: .8;
@@ -155,4 +161,3 @@
     }
   }
 }
-
