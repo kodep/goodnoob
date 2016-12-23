@@ -757,7 +757,7 @@ header {
 
 .background-wrapper {
   background: #4b7c7f image-url('header-background.jpg') no-repeat top left;
-  background-size: cover;
+  background-size: cover !important;
   min-height: 400px;
   position: relative;
   width: 100%;
@@ -2216,6 +2216,7 @@ $upload-button-color: #64b0fc;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        max-height: 100%;
       }
 
       .thumb-description {
@@ -3521,3 +3522,4 @@ $footer-links-color: #7f7f7f;
     }
   }
 }
+

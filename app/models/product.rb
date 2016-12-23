@@ -61,7 +61,7 @@ class Product < ActiveRecord::Base
           self
         end
       when 'name'
-        order("LOWER(name) #{direction}")
+        order(name: direction)
       else
         order(created_at: direction)
     end

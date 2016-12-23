@@ -9,6 +9,9 @@
             <span>More Listing</span>
           <% end %>
         </div>
+        <div class="loading-spinner">
+          <%= image_tag("spinner.svg") %>
+        </div>
 
-    <div class="hidden search-results-have-more" data-hasmore="<%= @products.next_page %>"></div>
+    <div class="hidden search-results-have-more" data-hasmore="<%= products.next_page %>"></div>
 </div>

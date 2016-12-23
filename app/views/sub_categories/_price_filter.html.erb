@@ -1,18 +1,13 @@
-<div class="filter-wrapper">
-    <a class='sub-filter-checkbox'>
+<div class="filter-wrapper price-filter-wrapper">
+      <div class='price-range' id='label_min'>
+        <%= prices.min.to_i %> <%= currency.sign %>
+      </div>
       <div id="slider">
         <%= hidden_field_tag 'price_from', :onchange => "$(this).closest('form').submit();" %>
         <%= hidden_field_tag 'price_to', :onchange => "$(this).closest('form').submit();" %>
       </div>
-    </a>
-
-      <div class='thumb-description price-range'>
-          <div class='text-left' id='label_min'>
-              <p><%= prices.min.to_i %></p>
-          </div>
-          <div class='text-right' id='label_max'>
-              <p><%= prices.max.to_i %></p>
-          </div>
+      <div class='price-range' id='label_max'>
+        <%= prices.max.to_i %> <%= currency.sign %>
       </div>
 </div>
 
@@ -24,10 +19,10 @@
           max: <%= prices.max.to_i %>,
           values: [<%= prices.min.to_i %>, <%= prices.max.to_i %>],
           slide: function(event, ui) {
-              $("#price_from").val(slider.slider("values")[0]);
-              $("#price_to").val(slider.slider("values")[1]);
-              $("#label_min").text(slider.slider("values")[0]);
-              $("#label_max").text(slider.slider("values")[1]);
+              $("#price_from").val(slider.slider("values")[0] + " <%= currency.sign %>");
+              $("#price_to").val(slider.slider("values")[1] + " <%= currency.sign %>");
+              $("#label_min").text(slider.slider("values")[0] + " <%= currency.sign %>");
+              $("#label_max").text(slider.slider("values")[1] + " <%= currency.sign %>");
           },
           change: function() {
             $('#filter_form').submit();
@@ -36,9 +31,8 @@
       $("#price_from").val('');
       $("#price_to").val('');
 
-      $("#label_min").text(slider.slider("values")[0]);
-      $("#label_max").text(slider.slider("values")[1]);
+      $("#label_min").text(slider.slider("values")[0] + " <%= currency.sign %>");
+      $("#label_max").text(slider.slider("values")[1] + " <%= currency.sign %>");
       $(".ui-slider-handle").focus();
   });
 </script>
-

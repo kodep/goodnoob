@@ -2,12 +2,31 @@ $(document).on 'turbolinks:load', ->
   $('.check__form').on 'change', ->
     $('#filter_form').submit()
 
+  ###
   $('.search-results-container').infinitescroll
     loading:
-      img: 'assets/spinner.svg'
+      img: '../assets/spinner.svg'
     navSelector: '.showmore-thumbs-row' # selector for the paged navigation (it will be hidden)
     nextSelector: '.showmore-thumbs-row .show-more-text' # selector for the NEXT link (to page 2)
     itemSelector: '.search-results-container .thumb-wrapper' # selector for all items you'll retrieve
+    path: (pageNumber) ->
+      return $('.showmore-thumbs-row .show-more-text').attr("href")
+
+  ###
+
+  $(window).on 'scroll', ->
+    showmore = $('.showmore-thumbs-row')
+    if showmore.offset().top < $(window).scrollTop() + $(window).height()
+      if !window.ajax and $('.search-results-have-more').data('hasmore')
+        window.ajax = true
+        showmore.find('.loading-spinner').show()
+        showmore.find('.plus-button-wrapper').hide()
+        showmore.find('.showmore-text-wrapper').hide()
+        $.ajax
+          url: showmore.find('.show-more-text').attr('href')
+          dataType: 'script'
+          success: (data) ->
+            window.ajax = false
 
   $(document).on 'click', '.remove-from-favorites', (event) ->
     event.preventDefault()
@@ -32,6 +51,7 @@ $(document).on 'turbolinks:load', ->
   $(document).on 'click', '.applied-sub-filter', (event) ->
     event.preventDefault()
     $this = $(@)
+    $(@).fadeOut()
     id = $this.data('id')
     switch $this.data( 'type')
       when 'filter' then $("#checkbox_#{id}").attr('checked', null).change()
@@ -57,7 +77,7 @@ $(document).on 'turbolinks:load', ->
     $('#search_direction').val desc
     $('#filter_form').submit()
 
-  $('.js-apply-sort').on 'click', (e) ->
+  $(document).on 'click', '.js-apply-sort', (e) ->
     e.preventDefault()
     $this = $(@)
     field = $this.data 'field'

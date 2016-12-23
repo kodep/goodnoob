@@ -1,4 +1,4 @@
-<div class="flex applied-sub-filters-wrapper hidden-xs">
+<div class="flex applied-sub-filters-wrapper">
   <div class="applied-sub-filters-title">Filters:</div>
   <% FilterOption.where(id: params[:filters]).each do |filter| %>
       <div class="applied-sub-filter" data-type="filter" data-id="<%= filter.id %>">
