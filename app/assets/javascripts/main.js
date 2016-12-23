@@ -434,11 +434,11 @@ $(document).on('turbolinks:load', function() {
     });
 
     $('.close-share-video').on('click', function(){
-        $('.share-video').css('display', 'table')
+        $(this).closest('.custom-share-video').find('.share-video').css('display', 'table')
     });
 
     $('.reclose-share-video').on('click', function(){
-        $('.share-video').css('display', 'none')
+        $(this).closest('.custom-share-video').find('.share-video').css('display', 'none')
     });
     // GreenTree
 
