@@ -30,12 +30,7 @@
       </span>
     </div>
   </div>
-  <%= link_to video do %>
-    <div class="embed-responsive embed-responsive-16by9">
-      <div class="media-overlay"></div>
-      <iframe class="embed-responsive-item" src="<%= video.url %>"></iframe>
-    </div>
-  <% end %>
+  <%= video_with_share(video) %>
   <div class="thumb-description text-center">
     <%=truncate video.comment, length: 110, separator: ' '%>
   </div>

@@ -263,14 +263,15 @@ $main-padding: 30px;
       font-size: 1.2rem;
       text-align: right;
       .filters-content {
-        width: 190px;
+        width: 100%;
         margin: auto;
         overflow: hidden;
-        height: 100%;
+        text-align: left;
+        padding: 20px;
         .filters-item {
-          margin-bottom: 10px;
+          margin-bottom: 20px;
           strong {
-            font-weight: 400;
+            font-weight: bold;
           }
         }
       }

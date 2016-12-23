@@ -38,7 +38,7 @@
           <ul class='dropdown-menu header-side-dropdown-button' aria-labelledby='upload-menu'>
             <li>
               <% if current_user.present? %>
-                  <%= modal_button_tag 'Photo', modals_path(action: :add_photo), link: true %>
+                  <%= modal_button_tag 'Photo', modals_path(action: :add_photo, product_id: product.id), link: true %>
               <% else %>
                   <%= modal_link('Photo') %>
               <% end %>
@@ -46,7 +46,7 @@
             <li role='separator' class='divider'></li>
             <li>
               <% if current_user.present? %>
-                  <%= modal_button_tag 'Video', modals_path(action: :add_video), link: true %>
+                  <%= modal_button_tag 'Video', modals_path(action: :add_video, product_id: product.id), link: true %>
               <% else %>
                   <%= modal_link('Video') %>
               <% end %>

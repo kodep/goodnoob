@@ -6,8 +6,7 @@
         <% @filters.each do |filter| %>
           <div class="filters-item">
             <strong><%= filter.name %>: </strong>
-            <br>
-            <%== filter_options.select{|f| f.filter == filter}.map(&:name).join '<br>' %>
+            <%== filter_options.select{|f| f.filter == filter}.map(&:name).join ', ' %>
           </div>
         <% end %>
       </div>
