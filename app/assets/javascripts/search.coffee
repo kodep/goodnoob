@@ -16,6 +16,8 @@ $(document).on 'turbolinks:load', ->
 
   $(window).on 'scroll', ->
     showmore = $('.showmore-thumbs-row')
+    if showmore.length == 0
+      return
     if showmore.offset().top < $(window).scrollTop() + $(window).height()
       if !window.ajax and $('.search-results-have-more').data('hasmore')
         window.ajax = true
