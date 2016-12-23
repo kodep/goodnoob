@@ -24,15 +24,8 @@
           <%= link_to guide.header, sub_category_guide_path(@sub_category, guide) %><br/>
         <% end %>
         <div class="guides-list-header">OTHER GUIDES</div>
-        <% Category.all.each do |category| %>
-          <ul class="category-guides">
-          <% category.sub_categories.each do |s_category| %>
-            <li>
-              <a href="#"><%= "#{s_category.name}" %> Guide</a>
-              <!-- <%# link_to "#{s_category.name} Guide", sub_category_guide_path(s_category.id, s_category.guides.first.id) %> -->
-            </li>
-          <% end %>
-          </ul>
+        <% Guide.where.not(sub_category_id: @sub_category.id).sample(20).each do |guide| %>
+            <%= link_to guide.header, sub_category_guide_path(guide.sub_category, guide) %><br/>
         <% end %>
       </div>
       <div class="row visible-xs">
@@ -49,3 +42,6 @@
     </div>
   </section>
 </div>
+<style>
+  .guide-info { background: url(<%= image_url @guide.image&.url %>) no-repeat; }
+</style>

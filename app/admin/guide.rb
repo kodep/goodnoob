@@ -2,7 +2,7 @@ ActiveAdmin.register Guide do
 
   belongs_to :sub_category, optional: true
 
-  permit_params :header, :description, :sub_category_id, :video_url
+  permit_params :header, :description, :sub_category_id, :video_url, :image
 
   filter :header
   filter :sub_category
@@ -22,6 +22,7 @@ ActiveAdmin.register Guide do
       f.input :sub_category
       f.input :header
       f.input :description, as: :html_editor
+      f.input :image, as: :file
     end
     f.actions
   end
