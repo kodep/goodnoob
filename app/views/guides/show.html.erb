@@ -44,7 +44,7 @@
     <div class="guide-text-wrapper">
       <h1><%= @guide.header.upcase %></h1>
       <div class="guide-text col-md-10 center-block">
-        <%= simple_format @guide.description %>
+        <%= simple_format @guide.description&.html_safe %>
       </div>
     </div>
   </section>

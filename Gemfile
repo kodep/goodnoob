@@ -31,6 +31,7 @@ gem 'rollbar'
 gem 'toastr-rails'
 gem 'readmorejs-rails'
 gem 'bootstrap-wysihtml5-rails'
+gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 
 group :development, :test do
   gem 'byebug'
