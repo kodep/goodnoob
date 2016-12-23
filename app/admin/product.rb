@@ -83,7 +83,7 @@ ActiveAdmin.register Product do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :description
+      f.input :description, as: :html_editor
       f.input :year
       f.input :url
       f.input :company
@@ -107,7 +107,7 @@ ActiveAdmin.register Product do
     f.inputs 'Attributes' do
       f.has_many :attrs, allow_destroy: true do |attr|
         attr.input :title
-        attr.input :value
+        attr.input :value, as: :html_editor
       end
     end
     f.inputs 'Dimensions' do
