@@ -2194,6 +2194,7 @@ $upload-button-color: #64b0fc;
         justify-content: center;
         position: relative;
         overflow: hidden;
+        height: 300px;
       }
 
       .thumb-preview-button {
@@ -2217,6 +2218,7 @@ $upload-button-color: #64b0fc;
         background-position: center;
         background-size: cover;
         max-height: 100%;
+        flex: 0 0 300px;
       }
 
       .thumb-description {
@@ -3522,4 +3524,3 @@ $footer-links-color: #7f7f7f;
     }
   }
 }
-
