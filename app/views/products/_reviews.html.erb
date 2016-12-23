@@ -22,12 +22,12 @@
       <div class="reviews">
         <div class="product-reviews-header">
           <span>reviews</span>
-          <% if product.reviews.length > 0 %>
+          <% if reviews.length > 0 %>
             <%= link_to 'Read More Reviews', product_reviews_path(product_id: product.id) %>
           <% end %>
         </div>
 
-        <% if product.reviews.length > 0 %>
+        <% if reviews.length > 0 %>
           <div class="reviews-container col-md-9 center-block">
             <% if user_signed_in? %>
               <%= modal_button_tag '+Add a review',
@@ -37,7 +37,7 @@
                            class: 'add-review hidden-xs' %>
             <% end %>
 
-            <% product.reviews.last(2).each do |review|%>
+            <% reviews.last(2).each do |review|%>
               <div class="product-review">
                 <span class="product-review-bar">
                   <%= render partial:'rating', locals:{product_id: review.product_id, rating: review.rating && review.rating.value || 0} %>

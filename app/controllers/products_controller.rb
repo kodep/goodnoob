@@ -22,13 +22,13 @@ class ProductsController < ApplicationController
     @product = Product.find params[:id]
     @media = (product.photos + product.videos).sort_by(&:created_at).reverse
     @pictures = product.pictures.order(created_at: :asc).first(6)
-    @reviews = product.reviews.recent.first(3)
+    @reviews = product.reviews.where.not(review: " ").recent.first(3)
     @simpage = (params[:similar] || '1').to_i
     @filters = product.filter_options.map(&:filter).uniq.sort { |x, y| x['name'] <=> y['name'] }
     if @simpage == 1
       @similars = Kaminari.paginate_array(product.similars.recent)
                      .page(@simpage)
-                     .per(2)
+                     .per(3)
     else
       @similars = Kaminari.paginate_array(product.similars.recent)
                      .page(@simpage)
