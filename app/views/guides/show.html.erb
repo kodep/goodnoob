@@ -1,14 +1,19 @@
-<div class="main-content-wrapper main-content-guides-wrapper">
+<div class="main-content-guides-wrapper">
   <section class="guide-info row">
     <div class="guide-video-wrapper col-md-8">
       <div class="guide-video">
+        <div class="row">
+          <div class="col-md-offset-8 col-md-4">
+            <%= guide_video_with_share(@guide) %>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="guide-description-wrapper">
       <div class="guide-description">
-        <h1><%= @guide.header %></h1>
-        <%= simple_format @guide.description.truncate(500) %>
+        <h1><%= "#{@sub_category.name&.singularize} guide" %></h1>
+        <%= "It it really important to choose the right #{@sub_category.name&.singularize&.downcase} as..." %>
         <div class="compare-products">
           <%= link_to "compare #{@sub_category.name}", sub_category_path(@sub_category) %>
         </div>
@@ -44,4 +49,5 @@
 </div>
 <style>
   .guide-info { background: url(<%= image_url @guide.image&.url %>) no-repeat; }
+  .guide-video { padding: 100px 0px; }
 </style>
