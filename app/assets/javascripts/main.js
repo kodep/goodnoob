@@ -15,6 +15,8 @@ $(document).on('turbolinks:load', function() {
     var checkBox = $('.checkbox-inline');
     var catclicker ;
     var submitButtonSelector = 'a[data-submit-button="true"]';
+    var filterForm = $('#filter_form');
+
     window.filterStatus = window.filterStatus || {
             'favourites': 'hide',
             'history-search': 'hide',
@@ -60,6 +62,18 @@ $(document).on('turbolinks:load', function() {
 
     displaySearchResultsMore();
 
+
+    filterForm.on('ajax:send', function() {
+      window.ajax = true;
+      $('.check__form').attr('disabled', true)
+      $('.search-results-container').find('.thumb-wrapper').fadeOut();
+      var showmore = $('.showmore-thumbs-row');
+      showmore.show();
+      showmore.find('.loading-spinner').show()
+      showmore.find('.plus-button-wrapper').hide()
+      showmore.find('.showmore-text-wrapper').hide()
+    });
+    /*
     showMoreProducts.on('ajax:success', function( e, data, status, xhr ) {
         $('.search-results-container').append(data);
         displaySearchResultsMore();
@@ -71,7 +85,7 @@ $(document).on('turbolinks:load', function() {
 
         });
     });
-
+    */
     reviewMore.on('ajax:success', function( e, data, status, xhr ) {
         $('.review-section').append(data);
         displaySearchResultsMore();

@@ -1,5 +1,12 @@
 <div id="products_goes_here">
-  <%= render partial: 'applied_filters' %>
+  <%= render partial: 'applied_filters' if params[:filters].present? ||
+                                          params[:companies].present? ||
+                                          params[:year_from].present? ||
+                                          params[:year_to].present? ||
+                                          params[:price_from].present? && params[:price_from].to_i != @sub_category.prices.minimum(:amount).to_i ||
+                                          params[:price_to].present? && params[:price_to].to_i != @sub_category.prices.maximum(:amount).to_i
+
+                                           %>
   <%= render partial: 'search' %>
   <div class="flex thumbs-matrix-wrapper search-results-container">
     <% if products.count == 0 %>

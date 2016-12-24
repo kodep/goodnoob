@@ -8,7 +8,7 @@
 
     <div class='form-group'>
       <div class='col-sm-11 center-block'>
-        <%= fields.file_field :image, class: 'form-control hidden file-upload-button' %>
+        <%= fields.file_field :image, class: 'form-control hidden file-upload-button', accept: 'image/*;capture=camera' %>
         <%= fields.label :image, '+Upload your photo' %>
       </div>
     </div>
