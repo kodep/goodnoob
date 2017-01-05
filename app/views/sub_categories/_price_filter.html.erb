@@ -19,8 +19,8 @@
           max: <%= prices.max.to_i %>,
           values: [<%= prices.min.to_i %>, <%= prices.max.to_i %>],
           slide: function(event, ui) {
-              $("#price_from").val(slider.slider("values")[0] + " <%= currency.sign %>");
-              $("#price_to").val(slider.slider("values")[1] + " <%= currency.sign %>");
+              $("#price_from").val(slider.slider("values")[0]);
+              $("#price_to").val(slider.slider("values")[1]);
               $("#label_min").text(slider.slider("values")[0] + " <%= currency.sign %>");
               $("#label_max").text(slider.slider("values")[1] + " <%= currency.sign %>");
           },

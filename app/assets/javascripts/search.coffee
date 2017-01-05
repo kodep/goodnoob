@@ -2,6 +2,7 @@ $(document).on 'turbolinks:load', ->
   $('.check__form').on 'change', ->
     $('#filter_form').submit()
 
+
   ###
   $('.search-results-container').infinitescroll
     loading:
@@ -16,17 +17,19 @@ $(document).on 'turbolinks:load', ->
 
   $(window).on 'scroll', ->
     showmore = $('.showmore-thumbs-row')
+    if showmore.length == 0
+      return
     if showmore.offset().top < $(window).scrollTop() + $(window).height()
       if !window.ajax and $('.search-results-have-more').data('hasmore')
         window.ajax = true
+        $('.check__form').attr('disabled', true)
         showmore.find('.loading-spinner').show()
         showmore.find('.plus-button-wrapper').hide()
         showmore.find('.showmore-text-wrapper').hide()
         $.ajax
           url: showmore.find('.show-more-text').attr('href')
           dataType: 'script'
-          success: (data) ->
-            window.ajax = false
+
 
   $(document).on 'click', '.remove-from-favorites', (event) ->
     event.preventDefault()
@@ -79,6 +82,7 @@ $(document).on 'turbolinks:load', ->
 
   $(document).on 'click', '.js-apply-sort', (e) ->
     e.preventDefault()
+    return if window.ajax
     $this = $(@)
     field = $this.data 'field'
     desc = $this.data('desc') != true

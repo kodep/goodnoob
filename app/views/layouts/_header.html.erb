@@ -41,34 +41,27 @@
         <li><%= link_to "Buying Guides", sub_category_guide_path(default_cat, default_guide) %></li>
         <hr style="border: none; border-bottom: 1px solid white; width: 100px">
         <% if user_signed_in?%>
-          <li>
-            <div class="dropdown">
-              <button class="dropdown-toggle" data-toggle="dropdown">
-                +New post
-              </button>
-
-              <ul class='dropdown-menu'>
-                <li>
-                  <%= modal_button_tag 'Photo', modals_path(action: :add_photo), link: true %>
-                </li>
-                <li role='separator' class='divider'></li>
-                <li>
-                  <%= modal_button_tag 'Video', modals_path(action: :add_video), link: true %>
-                </li>
-              </ul>
-            </div>
+          <li class="whiteli">
+            <span>+New post</span>
+          </li>
+          <li class="whiteli">
+            <%= modal_button_tag '/Photo', modals_path(action: :add_photo), link: true %>
+          </li>
+          <li role='separator' class='divider'></li>
+          <li class="whiteli">
+            <%= modal_button_tag '/Video', modals_path(action: :add_video), link: true %>
           </li>
         <% end %>
         <li><%= link_to('My Profile', edit_user_registration_path) %></li>
         <li clas="social-links">
           <div>
-            <a class="btn-social-circle" href="https://www.facebook.com/goodnoob">
+            <a class="btn-social-circle" href="https://www.facebook.com/goodnoob" target="_blank">
               <span class="fa fa-facebook"></span>
             </a>
-            <a class="btn-social-circle" href="https://twitter.com/Goodnoob_off">
+            <a class="btn-social-circle" href="https://twitter.com/Goodnoob_off" target="_blank">
               <span class="fa fa-twitter"></span>
             </a>
-            <a class="btn-social-circle" href="https://www.instagram.com/goodnoob_official/">
+            <a class="btn-social-circle" href="https://www.instagram.com/goodnoob_official/" target="_blank">
               <span class="fa fa-instagram"></span>
             </a>
           </div>

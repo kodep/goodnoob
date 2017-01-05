@@ -34,7 +34,7 @@ ActiveAdmin.register Company do
     f.inputs do
       f.input :name
       f.input :url
-      f.input :description
+      f.input :description, as: :html_editor
       f.input :email
       f.input :phone
       f.input :fax
