@@ -20,6 +20,7 @@ ActiveAdmin.register Guide do
   form do |f|
     f.inputs do
       f.input :sub_category
+      f.input :video_url
       f.input :header
       f.input :description, as: :html_editor
       f.input :image, as: :file
