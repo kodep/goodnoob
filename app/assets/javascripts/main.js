@@ -546,13 +546,6 @@ $(document).on('turbolinks:load', function() {
 
     $('#modal').on('shown.bs.modal', function (e) {
       $('.selectpicker').selectpicker();
-      $('body').addClass('body-fix')
-    });
-    $('.modal').on('shown.bs.modal', function (e) {
-      $('body').removeClass('body-visible').addClass('body-fix')
-    });
-    $('.modal').on('hidden.bs.modal', function (e) {
-      $('body').removeClass('body-fix').addClass('body-visible')
     });
 
     if($('.main-search-container').length > 0) {

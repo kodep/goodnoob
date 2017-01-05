@@ -613,8 +613,7 @@ header {
 
 .authform {
   max-width: 515px;
-  margin-top: 80px;
-  padding-top: 0px;
+  margin-top: 50px;
 
   .form-control {
     border-radius: 0;
@@ -3522,10 +3521,5 @@ $footer-links-color: #7f7f7f;
     &:hover {
       opacity: .7;
     }
-  }
-}
-@media only screen and (max-width: 767px) {
-  #SignUpModal .authform {
-    margin-top: 0px;
   }
 }
