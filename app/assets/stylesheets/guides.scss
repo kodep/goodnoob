@@ -1,16 +1,21 @@
 .main-content-guides-wrapper {
+  margin-top: 50px;
   .guide-info {
-    display: flex;
     background-size: cover;
 
-    .guide-description-wrapper {
-      order: 1;
+    .guide-info-overlay {
       background-color: rgba(0,0,0,0.5);
+      display: flex;
+    }
+
+    .guide-description-wrapper {
+      width: 40%;
+      order: 1;
       color: white;
       .guide-description {
-        margin: auto;
-        width: 600px;
-        padding: 100px;
+        margin: 0 auto;
+        width: 400px;
+        padding: 100px 10px 0 10px;
         h1 {
           font-weight: bolder;
           font-size: 1.5rem;
@@ -43,6 +48,7 @@
     }
 
     .guide-video-wrapper {
+      width: 60%;
       order: 2;
     }
   }
