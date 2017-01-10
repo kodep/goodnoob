@@ -84,6 +84,7 @@
 }
 
 .share_items > .share-button-whatsapp {
+    display: none;
     background: asset-url('share-icon-whatsapp.png') no-repeat center center;
 }
 
@@ -122,6 +123,12 @@
     top: 6px;
     right: 10px;
     content: "▼";
+    display: inline-block;
+  }
+}
+
+@media (max-width: 769px) {
+  .share_items > .share-button-whatsapp {
     display: inline-block;
   }
 }
