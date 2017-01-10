@@ -12,7 +12,7 @@
           <a class="share_item share-button-twitter"  href="https://twitter.com/intent/tweet?url=<%= request.original_url %>"></a>
           <a class="share_item share-button-whatsapp" href="whatsapp://send?text=<%= request.original_url %>"></a>
           <span class="share_item share-button-separator"></span>
-          <a class="share_item share-button-copylink js-copylink" data-copy-url="<%= request.original_url %>"></a>
+          <a class="share_item share-button-copylink js-copylink" data-copy-url="<%= video_url(video) %>"></a>
         </span>
       </span>
     </div>
