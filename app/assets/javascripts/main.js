@@ -447,13 +447,6 @@ $(document).on('turbolinks:load', function() {
         });
     });
 
-    $('.close-share-video').on('click', function(){
-        $(this).closest('.custom-share-video').find('.share-video').css('display', 'table')
-    });
-
-    $('.reclose-share-video').on('click', function(){
-        $(this).closest('.custom-share-video').find('.share-video').css('display', 'none')
-    });
     // GreenTree
 
     $('.review-body-link').on('click', function(e) {

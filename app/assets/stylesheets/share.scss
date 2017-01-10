@@ -62,38 +62,3 @@
     background: #CC181E;
   }
 }
-
-.share-video {
-  z-index: 2;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  text-align: center;
-  display: none;
-
-  i {
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    color: white;
-    font-size: 150%;
-    cursor: pointer;
-  }
-
-  .share-video-text {
-    display: table-cell;
-    vertical-align: middle;
-
-    p {
-      color: white;
-      margin-bottom: 20px;
-      font-size: 100%;
-    }
-
-    a {
-      color: white;
-      font-size: 24px;
-    }
-  }
-}
