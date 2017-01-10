@@ -99,6 +99,7 @@
 
 @media (max-width: 769px) {
   .main-content-guides-wrapper {
+
     .guide-info {
       .guide-info-overlay {
         display: block;
@@ -117,25 +118,26 @@
           width: 100%;
         }
       }
-      .guide-chapters {
-        display: block;
-        .guide-chapters-list-wrapper {
-          width: 100%;
-          text-align: center;
-          .guide-chapters-list {
-            padding: 10px;
-            margin: auto;
-            &.short {
-              height: 45px;
-            }
+    }
+
+    .guide-chapters {
+      display: block;
+      .guide-chapters-list-wrapper {
+        width: 100%;
+        text-align: center;
+        .guide-chapters-list {
+          padding: 10px;
+          margin: auto;
+          &.short {
+            height: 45px;
           }
         }
-        .guide-text-wrapper {
-          padding: 10px 20px;
-          h1 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-          }
+      }
+      .guide-text-wrapper {
+        padding: 10px 20px;
+        h1 {
+          margin-bottom: 10px;
+          font-size: 1.2rem;
         }
       }
     }
