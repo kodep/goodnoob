@@ -26,7 +26,7 @@ class SubCategoriesController < ApplicationController
 
     @filters = @sub_category.filters
 
-    @categories = Category.includes(:sub_categories).all
+    @categories = Category.includes(:sub_categories).order(:id)
 
     respond_to do |format|
       format.js { render 'success', layout: false }

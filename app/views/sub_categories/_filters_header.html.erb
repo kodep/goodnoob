@@ -7,7 +7,7 @@
 </div>
 
 <div class="flex main-filters-wrapper">
-  <% @categories.all.each do |category| %>
+  <% @categories.each do |category| %>
     <div class="filter-wrapper category-item <%= "active" if category.searched_for?(params[:sub_categories]) %>">
       <%= link_to category.sub_categories.first, class: 'category-link' do %>
         <label class="checkbox-style">

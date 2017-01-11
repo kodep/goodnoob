@@ -122,7 +122,7 @@ class UsersController < ApplicationController
                  .per(16)
 
     respond_to do |format|
-      format.html { @categories = Category.includes(:sub_categories).all }
+      format.html { @categories = Category.includes(:sub_categories).order(:id) }
       format.js { render partial: 'review_result' }
     end
   end
@@ -154,7 +154,7 @@ class UsersController < ApplicationController
     if request.xhr?
       render partial: 'review_result'
     else
-      @categories = Category.includes(:sub_categories).all
+      @categories = Category.includes(:sub_categories).order(:id)
       render
     end
   end
@@ -168,7 +168,7 @@ class UsersController < ApplicationController
     if request.xhr?
       render partial: 'photo_result'
     else
-      @categories = Category.includes(:sub_categories).all
+      @categories = Category.includes(:sub_categories).order(:id)
       render
     end
   end
@@ -182,7 +182,7 @@ class UsersController < ApplicationController
     if request.xhr?
       render partial: 'video_result'
     else
-      @categories = Category.includes(:sub_categories).all
+      @categories = Category.includes(:sub_categories).order(:id)
       render
     end
   end

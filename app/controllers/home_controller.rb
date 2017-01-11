@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     private
 
     def set_categories
-        @categories ||= Category.includes(:sub_categories).all
+        @categories ||= Category.includes(:sub_categories).order(:id)
     end
 
     def set_filters

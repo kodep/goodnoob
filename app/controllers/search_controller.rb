@@ -10,7 +10,7 @@ class SearchController < ApplicationController
     respond_to do |format|
       format.js { render 'search_results_callback', layout: false }
       format.html do
-        @categories = Category.includes(:sub_categories).all
+        @categories = Category.includes(:sub_categories).order(:id)
       end
     end
   end
