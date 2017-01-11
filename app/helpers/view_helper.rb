@@ -13,8 +13,7 @@ module ViewHelper
 
   def video_with_share(video)
     content_tag(:div, class: 'embed-responsive embed-responsive-16by9') do
-      content_tag(:iframe, '', class: 'embed-responsive-item', src: video.url)
+      content_tag(:iframe, '', class: 'embed-responsive-item', allowfullscreen: 'allowfullscreen', src: video.url)
     end
   end
-
 end
