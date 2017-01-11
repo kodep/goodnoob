@@ -481,9 +481,9 @@ $(document).on('turbolinks:load', function() {
     }
 
     $('.js-copylink').on('click', function(e){
-      e.preventDefault
+      e.preventDefault();
       var textField = document.createElement('textarea');
-      textField.innerText = $('.js-copylink').last().data('copyUrl');
+      textField.innerText = $(this).data('copyUrl');
       document.body.appendChild(textField);
       textField.select();
       document.execCommand('copy');
