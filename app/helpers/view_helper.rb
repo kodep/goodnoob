@@ -7,7 +7,7 @@ module ViewHelper
   def guide_video_with_share(guide)
     video_url = VideoInfo.new(guide.video_url).embed_url
     content_tag(:div, class: 'embed-responsive embed-responsive-16by9') do
-      content_tag(:iframe, '', class: 'embed-responsive-item', src: video_url)
+      content_tag(:iframe, '', class: 'embed-responsive-item', allowfullscreen: 'allowfullscreen', src: video_url)
     end
   end
 
