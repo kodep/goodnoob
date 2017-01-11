@@ -850,10 +850,11 @@ header {
   background: #ccc no-repeat center/cover;
   overflow: hidden;
   transition: 0.3s all ease-in-out;
-  opacity: 0.5;
+  opacity: 0.75;
   // border-top: 4px solid transparent;
 
-  &.active {
+  &.active,
+  &:hover {
     opacity: 1;
   }
 

@@ -1,4 +1,4 @@
-<div class="filter-wrapper category-item active">
+<div class="filter-wrapper category-item <%= "active" if category.searched_for?(params[:sub_categories]) %>">
   <%= search_category_link category, params[:sub_categories] do %>
       <label class="checkbox-style">
         <input id="<%= "category-#{category.id}" %>" type="checkbox" class="checkbox-inline" <%= category.searched_for?(params[:sub_categories]) ? "checked='checked'" : "" %>>
