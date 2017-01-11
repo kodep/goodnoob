@@ -30,7 +30,7 @@
         <% Category.order(:id).each do |category| %>
           <% category.sub_categories.where.not(id: @sub_category.id).order(:id).each do |sub_category| %>
             <% if sub_category.guides.present? %>
-              <%= link_to "#{sub_category.name} buying guide", sub_category_guide_path(sub_category, sub_category.guides.first) %><br/>
+              <%= link_to "#{sub_category.name} buying guide", sub_category_guide_path(sub_category, sub_category.guides.last) %><br/>
             <% end %>
           <% end %>
           <% if category.sub_categories.where.not(id: @sub_category.id).map(&:guides).flatten.present? %><br/><% end %>
