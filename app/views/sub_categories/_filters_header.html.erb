@@ -8,7 +8,7 @@
 
 <div class="flex main-filters-wrapper">
   <% @categories.all.each do |category| %>
-    <div class="filter-wrapper category-item active">
+    <div class="filter-wrapper category-item <%= "active" if category.searched_for?(params[:sub_categories]) %>">
       <%= link_to category.sub_categories.first, class: 'category-link' do %>
         <label class="checkbox-style">
           <input id="<%= "category-#{category.id}" %>" type="checkbox" class="checkbox-inline" <%= category.searched_for?(params[:sub_categories]) ? "checked='checked'" : "" %>>

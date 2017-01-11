@@ -850,10 +850,11 @@ header {
   background: #ccc no-repeat center/cover;
   overflow: hidden;
   transition: 0.3s all ease-in-out;
-  opacity: 0.5;
+  opacity: 0.75;
   // border-top: 4px solid transparent;
 
-  &.active {
+  &.active,
+  &:hover {
     opacity: 1;
   }
 
@@ -2785,19 +2786,15 @@ $footer-links-color: #7f7f7f;
   padding: 6px 4px 3px 4px;
   text-transform: uppercase;
 
-  &:hover {
+  .open & {
     color: #3ce1e6;
+    text-decoration: none;
   }
 
-  &:focus,
-  &:active {
-    color: #fff;
-  }
-
-  &,
   &:hover,
   &:focus,
   &:active {
+    color: #3ce1e6;
     text-decoration: none;
   }
 
@@ -2931,8 +2928,14 @@ $footer-links-color: #7f7f7f;
 }
 
 .dropdown-on-hover {
-  &:hover .dropdown-menu {
-    display: block;
+  &:hover {
+    .dropdown-menu {
+      display: block;
+    }
+    .tabs-link {
+      color: #3ce1e6;
+      text-decoration: none;
+    }
   }
 }
 
@@ -3308,14 +3311,6 @@ $footer-links-color: #7f7f7f;
     background-size: 50%;
     }
   }
-
-  .background-wrapper{
-    min-height: 215px;
-    .main-heading-wrapper{
-      height: 200px;
-    }
-  }
-
 
   #nav-filters {
     .navbar-btn a {min-width: initial;}

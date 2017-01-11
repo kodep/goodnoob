@@ -10,7 +10,7 @@
   <div class="main-tabs-wrapper">
     <div class="flex tabs-list">
       <span class="tabs-item social-feed-button-wrapper">
-        <%= link_to "Social Feed", search_index_path, {id: 'social-feed-button', class: 'btn btn-link tabs-link'} %>
+        <%= link_to "Social Feed", search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link #{"active" if current_page?(root_path)|| current_page?(search_index_path)}"} %>
       </span>
 
       <span class="item-separator">|</span>
