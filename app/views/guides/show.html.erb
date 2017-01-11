@@ -23,12 +23,17 @@
     <div class="guide-chapters-list-wrapper">
       <div class="guide-chapters-list short">
         <div class="guides-list-header">CHAPTERS</div>
-        <% @sub_category.guides.each do |guide| %>
+        <% @sub_category.guides.order(:id).each do |guide| %>
           <%= link_to guide.header, sub_category_guide_path(@sub_category, guide) %><br/>
         <% end %>
         <div class="guides-list-header">OTHER GUIDES</div>
-        <% Guide.where.not(sub_category_id: @sub_category.id).sample(20).each do |guide| %>
-            <%= link_to guide.header, sub_category_guide_path(guide.sub_category, guide) %><br/>
+        <% Category.order(:id).each do |category| %>
+          <% category.sub_categories.where.not(id: @sub_category.id).order(:id).each do |sub_category| %>
+            <% if sub_category.guides.present? %>
+              <%= link_to "#{sub_category.name} buying guide", sub_category_guide_path(sub_category, sub_category.guides.first) %><br/>
+            <% end %>
+          <% end %>
+          <% if category.sub_categories.where.not(id: @sub_category.id).map(&:guides).flatten.present? %><br/><% end %>
         <% end %>
       </div>
       <div class="row visible-xs">
