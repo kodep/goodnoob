@@ -29,7 +29,7 @@ class ModalsController < ApplicationController
   private
 
   def set_addendum_locals
-    @categories = Category.includes(:products).all
+    @categories = Category.includes(:products).order(:id)
     @companies = Company.includes(:products).all
     @products = []
   end

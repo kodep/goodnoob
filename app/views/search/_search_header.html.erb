@@ -34,7 +34,7 @@
   </div>
 
   <div class="flex main-filters-wrapper">
-    <% @categories.reverse.each do |category| %>
+    <% @categories.each do |category| %>
         <%= render partial: 'search/category_filter', locals: {category: category} %>
     <% end %>
   </div>
