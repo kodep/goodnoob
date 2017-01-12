@@ -434,7 +434,6 @@ $(document).on('turbolinks:load', function() {
       $(this).closest('.thumb-product').remove();
     })
 
-    // GreenTree
     $('.more-less-text-big').readmore({
         collapsedHeight: 60,
         moreLink: '<a>(Read more)</a>',
@@ -575,4 +574,9 @@ $(document).on('turbolinks:load', function() {
         $(".sort-by-value").html($(this).data('field'));
       })
     }
+});
+
+$(document).on('turbolinks:before-visit', function() {
+    $('.more-less-text').readmore('destroy');
+    $('.more-less-text-big').readmore('destroy');
 });
