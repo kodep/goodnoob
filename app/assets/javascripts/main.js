@@ -436,7 +436,7 @@ $(document).on('turbolinks:load', function() {
 
     // GreenTree
     $('.more-less-text').readmore({
-        collapsedHeight: 20,
+        collapsedHeight: 45,
         moreLink: '<a>(Read more)</a>',
         lessLink: '<a>(Read less)</a>'
     });
