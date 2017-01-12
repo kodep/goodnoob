@@ -8,7 +8,7 @@
         </div>
 
         <div class="user-avatar">
-          <% user_avatar = image_tag(current_user.picture.url(:thumbnail), alt: "profile photo") if current_user.picture %>
+          <% user_avatar = image_tag(current_user.picture.url(:avatar), alt: "profile photo") if current_user.picture %>
           <% picture_image = current_user.picture ? user_avatar : '<div class="no-photo"><span class="glyphicon glyphicon-camera"></span></div>' %>
           <%= modal_button_tag(picture_image.html_safe, modals_path(action: :add_picture), { link: true, imageable_type: "User", imageable_id: current_user.id  }) %>
         </div>
