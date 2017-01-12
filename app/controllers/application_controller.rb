@@ -9,12 +9,18 @@ class ApplicationController < ActionController::Base
 
   before_filter :store_current_location, unless: :devise_controller?
 
+  before_action :set_current_currency
+
   include UserLocation
 
   private
 
     def store_current_location
       store_location_for(:user, request.url)
+    end
+
+    def set_current_currency
+      Currency.current_currency = current_user&.currency || Currency.find_by(code: 'EUR')
     end
 
   protected

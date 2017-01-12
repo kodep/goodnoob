@@ -18,7 +18,7 @@ class Product < ActiveRecord::Base
   has_many :similars, -> (p) { where.not(id: p) }, through: :sub_category, source: :products
   has_and_belongs_to_many :filter_options
 
-  has_one :actual_price, -> { order created_at: :asc }, class_name: 'Price' # .actual_price method
+  has_one :actual_price, -> { where(currency_id: Currency.current_currency.id) }, class_name: 'Price' # .actual_price method
 
   alias_attribute :characteristics, :attrs # .characteristics method
 
@@ -85,7 +85,7 @@ class Product < ActiveRecord::Base
   end
 
   def price_string
-    prices.first.try(:title) # TODO: select a proper price record
+    actual_price&.title
   end
 
   def rating

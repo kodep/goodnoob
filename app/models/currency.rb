@@ -1,4 +1,6 @@
 class Currency < ActiveRecord::Base
+  cattr_accessor :current_currency
+
   has_many :users
   has_many :prices
 end
