@@ -3,7 +3,7 @@
   <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       <span class="user-profile">
-        <%= image_tag('profile-icon.png') %>
+        <%= current_user.picture ? image_tag(current_user.picture.url(:avatar), alt: "profile photo") : image_tag('profile-icon.png') %>
       </span>
     </button>
 
