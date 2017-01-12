@@ -2565,7 +2565,8 @@ $footer-links-color: #7f7f7f;
 
     .review-unit {
       .review-title {
-        h3 {
+        h3,
+        h3 > a {
           color: #7f8082;
           font-size: 17px;
           font-weight: 200;
