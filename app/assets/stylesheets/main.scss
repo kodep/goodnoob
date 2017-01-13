@@ -936,6 +936,9 @@ header {
   }
 }
 
+.subcategory-margin {
+  margin-top: 50px;
+}
 
 .main-subfilters-wrapper {
   flex-flow: row nowrap;
@@ -3518,4 +3521,8 @@ $footer-links-color: #7f7f7f;
       opacity: .7;
     }
   }
+}
+
+.ui-slider-horizontal {
+  width: 120px !important;
 }
