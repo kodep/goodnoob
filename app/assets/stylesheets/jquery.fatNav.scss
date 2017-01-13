@@ -130,13 +130,18 @@
   &.whiteli {
     a, button, span {
       color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+      &:hover {
+        opacity: .8;
+      }
     }
   }
+
   a, button, span {
-    color: #aef4e8;
+    color: #fff;
+    cursor: pointer;
     text-decoration: none;
-
-
     &:hover {
       opacity: .8;
     }
