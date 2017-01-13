@@ -1,13 +1,17 @@
+<% currency = Currency.current_currency %>
+<% min_price = prices.min { |a, b| a.amount <=> b.amount }.amount.floor %>
+<% max_price = prices.max { |a, b| a.amount <=> b.amount }.amount.ceil %>
+
 <div class="filter-wrapper price-filter-wrapper">
       <div class='price-range' id='label_min'>
-        <%= prices.min.to_i %> <%= currency.sign %>
+        <%= min_price %> <%= currency.sign %>
       </div>
       <div id="slider">
         <%= hidden_field_tag 'price_from', :onchange => "$(this).closest('form').submit();" %>
         <%= hidden_field_tag 'price_to', :onchange => "$(this).closest('form').submit();" %>
       </div>
       <div class='price-range' id='label_max'>
-        <%= prices.max.to_i %> <%= currency.sign %>
+        <%= max_price %> <%= currency.sign %>
       </div>
 </div>
 
@@ -15,9 +19,9 @@
   $(document).ready(function() {
       var slider = $("#slider").slider({
           range: true,
-          min: <%= prices.min.to_i %>,
-          max: <%= prices.max.to_i %>,
-          values: [<%= prices.min.to_i %>, <%= prices.max.to_i %>],
+          min: <%= min_price %>,
+          max: <%= max_price %>,
+          values: [<%= min_price %>, <%= max_price %>],
           slide: function(event, ui) {
               $("#price_from").val(slider.slider("values")[0]);
               $("#price_to").val(slider.slider("values")[1]);
