@@ -42,6 +42,6 @@
   </div>
   <% end %>
   <div class="thumb-description text-center">
-    <%= truncate photo.comment, length: 110, separator: ' '%>
+    <%= truncate strip_tags(photo.comment), length: 110, separator: ' '%>
   </div>
 </div>

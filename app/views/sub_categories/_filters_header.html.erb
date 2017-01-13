@@ -2,13 +2,13 @@
 <div class="main-tabs-wrapper">
   <div class="flex tabs-list">
     <span class="tabs-item social-feed-button-wrapper">
-      <%= link_to "Social Feed", search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link #{"active" if current_page?(root_path)|| current_page?(search_index_path)}"} %>
+      <%= link_to "Social Feed", search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link" } %>
     </span>
 
     <span class="item-separator">|</span>
 
     <span class="dropdown dropdown-on-hover tabs-item compare-button-wrapper">
-      <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown"><%= defined?(@category) ? @category.name : 'Compare Products' %></button>
+      <button type="button" class="btn btn-link tabs-link active dropdown-toggle" data-toggle="dropdown"><%= defined?(@category) ? @category.name : 'Compare Products' %></button>
       <div class="dropdown-menu compare-block-wrapper">
         <%= render 'layouts/compare_products' %>
       </div>

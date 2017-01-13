@@ -19,6 +19,6 @@
   </div>
   <%= video_with_share(video) %>
   <div class="thumb-description text-center">
-    <%=truncate video.comment, length: 110, separator: ' '%>
+    <%=truncate strip_tags(video.comment), length: 110, separator: ' '%>
   </div>
 </div>
