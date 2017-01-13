@@ -51,9 +51,6 @@ ActiveAdmin.register Company do
       address.input :latitude
       address.input :longitude
     end
-    f.inputs 'Users' do
-      f.input :users, as: :check_boxes
-    end
     f.actions
   end
 
