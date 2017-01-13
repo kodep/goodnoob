@@ -41,16 +41,18 @@
         <li><%= link_to "Buying Guides", sub_category_guide_path(default_cat, default_guide) %></li>
         <hr style="border: none; border-bottom: 1px solid white; width: 100px">
         <% if user_signed_in?%>
-          <li class="whiteli">
-            <span>+New post</span>
+          <li>
+            <span data-target="#collapseMedia" data-toggle="collapse">+New post</span>
           </li>
-          <li class="whiteli">
-            <%= modal_button_tag '/Photo', modals_path(action: :add_photo), link: true %>
-          </li>
-          <li role='separator' class='divider'></li>
-          <li class="whiteli">
-            <%= modal_button_tag '/Video', modals_path(action: :add_video), link: true %>
-          </li>
+          <div class="collapse" id="collapseMedia">
+            <li class="whiteli">
+              <%= modal_button_tag '/Photo', modals_path(action: :add_photo), link: true %>
+            </li>
+            <li role='separator' class='divider'></li>
+            <li class="whiteli">
+              <%= modal_button_tag '/Video', modals_path(action: :add_video), link: true %>
+            </li>
+          </div>
         <% end %>
         <li><%= link_to('My Profile', edit_user_registration_path) %></li>
         <li clas="social-links">
