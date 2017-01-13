@@ -15,6 +15,16 @@ class SearchController < ApplicationController
     end
   end
 
+  def suggestions
+    @suggestions = ProductSearchService.new(params).suggestions
+    respond_to do |format|
+      format.json do
+        render json:  @suggestions.products,
+               layout: false
+      end
+    end
+  end
+
   def remove
     current_user.remove_search(params[:id]) if current_user
     if request.xhr?
@@ -23,4 +33,5 @@ class SearchController < ApplicationController
       redirect_to :back
     end
   end
+
 end

@@ -74,6 +74,7 @@ Rails.application.routes.draw do
 
   resources :home, only: [:index]
   resources :search, only: [:index] do
+    get 'suggestions', on: :collection
     member do
       get 'remove'
     end
