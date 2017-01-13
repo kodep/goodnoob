@@ -22,7 +22,7 @@ class ModalsController < ApplicationController
       company = Company.find_by(id: params[:company_id])
       render json: { product: ActiveModel::ArraySerializer.new(company.products, each_serializer: ProductSerializer) }
     else
-      render jso: {}
+      render json: {}
     end
   end
 
@@ -33,4 +33,5 @@ class ModalsController < ApplicationController
     @companies = Company.includes(:products).all
     @products = []
   end
+
 end

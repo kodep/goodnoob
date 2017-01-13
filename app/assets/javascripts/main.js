@@ -574,6 +574,16 @@ $(document).on('turbolinks:load', function() {
         $(".sort-by-value").html($(this).data('field'));
       })
     }
+
+    // Insert message in modal
+    $('[data-toggle=modal][data-message]').on('click', function (event) {
+        var button = $(event.currentTarget);
+        var modal = $(button.data('target'));
+        var message = button.data('message');
+        var msgNode = $('<div class="alert alert-danger">' + message + '</div>');
+        modal.find('form').prepend(msgNode)
+        modal.one('hide.bs.modal', function(){ msgNode.remove(); });
+    });
 });
 
 $(document).on('turbolinks:before-visit', function() {

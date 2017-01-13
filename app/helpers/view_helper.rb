@@ -1,7 +1,10 @@
 module ViewHelper
 
-  def modal_link(text = 'Modal link', add_class = nil)
-    content_tag(:a, text, class: add_class, data: { toggle: 'modal', target: '#SignInModal'})
+  def modal_link(text = 'Modal link', add_class = nil, message = nil)
+    data = { toggle: 'modal', target: '#SignInModal' }
+    data[:message] = message if message.present?
+
+    content_tag(:a, text, class: add_class, data: data)
   end
 
   def guide_video_with_share(guide)

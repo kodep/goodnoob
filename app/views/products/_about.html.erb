@@ -43,7 +43,7 @@
               <% if current_user.present? %>
                   <%= modal_button_tag 'Photo', modals_path(action: :add_photo, product_id: product.id), link: true %>
               <% else %>
-                  <%= modal_link('Photo') %>
+                  <%= modal_link('Photo', nil, 'You need to be logged to upload photos') %>
               <% end %>
             </li>
             <li role='separator' class='divider'></li>
@@ -51,7 +51,7 @@
               <% if current_user.present? %>
                   <%= modal_button_tag 'Video', modals_path(action: :add_video, product_id: product.id), link: true %>
               <% else %>
-                  <%= modal_link('Video') %>
+                  <%= modal_link('Video', nil, 'You need to be logged to upload videos') %>
               <% end %>
             </li>
           </ul>
