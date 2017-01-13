@@ -61,7 +61,7 @@
   </div>
   <div class='thumb-description thumb-brd-btm-4 text-left'>
     <p>
-      <%= truncate photo.comment, length: 200, separator: ' ' %>
+      <%= truncate strip_tags(photo.comment), length: 200, separator: ' ' %>
     </p>
   </div>
   <div class='flex thumb-footer'>

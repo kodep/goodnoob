@@ -42,7 +42,7 @@
               </div>
               <div class='thumb-description text-left'>
                 <p>
-                  <%= truncate product.description, length: 320, separator: ' ' %>
+                  <%= truncate strip_tags(product.description), length: 320, separator: ' ' %>
                 </p>
               </div>
               <div class='thumb-moreinfo-link'>
