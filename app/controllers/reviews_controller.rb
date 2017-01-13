@@ -57,7 +57,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review.destroy!
-    redirect_to edit_user_registration_path
+    redirect_to :back
   end
 
   private
