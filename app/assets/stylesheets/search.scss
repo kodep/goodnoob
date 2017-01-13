@@ -127,8 +127,56 @@
   }
 }
 
+// Search-form--inline
+.search-form--inline {
+  .suggestions {
+    background: #fff;
+    border: 1px solid #bbb;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.13);
+    box-sizing: border-box;
+    display: none;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .s-separator {
+    border-bottom: 1px solid #ddd;
+    margin: 0 auto;
+    width: 98%;
+  }
+
+  .s-suggestion {
+    cursor: pointer;
+    padding: 7px 10px;
+
+    &:hover {
+      background-color: #eee;
+    }
+  }
+
+  .s-highlight-primary {
+    color: #e47911;
+  }
+
+  .s-query {
+    font-weight: 700;
+  }
+
+  a.s-suggestion {
+    display: block;
+    text-decoration: none;
+    color: #333;
+  }
+}
+
 @media (max-width: 769px) {
   .share_items > .share-button-whatsapp {
     display: inline-block;
   }
 }
+
+
