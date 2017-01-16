@@ -250,25 +250,6 @@ $(document).on('turbolinks:load', function() {
         maxScrollbarLength: 80
     });
 
-    // Showing 'Your categories' filters by default
-
-    for ( var filter in filterStatus ) {
-        if( filterStatus[filter] === 'show' ) {
-            var section = $('.filter-group.' + filter);
-            section.children('.filter-group-contents').toggle().addClass('visible');
-            $('.filter-group.' + filter + ' .filter-group-arrow').addClass('rotated');
-            if(section.find('.filter-wrapper').length > 5){
-                section.find('.showmore-link-wrapper:first').show();
-            }
-        }
-    }
-
-
-    // Hiding more than 5 filters
-    if($(filterHead).siblings('.filter-group-contents').find('.filter-wrapper').length > 5){
-        $(filterHead).siblings('.filter-group-contents').find('.filter-wrapper:gt(4)').hide();
-    }
-
     // Toggling main filters
     $(filterHead).click(function(){
         $(this).siblings('.filter-group-contents').toggle(300).toggleClass('visible');
@@ -547,7 +528,6 @@ $(document).on('turbolinks:load', function() {
     });
 
     if($('.main-search-container').length > 0) {
-      $('.filter-heading-wrapper').click();
 
       $('.js-activate-filters-sidebar').on('click', function(e){
         $(".bottom-bar").addClass('hidden-xs');
@@ -560,18 +540,21 @@ $(document).on('turbolinks:load', function() {
       $('.container-mask').on('click', function(){
         $(".bottom-bar").removeClass('hidden-xs');
         $('.side-panel-wrapper').removeClass('visible-mobile');
+        $(".mobile-sort-bar").addClass('hidden');
         $(this).addClass('hidden');
       })
 
       $('.js-activate-mobile-sort-by').on('click', function(){
         $(".bottom-bar").addClass('hidden-xs');
         $(".mobile-sort-bar").removeClass('hidden');
+        $('.container-mask').removeClass('hidden');
       })
 
       $('.mobile-sort-bar-item').on('click', function(){
         $(".bottom-bar").removeClass('hidden-xs');
         $(".mobile-sort-bar").addClass('hidden');
         $(".sort-by-value").html($(this).data('field'));
+        $('.container-mask').addClass('hidden');
       })
     }
 

@@ -71,8 +71,9 @@
     <% end if @sub_category.products.map(&:actual_price).uniq.compact.select { |p| p.amount.present? }.present? %>
 
     <% @filters.each do |filt| %>
+      <% type = "#{filt.name.downcase.gsub(/[^a-z]/, '')}-opt" %>
       <%= render layout: 'left_filter',
-          locals: { filter_name: filt.name, filter_type: filt.name, icon_class: 'glyphicon glyphicon-home' } do %>
+          locals: { filter_name: filt.name, filter_type: type, icon_class: 'glyphicon glyphicon-home' } do %>
         <% filt.filter_options.each do |option| %>
           <%= render partial: 'filter_options', locals: { option: option } %>
         <% end %>
