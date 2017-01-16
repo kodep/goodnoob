@@ -12,17 +12,21 @@
 class SubCategoriesController < ApplicationController
   def show
     @sub_category = SubCategory.find(params[:id])
+    params[:sub_categories] = [ @sub_category.id.to_s ]
 
-    @products = @sub_category.products
-                  .filter(params[:filters])
-                  .companies(params[:companies])
-                  .year_from(params[:year_from])
-                  .year_to(params[:year_to])
-                  .price_from(params[:price_from])
-                  .price_to(params[:price_to])
-                  .sort_by(params[:search_field], params[:search_direction])
-                  .page(params[:page])
-                  .per(16)
+    @products =
+      @sub_category.products
+                   .base_search(params[:search],
+                                params[:sub_categories],
+                                params[:companies])
+                   .filter(params[:filters])
+                   .year_from(params[:year_from])
+                   .year_to(params[:year_to])
+                   .price_from(params[:price_from])
+                   .price_to(params[:price_to])
+                   .sort_by(params[:search_field], params[:search_direction])
+                   .page(params[:page])
+                   .per(16)
 
     @filters = @sub_category.filters
 

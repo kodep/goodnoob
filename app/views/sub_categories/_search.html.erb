@@ -1,12 +1,17 @@
 <div class="flex main-search-wrapper">
-  <%= form_tag search_index_path, method: :get, class: 'search-form--inline' do %>
-      <div class="search-field-wrapper">
-        <%= text_field_tag :search, params[:search], class: 'search-field form-control', placeholder: 'Search...' %>
-        <%= button_tag class: 'submit-icon' do %>
-            <i class="glyphicon glyphicon-search"></i>
-        <% end %>
+  <div class="search-form--inline">
+    <div class="search-field-wrapper">
+      <%= text_field_tag :search, params[:search], class: 'search-field form-control', placeholder: 'Search...', autocomplete: 'off' %>
+      <%= button_tag class: 'submit-icon' do %>
+        <i class="glyphicon glyphicon-search"></i>
+      <% end %>
+      <div class="suggestions">
+        <div class="s-categories"></div>
+        <div class="s-separator"></div>
+        <div class="s-products"></div>
       </div>
-  <% end %>
+    </div>
+  </div>
 
   <div class="sort-by-field js-sort-by-dropdown hidden-xs dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -17,10 +22,10 @@
 
     <ul class="dropdown-menu">
       <li><a href="#" class="js-apply-sort" data-field="newest" data-desc="true">Newest</a></li>
-      <li><a href="#" class="js-apply-sort" data-field="price" data-desc="true">Price</a></li>
-      <li><a href="#" class="js-apply-sort" data-field="year" data-desc="false">Year</a></li>
-      <li><a href="#" class="js-apply-sort" data-field="rating" data-desc="false">Rating</a></li>
-      <li><a href="#" class="js-apply-sort" data-field="name" data-desc="true">Name</a></li>
+      <li><a href="#" class="js-apply-sort" data-field="price" data-desc="false">Price</a></li>
+      <li><a href="#" class="js-apply-sort" data-field="year" data-desc="true">Year</a></li>
+      <li><a href="#" class="js-apply-sort" data-field="rating" data-desc="true">Rating</a></li>
+      <li><a href="#" class="js-apply-sort" data-field="name" data-desc="false">Name</a></li>
     </ul>
   </div>
 </div>
