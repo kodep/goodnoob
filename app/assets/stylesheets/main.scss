@@ -136,7 +136,7 @@ table {
 /* FINISHED RESETTING */
 
 // Some very basic styles
-$main-background-color: #dcdfe9;
+$main-background-color: #f0f2f6;
 
 html,
 body,
@@ -804,6 +804,7 @@ header {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
+  background: $main-background-color;
 
   .filter-wrapper {
     color: #fff;
