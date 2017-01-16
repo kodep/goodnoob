@@ -85,7 +85,7 @@ $(document).on 'turbolinks:load', ->
     return if window.ajax
     $this = $(@)
     field = $this.data 'field'
-    desc = $this.data('desc') != true
+    desc = $this.data('desc') == true
     $('#search_field').val field
     $('#search_direction').val desc
     $('#filter_form').submit()
