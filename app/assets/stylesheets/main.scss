@@ -680,7 +680,7 @@ header {
     display: inline;
     margin: 6px;
     border-radius: 0px;
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 767px) {
       display: inline-block;
       font-size: .8em;
       width: 130px;
@@ -955,6 +955,7 @@ header {
     white-space: nowrap;
     font-weight: 300;
 
+
     .subcategory-link {
       background-position: center;
       align-items: center;
@@ -978,6 +979,14 @@ header {
         padding-top: 8px;
         font-size: 18px;
         cursor: pointer;
+
+        @media only screen and (max-width: 767px) {
+          font-size: 14px;
+        }
+
+        @media only screen and (max-width: 400px) {
+          font-size: 12px;
+        }
       }
     }
 
@@ -2072,13 +2081,17 @@ $upload-button-color: #64b0fc;
     .thumb-wrapper {
       background: $thumb-background;
       font-family: $thumbs-main-font;
-      margin: 0 0 15px;
+      margin: 0 15px 15px 0;
       padding: 0;
       width: 470px;
       max-width: 100%;
 
       @media only screen and (min-width: 768px) {
         margin: 0 15px 15px 0;
+      }
+
+      @media only screen and (max-width: 400px) {
+        margin: 0 0 15px 0;
       }
 
       &.thumb-product {
@@ -2562,7 +2575,7 @@ $footer-links-color: #7f7f7f;
   .review-section {
     padding: 20px 100px;
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 767px) {
       padding: 20px;
     }
 
@@ -2820,7 +2833,7 @@ $footer-links-color: #7f7f7f;
   width: 2px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .header-side-dropdown-button {
     position: fixed;
     top: 36px;
@@ -2897,7 +2910,7 @@ $footer-links-color: #7f7f7f;
     }
   }
 
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     display: none;
   }
 }
@@ -3494,6 +3507,7 @@ $footer-links-color: #7f7f7f;
   bottom: 0;
   font-weight: 200;
   font-size: 1.3rem;
+  z-index: 100;
   .mobile-sort-bar-header {
     background-color: #3fa9f5;
     height: 40px;
