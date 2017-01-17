@@ -2208,9 +2208,10 @@ $upload-button-color: #64b0fc;
       .thumb-preview {
         display: flex;
         flex-direction: column;
+        height: 300px;
         justify-content: center;
-        position: relative;
         overflow: hidden;
+        position: relative;
       }
 
       .thumb-preview-button {
@@ -2228,12 +2229,13 @@ $upload-button-color: #64b0fc;
       }
 
       .thumb-bg {
-        width: 100%;
-        object-fit: contain;
-        background-repeat: no-repeat;
         background-position: center;
+        background-repeat: no-repeat;
         background-size: cover;
+        flex: 0 0 300px;
         max-height: 100%;
+        object-fit: contain;
+        width: 100%;
       }
 
       .thumb-description {
