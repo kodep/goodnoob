@@ -91,6 +91,8 @@ Rails.application.routes.draw do
   resources :photos, only: [:create, :show, :edit, :update, :destroy]
   resources :videos, format: false, only: [:create, :show, :edit, :update, :destroy]
 
+  resources :terms, only: :show
+
   post '/modals/:action', controller: :modals, format: false, as: :modals
   get '/modals/fetch' => 'modals#fetch', format: :json
 end
