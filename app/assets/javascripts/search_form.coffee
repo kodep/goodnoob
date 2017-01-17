@@ -8,7 +8,7 @@ class SearchForm
     @products = @el.find('.s-products')
     @categories = @el.find('.s-categories')
     @input.on 'keyup', @onKeyUp
-    # @input.on 'blur', @onBlur
+    @input.on 'blur', @onBlur
 
   onKeyUp: =>
     query = @input.val()
@@ -53,18 +53,15 @@ class SearchForm
     "<a href='/products/#{product.id}' class='s-suggestion'>#{@productTitle(product, query)}</a>"
 
   categoryTemplate: (query, product) ->
-    search_params = $.param {
-      search: product.name,
-      year: product.year,
-      sub_categories: [ product.sub_category.id ] }
-    "<a class='s-suggestion' href='search?#{search_params}'>" +
+    search_params = $.param { search: product.name }
+    "<a class='s-suggestion' href='/sub_categories/#{product.sub_category.id}?#{search_params}'>" +
     "  #{@productTitle(product, query)} in " +
     "  <span class='s-highlight-primary'>#{product.sub_category.name}</span>" +
     "</a>"
 
   socialFeedTemplate: (query) ->
     search_params = $.param { search: query }
-    "<a class='s-suggestion' href='search?#{search_params}'>" +
+    "<a class='s-suggestion' href='/search?#{search_params}'>" +
     "  <span class='s-query'>#{query}</span> in " +
     "  <span class='s-highlight-primary'>Social Feed</span>" +
     "</a>"

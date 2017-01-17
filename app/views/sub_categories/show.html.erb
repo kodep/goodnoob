@@ -33,15 +33,17 @@
   </div>
 </div>
 
-<div class="main-search-container">
-  <%= render 'left_filters' %>
-  <!-- MAIN CONTENTS LAYOUT -->
-  <main class="main-content-wrapper">
-    <!-- <%= render partial: 'sort' %> -->
-    <%= render partial: 'products', locals: { products: @products } %>
-    <%= render partial: 'load_more_button', locals: { products: @products } %>
-  </main>
-</div>
+<%= form_tag(sub_category_path(@sub_category, format: :js), method: 'get', id: 'filter_form', remote: true) do %>
+  <div class="main-search-container">
+    <%= render 'left_filters' %>
+    <!-- MAIN CONTENTS LAYOUT -->
+    <main class="main-content-wrapper">
+      <!-- <%#= render partial: 'sort' %> -->
+      <%= render partial: 'products', locals: { products: @products } %>
+      <%= render partial: 'load_more_button', locals: { products: @products } %>
+    </main>
+  </div>
+<% end %>
 
 <div class="bottom-bar">
   <div class="bottom-bar-button js-activate-filters-sidebar">filters</div>

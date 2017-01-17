@@ -43,7 +43,7 @@ class Product < ActiveRecord::Base
   scope :price_from, ->(price_from) { joins(:actual_price).where('prices.amount >= ?', price_from) if price_from.present? }
   scope :price_to, ->(price_to) { joins(:actual_price).where('prices.amount <= ?', price_to) if price_to.present? }
   scope :sort_by, ->(field, desc) {
-    direction = desc == 'true' ? 'DESC' : 'ASC'
+    direction = desc.blank? || desc.eql?('true') ? 'DESC' : 'ASC'
     case field
       when 'price'
         joins(:actual_price).order("prices.amount #{direction}")
