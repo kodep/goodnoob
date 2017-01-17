@@ -194,6 +194,8 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hashie (3.4.6)
+    heroku-deflater (0.6.2)
+      rack (>= 1.4.5)
     high_voltage (3.0.0)
     hirb (0.7.3)
     hub (1.12.4)
@@ -474,6 +476,7 @@ DEPENDENCIES
   faker
   geocoder
   gon
+  heroku-deflater
   high_voltage
   hub
   image_optim
