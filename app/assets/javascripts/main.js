@@ -513,7 +513,10 @@ $(document).on('turbolinks:load', function() {
     })
 
     $('.bxslider').bxSlider({
-      pagerCustom: '.bx-slider-pager'
+      pagerCustom: '.bx-slider-pager',
+      onSliderLoad: function(){
+        $(".bxslider .product-photo").css("visibility", "visible");
+      }
     });
 
     $('.chart').horizBarChart({
