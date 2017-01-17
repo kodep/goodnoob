@@ -26,5 +26,5 @@
 <% end %>
 
 <% content_for :action do %>
-  <%= link_to "Post", '#', class:'btn upload-button', data:{submit_button:true, submit_target:'#submit-photo'} %>
+  <%= link_to "Post", '#', class: 'btn upload-button', data: { submit_button: true, submit_target: '#submit-photo', disable_with: 'Loading...' } %>
 <% end %>
