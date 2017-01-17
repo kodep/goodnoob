@@ -1,7 +1,6 @@
 /**
  * Created by Lilik on 17.12.2015.
  */
-$.fatNav();
 
 $(document).on('turbolinks:load', function() {
     var filterHead = $('.filter-heading-wrapper');
@@ -528,6 +527,8 @@ $(document).on('turbolinks:load', function() {
     $('#modal').on('shown.bs.modal', function (e) {
       $('.selectpicker').selectpicker();
     });
+
+    $.fatNav();
 
     if($('.main-search-container').length > 0) {
 
