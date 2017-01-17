@@ -87,6 +87,16 @@
         text-align: center;
         margin-bottom: 20px;
       }
+      h2 {
+        font-weight: bolder;
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .logo {
+        display: block;
+        margin: 20px auto 40px;
+      }
       .guide-text {
         float: none;
         p {
@@ -138,6 +148,13 @@
         h1 {
           margin-bottom: 10px;
           font-size: 1.2rem;
+        }
+        h2 {
+          margin-bottom: 10px;
+          font-size: 1rem;
+        }
+        .logo {
+          margin: 10px auto 20px;
         }
       }
     }
