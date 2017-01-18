@@ -3,8 +3,8 @@
     <div class="guide-chapters-list-wrapper">
       <div class="guide-chapters-list short">
         <div class="guides-list-header">CHAPTERS</div>
-        <% Term.order(:id).each do |term| %>
-          <%= link_to term.header, term_path(term) %><br/>
+        <% Info::Privacy.order(:id).each do |privacy| %>
+          <%= link_to privacy.header, info_privacy_path(privacy) %><br/>
         <% end %>
       </div>
       <div class="row visible-xs">
@@ -15,10 +15,10 @@
     </div>
     <div class="guide-text-wrapper">
       <%= image_tag("big_logo.png", alt: 'logo', class: 'logo') %>
-      <h1>TERMS AND CONDITIONS OF GOODNOOB</h1>
-      <h2><%= @term.header.upcase %></h2>
+      <h1>Privacy</h1>
+      <h2><%= @privacy.header.upcase %></h2>
       <div class="guide-text col-md-10 center-block">
-        <%= simple_format @term.description&.html_safe %>
+        <%= simple_format @privacy.description&.html_safe %>
       </div>
     </div>
   </section>

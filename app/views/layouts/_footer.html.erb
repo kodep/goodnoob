@@ -2,18 +2,24 @@
 <footer class="flex footer-wrapper">
     <div class="flex footer-mainlinks-wrapper">
         <div class="footer-termslink-wrapper">
-            <%= link_to (Term.first.present? ? term_path(Term.first) : '#'), class: "footer-main-link" do  %>
+            <%= link_to (Info::Term.first.present? ? info_term_path(Info::Term.first) : '#'), class: "footer-main-link" do  %>
                 <span class="footer-terms-link">Terms</span>
             <% end %>
         </div>
         <div class="footer-faqlink-wrapper">
-            <a href="#" class="footer-main-link"><span class="footer-faq-link">FAQ</span></a>
+            <%= link_to (Info::Question.first.present? ? info_question_path(Info::Question.first) : '#'), class: "footer-main-link" do  %>
+                <span class="footer-faq-link">FAQ</span>
+            <% end %>
         </div>
         <div class="footer-privacylink-wrapper">
-            <a class="footer-main-link" href="#"><span class="footer-privacy-link">Privacy</span></a>
+            <%= link_to (Info::Privacy.first.present? ? info_privacy_path(Info::Privacy.first) : '#'), class: "footer-main-link" do  %>
+                <span class="footer-privacy-link">Privacy</span>
+            <% end %>
         </div>
         <div class="footer-maplink-wrapper">
-            <a class="footer-main-link" href="#"><span class="footer-map-link">Site Map</span></a>
+            <%= link_to (Info::About.first.present? ? info_about_path(Info::About.first) : '#'), class: "footer-main-link" do  %>
+                <span class="footer-map-link">About us</span>
+            <% end %>
         </div>
     </div>
     <div class="flex footer-sociallinks-wrapper">
