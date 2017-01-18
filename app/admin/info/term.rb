@@ -1,4 +1,4 @@
-ActiveAdmin.register Term do
+ActiveAdmin.register Info::Term do
 
   permit_params :header, :description
 

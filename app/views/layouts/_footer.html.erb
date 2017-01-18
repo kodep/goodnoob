@@ -2,7 +2,7 @@
 <footer class="flex footer-wrapper">
     <div class="flex footer-mainlinks-wrapper">
         <div class="footer-termslink-wrapper">
-            <%= link_to (Term.first.present? ? term_path(Term.first) : '#'), class: "footer-main-link" do  %>
+            <%= link_to (Info::Term.first.present? ? info_term_path(Info::Term.first) : '#'), class: "footer-main-link" do  %>
                 <span class="footer-terms-link">Terms</span>
             <% end %>
         </div>

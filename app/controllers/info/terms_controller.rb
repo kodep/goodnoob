@@ -1,4 +1,4 @@
-class TermsController < ApplicationController
+class Info::TermsController < ApplicationController
   before_action :set_term, only: [:show]
 
   def show
@@ -7,6 +7,6 @@ class TermsController < ApplicationController
   private
 
   def set_term
-    @term = Term.find(params[:id])
+    @term = Info::Term.find(params[:id])
   end
 end

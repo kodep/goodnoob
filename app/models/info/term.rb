@@ -1,4 +1,4 @@
-class Term < ActiveRecord::Base
+class Info::Term < Info::Base
   validates :header, presence: true
 end
 

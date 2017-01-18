@@ -3,8 +3,8 @@
     <div class="guide-chapters-list-wrapper">
       <div class="guide-chapters-list short">
         <div class="guides-list-header">CHAPTERS</div>
-        <% Term.order(:id).each do |term| %>
-          <%= link_to term.header, term_path(term) %><br/>
+        <% Info::Term.order(:id).each do |term| %>
+          <%= link_to term.header, info_term_path(term) %><br/>
         <% end %>
       </div>
       <div class="row visible-xs">

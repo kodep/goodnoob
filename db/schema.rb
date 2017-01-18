@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170117143840) do
+ActiveRecord::Schema.define(version: 20170118114223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,6 +132,13 @@ ActiveRecord::Schema.define(version: 20170117143840) do
 
   add_index "guides", ["sub_category_id"], name: "index_guides_on_sub_category_id", using: :btree
 
+  create_table "info_terms", force: :cascade do |t|
+    t.string   "header"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "languages", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -215,13 +222,6 @@ ActiveRecord::Schema.define(version: 20170117143840) do
   create_table "sub_categories", force: :cascade do |t|
     t.string   "name"
     t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "terms", force: :cascade do |t|
-    t.string   "header"
-    t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
