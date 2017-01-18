@@ -48,7 +48,7 @@ $(document).on('turbolinks:load', function() {
 
 
     var addHeaderVideo = function() {
-        $('#header_video').html(
+        $('#header_video').prepend(
             '<video playsinline autoplay muted loop>' +
             '<source src="/good_noob.mp4" type="video/mp4">' +
             '</video>'
