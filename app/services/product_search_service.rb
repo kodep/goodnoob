@@ -16,12 +16,19 @@ class ProductSearchService
   end
 
   def suggestions
-    self.products =
-      Product.where('lower(products.name) LIKE lower(?)', "%#{search_string}%")
-             .first(5)
-             .as_json(only: [:id, :name, :year],
-                      include: { sub_category: { only: [:id, :name ] }})
-    self
+    { products:
+        Product.where('lower(products.name) LIKE lower(?)', "%#{search_string}%")
+               .includes(:sub_category)
+               .first(5)
+               .as_json(only: [:id, :name, :year],
+                        include: { sub_category: { only: [:id, :name ] } }),
+      companies:
+        Company.search(search_string)
+               .includes(:sub_categories)
+               .first(5)
+               .as_json(only: [:id, :name],
+                        include: { sub_categories: { only: [:id, :name ] } })
+    }
   end
 
 end
