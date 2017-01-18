@@ -7,7 +7,9 @@
             <% end %>
         </div>
         <div class="footer-faqlink-wrapper">
-            <a href="#" class="footer-main-link"><span class="footer-faq-link">FAQ</span></a>
+            <%= link_to (Info::Question.first.present? ? info_question_path(Info::Question.first) : '#'), class: "footer-main-link" do  %>
+                <span class="footer-faq-link">FAQ</span>
+            <% end %>
         </div>
         <div class="footer-privacylink-wrapper">
             <%= link_to (Info::Privacy.first.present? ? info_privacy_path(Info::Privacy.first) : '#'), class: "footer-main-link" do  %>
