@@ -2,10 +2,10 @@ class Company < ActiveRecord::Base
   has_many :products
   has_many :pos, class_name: 'POS'
   has_many :distributors, through: :pos
-  
+
   has_one :address, as: :addressable
 
-  has_many :sub_categories, through: :products
+  has_many :sub_categories, -> { uniq }, through: :products
   has_many :categories, through: :sub_categories
 
   has_many :user_favourites, as: :favouriteable
@@ -29,6 +29,11 @@ class Company < ActiveRecord::Base
     else
       all
     end
+  end
+
+  def self.search(query)
+    return [] if query.blank?
+    where('lower(companies.name) LIKE lower(:search)', search: "%#{query}%")
   end
 
 end

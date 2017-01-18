@@ -19,7 +19,7 @@ class SearchController < ApplicationController
     @suggestions = ProductSearchService.new(params).suggestions
     respond_to do |format|
       format.json do
-        render json:  @suggestions.products,
+        render json: @suggestions,
                layout: false
       end
     end

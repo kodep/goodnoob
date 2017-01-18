@@ -29,25 +29,33 @@ class SearchForm
       dataType: "JSON",
       data:
         search: query
-      success: (products) =>
-        @render(query, products)
+      success: (suggestions) =>
+        @render(query, suggestions)
         @suggestions.slideDown()
 
-  render: (query, products) =>
-    @renderCategories(query, products)
-    @renderProducts(query, products)
+  render: (query, suggestions) =>
+    @renderCategories(query, suggestions)
+    @renderProducts(query, suggestions.products)
 
   renderProducts: (query, products) =>
-    result = ''
+    html = ''
     for product in products
-      result += @productTemplate(query, product)
-    @products.html(result)
+      html += @productTemplate(query, product)
+    @products.html(html)
 
-  renderCategories: (query, products) =>
-    result = @socialFeedTemplate(query)
+  renderCompanies: (query, companies) =>
+    html = @socialFeedTemplate(query)
     for product in products
-      result += @categoryTemplate(query, product)
-    @categories.html(result)
+      html += @categoryTemplate(query, product)
+    @categories.html(html)
+
+  renderCategories: (query, suggestions) =>
+    result = [@socialFeedTemplate(query)]
+    for product in suggestions.products
+      result.push @categoryTemplate(query, product)
+    for company in suggestions.companies
+      result.push @companyTemplate(query, company)
+    @categories.html(result.join(''))
 
   productTemplate: (query, product) ->
     "<a href='/products/#{product.id}' class='s-suggestion'>#{@productTitle(product, query)}</a>"
@@ -57,6 +65,19 @@ class SearchForm
     "<a class='s-suggestion' href='/sub_categories/#{product.sub_category.id}?#{search_params}'>" +
     "  #{@productTitle(product, query)} in " +
     "  <span class='s-highlight-primary'>#{product.sub_category.name}</span>" +
+    "</a>"
+
+  companyTemplate: (query, company) ->
+    result = ''
+    for sub_category in company.sub_categories
+      result += @subCategoryTemplate(query, company, sub_category)
+    result
+
+  subCategoryTemplate: (query, company, sub_category) ->
+    search_params = $.param { companies: [company.id] }
+    "<a class='s-suggestion' href='/sub_categories/#{sub_category.id}?#{search_params}'>" +
+    "  #{@highlight(company.name, query)} in " +
+    "  <span class='s-highlight-primary'>#{sub_category.name} Compare</span>" +
     "</a>"
 
   socialFeedTemplate: (query) ->
