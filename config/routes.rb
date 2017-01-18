@@ -95,6 +95,7 @@ Rails.application.routes.draw do
     resources :terms, only: :show
     resources :privacies, only: :show
     resources :questions, only: :show
+    resources :abouts, only: :show
   end
 
   post '/modals/:action', controller: :modals, format: false, as: :modals

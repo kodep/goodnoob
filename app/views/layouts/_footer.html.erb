@@ -17,7 +17,9 @@
             <% end %>
         </div>
         <div class="footer-maplink-wrapper">
-            <a class="footer-main-link" href="#"><span class="footer-map-link">Site Map</span></a>
+            <%= link_to (Info::About.first.present? ? info_about_path(Info::About.first) : '#'), class: "footer-main-link" do  %>
+                <span class="footer-map-link">About us</span>
+            <% end %>
         </div>
     </div>
     <div class="flex footer-sociallinks-wrapper">
