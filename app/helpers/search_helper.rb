@@ -169,5 +169,13 @@ module SearchHelper
     search_link nil, param_changes, { class: 'sub-filter-checkbox' }, &block
   end
 
+  def products_for_select_tag(products = Product.all)
+    products.includes(:sub_category).map do |product|
+      title = product.name
+      title += " (#{product.year})" if product.year
+      title += " in #{product.sub_category.name}"
+      [title, product.id]
+    end
+  end
 
 end
