@@ -314,6 +314,11 @@ header {
     flex: 1 0 auto;
     text-align: center;
     justify-content: center;
+    @media only screen and (max-width: 767px) {
+      img {
+        width: 150px;
+      }
+    }
   }
 }
 
@@ -756,46 +761,26 @@ header {
 }
 
 .background-wrapper {
-  background: #4b7c7f image-url('header-background.jpg') no-repeat top left;
-  background-size: cover !important;
+  margin-top: $navbar-height;
+  height: 400px;
   min-height: 400px;
   position: relative;
-  width: 100%;
-  margin-top: $navbar-height;
-
-  .main-heading-wrapper {
-    align-items: flex-end;
-    display: flex;
-    flex-flow: column nowrap;
-    margin-right: 90px;
-    position: relative;
-    text-align: right;
+  background: image-url('header-video-placeholder.png') center center no-repeat;
+  background-size: cover;
+  video {
+    position: absolute;
+    display: block;
+    margin: 0 auto;
     height: 400px;
-    justify-content: space-between;
-
-    .main-heading {
-      color: $flores-heading-text;
-      font-family: $flores-heading-font;
-      font-size: $flores-heading-fontsize;
-      font-weight: $flores-heading-weight;
-      text-shadow: 2px 2px #666;
-    }
-
-    .heading-sub-text {
-      color: $heading-sub-text;
-      font-family: $heading-subtext-font;
-      font-size: $heading-subtext-fontsize;
-      font-weight: $heading-subtext-weight;
-      margin: 25px 0;
-      text-shadow: 1px 1px #333;
-    }
-
-    .heading-button {
-      color: $heading-button-text;
-      font-family: $heading-button-font;
-      font-size: $heading-button-fontsize;
-      height: 40px;
-      width: 190px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media only screen and (max-width: 767px) {
+    height: 200px;
+    min-height: 200px;
+    video {
+      height: 200px;
     }
   }
 }
@@ -1267,9 +1252,9 @@ header {
   }
 
   .background-wrapper {
-    background-size: cover;
-    height: auto;
-    min-height: 120px;
+    // background-size: cover;
+    // height: auto;
+    // min-height: 120px;
 
     .main-heading-wrapper {
       height: auto;
