@@ -93,6 +93,7 @@ Rails.application.routes.draw do
 
   namespace :info do
     resources :terms, only: :show
+    resources :privacies, only: :show
   end
 
   post '/modals/:action', controller: :modals, format: false, as: :modals

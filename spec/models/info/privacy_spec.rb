@@ -1,10 +1,12 @@
-class Info::Term < Info::Base
-  validates :header, presence: true
+require 'rails_helper'
+
+RSpec.describe Info::Privacy, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
 
 # == Schema Information
 #
-# Table name: info_terms
+# Table name: info_privacies
 #
 #  id          :integer          not null, primary key
 #  header      :string

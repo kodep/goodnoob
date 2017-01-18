@@ -1,10 +1,12 @@
-class Info::Term < Info::Base
-  validates :header, presence: true
+FactoryGirl.define do
+  factory :info_privacy, class: 'Info::Privacy' do
+    
+  end
 end
 
 # == Schema Information
 #
-# Table name: info_terms
+# Table name: info_privacies
 #
 #  id          :integer          not null, primary key
 #  header      :string

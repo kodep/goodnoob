@@ -10,7 +10,9 @@
             <a href="#" class="footer-main-link"><span class="footer-faq-link">FAQ</span></a>
         </div>
         <div class="footer-privacylink-wrapper">
-            <a class="footer-main-link" href="#"><span class="footer-privacy-link">Privacy</span></a>
+            <%= link_to (Info::Privacy.first.present? ? info_privacy_path(Info::Privacy.first) : '#'), class: "footer-main-link" do  %>
+                <span class="footer-privacy-link">Privacy</span>
+            <% end %>
         </div>
         <div class="footer-maplink-wrapper">
             <a class="footer-main-link" href="#"><span class="footer-map-link">Site Map</span></a>
