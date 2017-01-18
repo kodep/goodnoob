@@ -2197,6 +2197,9 @@ $upload-button-color: #64b0fc;
         justify-content: center;
         overflow: hidden;
         position: relative;
+        outline: none;
+
+        a, img { outline: none; }
       }
 
       .thumb-preview-button {
