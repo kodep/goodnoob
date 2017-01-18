@@ -173,7 +173,7 @@ module SearchHelper
     products.includes(:sub_category).map do |product|
       title = product.name
       title += " (#{product.year})" if product.year
-      title += " in #{product.sub_category.name}"
+      title += " in #{product.sub_category.name}" if product.sub_category.present?
       [title, product.id]
     end
   end
