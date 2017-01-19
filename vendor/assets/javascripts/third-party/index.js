@@ -3,3 +3,4 @@
 //= require ./jquery.bxslider
 //= require ./horizBarChart
 //= require ./bootstrap-select.min
+//= require ./jquery-scrolltofixed

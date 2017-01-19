@@ -81,9 +81,14 @@
   }
 }
 .price-filter-wrapper {
-  margin-left: -44px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 10px;
+  .price-range {
+    &#label_min { text-align: left; margin-left: 5px; }
+    &#label_max { text-align: right; margin-right: 5px; }
+  }
+  .ui-slider-horizontal {
+    width: 110px;
+  }
 }

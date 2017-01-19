@@ -279,6 +279,29 @@ $(document).on('turbolinks:load', function() {
 
     });
 
+    var fixFilters = function() {
+        $('#filters').css('height', $(window).height() - $('.white-header-stripe').outerHeight(true));
+        $('#filters').css('overflow-y', 'scroll');
+        if ($(window).outerWidth(true) > 767) {
+            $('#filters').scrollToFixed({
+                zIndex: 1,
+                marginTop: $('.white-header-stripe').outerHeight(true),
+                limit: function() {
+                    var l = $('.footer-wrapper').offset().top - $('#filters').outerHeight(true)
+                    return l;
+                }
+            });
+        } else {
+            $('#filters').css('height', $(window).height() - $('.white-header-stripe').outerHeight(true) - $('.side-panel-header').outerHeight(true));
+            $('#filters').css('overflow-y', 'scroll');
+            $('#filters').trigger('detach.ScrollToFixed');
+        }
+    }
+    fixFilters();
+    $(window).resize(function() {
+        fixFilters();
+    });
+
     // Adding filter boxes to grey bar
     function applyFilter(filterText, filterCheckBoxId, isChecked){
 

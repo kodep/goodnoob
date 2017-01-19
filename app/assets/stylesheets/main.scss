@@ -1335,20 +1335,14 @@ $subfilter-size: 0.8em;
 /*****************************
 * GENERAL SIDE PANEL STYLES *
 *****************************/
-.side-panel-wrapper-fix {
-  display: block;
-  float: left;
-}
-
 .side-panel-wrapper {
-  // background: $sidepanel-background;
-  background: white;
-  // position: fixed;
+  background: #f6f6f6;
   bottom: 100px;
   font-family: $sidepanel-main-font;
   top: 685px;
   width: 320px;
-  display: table-cell;
+  display: block;
+  float: left;
   border-bottom: 1px solid #f6f6f6;
 
   .side-panel-header {
@@ -1418,7 +1412,7 @@ $subfilter-size: 0.8em;
       display: none;
       opacity: 0;
       overflow: auto;
-      padding-left: 54px;
+      padding-left: 35px;
       position: relative;
       transition: opacity 0.3s;
 
@@ -1433,7 +1427,7 @@ $subfilter-size: 0.8em;
         .checkbox {
           position: relative;
           display: block;
-          padding-left: 35px;
+          padding-left: 20px;
           cursor: pointer;
           input {
             position: absolute;
@@ -1920,6 +1914,7 @@ $subfilter-white: #888;
 
   .side-panel-wrapper {
     &.visible-mobile {
+      position: fixed;
       left: 0;
     }
   }
@@ -3538,10 +3533,6 @@ $footer-links-color: #7f7f7f;
       opacity: .7;
     }
   }
-}
-
-.ui-slider-horizontal {
-  width: 120px !important;
 }
 
 .bx-clone {
