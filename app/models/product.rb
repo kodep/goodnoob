@@ -53,10 +53,10 @@ class Product < ActiveRecord::Base
         hits = self.joins(:ratings)
                  .select('products.id, avg(ratings.value) as average_raiting, count(ratings.id) as number_of_ratings')
                  .group('products.id')
-                 .order("average_raiting #{direction}, average_raiting #{direction}").map &:id
+                 .order("average_raiting #{direction}, number_of_ratings #{direction}").map &:id
         order_clause = get_order_clause(hits)
         if order_clause
-          reorder(order_clause)
+          order(order_clause)
         else
           self
         end
@@ -68,7 +68,7 @@ class Product < ActiveRecord::Base
   }
 
   def self.get_order_clause(hits)
-    if hits
+    if hits.present?
       s = "case products.id "
       hits.each_with_index { |n, i| s << "when #{n} then #{i} " }
       s << "else #{hits.size} "

@@ -25,6 +25,7 @@ class SubCategoriesController < ApplicationController
                    .price_from(params[:price_from])
                    .price_to(params[:price_to])
                    .sort_by(params[:search_field], params[:search_direction])
+                   .sort_by('rating', 'true')
                    .page(params[:page])
                    .per(16)
 
