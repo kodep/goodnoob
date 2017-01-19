@@ -1335,20 +1335,14 @@ $subfilter-size: 0.8em;
 /*****************************
 * GENERAL SIDE PANEL STYLES *
 *****************************/
-.side-panel-wrapper-fix {
-  display: block;
-  float: left;
-}
-
 .side-panel-wrapper {
-  // background: $sidepanel-background;
-  background: white;
-  // position: fixed;
+  background: #f6f6f6;
   bottom: 100px;
   font-family: $sidepanel-main-font;
   top: 685px;
   width: 320px;
-  display: table-cell;
+  display: block;
+  float: left;
   border-bottom: 1px solid #f6f6f6;
 
   .side-panel-header {
@@ -1920,6 +1914,7 @@ $subfilter-white: #888;
 
   .side-panel-wrapper {
     &.visible-mobile {
+      position: fixed;
       left: 0;
     }
   }
