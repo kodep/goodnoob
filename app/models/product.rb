@@ -58,7 +58,7 @@ class Product < ActiveRecord::Base
         if order_clause
           order(order_clause)
         else
-          self
+          order(created_at: direction)
         end
       when 'name'
         order(name: direction)
