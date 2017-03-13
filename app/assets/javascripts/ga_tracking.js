@@ -1,7 +1,5 @@
 function send_track_signup() {
-
-
-	ga('send', 'event', 'signup', 'signup', 'Fall Campaign');
+alert("This is my sample");
 }
 
 function handleOutboundLinkClicks(event) {
