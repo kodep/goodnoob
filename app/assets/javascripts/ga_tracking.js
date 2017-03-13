@@ -1,3 +1,6 @@
+function send_track_signup(){
+alert("This is my sample");
+}
 
 
 function handleOutboundLinkClicks(event) {
