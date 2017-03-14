@@ -11,10 +11,13 @@
       </li>
       <li role='separator' class='divider'></li>
       <li>
-        <%= modal_button_tag 'Video', modals_path(action: :add_video), link: true %>
+        <%= modal_button_tag 'Video', modals_path(action: :add_video), onclick => 'upload()', link: true %>
       </li>
     </ul>
   </div>
 </div>
-<script>ga('send', 'event', 'Photo', 'add_video');
-        ga('send', 'event', 'Video', 'add_video'); </script>
+<%= javascript_tag do %>
+    function upload() {
+        ga('send', 'event', 'button', 'add_video');
+    }
+<% end %>
