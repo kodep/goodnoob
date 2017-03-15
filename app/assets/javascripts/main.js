@@ -426,13 +426,10 @@ $(document).on('turbolinks:load', function() {
     $('#btnRegister').on('click', function(e) {
         $('#SignUpModal').modal({show: false});
         ga('send', 'event', 'click' 'SignUpModal');
-        alert("this is sample");
+        alert("login completed.");
     });
   
-    $('#btnRegister').on('click', function(e) {
-   
-    });
-    
+
 
     $('.toggle-mobile-post-buttons').on('click', function(e){
       e.preventDefault();
