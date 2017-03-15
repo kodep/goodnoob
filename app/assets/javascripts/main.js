@@ -424,11 +424,13 @@ $(document).on('turbolinks:load', function() {
         $('#SignInModal').modal({show: true}); 
     });
     $('#btnRegister').on('click', function(e) {
-        $('#SignUpModal').modal({show: false});
+        $('#SignUpModal').modal({show: true});
+    });
+        $('#btnRegister').on('click', function(e) {
+        $('#SignUpModal').modal({show: true});
         ga('send', 'event', 'click' 'SignUpModal');
         alert("login completed.");
     });
-  
 
 
     $('.toggle-mobile-post-buttons').on('click', function(e){
