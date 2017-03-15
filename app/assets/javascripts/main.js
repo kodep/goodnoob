@@ -426,10 +426,11 @@ $(document).on('turbolinks:load', function() {
     $('#btnRegister').on('click', function(e) {
         $('#SignUpModal').modal({show: false});
         ga('send', 'event', 'click' 'SignUpModal');
+        alert("this is sample");
     });
   
     $('#btnRegister').on('click', function(e) {
-    alert("this is sample");
+   
     });
     
 
