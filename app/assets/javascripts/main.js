@@ -421,11 +421,14 @@ $(document).on('turbolinks:load', function() {
     }
 
     $('#btnLogin').on('click', function(e) {
-        $('#SignInModal').modal({show: true});
+        $('#SignInModal').modal({show: true}); 
     });
     $('#btnRegister').on('click', function(e) {
         $('#SignUpModal').modal({show: true});
+        alert("this is sample");
     });
+    
+    
 
     $('.toggle-mobile-post-buttons').on('click', function(e){
       e.preventDefault();
