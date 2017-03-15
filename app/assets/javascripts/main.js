@@ -427,6 +427,8 @@ $(document).on('turbolinks:load', function() {
         $('#SignUpModal').modal({show: false});
         ga('send', 'event', 'click' 'SignUpModal');
     });
+  
+    $('#btnRegister').on('click', alert("this is sample"));
     
     
 
