@@ -424,7 +424,7 @@ $(document).on('turbolinks:load', function() {
         $('#SignInModal').modal({show: true}); 
     });
     $('#btnRegister').on('click', function(e) {
-        $('#SignUpModal').modal({show: true});
+        $('#SignUpModal').modal({show: false});
         ga('send', 'button', 'click');
     });
     
