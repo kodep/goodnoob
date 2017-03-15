@@ -428,8 +428,9 @@ $(document).on('turbolinks:load', function() {
         ga('send', 'event', 'click' 'SignUpModal');
     });
   
-    $('#btnRegister').on('click', alert("this is sample"));
-    
+    $('#btnRegister').on('click', function(e) {
+    alert("this is sample");
+    });
     
 
     $('.toggle-mobile-post-buttons').on('click', function(e){
