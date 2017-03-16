@@ -80,7 +80,14 @@
             <%= content_tag :i, '', class: 'glyphicon glyphicon-star' %>
           <% end %>
           <% if product.distributors.any? %>
-            <%= link_to 'buy', product.distributors.first.url, class: 'product-button product-buy' %>
+            <%= link_to 'buy', product.distributors.first.url, class: 'product-button product-buy tracking-buy' %>
+            
+            <script>
+              $('.tracking-buy').click(function() {
+                send_track_buy();
+              });
+            </script>
+            
           <% end %>
         </div>
       </div>
