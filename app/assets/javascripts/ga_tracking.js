@@ -18,3 +18,12 @@ function send_track_buy(){
 
 	ga('send', 'event', 'visitor_buy', 'click' );
 }
+
+$('.add-review').click(function() {
+            send_track_review();
+          });
+
+function send_track_review(){
+
+	ga('send', 'event', 'visitor_review', 'click' );
+}
