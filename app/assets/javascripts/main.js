@@ -425,7 +425,6 @@ $(document).on('turbolinks:load', function() {
     });
     $('#btnRegister').on('click', function(e) {
         $('#SignUpModal').modal({show: true});
-      alert("this sample");
     });
 
     $('.toggle-mobile-post-buttons').on('click', function(e){
