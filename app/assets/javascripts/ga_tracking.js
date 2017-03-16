@@ -16,5 +16,5 @@ function send_track_upload(){
 
 function send_track_buy(){
 
-	ga('send', 'event', 'upload', 'click' );
+	ga('send', 'event', 'visitor_buy', 'click' );
 }
