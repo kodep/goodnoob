@@ -1,29 +1,15 @@
+
 function send_track_signup(){
-alert("This is my sample");
+
+	ga('send', 'event', 'signup', 'click' );
 }
 
+function send_track_btnRegister_signup(){
 
-function handleOutboundLinkClicks(event) {
-  ga('send', 'event', {
-    eventCategory: 'Outbound Link',
-    eventAction: 'click',
-    eventLabel: event.target.href
-  });
+	ga('send', 'event', 'signup_end', 'click' );
 }
 
+function send_track_upload(){
 
-function send_track_signup_complete() {
-	ga('send', 'clicksignupcomplete');
-}
-
-function send_track_signup() {
-	ga('send', 'clicksignup');
-}
-
-function send_track_signup() {
-	ga('send', 'clicksignup');
-}
-
-function send_track_signup() {
-	ga('send', 'clicksignup');
+	ga('send', 'event', 'upload', 'click' );
 }
