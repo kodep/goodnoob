@@ -103,6 +103,12 @@
                      method: :get,
                      link: true,
                      class: 'add-review hidden-xs' %>
+ <script>
+            $('.add-review').click(function() {
+            send_track_review();
+          });
+</script>
+        
       <% end %>
 
       <% @product.reviews.each do |review|%>
