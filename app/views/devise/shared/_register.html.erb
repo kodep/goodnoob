@@ -22,9 +22,16 @@
       </div>
       <%= render "devise/shared/social_login" %>
       <div align="center">
-        <%= f.submit 'Register', :class => 'btn btn-commit' %>
+        <%= f.submit 'Register', :class => 'btn btn-commit', :id => 'btnRegister_signup' %>
         <a class="btn-login" data-dismiss='modal' data-target='#SignInModal' id='btnLogin'>I already have an account...</a>
       </div>
+      
+      <script>
+          $('#btnRegister_signup').click(function() {
+            send_track_btnRegister_signup();
+          });
+       </script>
+      
     <% end %>
   </div>
 <% end %>
