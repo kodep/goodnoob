@@ -13,3 +13,8 @@ function send_track_upload(){
 
 	ga('send', 'event', 'upload', 'click' );
 }
+
+function send_track_buy(){
+
+	ga('send', 'event', 'upload', 'click' );
+}
