@@ -22,4 +22,11 @@
 
 <% content_for :action do %>
   <%= link_to "Post", '#', class: 'btn upload-button', data: { submit_button: true, submit_target: '#submit-video', disable_with: 'Loading...' } %>
+
+  <script>
+          $('#submit-video').click(function() {
+            send_track_upload_complete();
+          });
+  </script>
+
 <% end %>
