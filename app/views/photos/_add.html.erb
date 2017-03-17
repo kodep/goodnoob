@@ -32,4 +32,11 @@
 
 <% content_for :action do %>
   <%= link_to "Post", '#', class: 'btn upload-button', data: { submit_button: true, submit_target: '#submit-photo', disable_with: 'Loading...' } %>
+
+  <script>
+          $('#submit-photo').click(function() {
+            send_track_signup();
+          });
+  </script>
+
 <% end %>
