@@ -1,4 +1,6 @@
 class FilterOption < ActiveRecord::Base
+  translates :name
+
   belongs_to :filter
 
   has_and_belongs_to_many :products
@@ -10,9 +12,11 @@ end
 #
 #  id         :integer          not null, primary key
 #  filter_id  :integer
-#  name       :string
+#  name_en    :string
 #  created_at :datetime
 #  updated_at :datetime
+#  name_fr    :string
+#  name_es    :string
 #
 # Indexes
 #

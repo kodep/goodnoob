@@ -1,4 +1,6 @@
 class Filter < ActiveRecord::Base
+  translates :name
+
   has_many :filter_options
   belongs_to :sub_category
 
@@ -11,9 +13,11 @@ end
 #
 #  id              :integer          not null, primary key
 #  sub_category_id :integer
-#  name            :string
+#  name_en         :string
 #  created_at      :datetime
 #  updated_at      :datetime
+#  name_fr         :string
+#  name_es         :string
 #
 # Indexes
 #

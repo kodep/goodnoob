@@ -1,4 +1,6 @@
 class Company < ActiveRecord::Base
+  translates :description
+
   has_many :products
   has_many :pos, class_name: 'POS'
   has_many :distributors, through: :pos
@@ -42,13 +44,15 @@ end
 #
 # Table name: companies
 #
-#  id          :integer          not null, primary key
-#  name        :string
-#  url         :string
-#  description :text
-#  email       :string
-#  phone       :string
-#  fax         :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id             :integer          not null, primary key
+#  name           :string
+#  url            :string
+#  description_en :text
+#  email          :string
+#  phone          :string
+#  fax            :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  description_fr :text
+#  description_es :text
 #

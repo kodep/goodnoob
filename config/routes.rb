@@ -98,6 +98,8 @@ Rails.application.routes.draw do
     resources :abouts, only: :show
   end
 
+  patch :select_locale, to: 'visitors#select_locale'
+
   post '/modals/:action', controller: :modals, format: false, as: :modals
   get '/modals/fetch' => 'modals#fetch', format: :json
 end

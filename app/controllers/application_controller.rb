@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
   before_filter :store_current_location, unless: :devise_controller?
 
   before_action :set_current_currency
+  before_action :set_locale
+  before_action :set_admin_locale
 
   include UserLocation
 
@@ -40,6 +42,16 @@ class ApplicationController < ActionController::Base
 
     def devise_mapping
       @devise_mapping ||= Devise.mappings[:user]
+    end
+
+    def set_locale
+      I18n.locale = session[:locale] || I18n.default_locale
+    end
+
+    def set_admin_locale
+      if request.url =~ /\/admin\//
+        I18n.locale = I18n.default_locale
+      end
     end
 
 end

@@ -9,7 +9,7 @@ ActiveAdmin.register Product do
     end
   end
 
-  permit_params :name, :description, :year, :url,
+  permit_params :name, :description_en, :description_fr, :description_es, :year, :url,
                 :sub_category_id, :company_id,
                 attrs_attributes: [:title, :value, :_destroy, :id],
                 prices_attributes: [:amount, :currency_id, :_destroy, :id],
@@ -38,7 +38,7 @@ ActiveAdmin.register Product do
   end
 
   filter :name_cont, label: 'Name'
-  filter :description_cont, label: 'Description'
+  filter :description_en_cont, label: 'Description'
   filter :year
   filter :sub_category
   filter :company
@@ -47,7 +47,9 @@ ActiveAdmin.register Product do
     panel 'Product Name' do
       attributes_table_for product do
         row :name
-        row :description
+        row :description_en
+        row :description_fr
+        row :description_es
         row :year
         row :url
         row :sub_category
@@ -83,7 +85,9 @@ ActiveAdmin.register Product do
   form do |f|
     f.inputs do
       f.input :name
-      f.input :description, as: :html_editor
+      Product.locale_columns(:description).each do |column|
+        f.input column, label: column, as: :html_editor
+      end
       f.input :year
       f.input :url
       f.input :company
@@ -106,8 +110,12 @@ ActiveAdmin.register Product do
     end
     f.inputs 'Attributes' do
       f.has_many :attrs, allow_destroy: true do |attr|
-        attr.input :title
-        attr.input :value, as: :html_editor
+        Attribute.locale_columns(:title).each do |column|
+          attr.input column, label: column
+        end
+        Attribute.locale_columns(:value).each do |column|
+          attr.input column, label: column, as: :html_editor
+        end
       end
     end
     f.inputs 'Dimensions' do
