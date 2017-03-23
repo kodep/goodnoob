@@ -48,7 +48,7 @@
           <div align="center"><%= link_to image_tag("logo2.png", alt: 'main-background', width: 70), root_path %></div>
         </li>
         <li><%= link_to "Social Feed", search_index_path %></li>
-        <% default_cat = SubCategory.find_by(name: "Surfboards") %>
+        <% default_cat = SubCategory.find_by(name_en: "Surfboards") %>
         <% if default_cat == nil %>
         <%  default_cat = SubCategory.first %>
         <% end %>
