@@ -2,10 +2,10 @@ ActiveAdmin.register Distributor do
 
   belongs_to :company, optional: true
 
-  permit_params :information, :phone, :url, :email,
+  permit_params :information_en, :information_fr, :information_es, :phone, :url, :email,
                 address_attributes: [:id, :street, :city, :postcode, :country, :latitude, :longitude, :addressable_type, :addressable_id]
 
-  filter :information_cont, label: 'Information'
+  filter :information_en_cont, label: 'Information'
   filter :phone_cont, label: 'Phone'
   filter :email, label: 'Email'
 
@@ -38,7 +38,9 @@ ActiveAdmin.register Distributor do
 
   form do |f|
     f.inputs do
-      f.input :information
+      Distributor.locale_columns(:information).each do |column|
+        f.input column, label: column, as: :html_editor
+      end
       f.input :phone
       f.input :url
       f.input :email

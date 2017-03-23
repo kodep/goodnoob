@@ -4,7 +4,7 @@ ActiveAdmin.register Company do
     belongs_to :user, :distributor, optional: true
   end
 
-  permit_params :name, :url, :description, :international,
+  permit_params :name, :url, :description_en, :description_fr, :description_es, :international,
                 :email, :phone, :fax,
                 address_attributes: [:id, :street, :city, :postcode, :country, :latitude, :longitude, :addressable_type, :addressable_id],
                 user_ids: []
@@ -12,7 +12,7 @@ ActiveAdmin.register Company do
   scope :all
 
   filter :name_cont, label: 'Name'
-  filter :description_cont, label: 'Description'
+  filter :description_en_cont, label: 'Description'
   filter :email_cont, label: 'Email'
   filter :phone_cont, label: 'Phone'
   filter :fax_cont, label: 'Fax'
@@ -34,7 +34,9 @@ ActiveAdmin.register Company do
     f.inputs do
       f.input :name
       f.input :url
-      f.input :description, as: :html_editor
+      Company.locale_columns(:description).each do |column|
+        f.input column, label: column, as: :html_editor
+      end
       f.input :email
       f.input :phone
       f.input :fax

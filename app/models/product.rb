@@ -1,6 +1,8 @@
 class Product < ActiveRecord::Base
   include Recentable
 
+  translates :description
+
   belongs_to :company
   belongs_to :sub_category, inverse_of: :products
   has_one :category, through: :sub_category
@@ -140,11 +142,13 @@ end
 #
 #  id              :integer          not null, primary key
 #  name            :string
-#  description     :text
+#  description_en  :text
 #  year            :integer
 #  url             :string
 #  sub_category_id :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  company_id      :integer
+#  description_fr  :text
+#  description_es  :text
 #

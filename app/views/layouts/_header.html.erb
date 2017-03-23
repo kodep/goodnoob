@@ -9,6 +9,26 @@
     </div>
 
     <div class="flex header-end">
+      <div class="upload-btn-wrapper">
+        <div class='dropdown'>
+          <button type='button' id='upload-menu' class='upload-btn dropdown-toggle'
+                  data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
+            <%= current_locale %>
+          </button>
+
+          <ul class='dropdown-menu header-side-dropdown-button' aria-labelledby='upload-menu'>
+            <li>
+              <%= link_to 'EN', select_locale_path(locale: :en), method: :patch %>
+            </li>
+            <li>
+              <%= link_to 'FR', select_locale_path(locale: :fr), method: :patch %>
+            </li>
+            <li>
+              <%= link_to 'ES', select_locale_path(locale: :es), method: :patch %>
+            </li>
+          </ul>
+        </div>
+      </div>
       <% if user_signed_in? %>
         <%= render 'layouts/upload_button' %>
         <div class='buttons-separator hidden-xs'></div>

@@ -1,7 +1,7 @@
 ActiveAdmin.register Language do
 
-  permit_params :name
+  permit_params :name_en, :name_fr, :name_es
 
-  filter :name
+  filter :name_en
 
 end

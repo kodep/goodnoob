@@ -46,4 +46,8 @@ module ApplicationHelper
     end
   end
 
+  def current_locale
+    session[:locale] || :en
+  end
+
 end

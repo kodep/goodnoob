@@ -1,6 +1,7 @@
 class Category < ActiveRecord::Base
-
   include Paperclip::Glue
+
+  translates :name
 
   belongs_to :father_category
   has_many :sub_categories
@@ -37,10 +38,12 @@ end
 # Table name: categories
 #
 #  id                 :integer          not null, primary key
-#  name               :string
+#  name_en            :string
 #  father_category_id :integer
 #  image_file_name    :string
 #  image_content_type :string
 #  image_file_size    :integer
 #  image_updated_at   :datetime
+#  name_fr            :string
+#  name_es            :string
 #

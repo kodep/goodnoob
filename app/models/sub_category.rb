@@ -1,4 +1,6 @@
 class SubCategory < ActiveRecord::Base
+  translates :name
+
   belongs_to :category
   has_many :products, inverse_of: :sub_category
   has_many :filters
@@ -21,8 +23,10 @@ end
 # Table name: sub_categories
 #
 #  id          :integer          not null, primary key
-#  name        :string
+#  name_en     :string
 #  category_id :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  name_fr     :string
+#  name_es     :string
 #

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118122406) do
+ActiveRecord::Schema.define(version: 20170323003625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,31 +31,39 @@ ActiveRecord::Schema.define(version: 20170118122406) do
   end
 
   create_table "attributes", force: :cascade do |t|
-    t.string   "title"
-    t.text     "value"
+    t.string   "title_en"
+    t.text     "value_en"
     t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "title_fr"
+    t.string   "title_es"
+    t.string   "value_fr"
+    t.string   "value_es"
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name_en"
     t.integer  "father_category_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "name_fr"
+    t.string   "name_es"
   end
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
     t.string   "url"
-    t.text     "description"
+    t.text     "description_en"
     t.string   "email"
     t.string   "phone"
     t.string   "fax"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.text     "description_fr"
+    t.text     "description_es"
   end
 
   create_table "currencies", force: :cascade do |t|
@@ -75,25 +83,31 @@ ActiveRecord::Schema.define(version: 20170118122406) do
   end
 
   create_table "distributors", force: :cascade do |t|
-    t.text     "information"
+    t.text     "information_en"
     t.string   "phone"
     t.string   "url"
     t.string   "email"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.text     "information_fr"
+    t.text     "information_es"
   end
 
   create_table "father_categories", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name_en"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name_fr"
+    t.string   "name_es"
   end
 
   create_table "filter_options", force: :cascade do |t|
     t.integer  "filter_id"
-    t.string   "name"
+    t.string   "name_en"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name_fr"
+    t.string   "name_es"
   end
 
   add_index "filter_options", ["filter_id"], name: "index_filter_options_on_filter_id", using: :btree
@@ -110,17 +124,19 @@ ActiveRecord::Schema.define(version: 20170118122406) do
 
   create_table "filters", force: :cascade do |t|
     t.integer  "sub_category_id"
-    t.string   "name"
+    t.string   "name_en"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name_fr"
+    t.string   "name_es"
   end
 
   add_index "filters", ["sub_category_id"], name: "index_filters_on_sub_category_id", using: :btree
 
   create_table "guides", force: :cascade do |t|
-    t.string   "header"
-    t.text     "description"
-    t.string   "video_url"
+    t.string   "header_en"
+    t.text     "description_en"
+    t.string   "video_url_en"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "sub_category_id"
@@ -128,15 +144,25 @@ ActiveRecord::Schema.define(version: 20170118122406) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "video_url_fr"
+    t.string   "video_url_es"
+    t.string   "header_fr"
+    t.string   "header_es"
+    t.text     "description_fr"
+    t.text     "description_es"
   end
 
   add_index "guides", ["sub_category_id"], name: "index_guides_on_sub_category_id", using: :btree
 
   create_table "info_abouts", force: :cascade do |t|
-    t.string   "header"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "header_en"
+    t.text     "description_en"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "header_fr"
+    t.string   "header_es"
+    t.text     "description_fr"
+    t.text     "description_es"
   end
 
   create_table "info_privacies", force: :cascade do |t|
@@ -147,10 +173,14 @@ ActiveRecord::Schema.define(version: 20170118122406) do
   end
 
   create_table "info_questions", force: :cascade do |t|
-    t.string   "header"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "header_en"
+    t.text     "description_en"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "header_fr"
+    t.string   "header_es"
+    t.text     "description_fr"
+    t.text     "description_es"
   end
 
   create_table "info_terms", force: :cascade do |t|
@@ -161,9 +191,11 @@ ActiveRecord::Schema.define(version: 20170118122406) do
   end
 
   create_table "languages", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name_en"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name_fr"
+    t.string   "name_es"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -205,13 +237,15 @@ ActiveRecord::Schema.define(version: 20170118122406) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
-    t.text     "description"
+    t.text     "description_en"
     t.integer  "year"
     t.string   "url"
     t.integer  "sub_category_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "company_id"
+    t.text     "description_fr"
+    t.text     "description_es"
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -241,10 +275,12 @@ ActiveRecord::Schema.define(version: 20170118122406) do
   end
 
   create_table "sub_categories", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name_en"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "name_fr"
+    t.string   "name_es"
   end
 
   create_table "user_favourites", force: :cascade do |t|

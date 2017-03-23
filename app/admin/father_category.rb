@@ -1,8 +1,8 @@
 ActiveAdmin.register FatherCategory do
 
-  permit_params :name
+  permit_params :name_en, :name_fr, :name_es
 
-  filter :name
+  filter :name_en
   filter :created_at
 
   action_item :categories, only: :show do
@@ -11,10 +11,22 @@ ActiveAdmin.register FatherCategory do
 
   index do
     id_column
-    column :name
+    column :name_en
+    column :name_fr
+    column :name_es
     column :created_at
     column :updated_at
     actions
   end
+
+  form do |f|
+    f.inputs do
+      FatherCategory.locale_columns(:name).each do |column|
+        f.input column, label: column
+      end
+    end
+    f.actions
+  end
+
 
 end

@@ -36,6 +36,7 @@ gem 'readmorejs-rails'
 gem 'bootstrap-wysihtml5-rails'
 gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 gem 'video_info'
+gem 'traco'
 
 group :development, :test do
   gem 'byebug'
