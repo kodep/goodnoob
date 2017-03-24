@@ -45,7 +45,17 @@ class ApplicationController < ActionController::Base
     end
 
     def set_locale
-      I18n.locale = session[:locale] || I18n.default_locale
+      if session[:locale].blank?
+        case request.location&.country
+        when "France"
+          session[:locale] = :fr
+        when "Spain"
+          session[:locale] = :es
+        else
+          session[:locale] = :en
+        end
+      end
+      I18n.locale = session[:locale]
     end
 
     def set_admin_locale
