@@ -59,7 +59,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_admin_locale
-      if request.url =~ /\/admin\//
+      if request.url =~ /\/admin/
         I18n.locale = I18n.default_locale
       end
     end
