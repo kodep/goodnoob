@@ -278,5 +278,5 @@ ActiveAdmin.setup do |config|
   # of those filters by default here.
   #
   # config.include_default_association_filters = true
-  config.before_filter :set_admin_locale
+  config.before_action :set_admin_locale
 end

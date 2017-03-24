@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    nav_links_for_auth:
+      log_in: Log in
+
+fr:
+  layouts:
+    nav_links_for_auth:
+      log_in: Se connecter
+
+es:
+  layouts:
+    nav_links_for_auth:
+      log_in: Iniciar sesión
