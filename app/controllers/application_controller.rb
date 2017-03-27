@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :language])
       devise_parameter_sanitizer.permit(:account_update, keys:[:name])
     end
 
@@ -55,7 +55,11 @@ class ApplicationController < ActionController::Base
           session[:locale] = :en
         end
       end
-      I18n.locale = session[:locale]
+      if current_user&.language.in? %w[en es fr]
+        I18n.locale = current_user.language
+      else
+        I18n.locale = session[:locale]
+      end
     end
 
     def set_admin_locale

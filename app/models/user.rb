@@ -1,6 +1,13 @@
 class User < ActiveRecord::Base
   enum role: [:user, :vip, :admin]
+  enum language: {
+    en: 'English',
+    fr: 'French',
+    es: 'Spanish'
+  }
+
   after_initialize :set_default_role, :if => :new_record?
+  after_create :send_welcome_email
 
   def set_default_role
     self.role ||= :user
@@ -60,6 +67,11 @@ class User < ActiveRecord::Base
     "#{name} #{last_name}"
   end
 
+  private
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_later
+  end
+
   class << self
 
     def from_omniauth access_token
@@ -111,6 +123,7 @@ end
 #  sex                    :integer
 #  company                :boolean
 #  bio                    :text
+#  language               :string
 #
 # Indexes
 #
