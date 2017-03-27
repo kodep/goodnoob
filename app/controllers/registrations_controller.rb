@@ -10,6 +10,11 @@ class RegistrationsController < Devise::RegistrationsController
       :name, :last_name, :bio, :language_id, :currency_id, address_attributes: [:id, :country, :city])
   end
 
+  def sign_up_params
+    params.require(:user).permit(:email,:password, :password_confirmation, :name,
+      :locale)
+  end
+
   protected
 
   def update_resource(resource, params)
