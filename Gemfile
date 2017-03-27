@@ -60,6 +60,7 @@ group :development do
   gem 'jazz_hands',
       github: 'nixme/jazz_hands',
       branch: 'bring-your-own-debugger'
+  gem 'letter_opener'
 end
 
 group :test do

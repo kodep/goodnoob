@@ -262,6 +262,8 @@ GEM
     kaminari-core (1.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     magnific-popup-rails (1.1.0)
@@ -515,6 +517,7 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   launchy
+  letter_opener
   magnific-popup-rails (~> 1.1.0)
   omniauth-facebook
   omniauth-google-oauth2
