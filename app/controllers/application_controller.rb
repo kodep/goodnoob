@@ -55,11 +55,10 @@ class ApplicationController < ActionController::Base
           session[:locale] = :en
         end
       end
-      if current_user&.language.in? %w[en es fr]
-        I18n.locale = current_user.language
-      else
-        I18n.locale = session[:locale]
+      if current_user&.locale.in? %w[en es fr]
+        session[:locale] = current_user.locale
       end
+      I18n.locale = session[:locale]
     end
 
     def set_admin_locale
