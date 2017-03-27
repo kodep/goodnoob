@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   enum role: [:user, :vip, :admin]
-  enum language: {
+  enum locale: {
     en: 'English',
     fr: 'French',
     es: 'Spanish'

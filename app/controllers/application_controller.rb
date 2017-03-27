@@ -28,8 +28,8 @@ class ApplicationController < ActionController::Base
   protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :language])
-      devise_parameter_sanitizer.permit(:account_update, keys:[:name, :language])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :locale])
+      devise_parameter_sanitizer.permit(:account_update, keys:[:name, :locale])
     end
 
     def resource_name
