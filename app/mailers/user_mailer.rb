@@ -1,7 +1,7 @@
 class UserMailer < ApplicationMailer
   def welcome user
     @user = user
-    case user.language
+    case user.locale
     when 'en'
       subject = 'Welcome to GoodNoob!'
     when 'fr'
