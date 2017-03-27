@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   enum role: [:user, :vip, :admin]
   enum language: {
-    en: 'en',
-    fr: 'fr',
-    es: 'es'
+    en: 'English',
+    fr: 'French',
+    es: 'Spanish'
   }
 
   after_initialize :set_default_role, :if => :new_record?
@@ -123,7 +123,7 @@ end
 #  sex                    :integer
 #  company                :boolean
 #  bio                    :text
-#  language               :string
+#  locale                 :string
 #
 # Indexes
 #
