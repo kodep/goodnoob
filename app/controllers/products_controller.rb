@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
     else
       @similars = Kaminari.paginate_array(product.similars.recent)
                      .page(@simpage)
-                     .per(10).padding(-8)
+                     .per(10)
     end
     @photopage = (params[:photo] || '1').to_i
     if @photopage == 1
@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
     else
       @photos = Kaminari.paginate_array(product.photos.recent)
                      .page(@photopage)
-                     .per(10).padding(-8)
+                     .per(10)
     end
     @videopage = (params[:video] || '1').to_i
     if @videopage == 1

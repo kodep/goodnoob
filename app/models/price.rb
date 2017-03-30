@@ -5,7 +5,7 @@ class Price < ActiveRecord::Base
   def title
     options = {}
     options.merge! unit: currency.sign if currency && currency.sign.present?
-    amount.to_s :currency, options
+    amount.to_i.to_s :currency, options
   end
 end
 
