@@ -50,4 +50,13 @@ module ApplicationHelper
     session[:locale] || :en
   end
 
+  def home_page_description
+    case current_locale.to_sym
+    when :es
+      'Plataforma social especializada en deportes extremos: Snowboard, Ski, Surf, Skate… Aprende, Comparte y Busca entre las mejores marcas internacionales y locales'
+    else
+      'Social platform specialized in extreme sports: Snowboard, Ski, Surf, Skate… Learn, Share and Search between the best international and local brands'
+    end
+  end
+
 end
