@@ -4,10 +4,10 @@ ActiveAdmin.register Company do
     belongs_to :user, :distributor, optional: true
   end
 
-  permit_params :name, :url, :description_en, :description_fr, :description_es, :international,
-                :email, :phone, :fax,
-                address_attributes: [:id, :street, :city, :postcode, :country, :latitude, :longitude, :addressable_type, :addressable_id],
-                user_ids: []
+  permit_params :name, :url, :description_en, :description_fr, :description_es,
+    :international, :email, :phone, :fax, country_ids: [], user_ids: [],
+    address_attributes: [:id, :street, :city, :postcode, :country, :country_code,
+      :latitude, :longitude, :addressable_type, :addressable_id]
 
   scope :all
 
@@ -41,6 +41,11 @@ ActiveAdmin.register Company do
       f.input :phone
       f.input :fax
     end
+
+    f.inputs 'Sells in' do
+      f.input :countries, as: :check_boxes
+    end
+
     f.inputs 'Address', for: [:address_attributes, f.object.address || f.object.build_address] do |address|
       address.input :id, as: :hidden, value: address.object.id
       address.input :addressable_id, as: :hidden, value: f.object.id

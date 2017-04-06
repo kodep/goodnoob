@@ -1,19 +1,13 @@
-class Language < ActiveRecord::Base
-  translates :name
-
-  has_many :users
-  has_many :reviews
+class Region < ActiveRecord::Base
   has_many :countries
 end
 
 # == Schema Information
 #
-# Table name: languages
+# Table name: regions
 #
 #  id         :integer          not null, primary key
-#  name_en    :string
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  name_fr    :string
-#  name_es    :string
 #
