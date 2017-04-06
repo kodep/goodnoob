@@ -3,6 +3,7 @@ class Currency < ActiveRecord::Base
 
   has_many :users
   has_many :prices
+  has_many :countries
 end
 
 # == Schema Information

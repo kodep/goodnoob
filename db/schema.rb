@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170327090148) do
+ActiveRecord::Schema.define(version: 20170406135751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,30 @@ ActiveRecord::Schema.define(version: 20170327090148) do
     t.text     "description_fr"
     t.text     "description_es"
   end
+
+  create_table "companies_countries", force: :cascade do |t|
+    t.integer  "country_id"
+    t.integer  "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "companies_countries", ["company_id"], name: "index_companies_countries_on_company_id", using: :btree
+  add_index "companies_countries", ["country_id"], name: "index_companies_countries_on_country_id", using: :btree
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "country_code"
+    t.integer  "region_id"
+    t.integer  "currency_id"
+    t.integer  "language_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "countries", ["currency_id"], name: "index_countries_on_currency_id", using: :btree
+  add_index "countries", ["language_id"], name: "index_countries_on_language_id", using: :btree
+  add_index "countries", ["region_id"], name: "index_countries_on_region_id", using: :btree
 
   create_table "currencies", force: :cascade do |t|
     t.string   "name"
@@ -257,6 +281,12 @@ ActiveRecord::Schema.define(version: 20170327090148) do
     t.integer  "review_id"
   end
 
+  create_table "regions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.string   "title"
     t.text     "review"
@@ -341,6 +371,11 @@ ActiveRecord::Schema.define(version: 20170327090148) do
     t.string   "code",        limit: 20
   end
 
+  add_foreign_key "companies_countries", "companies"
+  add_foreign_key "companies_countries", "countries"
+  add_foreign_key "countries", "currencies"
+  add_foreign_key "countries", "languages"
+  add_foreign_key "countries", "regions"
   add_foreign_key "filter_options", "filters"
   add_foreign_key "filter_options_products", "filter_options"
   add_foreign_key "filter_options_products", "products"

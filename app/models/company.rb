@@ -12,6 +12,7 @@ class Company < ActiveRecord::Base
 
   has_many :user_favourites, as: :favouriteable
   has_many :users, through: :user_favourites
+  has_and_belongs_to_many :countries
 
   accepts_nested_attributes_for :address
 
