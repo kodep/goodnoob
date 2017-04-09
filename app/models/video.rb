@@ -27,6 +27,8 @@ class Video < ActiveRecord::Base
 
   accepts_nested_attributes_for :picture, allow_destroy: true
 
+  after_create :congratulate_user_if_first_video
+
   def self.add_billet
     new main: false, day: false
   end
@@ -56,6 +58,11 @@ class Video < ActiveRecord::Base
     end
 
     nil
+  end
+
+  def congratulate_user_if_first_video
+    return unless user.videos.count == 1
+    UserMailer.first_video_upload(user).deliver_later
   end
 end
 
