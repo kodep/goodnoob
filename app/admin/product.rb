@@ -9,7 +9,7 @@ ActiveAdmin.register Product do
     end
   end
 
-  permit_params :name, :description_en, :description_fr, :description_es, :year, :url,
+  permit_params :name, :description_en, :description_fr, :description_es, :year,
                 :sub_category_id, :company_id,
                 attrs_attributes: [:title, :value, :_destroy, :id],
                 prices_attributes: [:amount, :currency_id, :_destroy, :id],
@@ -51,7 +51,6 @@ ActiveAdmin.register Product do
         row :description_fr
         row :description_es
         row :year
-        row :url
         row :sub_category
         row :created_at
         row :updated_at
@@ -89,7 +88,6 @@ ActiveAdmin.register Product do
         f.input column, label: column, as: :html_editor
       end
       f.input :year
-      f.input :url
       f.input :company
       f.input :sub_category
       f.input :filter_options, as: :grouped_check_boxes,
