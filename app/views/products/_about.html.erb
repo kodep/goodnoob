@@ -26,7 +26,6 @@
         <div class="product-review-bar">
           <%= render 'products/rating', rating: product.rating, product_id: product.id %>
           (<%= product.ratings.length %>)
-          <%= link_to 'Official Website', product.url, :target => "_blank", class: 'official-link' %>
         </div>
         <div class="product-about-text">
           <%= simple_format product.description %>
@@ -81,13 +80,13 @@
           <% end %>
           <% if product.distributors.any? %>
             <%= link_to 'buy', product.distributors.first.url, class: 'product-button product-buy tracking-buy' %>
-            
+
             <script>
               $('.tracking-buy').click(function() {
                 send_track_buy();
               });
             </script>
-            
+
           <% end %>
         </div>
       </div>

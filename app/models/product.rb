@@ -144,7 +144,6 @@ end
 #  name            :string
 #  description_en  :text
 #  year            :integer
-#  url             :string
 #  sub_category_id :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
