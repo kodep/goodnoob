@@ -15,12 +15,20 @@ class Photo < ActiveRecord::Base
 
   accepts_nested_attributes_for :picture
 
+  after_create :congratulate_user_if_first_photo
+
   def self.last_photos(except:, limit:)
     all.where.not(id: except.id).order(created_at: :desc).limit(limit)
   end
 
   def self.add_billet
     new main: false, day: false, picture: Picture.new
+  end
+
+  private
+  def congratulate_user_if_first_photo
+    return unless user.photos.count == 1
+    UserMailer.first_photo_upload(user).deliver_later
   end
 end
 
