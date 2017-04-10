@@ -47,22 +47,19 @@
         <li class="logo">
           <div align="center"><%= link_to image_tag("logo2.png", alt: 'main-background', width: 70), root_path %></div>
         </li>
-        <li><%= link_to "Social Feed", search_index_path %></li>
-        <% default_cat = SubCategory.find_by(name_en: "Surfboards") %>
-        <% if default_cat == nil %>
-        <%  default_cat = SubCategory.first %>
-        <% end %>
-        <li><%= link_to "Compare Products", default_cat %></li>
+        <li><%= link_to t('.social_feed'), search_index_path %></li>
+        <% default_cat = SubCategory.find_by(name_en: "Surfboards") || SubCategory.first %>
+        <li><%= link_to t('.compare_products'), default_cat %></li>
         <% default_guide = default_cat.guides.first %>
         <% if default_guide == nil %>
         <%  default_guide = Guide.first %>
         <%  default_cat = default_guide.sub_category %>
         <% end %>
-        <li><%= link_to "Buying Guides", sub_category_guide_path(default_cat, default_guide) %></li>
+        <li><%= link_to t('.buying_guides'), sub_category_guide_path(default_cat, default_guide) %></li>
         <hr style="border: none; border-bottom: 1px solid white; width: 100px">
         <% if user_signed_in?%>
           <li>
-            <span data-target="#collapseMedia" data-toggle="collapse">+New post</span>
+            <span data-target="#collapseMedia" data-toggle="collapse"><%= t '.new_post' %></span>
           </li>
           <div class="collapse" id="collapseMedia">
             <li class="whiteli">
@@ -74,7 +71,7 @@
             </li>
           </div>
         <% end %>
-        <li><%= link_to('My Profile', edit_user_registration_path) %></li>
+        <li><%= link_to t('.my_profile'), edit_user_registration_path %></li>
         <li clas="social-links">
           <div>
             <a class="btn-social-circle" href="https://www.facebook.com/goodnoob" target="_blank">

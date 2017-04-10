@@ -1,28 +1,80 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   layouts:
     nav_links_for_auth:
       log_in: Log in
+
+  guides:
+    show:
+      chapters: Chapters
+      compare_sub_category: "compare %{name}"
+      other_guides: Other guides
+      sub_category_guide: "%{name} guide"
+      tagline: "It it really important to choose the right %{name} as..."
+
+  info:
+    abouts:
+      show:
+        chapters: Chapters
+        about_us: About us
+    privacies:
+      show:
+        chapters: Chapters
+        privacy: Privacy
+    questions:
+      show:
+        chapters: Chapters
+        faq: FAQ
+    terms:
+      show:
+        chapters: Chapters
+        tos: TERMS AND CONDITIONS OF GOODNOOB
+
+  layouts:
+    footer:
+      terms: Terms
+      faq: FAQ
+      privacy: Privacy
+      about_us: About us
+      we_are_also_in: "We are also in:"
+    header:
+      social_feed: Social Feed
+      compare_products: Compare Products
+      buying_guides: Buying Guides
+      new_post: + New Post
+      my_profile: My Profile
+    mobile_post_button:
+      log_in_to_post_video: You need to be logged to upload videos
+      log_in_to_post_photo: You need to be logged to upload photos
+    nav_links_for_auth:
+      log_in: Log in
+      log_out: Log out
+      account: Account
+    search_box:
+      categories: Categories
+      search: Search...
+    upload_button:
+      new_post: + NEW POST
+      photo: Photo
+      video: Video
+
+  photos:
+    add:
+      upload_your_photo: + Upload your photo
+      comment: Comment...
+    edit:
+      edit_a_photo: edit a photo
+      upload_your_photo: + Upload your photo
+      comment: Comment...
+    search_thumbnail:
+      copy_url: Copy URL
+      delete: Delete
+      edit: Edit
+      share: Share
+    thumbnail:
+      copy_url: Copy URL
+      share: Share
+    show:
+      other_photos_and_videos: other photos and videos
 
 fr:
   layouts:
