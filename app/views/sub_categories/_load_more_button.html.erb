@@ -6,7 +6,7 @@
         </div>
         <div class="showmore-text-wrapper">
           <%= link_to request.query_parameters.merge(page: products.next_page), class: "show-more-text", 'data-remote': true do %>
-            <span>More Listing</span>
+            <span><%= t '.more_listings' %></span>
           <% end %>
         </div>
         <div class="loading-spinner">

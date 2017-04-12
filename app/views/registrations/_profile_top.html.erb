@@ -3,7 +3,7 @@
     <div class="flex main-heading-wrapper">
       <div id="profile-card">
         <div class='profile-edit'>
-          <% edit_content = "#{image_tag('edit-icon-white.png', class: 'edit-icon')}Edit info" %>
+          <% edit_content = "#{image_tag('edit-icon-white.png', class: 'edit-icon')}" + t('.edit_info') %>
           <%= modal_button_tag edit_content.html_safe, modals_path(action: :edit_user), link: true %>
         </div>
 

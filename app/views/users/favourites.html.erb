@@ -7,7 +7,7 @@
     <div id="products_goes_here">
       <div class="flex thumbs-matrix-wrapper search-results-container">
         <% if @products.count == 0 %>
-          you have no favourite products yet
+          <%= t '.no_favorites' %>
         <% else %>
           <% @products.each do |product| %>
               <div class='thumb-wrapper thumb-product'>
@@ -24,7 +24,7 @@
                     <a href="javascript:;" class="toggle-product-menu social-share thumb-more-button"></a>
                     <div class="menu-group">
                       <div class="menu-item">
-                        <%= link_to 'Remove', product_user_favourite_products_path(product), method: :delete, remote: true, class: 'remove-favourite' %>
+                        <%= link_to t('.remove'), product_user_favourite_products_path(product), method: :delete, remote: true, class: 'remove-favourite' %>
                       </div>
                     </div>
                   </div>
@@ -47,7 +47,7 @@
                   </p>
                 </div>
                 <div class='thumb-moreinfo-link'>
-                  <%= link_to 'More Info...', product %>
+                  <%= link_to t('.more_info'), product %>
                 </div>
               </div>
           <% end %>

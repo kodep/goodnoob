@@ -1,7 +1,7 @@
-en:
+fr:
   layouts:
     nav_links_for_auth:
-      log_in: Log in
+      log_in: Se connecter
 
   guides:
     show:

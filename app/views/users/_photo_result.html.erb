@@ -1,7 +1,7 @@
 <% if @media.total_count == 0 %>
   <div class="flash alert alert-danger">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    Sorry, your search returned no products.
+    <%= t '.no_results' %>
   </div>
 <% else %>
   <% @media.each do |media_object| %>

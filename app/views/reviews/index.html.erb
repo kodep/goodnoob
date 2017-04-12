@@ -54,36 +54,37 @@
       </div>
       <div class="product-buttons">
         <span class="product-price"><%= @product.price_string %></span>
-        <button type='button' id='upload-menu' class='btn product-button product-post hidden-xs dropdown-toggle'
-                data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
-          post photo / video
+        <button type='button' id='upload-menu'
+          class='btn product-button product-post hidden-xs dropdown-toggle'
+          data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
+          <%= t '.post_photo_video' %>
         </button>
 
         <ul class='dropdown-menu header-side-dropdown-button' aria-labelledby='upload-menu'>
           <li>
-            <%= modal_button_tag 'Photo', modals_path(action: :add_photo), link: true %>
+            <%= modal_button_tag t('.photo'), modals_path(action: :add_photo), link: true %>
           </li>
           <li role='separator' class='divider'></li>
           <li>
-            <%= modal_button_tag 'Video', modals_path(action: :add_video), link: true %>
+            <%= modal_button_tag t('.video'), modals_path(action: :add_video), link: true %>
           </li>
         </ul>
 
         <% if @product.users.include? current_user %>
-          <%= link_to 'Added(Remove)', product_user_favourite_products_path(@product), method: :delete,
+          <%= link_to t('.added_remove'), product_user_favourite_products_path(@product), method: :delete,
           class: 'product-button product-add-favourites hidden-xs' %>
         <% else %>
 
-          <%= link_to 'Add to Favourites', product_user_favourite_products_path(@product), method: :post,  class:
+          <%= link_to t('.add_to_favorites'), product_user_favourite_products_path(@product), method: :post,  class:
             'product-button product-add-favourites hidden-xs' %>
         <% end %>
 
         <%= link_to product_user_favourite_products_path(@product), method: :post, class:
           'product-button visible-xs-inline-block product-add-favourites' do %>
-          <%= content_tag :i, '', class: 'glyphicon glyphicon-star ' %>
+          <i class="glyphicon glyphicon-star"></i>
         <% end %>
         <% if @product.distributors.any? %>
-          <%= link_to 'buy', @product.distributors.first.url, class: 'product-button product-buy' %>
+          <%= link_to t('.buy'), @product.distributors.first.url, class: 'product-button product-buy' %>
         <% end %>
       </div>
     </div>
@@ -93,12 +94,12 @@
 <section class="product-reviews-all-wrapper">
   <div class="product-reviews-all col-md-7 center-block">
     <div class="product-reviews-header">
-      <span>reviews</span>
+      <span><%= t '.reviews' %></span>
     </div>
 
     <div class="reviews-container">
       <% if user_signed_in? %>
-        <%= modal_button_tag '+Add a review',
+        <%= modal_button_tag t('.add_a_review'),
                      new_product_review_path(@product),
                      method: :get,
                      link: true,
@@ -108,7 +109,7 @@
             send_track_review();
           });
 </script>
-        
+
       <% end %>
 
       <% @product.reviews.each do |review|%>

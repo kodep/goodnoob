@@ -1,6 +1,6 @@
 <ol class='breadcrumb'>
   <li>
-    <%= link_to 'Home', root_path %>
+    <%= link_to t('.home'), root_path %>
   </li>
   <li>
     <%= link_to product.sub_category_name,
@@ -15,6 +15,6 @@
     <%= link_to product.name, product %>
   </li>
   <li class='active'>
-    <%= link_to 'Reviews', product_reviews_path(product_id: product.id) %>
+    <%= link_to t('.reviews'), product_reviews_path(product_id: product.id) %>
   </li>
 </ol>

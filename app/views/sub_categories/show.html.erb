@@ -46,24 +46,24 @@
 <% end %>
 
 <div class="bottom-bar">
-  <div class="bottom-bar-button js-activate-filters-sidebar">filters</div>
+  <div class="bottom-bar-button js-activate-filters-sidebar"><%= t '.filters' %></div>
   |
   <div class="bottom-bar-button js-activate-mobile-sort-by">
-    sort by:
-    <span class="sort-by-value"><%= params[:search_field].try(:titleize) || 'Newest'%></span>
+    <%= t '.sort_by' %>
+    <span class="sort-by-value"><%= params[:search_field].try(:titleize) || t('.newest') %></span>
     <i class="down-arrow">▼</i>
   </div>
 </div>
 
 <div class="mobile-sort-bar hidden">
   <div class="mobile-sort-bar-header">
-    sort by:
-    <span class="sort-by-value"><%= params[:search_field].try(:titleize) || 'Newest'%></span>
+    <%= t '.sort_by' %>
+    <span class="sort-by-value"><%= params[:search_field].try(:titleize) || t('.newest') %></span>
     <i class="down-arrow">▼</i>
   </div>
-  <div class="mobile-sort-bar-item js-apply-sort" data-field="newest" data-desc="true">Newest</div>
-  <div class="mobile-sort-bar-item js-apply-sort" data-field="price" data-desc="false">Price</div>
-  <div class="mobile-sort-bar-item js-apply-sort" data-field="year" data-desc="true">Year</div>
-  <div class="mobile-sort-bar-item js-apply-sort" data-field="rating" data-desc="true">Rating</div>
-  <div class="mobile-sort-bar-item js-apply-sort" data-field="name" data-desc="false">Name</div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="newest" data-desc="true"><%= t '.newest' %></div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="price" data-desc="false"><%= t '.price' %></div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="year" data-desc="true"><%= t '.year' %></div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="rating" data-desc="true"><%= t '.rating' %></div>
+  <div class="mobile-sort-bar-item js-apply-sort" data-field="name" data-desc="false"><%= t '.name' %></div>
 </div>

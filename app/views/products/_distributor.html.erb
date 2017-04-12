@@ -7,20 +7,20 @@
 <address>
   <% if distributor.email? %>
     <p>
-      <strong>Contact Email: </strong><%= distributor.email %>
+      <strong><%= t '.contact_email' %>: </strong><%= distributor.email %>
     </p>
   <% end %>
 
   <% if distributor.address.present? %>
     <p>
-      <strong>Address :</strong><%= distributor.address.street %> <%= distributor.address.city %> <%= distributor.address.postcode %>
+      <strong><%= t '.address' %>:</strong><%= distributor.address.street %> <%= distributor.address.city %> <%= distributor.address.postcode %>
     </p>
   <% end %>
-  
-  
+
+
   <% if distributor.phone? %>
     <p>
-      <strong>Contact Phone: </strong><%= distributor.phone %>
+      <strong><%= t '.contact_phone' %>: </strong><%= distributor.phone %>
     </p>
   <% end %>
 

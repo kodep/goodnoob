@@ -1,5 +1,5 @@
 <% if @media.total_count == 0 %>
-  you have no reviews yet
+  <%= t '.no_reviews' %>
 <% else %>
   <% @media.each do |media_object| %>
     <% if media_object.is_a?(Review) %>

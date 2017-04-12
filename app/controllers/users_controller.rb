@@ -39,10 +39,6 @@ class UsersController < ApplicationController
   before_action :admin_only, :except => [:reviews, :social, :favourites, :update, :review, :photo, :video, :show, :ajax_destroy_favourite, :ajax_destroy_recent_search,
                                           :ajax_destroy_all_favourites, :ajax_destroy_recent_searches]
 
-  def index
-    @users = User.all
-  end
-
   def show
     @user = User.find(params[:id])
     unless current_user.admin?
