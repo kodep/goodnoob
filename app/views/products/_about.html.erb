@@ -34,44 +34,46 @@
           <span class="product-price"><%= product.price_string %></span>
           <button type='button' id='upload-menu' class='btn product-button product-post hidden-xs dropdown-toggle'
                   data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
-            post photo / video
+            <%= t '.post_photo_video' %>
           </button>
 
           <ul class='dropdown-menu header-side-dropdown-button' aria-labelledby='upload-menu'>
             <li>
               <% if current_user.present? %>
-                  <%= modal_button_tag 'Photo', modals_path(action: :add_photo, product_id: product.id), link: true %>
+                  <%= modal_button_tag t('.photo'), modals_path(action: :add_photo, product_id: product.id), link: true %>
               <% else %>
-                  <%= modal_link('Photo', nil, 'You need to be logged to upload photos') %>
+                  <%= modal_link t('.photo'), nil, t('.log_in_to_post_photo') %>
               <% end %>
             </li>
             <li role='separator' class='divider'></li>
             <li>
               <% if current_user.present? %>
-                  <%= modal_button_tag 'Video', modals_path(action: :add_video, product_id: product.id), link: true %>
+                  <%= modal_button_tag t('.video'), modals_path(action: :add_video, product_id: product.id), link: true %>
               <% else %>
-                  <%= modal_link('Video', nil, 'You need to be logged to upload videos') %>
+                  <%= modal_link t('.video'), nil, t('.log_in_to_post_video') %>
               <% end %>
             </li>
           </ul>
 
-          <%= modal_button_tag 'Add a review',
+          <%= modal_button_tag t('.add_a_review'),
              new_product_review_path(product),
              method: :get,
              link: true,
              class: 'product-button visible-xs-inline-block' %>
 
           <% if product.users.include? current_user %>
-            <%= link_to 'Added(Remove)', product_user_favourite_products_path(@product), method: :delete,
+            <%= link_to t('.added_remove'), product_user_favourite_products_path(@product),
+              method: :delete,
               class: 'product-button product-add-favourites hidden-xs' %>
           <% else %>
 
 
             <% if current_user.present? %>
-                  <%= link_to 'Add to Favourites', product_user_favourite_products_path(@product), method: :post,
-                              class: 'product-button product-add-favourites hidden-xs' %>
+              <%= link_to t('.add_to_favorites'), product_user_favourite_products_path(@product),
+                method: :post,
+                class: 'product-button product-add-favourites hidden-xs' %>
             <% else %>
-              <%= modal_link('Add to Favourites', 'product-button product-add-favourites hidden-xs') %>
+              <%= modal_link t('.add_to_favorites'), 'product-button product-add-favourites hidden-xs' %>
             <% end %>
           <% end %>
           <%= link_to product_user_favourite_products_path(@product), method: :post, class:
@@ -79,7 +81,7 @@
             <%= content_tag :i, '', class: 'glyphicon glyphicon-star' %>
           <% end %>
           <% if product.distributors.any? %>
-            <%= link_to 'buy', product.distributors.first.url, class: 'product-button product-buy tracking-buy' %>
+            <%= link_to t('.buy'), product.distributors.first.url, class: 'product-button product-buy tracking-buy' %>
 
             <script>
               $('.tracking-buy').click(function() {

@@ -7,7 +7,7 @@
   <div id="user_social">
     <div class="flex thumbs-matrix-wrapper search-results-container">
       <% if @media.length == 0 %>
-        you have no social activity yet
+        <%= t '.no_activities' %>
       <% end %>
       <%= render 'social_bunch' %>
       <div class="showmore-thumbs-row">

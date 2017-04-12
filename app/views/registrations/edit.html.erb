@@ -3,7 +3,7 @@
 <%= render partial: 'profile_top' %>
 <%= render partial: 'nav_filters' %>
 <div class="profile-section">
-  <h1>Account settings</h1>
+  <h1><%= t '.account_settings' %></h1>
 </div>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
         <%= devise_error_messages! %>
@@ -11,25 +11,25 @@
       <div class="authform side-edit-columns" >
 
         <div class="form-group">
-          <%= f.label "E-mail address" %>
-          <%= f.email_field :email, class: 'form-control', placeholder: "Email" %>
+          <%= f.label :email, t('.email') %>
+          <%= f.email_field :email, class: 'form-control', placeholder: t('.email') %>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
         </div>
 
         <div class="form-group">
-          <%= f.label "Current password" %>
-          <%= f.password_field :current_password, :autocomplete => 'off', class: 'form-control', placeholder: "Current Password" %>
+          <%= f.label :current_password, t('.current_password') %>
+          <%= f.password_field :current_password, :autocomplete => 'off', class: 'form-control', placeholder: t('.current_password') %>
         </div>
 
         <div class="form-group">
-          <%= f.label "New Password" %>
-          <%= f.password_field :password, :autocomplete => 'off', class: 'form-control', placeholder: "New Password" %>
+          <%= f.label :password, t('.new_password') %>
+          <%= f.password_field :password, :autocomplete => 'off', class: 'form-control', placeholder: t('.new_password') %>
         </div>
 
         <div class="form-group">
-          <%= f.label "Language" %>
+          <%= f.label :language, t('.language') %>
           <div class="form-right">
             <div class="select-wrapper">
               <%= f.collection_select :language_id, Language.all, :id, :name %>
@@ -38,7 +38,7 @@
         </div>
 
         <div class="form-group">
-          <%= f.label "Currency" %>
+          <%= f.label :currency, t('.currency') %>
           <div class="form-right">
             <div class="select-wrapper">
               <%= f.collection_select :currency_id, Currency.all, :id, :name %>
@@ -47,11 +47,11 @@
         </div>
 
     <div class="edit-buttons">
-      <%= f.submit 'Save changes', class: 'button save_changes', style: "background:#00b2ff;" %>
-      <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: 'button', style: "background:#3d80a2;" %>
+      <%= f.submit t('.save'), class: 'button save_changes', style: "background:#00b2ff;" %>
+      <%= link_to t('.logout'), destroy_user_session_path, :method => :delete, class: 'button', style: "background:#3d80a2;" %>
     </div>
     <div class="edit-buttons">
-      <%= link_to "Delete Account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button right' %>
+      <%= link_to t('.delete_account'), registration_path(resource_name), :data => { :confirm => t('.are_you_sure') }, :method => :delete, :class => 'button right' %>
     </div>
 
       </div>

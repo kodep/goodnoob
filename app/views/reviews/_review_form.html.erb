@@ -1,11 +1,11 @@
 <%= form_for @review, url: {action: "create"} do |f| %>
   <div class='form-group'>
-    <%= f.text_field :title, class: 'form-control', placeholder: 'Title', required: true %>
+    <%= f.text_field :title, class: 'form-control', placeholder: t('.title'), required: true %>
   </div>
   <%= render partial: 'reviews/review_rating_form' , locals:{form:f}%>
   <div class='form-group'>
     <%= f.text_area :review, class: 'form-control wysihtml5',
-                             placeholder: 'Post your review and help others...',
+                             placeholder: t('.post_review'),
                              rows: 7,
                              required: true %>
   </div>

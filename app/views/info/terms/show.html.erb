@@ -2,7 +2,7 @@
   <section class="guide-chapters row">
     <div class="guide-chapters-list-wrapper">
       <div class="guide-chapters-list short">
-        <div class="guides-list-header">CHAPTERS</div>
+        <div class="guides-list-header"><%= t '.chapters' %></div>
         <% Info::Term.order(:id).each do |term| %>
           <%= link_to term.header, info_term_path(term) %><br/>
         <% end %>
@@ -15,7 +15,7 @@
     </div>
     <div class="guide-text-wrapper">
       <%= image_tag("big_logo.png", alt: 'logo', class: 'logo') %>
-      <h1>TERMS AND CONDITIONS OF GOODNOOB</h1>
+      <h1><%= t '.tos' %></h1>
       <h2><%= @term.header.upcase %></h2>
       <div class="guide-text col-md-10 center-block">
         <%= simple_format @term.description&.html_safe %>

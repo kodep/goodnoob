@@ -9,7 +9,7 @@
     <div class='form-group'>
       <div class='col-sm-11 center-block'>
         <%= fields.file_field :image, class: 'form-control hidden file-upload-button' %>
-        <%= fields.label :image, '+Upload your photo' %>
+        <%= fields.label :image, t('.upload_your_photo') %>
       </div>
     </div>
 
@@ -17,7 +17,7 @@
 
   <div class='form-group'>
     <div class='col-sm-11 center-block'>
-      <%= form.text_area :comment, class: 'form-control', maxlength: 250, placeholder: 'Comment...' %>
+      <%= form.text_area :comment, class: 'form-control', maxlength: 250, placeholder: t('.comment') %>
     </div>
   </div>
 

@@ -21,16 +21,16 @@
     <div class="reviews-wrapper col-md-9 pull-left <%= product.reviews.length > 0 ? '' : 'no-reviews'%>">
       <div class="reviews">
         <div class="product-reviews-header">
-          <span>reviews</span>
+          <span><%= t '.reviews' %></span>
           <% if reviews.length > 0 %>
-            <%= link_to 'Read More Reviews', product_reviews_path(product_id: product.id) %>
+            <%= link_to t('.read_more_reviews'), product_reviews_path(product_id: product.id) %>
           <% end %>
         </div>
 
         <% if reviews.length > 0 %>
           <div class="reviews-container col-md-9 center-block">
             <% if user_signed_in? %>
-              <%= modal_button_tag '+Add a review',
+              <%= modal_button_tag t('.add_a_review'),
                            new_product_review_path(product),
                            method: :get,
                            link: true,
@@ -59,21 +59,21 @@
         <% else %>
           <div class="no-reviews-block-wrapper col-md-9 center-block">
             <div class="no-reviews-block">
-              <div class="no-review-title">no reviews yet, <b>be the first!</b></div>
+              <div class="no-review-title"><%= t '.no_reviews_yet' %> <b><%= t '.be_the_first' %></b></div>
               <div>
                 <% if user_signed_in? %>
-                  <%= modal_button_tag '+Add a review',
+                  <%= modal_button_tag t('.add_a_review'),
                     new_product_review_path(product),
                     method: :get,
                     link: true,
                     class: 'add-review hidden-xs' %>
-                  
+
                     <script>
                                 $('.add-review').click(function() {
                                 send_track_review();
                               });
                     </script>
-                  
+
                 <% end %>
               </div>
             </div>

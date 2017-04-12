@@ -2,8 +2,8 @@
   <div class="product-details">
     <div class="row">
       <div class="product-details-tabs-control col-md-5 center-block">
-        <a href="#" class="product-tab-button active">characteristics</a>
-        <a href="#" class="product-tab-button">company</a>
+        <a href="#" class="product-tab-button active"><%= t '.characteristics' %></a>
+        <a href="#" class="product-tab-button"><%= t '.company' %></a>
       </div>
     </div>
 
@@ -17,7 +17,7 @@
         <% end %>
 
         <% unless product.dimensions.empty? %>
-            <h1>Dimensions:</h1>
+            <h1><%= t '.dimensions' %>:</h1>
             <% product.dimensions.each do |dimension| %>
                 <p><%= dimension.text %></p>
             <% end %>
@@ -37,25 +37,25 @@
         <div class="contacts">
           <% if company.email? %>
             <p>
-              Email: <%= company.email %>
+              <%= t '.email' %>: <%= company.email %>
             </p>
           <% end %>
 
           <% unless company.address.nil? %>
             <p>
-              Address: <%= company.address.street %> <%= company.address.city %> <%= company.address.postcode %>
+              <%= t '.address' %>: <%= company.address.street %> <%= company.address.city %> <%= company.address.postcode %>
             </p>
           <% end %>
 
           <% if company.phone? %>
             <p>
-              Phone: <%= company.phone %>
+              <%= t '.phone' %>: <%= company.phone %>
             </p>
           <% end %>
 
           <% if company.fax? %>
             <p>
-              Fax: <%= company.fax %>
+              <%= t '.fax' %>: <%= company.fax %>
             </p>
           <% end %>
         </div>

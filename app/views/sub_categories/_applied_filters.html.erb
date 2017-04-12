@@ -21,7 +21,7 @@
         <%= link_to '#' do %>
             <span class="glyphicon glyphicon-remove"></span>
         <% end %>
-        <span class="applied-filter-text">From <%= params[:year_from] %> year</span>
+        <span class="applied-filter-text"><%= t '.from_year', year: params[:year_from] %></span>
       </div>
   <% end %>
   <% if params[:year_to].present? %>
@@ -29,7 +29,7 @@
         <%= link_to '#' do %>
             <span class="glyphicon glyphicon-remove"></span>
         <% end %>
-        <span class="applied-filter-text">To <%= params[:year_to] %> year</span>
+        <span class="applied-filter-text"><%= t '.to_year', year: params[:year_from] %></span>
       </div>
   <% end %>
   <% if params[:price_from].present? && params[:price_from].to_i != @sub_category.prices.minimum(:amount).to_i %>
@@ -37,7 +37,7 @@
         <%= link_to '#' do %>
             <span class="glyphicon glyphicon-remove"></span>
         <% end %>
-        <span class="applied-filter-text">From <%= params[:price_from] %></span>
+        <span class="applied-filter-text"><%= t '.from' %> <%= params[:price_from] %></span>
       </div>
   <% end %>
   <% if params[:price_to].present? && params[:price_to].to_i != @sub_category.prices.maximum(:amount).to_i  %>
@@ -45,7 +45,7 @@
         <%= link_to '#' do %>
             <span class="glyphicon glyphicon-remove"></span>
         <% end %>
-        <span class="applied-filter-text">To <%= params[:price_to] %></span>
+        <span class="applied-filter-text"><%= t '.to' %> <%= params[:price_to] %></span>
       </div>
   <% end %>
 </div>

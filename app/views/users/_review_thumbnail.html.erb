@@ -8,7 +8,7 @@
           <a href="javascript:;" class="toggle-product-menu social-share thumb-more-button"></a>
           <div class="menu-group">
             <div class="menu-item">
-              <%= modal_button_tag 'Edit',
+              <%= modal_button_tag t('.edit'),
                 edit_product_review_path(review.product, review),
                 method: :get,
                 link: true,
@@ -16,7 +16,7 @@
             </div>
             <hr>
             <div class="menu-item">
-              <%= link_to 'Remove', product_review_path(review.product, review), method: :delete, remote: true %>
+              <%= link_to t('.remove'), product_review_path(review.product, review), method: :delete, remote: true %>
             </div>
           </div>
         </div>

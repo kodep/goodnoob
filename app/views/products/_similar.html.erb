@@ -1,6 +1,6 @@
 <div class="product-similar-wrapper col-md-12">
   <div class="product-similar">
-    <div class="product-similar-header">similar products</div>
+    <div class="product-similar-header"><%= t '.similar_products' %></div>
     <div class="main-content-wrapper">
       <div class="product-similars short flex thumbs-matrix-wrapper similar-wrapper">
         <%= render partial: 'product_similar', locals: { results: @similars } %>

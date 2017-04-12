@@ -7,13 +7,13 @@
   <div class="main-tabs-wrapper">
     <div class="flex tabs-list">
       <span class="tabs-item social-feed-button-wrapper">
-        <%= link_to "Social Feed", search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link active"} %>
+        <%= link_to t('.social_feed'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link active"} %>
       </span>
 
       <span class="item-separator">|</span>
 
       <span class="dropdown dropdown-on-hover tabs-item compare-button-wrapper">
-        <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown"><%= defined?(@category) ? @category.name : 'Compare Products' %></button>
+        <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown"><%= defined?(@category) ? @category.name : t('.compare_products') %></button>
         <div class="dropdown-menu compare-block-wrapper">
           <%= render 'layouts/compare_products' %>
         </div>
@@ -22,7 +22,7 @@
       <span class="item-separator">|</span>
 
       <span class="dropdown dropdown-on-hover tabs-item">
-        <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown">Buying Guides</button>
+        <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown"><%= t '.buying_guides' %></button>
         <div class="dropdown-menu buying-guides-block-wrapper">
           <%= render 'layouts/buying_guides' %>
         </div>
@@ -40,11 +40,11 @@
     <div class="show-filters">
       <a href="#" class="show-filters-button">
         <span class="glyphicon glyphicon-chevron-down"></span>
-        <span class="applied-filter-text">View filters</span>
+        <span class="applied-filter-text"><%= t '.view_filters' %></span>
       </a>
       <%= link_to search_index_path(clear_sub_categories(params)), data: {'turbolinks-scroll' => false} do %>
         <span class="glyphicon glyphicon-remove"></span>
-        <span class="applied-filter-text">Clear all</span>
+        <span class="applied-filter-text"><%= t '.clear_all' %></span>
       <% end %>
     </div>
 
@@ -60,7 +60,7 @@
       <span class="applied-filter js-clear-all clear-filters-filter">
         <%= link_to search_index_path(clear_sub_categories(params)), data: {'turbolinks-scroll' => false} do %>
           <span class="glyphicon glyphicon-remove"></span>
-          <span class="applied-filter-text">Clear All</span>
+          <span class="applied-filter-text"><%= t '.clear_all' %></span>
         <% end %>
       </span>
     </div>

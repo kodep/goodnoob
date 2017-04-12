@@ -9,10 +9,11 @@
 
       <div class="guide-description-wrapper">
         <div class="guide-description">
-          <h1><%= "#{@sub_category.name&.singularize} guide" %></h1>
-          <%= "It it really important to choose the right #{@sub_category.name&.singularize&.downcase} as..." %>
+          <h1><%= t '.sub_category_guide', name: @sub_category.name&.singularize %></h1>
+          <%= t '.tagline', name: @sub_category.name&.singularize&.downcase %>
           <div class="compare-products">
-            <%= link_to "compare #{@sub_category.name}", sub_category_path(@sub_category) %>
+            <%= link_to t('.compare_sub_category', name: @sub_category.name),
+              sub_category_path(@sub_category) %>
           </div>
         </div>
       </div>
@@ -22,11 +23,11 @@
   <section class="guide-chapters row">
     <div class="guide-chapters-list-wrapper">
       <div class="guide-chapters-list short">
-        <div class="guides-list-header">CHAPTERS</div>
+        <div class="guides-list-header"><%= t '.chapters' %></div>
         <% @sub_category.guides.order(:id).each do |guide| %>
           <%= link_to guide.header, sub_category_guide_path(@sub_category, guide) %><br/>
         <% end %>
-        <div class="guides-list-header">OTHER GUIDES</div>
+        <div class="guides-list-header"><%= t '.other_guides' %></div>
         <% Category.order(:id).each do |category| %>
           <% category.sub_categories.where.not(id: @sub_category.id).order(:id).each do |sub_category| %>
             <% if sub_category.guides.present? %>

@@ -9,19 +9,19 @@
         <a class="toggle-product-menu social-share thumb-more-button"></a>
         <div class="menu-group">
           <div class="menu-item">
-            <a class="social-share toggle-social-share-menu">Share</a>
+            <a class="social-share toggle-social-share-menu"><%= t '.share' %></a>
           </div>
           <hr>
           <div class="menu-item">
-            <%= modal_button_tag 'Edit', edit_video_path(video), link: true, method: :get %>
+            <%= modal_button_tag t('.edit'), edit_video_path(video), link: true, method: :get %>
           </div>
           <hr>
           <div class="menu-item">
-            <%= link_to 'Delete', video_path(video), method: :delete %>
+            <%= link_to t('.delete'), video_path(video), method: :delete %>
           </div>
           <hr>
           <div class="menu-item">
-            <a class="share-button-copylink js-copylink" data-copy-url="<%= video_url(video) %>">Copy Url</a>
+            <a class="share-button-copylink js-copylink" data-copy-url="<%= video_url(video) %>"><%= t '.copy_url' %></a>
           </div>
         </div>
 
