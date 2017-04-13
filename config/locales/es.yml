@@ -5,45 +5,45 @@ es:
 
   guides:
     show:
-      chapters: Chapters
-      compare_sub_category: "compare %{name}"
-      other_guides: Other guides
-      sub_category_guide: "%{name} guide"
-      tagline: "It it really important to choose the right %{name} as..."
+      chapters: Capítulos
+      compare_sub_category: "Comparar %{name}"
+      other_guides: Otras guías
+      sub_category_guide: "%{name} guía"
+      tagline: "Es muy importante el perfecto %{name} as..."
 
   info:
     abouts:
       show:
-        chapters: Chapters
-        about_us: About us
+        chapters: Capítulos
+        about_us: Sobre nosotros
     privacies:
       show:
-        chapters: Chapters
-        privacy: Privacy
+        chapters: Capítulos
+        privacy: Privacidad
     questions:
       show:
-        chapters: Chapters
-        faq: FAQ
+        chapters: Capítulos
+        faq: Preguntas
     terms:
       show:
-        chapters: Chapters
-        tos: TERMS AND CONDITIONS OF GOODNOOB
+        chapters: Preguntas
+        tos: Términos y condiciones de GOODNOOB
 
   layouts:
     footer:
-      terms: Terms
-      faq: FAQ
-      privacy: Privacy
-      about_us: About us
-      we_are_also_in: "We are also in:"
+      terms: Términos
+      faq: Preguntas
+      privacy: Privacidad
+      about_us: Sobre nosotros
+      we_are_also_in: "Siguenos también en:"
     header:
-      social_feed: Social Feed
-      compare_products: Compare Products
-      buying_guides: Buying Guides
-      new_post: + New Post
-      my_profile: My Profile
+      social_feed: Social
+      compare_products: Comapra
+      buying_guides: Aprende
+      new_post: + Nueva publicación
+      my_profile: Mi perfil
     mobile_post_button:
-      log_in_to_post_video: You need to be logged to upload videos
+      log_in_to_post_video: Necesitas estar logueado para subir videos
       log_in_to_post_photo: You need to be logged to upload photos
     nav_links_for_auth:
       log_in: Log in
