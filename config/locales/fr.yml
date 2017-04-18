@@ -5,292 +5,292 @@ fr:
 
   guides:
     show:
-      chapters: Chapters
-      compare_sub_category: "compare %{name}"
-      other_guides: Other guides
-      sub_category_guide: "%{name} guide"
-      tagline: "It it really important to choose the right %{name} as..."
+      chapters: Chapitres
+      compare_sub_category: "Comparer %{name}"
+      other_guides: Autres guides
+      sub_category_guide: "Guide d'achat - %{name}"
+      tagline: "Il est très important de savoir quel est votre %{name} parfait..."
 
   info:
     abouts:
       show:
-        chapters: Chapters
-        about_us: About us
+        chapters: Chapitres
+        about_us: A propos
     privacies:
       show:
-        chapters: Chapters
-        privacy: Privacy
+        chapters: Chapitres
+        privacy: Vie privée
     questions:
       show:
-        chapters: Chapters
+        chapters: Chapitres
         faq: FAQ
     terms:
       show:
-        chapters: Chapters
-        tos: TERMS AND CONDITIONS OF GOODNOOB
+        chapters: Chapitres
+        tos: "Conditions Générales d'utilisation"
 
   layouts:
     footer:
-      terms: Terms
+      terms: CGU
       faq: FAQ
-      privacy: Privacy
-      about_us: About us
-      we_are_also_in: "We are also in:"
+      privacy: Vie privée
+      about_us: A propos
+      we_are_also_in: "Nous sommes aussi sur:"
     header:
-      social_feed: Social Feed
-      compare_products: Compare Products
-      buying_guides: Buying Guides
-      new_post: + New Post
-      my_profile: My Profile
+      social_feed: "Fil d'actualité"
+      compare_products: Comparer les produits
+      buying_guides: "Guides d'achat"
+      new_post: + PARTAGER
+      my_profile: Mon profil
     mobile_post_button:
-      log_in_to_post_video: You need to be logged to upload videos
-      log_in_to_post_photo: You need to be logged to upload photos
+      log_in_to_post_video: Vous devez être connecté pour partager une vidéo
+      log_in_to_post_photo: Vous devez être connecté pour partager une photo
     nav_links_for_auth:
-      log_in: Log in
-      log_out: Log out
-      account: Account
+      log_in: Se connecter
+      log_out: Se déconnecter
+      account: Compte
     search_box:
-      categories: Categories
-      search: Search...
+      categories: Catégories
+      search: Rechercher...
     upload_button:
-      new_post: + NEW POST
+      new_post: + PARTAGER
       photo: Photo
-      video: Video
+      video: Vidéo
 
   photos:
     add:
-      upload_your_photo: + Upload your photo
-      comment: Comment...
+      upload_your_photo: + Partager une photo
+      comment: Description...
     edit:
-      edit_a_photo: edit a photo
-      upload_your_photo: + Upload your photo
-      comment: Comment...
+      edit_a_photo: éditer une photo
+      upload_your_photo: + Partager une photo
+      comment: Description...
     search_thumbnail:
-      copy_url: Copy URL
-      delete: Delete
-      edit: Edit
-      share: Share
+      copy_url: "Copier l'URL"
+      delete: Supprimer
+      edit: Editer
+      share: Partager
     thumbnail:
-      copy_url: Copy URL
-      share: Share
+      copy_url: "Copier l'URL"
+      share: Partager
     show:
-      other_photos_and_videos: other photos and videos
+      other_photos_and_videos: autres photos et vidéos
 
   products:
     about:
-      post_photo_video: post photo / video
+      post_photo_video: Partager photo/vidéo
       photo: Photo
-      video: Video
-      log_in_to_post_video: You need to be logged to upload videos
-      log_in_to_post_photo: You need to be logged to upload photos
-      add_a_review: Add a review
-      added_remove: Added(Remove)
-      add_to_favorites: Add to favorites
-      buy: buy
+      video: Vidéo
+      log_in_to_post_video: Vous devez être connecté pour partager une vidéo
+      log_in_to_post_photo: Vous devez être connecté pour partager une photo
+      add_a_review: Ajouter un commentaire
+      added_remove: Ajouté(Supprimer)
+      add_to_favorites: Ajouter aux favoris
+      buy: Acheter
     breadcrumbs:
-      home: Home
+      home: "Fil d'actualité"
     company:
       contacts: Contacts
-      contact_email: Contact Email
-      contact_phone: Contact Phone
-      contact_fax: Contact Fax
-      address: Address
+      contact_email: Email
+      contact_phone: Télephone
+      contact_fax: Fax
+      address: Adresse
     details:
-      characteristics: characteristics
-      company: company
+      characteristics: caractéristiques
+      company: entreprise
       dimensions: Dimensions
       email: Email
-      address: Address
-      phone: Phone
+      address: Adresse
+      phone: Téléphone
       fax: Fax
     distributor:
-      contact_email: Contact Email
-      contact_phone: Contact Phone
-      address: Address
+      contact_email: Email
+      contact_phone: Téléphone
+      address: Adresse
     photos_and_videos:
-      photos_and_videos: photos and videos
-      no_photos_or_videos_yet: no photos or videos yet,
-      be_the_first: be the first!
-      new_post: + new post
+      photos_and_videos: photos et vidéos
+      no_photos_or_videos_yet: pas encore de vidéos ou de photos,
+      be_the_first: sois le premier!
+      new_post: + partager
       photo: Photo
-      video: Video
+      video: Vidéo
     reviews:
-      reviews: reviews
-      read_more_reviews: Read More Reviews
-      add_a_review: + Add a review
-      no_reviews_yet: no reviews yet,
-      be_the_first: be the first!
+      reviews: commentaires
+      read_more_reviews: Lire plus de commentaires
+      add_a_review: + Ajouter un commentaire
+      no_reviews_yet: pas encore de commentaire,
+      be_the_first: sois le premier!
     similar:
-      similar_products: similar products
+      similar_products: produits similaires
     thumbnail:
-      more_info: More Info...
+      more_info: "Plus d'Info..."
     set_filter_options:
-      filter_options: Filter Options
+      filter_options: Filtres
 
   registrations:
     new:
-      sign_up: Sign up
-      name: Name
+      sign_up: "S'inscrire"
+      name: Nom
       email: Email
-      password: Password
-      password_confirmation: Password confirmation
+      password: Mot de passe
+      password_confirmation: Confirmation du mot de passe
     edit:
-      account_settings: Account settings
+      account_settings: Paramètres du compte
       email: Email
-      current_password: Current password
-      new_password: New Password
-      language: Language
-      currency: Currency
-      save: Save changes
-      logout: Logout
-      delete_account: Delete Account
-      are_you_sure: Are you sure?
+      current_password: Mot de passe actuel
+      new_password: Nouveau mot de passe
+      language: Langage
+      currency: Devise préférée
+      save: Sauvegarder les changements
+      logout: Se Déconnecter
+      delete_account: Supprimer le compte
+      are_you_sure: "Êtes vous sûr? Cette action n'est pas reversible."
     profile_top:
-      edit_info: Edit Info
+      edit_info: Éditer mes informations
     nav_filters:
-      profile: Profile
-      reviews: Reviews
+      profile: Profil
+      reviews: Commentaires
       social: Social
-      favorites: Favorites
+      favorites: Favoris
 
   reviews:
     breadcrumbs:
       home: Home
-      reviews: Reviews
+      reviews: Commentaires
     edit:
-      title: Title
-      post_review: Post your review and help others...
-      upload: Upload
+      title: Titre
+      post_review: Partager vos commentaires et aidez la communauté...
+      upload: Partager
     new:
-      upload: Upload
-      title: Add a review
+      upload: Partager
+      title: Ajouter un commentaire
     review_form:
-      title: Title
-      post_review: Post your review and help others...
+      title: Titre
+      post_review: Partager vos commentaires et aidez la communauté...
     index:
-      post_photo_video: post photo / video
-      added_remove: Added(Remove)
-      add_to_favorites: Add to Favourites
-      buy: buy
-      reviews: reviews
-      add_a_review: + Add a review
+      post_photo_video: partager photo / vidéo
+      added_remove: Ajouté(Supprimer)
+      add_to_favorites: Ajouter aux favoris
+      buy: acheter
+      reviews: commentaires
+      add_a_review: + Ajouter un commentaire
       photo: Photo
-      video: Video
+      video: Vidéo
 
   search:
     form:
-      search: Search...
+      search: Rechercher...
     left_filter:
-      more: More...
+      more: Plus...
     load_more_button:
-      more_listings: More Listings
+      more_listings: Plus de produits
     search_header:
-      social_feed: Social Feed
-      compare_products: Compare Products
-      buying_guides: Buying Guides
-      view_filters: View filters
-      clear_all: Clear all
+      social_feed: "Fil d'actualité"
+      compare_products: Comparer les Produits
+      buying_guides: "Guides d'achat"
+      view_filters: Voir les filtres
+      clear_all: Tout supprimer
     search_results:
-      no_results: Sorry, your search returned no products.
+      no_results: Aucun résultat pour votre recherche.
 
   shared:
     selects:
-      search_product: Search your product...
+      search_product: Rechercher un produit...
 
   sub_categories:
     applied_filters:
-      from_year: From %{year} year
-      to_year: To %{year} year
-      from: From
-      to: To
+      from_year: "À partir de %{year}"
+      to_year: "Jusqu'à %{year}"
+      from: À partir de
+      to: "Jusqu'à"
     breadcrumbs:
-      home: Home
+      home: Accueil
     filters_header:
-      social_feed: Social Feed
-      compare_products: Compare Products
-      buying_guides: Buying Guides
+      social_feed: "Fil d'actualité"
+      compare_products: Comparer Produits
+      buying_guides: "Guides d'achat"
     left_filter:
-      see_more: See more...
+      see_more: Voir plus...
     load_more_button:
-      more_listings: More Listings
+      more_listings: Plus de Produits
     products:
-      no_results: Sorry, your search returned no products.
-      more_info: More Info...
+      no_results: Aucun résultat pour votre recherche.
+      more_info: "Plus d'info..."
     search:
-      search: Search...
-      sort_by: Sort by
-      newest: Newest
-      price: Price
-      year: Year
-      rating: Rating
-      name: Name
+      search: Rechercher...
+      sort_by: Trier par
+      newest: Plus récent
+      price: Prix
+      year: Année
+      rating: Note
+      name: Nom
     sort:
-      sort_by: 'Sort by:'
-      price: Price
-      year: Year
-      popularity: Popularity
+      sort_by: 'Trier par:'
+      price: Prix
+      year: Année
+      popularity: Popularité
       a_z: A-Z
     year_filter:
-      from: From
-      to: To
+      from: De
+      to: À
     show:
-      filters: filters
-      sort_by: 'sort by:'
-      newest: Newest
-      price: Price
-      year: Year
-      rating: Rating
-      name: Name
+      filters: filtres
+      sort_by: 'trier par:'
+      newest: Plus récent
+      price: Prix
+      year: Année
+      rating: Note
+      name: Nom
 
   users:
     edit:
-      enter_a_name: enter a name
-      enter_a_last_name: enter a last name
-      enter_your_bio: enter your bio
-      enter_your_country: enter your country
-      enter_your_city: enter your city
-      enter_your_street: enter your street
-      save: Save
+      enter_a_name: prénom
+      enter_a_last_name: nom de famille
+      enter_your_bio: bio
+      enter_your_country: pays
+      enter_your_city: ville
+      enter_your_street: rue
+      save: Enregistrer
     photo_result:
-      no_results: Sorry, your search returned no products.
+      no_results: Aucun résultat pour votre recherche.
     photo_thumbnail:
-      more_info: More Info...
+      more_info: "Plus d'Info..."
     review_result:
-      no_reviews: You have no reviews yet
+      no_reviews: "Vous n'avez pas encore partagé de commentaire" 
     review_thumbnail:
-      edit: Edit
-      remove: Remove
+      edit: Editer
+      remove: Supprimer
     video_result:
-      no_results: Sorry, your search returned no products.
+      no_results: Aucun résultat pour votre recherche.
     video_thumbnail:
-      more_info: More Info...
+      more_info: "Plus d'Info..."
     favourites:
-      no_favorites: you have no favourite products yet
-      remove: Remove
-      more_info: More Info...
+      no_favorites: "vous n'avez pas encore de favoris"
+      remove: Supprimer
+      more_info: "Plus d'Info..."
     review:
-      more_listings: More Listings
+      more_listings: Plus de commentaires
     reviews:
-      more_listings: More Listings
+      more_listings: Plus de commentaires
     social:
-      no_activities: you have no social activity yet
+      no_activities: "Vous n'avez pas encore d'activité"
     video:
-      no_results: Sorry, your search returned no products.
-      remove: Remove
-      more_info: More Info...
+      no_results: Aucun résultat pour votre recherche.
+      remove: Supprimer
+      more_info: Plus d'Info...
 
   videos:
     add:
-      comment: Comment...
+      comment: Commenter...
     breadcrumbs:
-      home: Home
+      home: Accueil
     edit:
-      comment: Comment...
-      edit_a_video: edit a video
+      comment: Commenter...
+      edit_a_video: éditer une vidéo
     search_thumbnail:
-      share: Share
-      edit: Edit
-      delete: Delete
-      copy_url: Copy URL
+      share: Partager
+      edit: Editer
+      delete: Supprimer
+      copy_url: "Copier l'URL"
     show:
-      other_photos_and_videos: other photos and videos
+      other_photos_and_videos: autres photos et vidéos
