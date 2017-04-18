@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170409111704) do
+ActiveRecord::Schema.define(version: 20170418104219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -280,6 +280,18 @@ ActiveRecord::Schema.define(version: 20170409111704) do
     t.integer  "review_id"
   end
 
+  create_table "region_product_urls", force: :cascade do |t|
+    t.integer  "region_id"
+    t.integer  "product_id"
+    t.string   "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "region_product_urls", ["product_id", "region_id"], name: "index_region_product_urls_on_product_id_and_region_id", unique: true, using: :btree
+  add_index "region_product_urls", ["product_id"], name: "index_region_product_urls_on_product_id", using: :btree
+  add_index "region_product_urls", ["region_id"], name: "index_region_product_urls_on_region_id", using: :btree
+
   create_table "regions", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -379,5 +391,7 @@ ActiveRecord::Schema.define(version: 20170409111704) do
   add_foreign_key "filter_options_products", "filter_options"
   add_foreign_key "filter_options_products", "products"
   add_foreign_key "filters", "sub_categories"
+  add_foreign_key "region_product_urls", "products"
+  add_foreign_key "region_product_urls", "regions"
   add_foreign_key "user_favourites", "users"
 end

@@ -17,6 +17,7 @@ class Product < ActiveRecord::Base
   has_many :user_favourites, as: :favouriteable
   has_many :users, through: :user_favourites
   has_many :pictures, as: :imageable
+  has_many :region_product_urls
   has_many :similars, -> (p) { where.not(id: p) }, through: :sub_category, source: :products
   has_and_belongs_to_many :filter_options
 
@@ -35,6 +36,7 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :prices, allow_destroy: true
   accepts_nested_attributes_for :dimensions, allow_destroy: true
   accepts_nested_attributes_for :pictures, allow_destroy: true
+  accepts_nested_attributes_for :region_product_urls, allow_destroy: true
 
   scope :filter, ->(filters) { includes(:filter_options)
                                  .where(filter_options: { id: filters }) if filters.present? }
