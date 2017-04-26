@@ -80,8 +80,8 @@
             'product-button visible-xs-inline-block product-add-favourites' do %>
             <%= content_tag :i, '', class: 'glyphicon glyphicon-star' %>
           <% end %>
-          <% if product.distributors.any? %>
-            <%= link_to t('.buy'), product.distributors.first.url, class: 'product-button product-buy tracking-buy' %>
+          <% if @buy_url %>
+            <%= link_to t('.buy'), @buy_url.url, class: 'product-button product-buy tracking-buy' %>
 
             <script>
               $('.tracking-buy').click(function() {
