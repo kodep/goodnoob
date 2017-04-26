@@ -5,6 +5,9 @@ class Country < ActiveRecord::Base
   has_and_belongs_to_many :companies
 
   validates :name, :country_code, presence: true
+  validates :country_code, uniqueness: { case_sensitive: false }
+
+  before_save { self.country_code.upcase! }
 end
 
 # == Schema Information

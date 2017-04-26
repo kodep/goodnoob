@@ -14,7 +14,8 @@ ActiveAdmin.register Product do
                 attrs_attributes: [:title, :value, :_destroy, :id],
                 prices_attributes: [:amount, :currency_id, :_destroy, :id],
                 dimensions_attributes: [:text, :_destroy, :id],
-                pictures_attributes: %i(image _destroy id),
+                pictures_attributes: [:image, :_destroy, :id],
+                region_product_urls_attributes: [:url, :_destroy, :id, :region_id],
                 :filter_option_ids => []
 
   action_item :videos, only: :show do
@@ -68,6 +69,12 @@ ActiveAdmin.register Product do
         column :currency
       end
     end
+    panel 'Region Product URLs' do
+      table_for product.region_product_urls do
+        column :url
+        column :region
+      end
+    end
     panel 'Attributes' do
       table_for product.attrs do
         column :title
@@ -104,6 +111,12 @@ ActiveAdmin.register Product do
       f.has_many :prices, allow_destroy: true do |attr|
         attr.input :amount
         attr.input :currency
+      end
+    end
+    f.inputs 'Region Product URLs' do
+      f.has_many :region_product_urls, allow_destroy: true do |attr|
+        attr.input :url
+        attr.input :region
       end
     end
     f.inputs 'Attributes' do
