@@ -37,6 +37,7 @@ gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 gem 'video_info'
 gem 'traco'
 gem 'i18n-tasks', '~> 0.9.12'
+gem 'slim'
 
 group :development, :test do
   gem 'byebug'
