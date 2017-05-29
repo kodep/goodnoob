@@ -1,0 +1,44 @@
+.row.back
+  .col-md-1
+  .col-md-7.hidden-xs.hidden-sm.margin_padding
+    .row.big_text.col-md-12
+      |Welcome to &nbsp
+      span.logo_text goodnoob
+      |&nbsp
+      span.image_logo.center = image_tag 'good noob_logo.png'
+    .small_text The extream sport comunity
+    .small_text This is how it works:
+    .row
+      .col-md-3.component
+        = image_tag 'learn.png'
+        .text_back
+          |Learn everything with our buying guides
+          .text
+            |Learn how to pick your extreme sports products
+            br
+            |with the full explained guides on our site
+            br
+            |information is power!
+      .col-md-3.component
+        = image_tag 'compare.png'
+        .text_back
+          |Compare and search your extreme sport product
+          .text
+            |Search, compare and filter every product you can
+            br
+            |imagine. Read reviews, save your favourite and
+            br
+            |buy it.
+      .col-md-3.component
+        = image_tag 'share.png'
+        .text_back
+          |Share your photos and videos with the community
+          .text
+            |Share your photos with the community, make a
+            br
+            |video, or upload the review of your new gear.
+            br
+            |Enjoy the ride!
+  .col-md-3.col-xs-12.col-sm-12
+    = render partial: 'devise/shared/register'
+

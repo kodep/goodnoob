@@ -1,0 +1,66 @@
+.back{
+  padding-top: 100px;
+  background-image: url(asset-path('welcome_page_back.png'));
+  height:50em;
+  color: white;
+}
+.component {
+  margin: 1em 1em 0 1em;
+  height: 18em;
+  width: 20em;
+}
+
+.component img{
+  width:100%;
+  height: 100%;
+}
+
+.component:hover .text_back{
+  font-size: 0.95em;
+}
+
+.component:hover {
+  margin: 0;
+  height: 20em;
+  width: 22em;
+}
+
+.big_text {
+  margin-bottom: 0.3em;
+  font-size: 3em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.logo_text {
+  background: white;
+  color: #303030;
+  padding: 10px 5px 0 5px;
+}
+
+.small_text {
+  margin-bottom: 1em;
+  margin-top: 10px;
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+.margin_padding {
+  margin-top: 50px;
+  padding-top: 50px;
+}
+
+.image_logo{
+  display: inline-block;
+}
+
+.text_back {
+  background: white;
+  padding: 1em 0.3em 1em 0.3em;
+  color: black;
+  font-size: 0.85em;
+}
+
+.text {
+ color: #929292;
+}
