@@ -4,10 +4,17 @@
 
 .modal-dialog {
   z-index: 999;
+  width: 900px;
+  margin-top: 12%;
+
+  @media (max-width: 768px) {
+      width: 95%;
+  }
 
   .btn {
     border-radius: 0;
-    border: 1px solid grey;
+    padding: 2% 3.5%;
+    font-size: 1em;
     &.upload-button {
     }
 

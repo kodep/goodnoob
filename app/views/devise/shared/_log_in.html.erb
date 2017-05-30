@@ -1,6 +1,7 @@
 <% unless user_signed_in? %>
   <div class="authform container" id="UserSignIn">
-    <div class='login_form col-lg-6'>
+    
+    <div class='login_form col-lg-6 col-sm-6'>
         <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
         <% devise_error_messages! %>
         <div class="form-group">
@@ -21,12 +22,12 @@
         </div>
       <% end -%> -->
         <%= render "devise/shared/social_login" %>
-        <div align="center">
+        <div class="button_login" align="center">
           <a type="button" class="btn btn-commit btn-register" data-dismiss='modal' data-target='#SignUpModal' id='btnRegister'>Register</a>
           <%= f.submit 'Login', :class => 'btn btn-commit' %>
         </div>
       </div>
-      <div class='login_image col-lg-6'>
+      <div class='login_image col-lg-6 col-sm-6'>
         <%= image_tag(asset_path 'login_image.png') %>
       </div>
     </div>
