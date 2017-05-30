@@ -1,44 +1,88 @@
-.row.back
-  .col-md-1
-  .col-md-7.hidden-xs.hidden-sm.margin_padding
-    .row.big_text.col-md-12
-      |Welcome to &nbsp
-      span.logo_text goodnoob
-      |&nbsp
-      span.image_logo.center = image_tag 'good noob_logo.png'
-    .small_text The extream sport comunity
-    .small_text This is how it works:
+#welcome_page
+  .row.back
     .row
-      .col-md-3.component
-        = image_tag 'learn.png'
-        .text_back
-          |Learn everything with our buying guides
-          .text
-            |Learn how to pick your extreme sports products
-            br
-            |with the full explained guides on our site
-            br
-            |information is power!
-      .col-md-3.component
-        = image_tag 'compare.png'
-        .text_back
-          |Compare and search your extreme sport product
-          .text
-            |Search, compare and filter every product you can
-            br
-            |imagine. Read reviews, save your favourite and
-            br
-            |buy it.
-      .col-md-3.component
-        = image_tag 'share.png'
-        .text_back
-          |Share your photos and videos with the community
-          .text
-            |Share your photos with the community, make a
-            br
-            |video, or upload the review of your new gear.
-            br
-            |Enjoy the ride!
-  .col-md-3.col-xs-12.col-sm-12
-    = render partial: 'devise/shared/register'
+      .col-lg-9.col-md-8.col-sm-6
+      .col-lg-2.col-md-2.sol-sm-6
+        .text_right.text_log
+          a#btnRegister data-dismiss="modal" data-target="#SignUpModal" type="button" login
+          | &nbsp/&nbsp
+          a#btnLogin data-dismiss="modal" data-target="#SignInModal" register
+    .col-lg-1
+    .col-md-8.col-lg-7.hidden-xs.hidden-sm.margin_padding.hidden-md
+      .row.big_text.col-lg-12
+        |Welcome to &nbsp
+        span.logo_text goodnoob
+        |&nbsp
+        span.image_logo.center = image_tag 'good noob_logo.png'
+      .small_text The extream sport comunity
+      .small_text This is how it works:
+      .row
+        .col-lg-3.component
+          = image_tag 'learn.png'
+          .text_back
+            |Learn everything with our buying guides
+            .text
+              |Learn how to pick your extreme sports products
+              br
+              |with the full explained guides on our site
+              br
+              |information is power!
+        .col-lg-3.component
+          = image_tag 'compare.png'
+          .text_back
+            |Compare and search your extreme sport product
+            .text
+              |Search, compare and filter every product you can
+              br
+              |imagine. Read reviews, save your favourite and
+              br
+              |buy it.
+        .col-lg-3.component
+          = image_tag 'share.png'
+          .text_back
+            |Share your photos and videos with the community
+            .text
+              |Share your photos with the community, make a
+              br
+              |video, or upload the review of your new gear.
+              br
+              |Enjoy the ride!
+    .col-lg-3.col-md-4
+      - unless user_signed_in?
+        .authform.register_form_welcome_page
+          #welcome_register_image
+            = image_tag(asset_path 'register_image.png')
+          .login_image#welcome_login_image style='display:none;'
+            = image_tag(asset_path 'login_image.png')
+          #welcome_register_form
+            = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f|
+              = devise_error_messages!
+              .form-group
+                = f.text_field :name, :autofocus => true, class: 'form-control', placeholder: 'Name'
+                = f.email_field :email, class: 'form-control', placeholder: 'E-mail address'
+                = f.password_field :password, class: 'form-control', placeholder: 'Password'
+                = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm password'
+                br
+                .row align="center"
+                  .col-lg-6 = link_to 'Login with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook"
+                  .col-lg-6 = link_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social btn-google-plus"
+              div align="center"
+                = f.submit 'Register', :class => 'btn btn-commit', :id => 'btnRegister_signup'
+                a#welcome_register_button.btn-login I already have an account...
+            = link_to 'Continue without registration', home_index_path, class: "btn btn-block btn-contion"
+          .login_form#welcome_login_form style='display:none;'
+            = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %
+              = devise_error_messages!
+              .form-group
+                = f.email_field :email, :autofocus => true, class: 'form-control', placeholder: 'Mail address'
+              .form-group
+                = f.password_field :password, class: 'form-control', placeholder: 'Password'
+                br
+                  .row align="center"
+                    .col-lg-6 = link_to 'Login with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook"
+                    .col-lg-6 = link_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social btn-google-plus"
+              div align="center"
+                a#welcome_login_button.btn.btn-commit.btn-register Register
+                = f.submit 'Login', :class => 'btn btn-commit'
+    .text_footer.text_right By entering this page? you are agree to our terms of us and services.
 
