@@ -1,5 +1,5 @@
 <% unless user_signed_in? %>
-  <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+  <button type='button' class='close my-custom-close' data-dismiss='modal' aria-label='Close'>
     <%= image_tag 'cross.png' %>
   </button>
   <div class="authform row flex-form" id="UserSignIn">
@@ -25,7 +25,8 @@
         </div>
       <% end -%> -->
         <%= render "devise/shared/social_login" %>
-        <div class="button_login" align="center">
+
+        <div class="button-login-page" align="center">
           <a type="button" class="btn btn-commit btn-register" data-dismiss='modal' data-target='#SignUpModal' id='btnRegister'>Register</a>
           <%= f.submit 'Login', :class => 'btn btn-commit' %>
         </div>
