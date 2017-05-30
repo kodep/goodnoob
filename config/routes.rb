@@ -48,7 +48,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'search#index'
+  root to: 'home#welcome_page'
   devise_for :users, controllers: {
     registrations: 'registrations',
     omniauth_callbacks: 'users/omniauth_callbacks'
@@ -72,11 +72,8 @@ Rails.application.routes.draw do
 
   post 'ajax_set_product_rating', to: 'products#ajax_set_product_rating', as: :ajax_set_product_rating
 
-  resources :home, only: [:index] do
-    collection do
-      get 'welcome_page'
-    end
-  end
+  resources :home, only: [:index]
+
   resources :search, only: [:index] do
     get 'suggestions', on: :collection
     member do

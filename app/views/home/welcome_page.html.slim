@@ -52,7 +52,7 @@
         .authform.register_form_welcome_page
           #welcome_register_image
             = image_tag(asset_path 'register_image.png')
-          .login_image#welcome_login_image style='display:none;'
+          .login_image.hidden#welcome_login_image
             = image_tag(asset_path 'login_image.png')
           #welcome_register_form
             = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f|
@@ -70,7 +70,7 @@
                 = f.submit 'Register', :class => 'btn btn-commit', :id => 'btnRegister_signup'
                 a#welcome_register_button.btn-login I already have an account...
             = link_to 'Continue without registration', home_index_path, class: "btn btn-block btn-contion"
-          .login_form#welcome_login_form style='display:none;'
+          .login_form.hidden#welcome_login_form
             = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %
               = devise_error_messages!
               .form-group
