@@ -13,7 +13,7 @@
     background: lightgray;
     border-radius: 0;
     color: black;
-    margin-top: -2vh;
+    margin-top: -4%;
   }
 
   .authform form{
@@ -32,6 +32,7 @@
     padding: 24px;
     border: 1px solid #e3e3e3;
   }
+
   .text_footer{
     bottom: 2vh;
     position: absolute;
@@ -46,18 +47,19 @@
 
   .text_log {
     background: white;
-    padding: 1.5vh 1.5vh 1.5vh 1.5vh;
+    padding: 4.5% 3.5% 3.5% 3.5%;
     font-size: 15px;
     text-transform: uppercase;
     display: inline-block;
     color: black;
-    margin-left: 13vh;
+    margin-left: 50%;
     a {
+      cursor: pointer;
       color: black;
     }
   }
   .register_form_welcome_page {
-    padding: 2vh 0 3vh 2vh;
+    padding: 2% 0 3% 1%;
   }
 
   .back {
@@ -67,9 +69,8 @@
   }
 
   .component {
-    margin: -6vh 0 0 0;
-    height: 100%;
-    width: 19vw;
+    margin-top: -3%;
+    width: 32%;
     img {
       width: 100%;
       height: 100%;
@@ -77,16 +78,15 @@
   }
 
   .component:hover {
-    margin: -7vh -0.75vw 0 -0.75vw;
-    height: 35vh;
-    width: 20.5vw;
+    margin: -4% -1% 0 -1%;
+    width: 34%;
     .text_back {
       font-size: 1em;
     }
   }
 
   .big_text {
-    margin-bottom: 1vh;
+    margin-bottom: 1%;
     font-size: 3em;
     text-transform: uppercase;
     font-weight: 800;
@@ -95,17 +95,17 @@
   .logo_text {
     background: white;
     color: #303030;
-    padding: 1vh 1.5vh 0 1vh;
+    padding: 1% 0.5% 0 0.3%;
   }
 
   .small_text {
-    margin-bottom: 12vh;
+    margin-bottom: 8%;
     text-transform: uppercase;
     font-size: 2em;
   }
 
   .margin_padding {
-    margin-top: 8vh;
+    margin-top: 4%;
   }
 
   .image_logo {
@@ -114,7 +114,7 @@
 
   .text_back {
     background: white;
-    padding: 0.5vh 0.1vh 0.5vh 0.4vh;
+    padding: 2.5% 2% 2.5% 2.5%;
     color: black;
     font-size: 0.9em;
   }
