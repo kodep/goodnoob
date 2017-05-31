@@ -9,12 +9,12 @@
           a#btnLogin data-dismiss="modal" data-target="#SignInModal" register
     .col-lg-1
     .col-md-8.col-lg-7.hidden-xs.hidden-sm.margin_padding.hidden-md
-      .row.big_text.col-lg-12
-        |Welcome to &nbsp
+      .row.big_text
+        .text Welcome to &nbsp
         span.logo_text goodnoob
-        |&nbsp
-        span.image_logo.center = image_tag 'good noob_logo.png'
-      .small_text The extream sport comunity
+        |&nbsp&nbsp
+        .image_logo.center = image_tag 'good noob_logo.png'
+      .small_text The extreme sport community
       .small_text This is how it works:
       .row
         .col-lg-3.component
@@ -24,7 +24,7 @@
             .text
               |Learn how to pick your extreme sports products
               br
-              |with the full explained guides on our site
+              |with the full explained guides on our site,
               br
               |information is power!
         .col-lg-3.component
@@ -51,7 +51,7 @@
       - unless user_signed_in?
         .authform.register_form_welcome_page
           #welcome_register_image
-            = image_tag(asset_path 'register_image.png')
+            = image_tag(asset_path 'welcome_register_image.jpg')
           .login_image.hidden#welcome_login_image
             = image_tag(asset_path 'login_image.png')
           #welcome_register_form
@@ -64,12 +64,13 @@
                 = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm password'
                 br
                 .row align="center"
-                  .col-lg-6 = link_to 'Login with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook"
-                  .col-lg-6 = link_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social btn-google-plus"
-              div align="center"
-                = f.submit 'Register', :class => 'btn btn-commit', :id => 'btnRegister_signup'
-                a#welcome_register_button.btn-login I already have an account...
-            = link_to 'Continue without registration', home_index_path, class: "btn btn-block btn-contion"
+                  .col-lg-1
+                  .col-lg-5 = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook"
+                  .col-lg-5 = link_to 'Log in with Google', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social btn-google-plus"
+                .row.padding-top align="center"
+                  = f.submit 'Register', :class => 'btn btn-commit', :id => 'btnRegister_signup'
+                  a#welcome_register_button.btn-login I already have an account...
+            = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-contion"
           .login_form.hidden#welcome_login_form
             = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %
               = devise_error_messages!
@@ -79,10 +80,12 @@
                 = f.password_field :password, class: 'form-control', placeholder: 'Password'
                 br
                   .row align="center"
-                    .col-lg-6 = link_to 'Login with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook"
-                    .col-lg-6 = link_to 'Login with Google', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social btn-google-plus"
+                    .col-lg-1
+                    .col-lg-5 = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook"
+                    .col-lg-5 = link_to 'Log in with Google', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social btn-google-plus"
               div align="center"
                 a#welcome_login_button.btn.btn-commit.btn-register Register
                 = f.submit 'Login', :class => 'btn btn-commit'
+            = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-contion"
     .text_footer.text_right By entering this page? you are agree to our terms of us and services.
 
