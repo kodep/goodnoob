@@ -124,6 +124,7 @@ end
 #  company                :boolean
 #  bio                    :text
 #  locale                 :string
+#  surname                :string
 #
 # Indexes
 #

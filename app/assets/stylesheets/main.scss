@@ -168,6 +168,8 @@ $heading-subtext-font: 'Myriad Pro', sans-serif;
 $heading-button-font: 'Myriad Pro', sans-serif;
 $mainmenu-link-font: 'Myriad Pro', sans-serif;
 $buying-list-font: 'Myriad Pro', sans-serif;
+$input-field-font: 'Myriad Pro Light', sans-serif;
+$button-social-font:  'Myriad Pro Light', sans-serif;
 
 // Font-sizes
 $header-simple-btn-fontsize: 1.1rem;
@@ -617,52 +619,65 @@ header {
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
 
-.modal-dialog {
-  max-width: 900px !important;
-  margin: 5% 25%
+.flex-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.no-padding {
+  padding: 0;
 }
 
 .authform {
-  max-width: 900px;
+  width: 100%;
   margin-top: 50px;
+  max-width: 100%;
 
-.register_image {
-  padding: 0;
+  @media (max-width: 992px) {
+    width: 75%;
+  }
+
+.register-image {
   height: 100%;
 }
 
-
-.register_form {
-  padding: 0;
+.register-image>img {
+  width: 100%;
 }
 
-.login_image {
-  padding: 0;
+.login-image {
   height: 100%;
 }
 
-.login_form {
-  height: 400px;
-  padding: 0;
+.login-image>img {
+  width: 100%;
 }
 
-.login_form>form {
-  height: 99%;
-  padding: 20% 5%;
-}
-
-.register_form>form {
+.login-form>form {
   height: 100%;
-  padding: 7.5% 5%;
+  padding: 80px 50px 0;
+  @media (max-width: 992px) {
+    padding-bottom: 50px;
+  }
+  @media (max-width: 680px) {
+    padding: 40px 25px;
+  }
 }
 
-.new_user {
-  padding: 34px 50px;
+.register-form>form {
+  height: 100%;
+  padding: 4.5% 5%;
+}
+
+.new-user {
+  padding: 6% 11%;
 }
 
   .form-control {
+    font-family: $header-button-font;
     border-radius: 0;
     margin-top: 5px;
+    font-size: 18px;
   }
 
   form {
@@ -713,12 +728,28 @@ header {
   }
 
   .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+    font-family: $input-field-font;
+  }
+
+  .social_login {
+    margin-top: 12%;
+  }
+
+  .button_login {
+    margin-top: 12%;
+  }
+
+  .button_registration {
+    margin-top: 6%;
+  }
+
+  .button_login>a {
+    padding: 3%;
   }
 
   .btn-social {
     position:relative;
-    padding-left:44px;
     text-align:left;
     white-space:nowrap;
     overflow:hidden;
@@ -729,7 +760,10 @@ header {
     @media only screen and (max-width: 767px) {
       display: inline-block;
       font-size: .8em;
-      width: 130px;
+      width: 155px;
+    }
+    @media (max-width: 640px) {
+      width: 85%;
     }
   }
 
@@ -746,7 +780,8 @@ header {
   }
 
   .btn-facebook {
-    color:#fff;
+    font-family: $button-social-font;
+    color:white;
     background-color:#3b5998;
     border-color:rgba(0,0,0,0.2);
   }
@@ -760,7 +795,8 @@ header {
   }
 
   .btn-google-plus {
-    color:#fff;
+    font-family: $button-social-font;
+    color:white;
     background-color:#dd4b39;
     border-color:rgba(0,0,0,0.2);
   }
@@ -782,7 +818,6 @@ header {
     margin: 6px;
     border-radius: 0px;
     background-color: #80e2ce;
-    border-color: #6fb9d6;
     color: #fff;
   }
 
