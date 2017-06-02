@@ -39,6 +39,7 @@ gem 'video_info'
 gem 'traco'
 gem 'i18n-tasks', '~> 0.9.12'
 gem 'slim'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'

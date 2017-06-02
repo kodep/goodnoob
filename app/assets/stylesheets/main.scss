@@ -136,12 +136,13 @@ table {
 /* FINISHED RESETTING */
 
 // Some very basic styles
-$main-background-color: #f0f2f6;
+$main-background-color: white;
 
 html,
 body,
 .main-wrapper {
   min-height: 100%;
+  background-color: white;
 }
 
 .main-wrapper {
@@ -159,10 +160,11 @@ body,
 * HEADER FONTS AND COLORS SETUP *
 ********************************/
 $font-family-sans-serif: 'Myriad Pro', sans-serif;
+$font-family-sans-serif-light: 'Myriad Pro Light', sans-serif;
 $headings-font-family: 'DIN Alternate', sans-serif;
 
 // Font-families
-$header-button-font: 'Myriad Pro', serif;
+$header-button-font: 'Myriad Pro Light', serif;
 $flores-heading-font: 'DIN Alternate', sans-serif;
 $heading-subtext-font: 'Myriad Pro', sans-serif;
 $heading-button-font: 'Myriad Pro', sans-serif;
@@ -173,6 +175,7 @@ $button-social-font:  'Myriad Pro Light', sans-serif;
 $button-toggle-modal-font: 'Myriad Pro', sans-serif;
 $tabs-list-font: 'DIN Alternate', sans-serif;
 $main-filters-wrapper-font: 'Affogato-Light', sans-serif;
+$button-social-font: 'Myriad Pro Light', sans-serif;
 
 // Font-sizes
 $header-simple-btn-fontsize: 1.1rem;
@@ -278,8 +281,7 @@ header {
   align-content: center;
   justify-content: space-between;
   align-items: center;
-  min-height: $navbar-height;
-  border-bottom: 1px solid #e3e5e5;
+  min-height: 48px;
   position: fixed;
   width: 100%;
   z-index: 9;
@@ -319,10 +321,14 @@ header {
     flex: 1 0 auto;
     text-align: center;
     justify-content: center;
+    @media only screen and (max-width: 767px) {
+      width: 40.5%;
+    }
     img {
-      height: 50px;
+      height: 22px;
       @media only screen and (max-width: 767px) {
-        height: 34px;
+        height: auto;
+        width: 100%;
       }
     }
   }
@@ -576,6 +582,7 @@ header {
   .upload-btn {
     @extend .header-btn-bg;
     font-family: $header-button-font;
+    font-size: 0.9rem;
   }
 }
 
@@ -599,7 +606,7 @@ header {
 
 .login-btn-wrapper {
   display: inline-block;
-  margin-left: 15px;
+  margin-left: 10px;
 
   .btn {
     @extend .header-btn-bg;
@@ -624,8 +631,6 @@ header {
     border-radius: 0;
   }
 }
-
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
 
 .flex-form {
   display: flex;
@@ -2057,18 +2062,6 @@ $upload-button-color: #64b0fc;
 //*******************************//
 //**MAIN CONTENT GENERAL STYLES**//
 //*******************************//
-.edit-user-background {
-  display: flex;
-  justify-content: space-around;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding-bottom: 3%;
-  flex-wrap: wrap;
-
-  .side-edit-columns {
-    flex: 1 0 100px;
-  }
-}
-
 .main-container {
   display: table;
   table-layout: fixed;
@@ -2647,7 +2640,7 @@ $footer-links-color: #7f7f7f;
 }
 
 .review-wrapper {
-  background-color: #f0f2f6;
+  background-color: white;
 
   .header-title {
     padding: 50px 0;
@@ -3051,248 +3044,6 @@ $footer-links-color: #7f7f7f;
   }
 }
 
-.profile-section{
-  text-align: center;
-  background: rgba(236,236,236,1);
-  padding: 10px 0px;
-  h1{
-    margin: 0px;
-    font-weight: 200;
-    font-size: 1em;
-  }
-}
-
-#nav-filters {
-  margin-top: -2px !important;
-  background:#3fa9f5;
-  border: 0px;
-  border-radius: 0px;
-  margin-bottom: 0px;
-
-  li.active > a{
-    background: white;
-    color: #3fa9f5;
-  }
-
-  .navbar-btn {
-    margin-left: 30px;
-
-    a {
-      display: inline-block;
-      min-width: 145px;
-      background-color: transparent;
-      padding: 5px 15px;
-      border: 1px solid #fff;
-      color: #fff;
-      text-align: center;
-      line-height: 1.42;
-    }
-
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-
-  .nav-center {
-    float: none;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .navbar-collapse {
-    background-color: #D6D6D6;
-  }
-
-  .edit-user-background {
-    margin-top: 30px;
-  }
-}
-
-#profile {
-  .background-wrapper {
-    background: #4b7c7f url(/assets/header-background-91a72301ee6fd9e1d364fe268b00c54ae345b92cdefdfd3136e6a690baf2dbad.jpg) no-repeat top left;
-    background-size: cover;
-    min-height: 415px;
-    position: relative;
-    width: 100%;
-    margin-top: 50px;
-
-    @media only screen and (max-width: 759px) {
-      min-height: 300px;
-    }
-  }
-
-  .main-heading-wrapper {
-    -webkit-box-align: end;
-    -ms-flex-align: end;
-    align-items: flex-end;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-flow: column nowrap;
-    flex-flow: column nowrap;
-    margin-right: 0px;
-    margin-left: 0px;
-    position: relative;
-    text-align: right;
-    height: 400px;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: center;
-
-    .main-heading {
-      color: #fff;
-      font-family: "Myriad Pro", sans-serif;
-      font-size: 3.375em;
-      font-weight: 700;
-      text-shadow: 2px 2px #666;
-    }
-
-    .heading-sub-text {
-      color: #fff;
-      font-family: "Myriad Pro", sans-serif;
-      font-size: 1.6875em;
-      font-weight: 700;
-      margin: 25px 0;
-      text-shadow: 1px 1px #333;
-    }
-    .heading-button {
-      color: #fff;
-      font-family: "Myriad Pro", sans-serif;
-      font-size: 1em;
-      height: 40px;
-      width: 190px;
-    }
-
-    @media only screen and (max-width: 759px) {
-      height: 300px;
-    }
-  }
-
-  #profile-card {
-    position: relative;
-    height: 165px;
-    width: 415px;
-    margin: auto;
-    background: white;
-
-    .profile-edit {
-      display: inline-block;
-      position: absolute;
-      right: 0;
-      top: -23px;
-
-      a {
-        font-size: 1.2em;
-        font-weight: 200;
-        color: #fff;
-        text-decoration: none;
-
-        .edit-icon {
-          display: inline-block;
-          width: 12px;
-          height: 15px;
-          margin-right: 5px;
-        }
-
-        &:hover {
-          opacity: .7;
-        }
-      }
-    }
-
-    .user-info{
-      display: inline-block;
-      height:165px;
-      text-align: left;
-      width: 415px - 165px;
-      float: right;
-      box-sizing: border-box;
-      padding: 20px;
-
-      h1 {
-        color: black;
-        font-family: Myriad Pro;
-        font-size: 1.6em;
-        margin: 0;
-        margin-top: 10px;
-        font-weight: 700;
-      }
-      h2 {
-        color: black;
-        font-family: Myriad Pro;
-        font-size: 1.2em;
-        font-weight: 400;
-      }
-      p {
-        padding-top: 20px;
-        color: black;
-        font-family: Myriad Pro;
-        font-size: 0.9em;
-        font-weight: 300;
-        overflow: auto;
-      }
-    }
-
-   .user-avatar {
-      display: inline-block;
-      width:165px;
-      height:165px;
-      float: left;
-
-      a {
-        color: white;
-        text-decoration: none;
-      }
-
-      .no-photo {
-        background-color: #3fa9f5;
-        text-align: center;
-        width: 100%;
-        line-height: 165px;
-        font-size: 1.5em;
-
-        &:hover {
-          opacity: .8;
-        }
-      }
-
-      img {
-        display:block;
-        width:100%;
-        height:100%;
-      }
-    }
-
-    @media only screen and (max-width: 759px) {
-      height: 140px;
-      width: 290px;
-
-      .user-avatar {
-        height: 140px;
-        width: 140px;
-      }
-
-      .user-info {
-        width: 290px - 140px;
-
-        h1 {
-          font-size: 1.2em;
-        }
-        h2 {
-          font-size: .8em;
-        }
-        p {
-          font-size: .6em;
-        }
-      }
-    }
-  }
-}
-
   label[type="image"]{
     display:none;
   }
@@ -3349,7 +3100,7 @@ $footer-links-color: #7f7f7f;
   }
 
   #user_favorites{
-    background:#f0f2f6;
+    background: white;
   }
 
   #user_social{
@@ -3373,77 +3124,14 @@ $footer-links-color: #7f7f7f;
     }
   }
 
-  @media only screen and (max-width: 759px) {
+@media only screen and (max-width: 759px) {
   #user_favorites .thumbs-matrix-wrapper .thumb-wrapper.thumb-product {
     width: 100%;
-  }
-
-  #nav-filters > ul > li.navbar-btn:active > a.profile-icon {
-    background: url(/assets/profile_hover.png) no-repeat center;
-    background-size: 60%;
-  }
-
-  .authform.side-edit-columns{
-    padding: 10px 40px;
-  }
-
-  #nav-filters > ul > li.navbar-btn.active > a{
-      &.profile-icon{
-        background: white image-url('profile_hover.png') no-repeat center;
-        background-size: 40%;
-      }
-      &.reviews-icon{
-        background: white image-url('reviews_hover.png') no-repeat center;
-        background-size: 50%;
-      }
-      &.photos-icon{
-        background: white image-url('photosandvideos_hover.png') no-repeat center;
-        background-size: 50%;
-      }
-      &.favourites-icon{
-        background: white image-url('favourites_hover.png') no-repeat center;
-        background-size: 50%;
-      }
-  }
-
-
-  #nav-filters > ul > li.navbar-btn > a {
-    padding: 25px 27px;
-
-    &.profile-icon{
-    background: #3fa9f5 image-url('profile.png') no-repeat center;
-    background-size: 40%;
-    }
-    &.reviews-icon{
-    background: #3fa9f5 image-url('reviews.png') no-repeat center;
-    background-size: 50%;
-    }
-    &.photos-icon{
-    background: #3fa9f5 image-url('photosandvideos.png') no-repeat center;
-    background-size: 50%;
-    }
-    &.favourites-icon{
-    background: #3fa9f5 image-url('favourites.png') no-repeat center;
-    background-size: 50%;
-    }
-  }
-
-  #nav-filters {
-    .navbar-btn a {min-width: initial;}
-
-    li a{
-      label[type="text"]{
-        display: none;
-      }
-      label[type="image"]{
-        display:block;
-      }
-    }
   }
 }
 
 .social{
-  background:#f0f2f6 !important;
+  background: white;
 }
 
 .mobile-post-buttons {
@@ -3639,4 +3327,15 @@ $footer-links-color: #7f7f7f;
 
 .bx-clone {
   display: none;
+}
+
+.overflow-ellipsis-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.black-search-icon {
+  color: black;
+  font-size: 6vw;
 }

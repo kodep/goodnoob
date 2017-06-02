@@ -139,7 +139,7 @@ en:
       password_confirmation: Password confirmation
     edit:
       account_settings: Account settings
-      email: Email
+      email: E-mail address
       current_password: Current password
       new_password: New Password
       language: Language

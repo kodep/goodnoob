@@ -22,7 +22,7 @@
 }
 .hamburger__icon, .hamburger__icon:before, .hamburger__icon:after {
   display: block;
-  width: 25px;
+  width: 22px;
   height: 2px;
   background-color: #222;
   -moz-transition-property: background-color, -moz-transform;
@@ -39,10 +39,10 @@
   content: "";
 }
 .hamburger__icon:before {
-  top: -7px;
+  top: -5px;
 }
 .hamburger__icon:after {
-  top: 7px;
+  top: 5px;
 }
 .hamburger.active .hamburger__icon {
   background-color: transparent;
