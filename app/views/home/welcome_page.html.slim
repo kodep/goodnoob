@@ -45,13 +45,57 @@
                 |video, or upload the review of your new gear.
                 br
                 |Enjoy the ride!
-      .col-lg-3
+      .col-lg-3.col-sm-12.col-xs-12
         - unless user_signed_in?
           .authform.register-form-welcome-page
-            #welcome_register_image
-              = image_tag(asset_path 'welcome_register_image.jpg')
-            .login-image.hidden#welcome_login_image
-              = image_tag(asset_path 'login_image.png')
+            .big-image
+              #welcome_register_image
+                = image_tag(asset_path 'welcome_register_image.jpg')
+              .login-image.hidden#welcome_login_image
+                = image_tag(asset_path 'login_image.png')
+              #learn-big.hidden
+                .opacity-container
+                .text-image-container
+                  = image_tag 'good noob_logo.png'
+                  .title-text Learn
+                  .small-title-text Learn how to pick your extreme sports
+                  .small-title-text products with the full explained guides on
+                  .small-title-text our site, information is power!
+                .button-title
+                  = link_to 'go to "lern"', user_facebook_omniauth_authorize_path, class: 'btn btn-block'
+                = image_tag 'learn-image.png'
+              #compare-big.hidden
+                .opacity-container
+                .text-image-container
+                  = image_tag 'good noob_logo.png'
+                  .title-text Compare
+                  .small-title-text Search, compare and filter every product
+                  .small-title-text you can imagine. Read reviews, save your
+                  .small-title-text favourite and buy it
+                .button-title
+                  = link_to 'go to "compare"', user_facebook_omniauth_authorize_path, class: 'btn btn-block'
+                = image_tag 'compare-image.png'
+              #share-big.hidden
+                .opacity-container
+                .text-image-container
+                  = image_tag 'good noob_logo.png'
+                  .title-text Share
+                  .small-title-text Share your photos with the community,
+                  .small-title-text make a video, or upload the review of your
+                  .small-title-text new gear. Enjoy the ride!
+                .button-title
+                  = link_to 'go to "share"', user_facebook_omniauth_authorize_path, class: 'btn btn-block'
+                = image_tag 'share-image.png'
+            .col-sm-12.col-xs-12.container-images.hidden-lg
+              .col-sm-4.col-xs-4.component-image#learn
+                #learn-image-text= image_tag 'learn.png'
+                .hidden#learn-image = image_tag 'learn-image.png'
+              .col-sm-4.col-xs-4.component-image#compare
+                #compare-image-text = image_tag 'compare.png'
+                .hidden#compare-image = image_tag 'compare-image.png'
+              .col-sm-4.col-xs-4.component-image#share
+                #share-image-text = image_tag 'share.png'
+                .hidden#share-image = image_tag 'share-image.png'
             #welcome_register_form
               = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f|
                 = devise_error_messages!
@@ -62,13 +106,14 @@
                   = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm password'
                   br
                   .row align="center"
-                    .col-lg-1
-                    .col-lg-5 = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook"
-                    .col-lg-5 = link_to 'Log in with Google', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social btn-google-plus"
+                    .col-lg-1.col-sm-1.col-xs-1
+                    .col-lg-5.col-sm-5.col-xs-5 = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook"
+                    .col-lg-5.col-sm-5.col-xs-5 = link_to 'Log in with Google', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social btn-google-plus"
                   .row.padding-top align="center"
                     = f.submit 'Register', :class => 'btn btn-commit', :id => 'btnRegister_signup'
                     a#welcome_register_button.btn-login I already have an account...
-              = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-contion"
+              .continue-container
+               = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-contion"
             .login-form.no-padding.hidden#welcome_login_form
               = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %
                 = devise_error_messages!

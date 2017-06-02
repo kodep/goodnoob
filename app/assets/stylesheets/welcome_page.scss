@@ -165,4 +165,117 @@ $font-family-alternate: "DIN Alternate" , sans-serif;
     padding-top: 4px;
     color: #929292;
   }
+  @media only screen and (max-width: 1200px) {
+    .text-footer {
+      display: inline-block;
+      width: 100%;
+      right: 0;
+      text-align: center;
+      bottom: 5vh;
+      font-size: 3vw;
+    }
+    .margin {
+      margin-top: 0;
+    }
+    .welcome_register_form{
+      height: inherit;
+    }
+    .register-form-welcome-page {
+      padding: 0 0 0 1%;
+      font-family: $font-family-sans-serif;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      .big-image {
+        position: relative;
+        height: 90vw;
+        overflow: hidden;
+        .opacity-container{
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background: #303030;
+          opacity: 0.6;
+        }
+        .button-title {
+          position: absolute;
+          bottom: 30%;
+          text-align: center;
+          width: 100%;
+          a {
+            font-family: $font-family-alternate;
+            font-size: 4vw;
+            background: #ffffff;
+            color: black;
+            display: initial;
+            text-transform: uppercase;
+          }
+        }
+        .text-image-container{
+          font-family: $font-family-alternate;
+          height: 100%;
+          width: 100%;
+          text-align: center;
+          position: absolute;
+          .title-text {
+            font-size: 7vw;
+            margin-bottom: 2vh;
+            text-transform: uppercase;
+          }
+          .small-title-text {
+            font-size: 4vw;
+          }
+          img {
+            width: 10vw;
+            margin: 15% auto 3% auto;
+          }
+        }
+        #welcome_register_form {
+          height: inherit;
+          .new_user {
+            height: inherit;
+          }
+        }
+      }
+    }
+    .continue-container {
+
+      .btn-contion {
+        margin-top: 0;
+        font-size: 2vw;
+      }
+    }
+    .authform {
+      .form-control {
+        height: 4vh;
+        font-size: 2vh;
+        margin-top: 3vh;
+      }
+      .padding-top {
+        padding: 1vh 0 3vh 0;
+      }
+      form {
+        .btn-social {
+          font-size: 2.5vw;
+        }
+        .btn-commit{
+          font-size: 2vw;
+        }
+        background-color: white;
+        padding: 0 10%;
+        border: 1px solid #e3e3e3;
+      }
+    }
+    .text-log {
+      z-index: 100;
+    }
+    .container-images {
+      padding: 0 5%;
+      .component-image {
+        margin: -20% 0 5% 0;
+        padding: 0;
+      }
+    }
+  }
 }
