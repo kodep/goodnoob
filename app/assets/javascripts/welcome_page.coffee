@@ -11,3 +11,12 @@ $(document).ready ->
     $('#SignInModal').modal({show: true})
   $('body').on 'click', '#btnRegister', ->
     $('#SignUpModal').modal({show: true})
+  $('body').on 'click', '#learn', ->
+    $('#learn-image-text, #compare-image, #share-image, #share-big, #compare-big, #welcome_register_image').addClass('hidden')
+    $('#learn-image, #compare-image-text, #share-image-text, #learn-big').removeClass('hidden')
+  $('body').on 'click', '#compare', ->
+    $('#compare-image-text, #learn-image, #share-image, #share-big, #learn-big, #welcome_register_image').addClass('hidden')
+    $('#compare-image, #share-image-text, #learn-image-text, #compare-big').removeClass('hidden')
+  $('body').on 'click', '#share', ->
+    $('#share-image-text, #compare-image, #learn-image, #learn-big, #compare-big, #welcome_register_image').addClass('hidden')
+    $('#share-image, #learn-image-text, #compare-image-text, #share-big').removeClass('hidden')
