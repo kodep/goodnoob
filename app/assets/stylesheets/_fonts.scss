@@ -30,3 +30,61 @@
   font-style: normal;
   font-weight: 400;
 }
+
+@font-face {
+    font-family: 'Affogato-Black';
+    src: font-url('Affogato-Black.eot');
+    src: font-url('Affogato-Black.eot?#iefix') format('embedded-opentype'),
+         font-url('Affogato-Black.woff') format('woff'),
+         font-url('Affogato-Black.woff2') format('woff2'),
+         font-url('Affogato-Black.ttf')  format('truetype'),
+         font-url('Affogato-Black.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Affogato-Bold';
+    src: font-url('Affogato-Bold.eot');
+    src: font-url('Affogato-Bold.eot?#iefix') format('embedded-opentype'),
+         font-url('Affogato-Bold.woff') format('woff'),
+         font-url('Affogato-Bold.woff2') format('woff2'),
+         font-url('Affogato-Bold.ttf')  format('truetype'),
+         font-url('Affogato-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Affogato-Medium';
+    src: font-url('Affogato-Medium.eot');
+    src: font-url('Affogato-Medium.eot?#iefix') format('embedded-opentype'),
+         font-url('Affogato-Medium.woff') format('woff'),
+         font-url('Affogato-Medium.woff2') format('woff2'),
+         font-url('Affogato-Medium.ttf')  format('truetype'),
+         font-url('Affogato-Medium.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Affogato-Regular';
+    src: font-url('Affogato-Regular.eot');
+    src: font-url('Affogato-Regular.eot?#iefix') format('embedded-opentype'),
+         font-url('Affogato-Regular.woff') format('woff'),
+         font-url('Affogato-Regular.woff2') format('woff2'),
+         font-url('Affogato-Regular.ttf')  format('truetype'),
+         font-url('Affogato-Regular.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Affogato-Light';
+    src: font-url('Affogato-Light.eot');
+    src: font-url('Affogato-Light.eot?#iefix') format('embedded-opentype'),
+         font-url('Affogato-Light.woff') format('woff'),
+         font-url('Affogato-Light.woff2') format('woff2'),
+         font-url('Affogato-Light.ttf')  format('truetype'),
+         font-url('Affogato-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
