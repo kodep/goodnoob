@@ -1,18 +1,4 @@
 <div class="flex main-search-wrapper">
-  <div class="search-form--inline">
-    <div class="search-field-wrapper">
-      <%= text_field_tag :search, params[:search], class: 'search-field form-control',
-        placeholder: t('.search'), autocomplete: 'off' %>
-      <%= button_tag class: 'submit-icon' do %>
-        <i class="glyphicon glyphicon-search"></i>
-      <% end %>
-      <div class="suggestions">
-        <div class="s-categories"></div>
-        <div class="s-separator"></div>
-        <div class="s-products"></div>
-      </div>
-    </div>
-  </div>
 
   <div class="sort-by-field js-sort-by-dropdown hidden-xs dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">

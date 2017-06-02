@@ -37,31 +37,34 @@
   }
 }
 
-$appliedfilters-font: sans-serif;
-$appliedfilters-fontsize: 1rem;
+$appliedfilters-font: 'Myriad Pro', sans-serif;
+$appliedfilters-fontsize: 14px;
 
 $appfilters-background: #d0d0d1;
-$appfilter-background: #239fe2;
-$appfilters-text-color: #ffffff;
+$appfilter-background: #fff;
+$appfilters-text-color: #000;
 
 .applied-sub-filters-wrapper{
-  background: $appfilters-background;
+  background: #fff;
   display: flex;
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 16px;
+  padding-left: 40px;
   padding-right: 16px;
   height: auto;
-  min-height: 50px;
+  min-height: 30px;
 
   .applied-sub-filters-title {
-    width: 70px;
+    width: 35px;
     text-align: center;
+    font-size: 14px;
   }
 
   .applied-sub-filter{
+    font-family: inherit;
+    font-weight: inherit;
     align-items: center;
     background: $appfilter-background;
     cursor: pointer;
@@ -74,8 +77,9 @@ $appfilters-text-color: #ffffff;
 
     .glyphicon-remove{
       font-size: .6em;
-      margin-right: 20px;
-      color: white;
+      margin-bottom: 9px;
+      margin-right: 5px;
+      color: black;
     }
 
     .applied-filter-text{

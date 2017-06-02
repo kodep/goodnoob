@@ -1,26 +1,30 @@
 <div class="subcategory-margin"></div>
 <div class="main-tabs-wrapper">
-  <div class="flex tabs-list">
-    <span class="tabs-item social-feed-button-wrapper">
-      <%= link_to t('.social_feed'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link" } %>
-    </span>
 
-    <span class="item-separator">|</span>
+  <div class="flex tabs-list">
+    <span class="dropdown dropdown-on-hover tabs-item">
+      <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown"><%= link_to t('.learn') %></button>
+        <div class="dropdown-menu buying-guides-block-wrapper">
+      <%= render 'layouts/buying_guides' %>
+    </div>
+  </span>
+
+    <span class="item-separator"><%= image_tag(asset_path('l-arrow.png')) %></span>
 
     <span class="dropdown dropdown-on-hover tabs-item compare-button-wrapper">
-      <button type="button" class="btn btn-link tabs-link active dropdown-toggle" data-toggle="dropdown"><%= defined?(@category) ? @category.name : t('.compare_products') %></button>
+      <button type="button" class="btn btn-link tabs-link active dropdown-toggle" data-toggle="dropdown">
+        <span class="hidden-xs"><%= defined?(@category) ? @category.name : t('.compare') %></span>
+        <span class="visible-xs"><%= defined?(@category) ? @category.name : t('.compare') %></span>
+      </button>
       <div class="dropdown-menu compare-block-wrapper">
         <%= render 'layouts/compare_products' %>
       </div>
     </span>
 
-    <span class="item-separator">|</span>
+    <span class="item-separator"><%= image_tag(asset_path('r-arrow.png')) %></span>
 
-    <span class="dropdown dropdown-on-hover tabs-item">
-      <button type="button" class="btn btn-link tabs-link dropdown-toggle" data-toggle="dropdown"><%= t '.buying_guides' %></button>
-      <div class="dropdown-menu buying-guides-block-wrapper">
-        <%= render 'layouts/buying_guides' %>
-      </div>
+    <span class="tabs-item social-feed-button-wrapper">
+      <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link" } %>
     </span>
   </div>
 </div>
