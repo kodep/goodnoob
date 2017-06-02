@@ -1,4 +1,11 @@
+$font-family-sans-serif: 'Myriad Pro', sans-serif;
+$font-family-alternate: "DIN Alternate" , sans-serif;
 #welcome_page {
+
+  .margin {
+    margin-top: 2%;
+  }
+
   .margin-image{
     margin-top: -0.5%;
     margin-left: -5%;
@@ -14,7 +21,7 @@
       padding-top: 3%;
     }
 
-    .login_form {
+    .login-form {
       height: initial;
     }
     .form-control{
@@ -25,7 +32,8 @@
   }
 
   .btn-contion{
-    background: lightgray;
+    background: #f5f5f5;
+    text-transform: uppercase;
     border-radius: 0;
     color: black;
     margin-top: -4%;
@@ -37,11 +45,11 @@
     border: 1px solid #e3e3e3;
 
     .btn-commit {
-     font-size: 0.7em;
+     font-size: 0.9em;
     }
 
     .btn-login {
-      font-size: 0.7em;
+      font-size: 0.9em;
     }
 
     .btn-social {
@@ -53,11 +61,11 @@
       text-overflow: ellipsis;
       display: inline-block;
       border-radius: 0px;
-      font-size: 0.7em;
+      font-size: 0.9em;
     }
   }
 
-  .text_footer{
+  .text-footer{
     bottom: 2vh;
     position: absolute;
     color: #929292;
@@ -65,26 +73,25 @@
     right: 9vw;
   }
 
-  .text_right {
-    text-align: right;
-  }
 
-  .text_log {
+  .text-log {
     background: white;
-    padding: 8.5%;
-    font-size: 0.95em;
+    padding: 0.6%;
+    font-size: 0.75em;
     text-transform: uppercase;
     display: inline-block;
     color: black;
-    margin-left: 50%;
+    position: absolute;
+    right: 4.4%;
     a {
       cursor: pointer;
       color: black;
     }
   }
-  .register_form_welcome_page {
+  .register-form-welcome-page {
+    font-family: $font-family-sans-serif;
     margin: 5% 0;
-    padding: 2% 0 3% 1%;
+    padding: 2% 0 7% 1%;
   }
 
   .back {
@@ -96,6 +103,13 @@
   .component {
     margin-top: 4%;
     width: 32%;
+    .text-back {
+      font-family: $font-family-sans-serif;
+      background: white;
+      padding: 4.5% 1% 4.5% 2.8%;
+      color: black;
+      font-size: 0.9vw;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -105,51 +119,47 @@
   .component:hover {
     margin: 3% -1% 0 -1%;
     width: 34%;
-    .text_back {
-      font-size: 0.8vw;
+    .text-back {
+      font-size: 0.96vw;
     }
   }
 
-  .big_text {
+  .big-text {
     .text{
-      padding-top: 1%;
       color: white;
     }
     padding-left: 15px;
     display: flex;
     margin-bottom: 1%;
-    font-size: 3em;
+    font-size: 2.5vw;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: bold;
+    font-family: $font-family-alternate;
   }
 
-  .logo_text {
+  .logo-text {
     background: white;
     color: #303030;
-    padding: 1% 0.5% 0 0.3%;
+    padding: 0% 0.5% 0 0.3%;
   }
 
-  .small_text {
+  .small-text {
+    font-family: $font-family-alternate;
     margin-bottom: 3%;
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: 1.6vw;
   }
 
-  .margin_padding {
+  .margin-padding {
     width: 66%;
     margin: 4% 0 0 4%;
   }
 
-  .image_logo {
+  .image-logo {
+    padding-top: 0.2vh;
     display: inline-block;
   }
 
-  .text_back {
-    background: white;
-    padding: 3.5% 1% 3.5% 2.8%;
-    color: black;
-    font-size: 0.75vw;
-  }
 
   .text {
     padding-top: 4px;

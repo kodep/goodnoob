@@ -1,25 +1,23 @@
 #welcome_page
   .row.back
     .row
-      .col-lg-10
-      .col-lg-1
-        .text_right.text_log
-          a#btnLogin data-dismiss="modal" data-target="#SignUpModal" type="button" login
-          | &nbsp/&nbsp
-          a#btnRegister data-dismiss="modal" data-target="#SignInModal" register
-    .row
-      .col-lg-9.hidden-xs.hidden-sm.margin_padding.hidden-md
-        .row.big_text
+      .text-log.text-right
+        a#btnLogin data-dismiss="modal" data-target="#SignUpModal" type="button" login
+        | &nbsp/&nbsp
+        a#btnRegister data-dismiss="modal" data-target="#SignInModal" register
+    .row.margin
+      .col-lg-9.hidden-xs.hidden-sm.margin-padding.hidden-md
+        .row.big-text
           .text Welcome to &nbsp
-          span.logo_text goodnoob
-          |&nbsp&nbsp
-          .image_logo.center = image_tag 'good noob_logo.png'
-        .small_text The extreme sport community
-        .small_text This is how it works:
+          span.logo-text goodnoob
+          |&nbsp
+          .image-logo.center = image_tag 'good noob_logo.png'
+        .small-text The extreme sport community.
+        .small-text This is how it works:
         .row
-          .col-lg-3.component
+          .col-lg-4.component
             = image_tag 'learn.png'
-            .text_back
+            .text-back
               |Learn everything with our buying guides
               .text
                 |Learn how to pick your extreme sports products
@@ -27,9 +25,9 @@
                 |with the full explained guides on our site,
                 br
                 |information is power!
-          .col-lg-3.component
+          .col-lg-4.component
             = image_tag 'compare.png'
-            .text_back
+            .text-back
               |Compare and search your extreme sport product
               .text
                 |Search, compare and filter every product you can
@@ -37,9 +35,9 @@
                 |imagine. Read reviews, save your favourite and
                 br
                 |buy it.
-          .col-lg-3.component
+          .col-lg-4.component
             = image_tag 'share.png'
-            .text_back
+            .text-back
               |Share your photos and videos with the community
               .text
                 |Share your photos with the community, make a
@@ -49,10 +47,10 @@
                 |Enjoy the ride!
       .col-lg-3
         - unless user_signed_in?
-          .authform.register_form_welcome_page
+          .authform.register-form-welcome-page
             #welcome_register_image
               = image_tag(asset_path 'welcome_register_image.jpg')
-            .login_image.hidden#welcome_login_image
+            .login-image.hidden#welcome_login_image
               = image_tag(asset_path 'login_image.png')
             #welcome_register_form
               = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f|
@@ -71,7 +69,7 @@
                     = f.submit 'Register', :class => 'btn btn-commit', :id => 'btnRegister_signup'
                     a#welcome_register_button.btn-login I already have an account...
               = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-contion"
-            .login_form.no-padding.hidden#welcome_login_form
+            .login-form.no-padding.hidden#welcome_login_form
               = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %
                 = devise_error_messages!
                 .form-group
@@ -87,5 +85,5 @@
                     a#welcome_login_button.btn.btn-commit.btn-register Register
                     = f.submit 'Login', :class => 'btn btn-commit'
               = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-contion"
-    .text_footer.text_right By entering this page? you are agree to our terms of us and services.
+    .text-footer.text-right By entering this page? you are agree to our terms of us and services.
 
