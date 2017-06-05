@@ -1,4 +1,5 @@
 $font-family-alternate: "DIN Alternate" , sans-serif;
+$font-family-sans-serif: 'Myriad Pro', sans-serif;
 $font-family-affogato: "Affogato-Regular" , sans-serif;
 #new-post-modal {
   .close > img {
@@ -13,17 +14,18 @@ $font-family-affogato: "Affogato-Regular" , sans-serif;
   .back {
     background: white;
     width: 53.6vw;
-    height: 43.5vh;
     position: absolute;
     margin: 0 auto;
     left: 0;
     right: 0;
     .form-container {
+      background: white;
       padding: 0 5%;
       height: 100%;
       position: inherit;
       right: 0;
       .form-horizontal {
+        font-family: $font-family-sans-serif;
         height: 100%;
 
         .form-group {
@@ -31,20 +33,21 @@ $font-family-affogato: "Affogato-Regular" , sans-serif;
           width: 100%;
           height: 100%;
           padding-top: 10%;
-          .bootstrap-select{
+          .bootstrap-select {
             height: 5%;
             margin-top: 0;
-            button{
+            button {
               padding: 0;
               border-radius: 0;
               background: white;
               height: 100%;
             }
-            .dropdown-menu{
+            .dropdown-menu {
               width: inherit;
             }
           }
           .btn_upload {
+            font-family: $font-family-alternate;
             width: 85.7%;
             right: 0;
             left: 0;
@@ -55,10 +58,11 @@ $font-family-affogato: "Affogato-Regular" , sans-serif;
             border: 0;
             line-height: normal;
             height: 6%;
-            font-size: 70%;
+            font-size: 1vw;
             padding: 1% 0;
           }
           .btn-submit {
+            font-family: $font-family-alternate;
             padding: 2%;
             bottom: 10%;
             position: absolute;
@@ -70,9 +74,10 @@ $font-family-affogato: "Affogato-Regular" , sans-serif;
             background: #80e2ce;
             border: 0;
           }
-          .comment-container{
+          .comment-container {
             resize: none;
             height: 40%;
+            font-size: 1vw;
           }
           .url-input{
             height: 6%;
@@ -83,21 +88,21 @@ $font-family-affogato: "Affogato-Regular" , sans-serif;
         .form-control {
           margin-top: 4.5%;
         }
-        .container-list{
+        .container-list {
           border: 0;
           padding: 0;
           height: 6%;
           text-align: center;
           font-size: 0.9vw;
-          .open{
+          .open {
             background: #2b3238;
-            border: 1px Solid #ccc;
+            border: 1px solid #ccc;
             color: white;
             height: 100%;
           }
-          .closed{
+          .closed {
             background: white;
-            border: 1px Solid #ccc;
+            border: 1px solid #ccc;
             height: 100%;
           }
         }
@@ -111,7 +116,7 @@ $font-family-affogato: "Affogato-Regular" , sans-serif;
         position: inherit;
         height: 100%;
         width: 100%;
-        img{
+        img {
           height: 100%;
           width: 100%;
         }
