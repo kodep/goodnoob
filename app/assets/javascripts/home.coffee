@@ -40,3 +40,9 @@ $(document).on 'turbolinks:load', ->
         $('#js-show-less').hide()
       return
     return
+  $('body').on 'click', '.video', ->
+    $('#photo_form').addClass('hidden')
+    $('#video_form').removeClass('hidden')
+  $('body').on 'click', '.photo', ->
+    $('#photo_form').removeClass('hidden')
+    $('#video_form').addClass('hidden')

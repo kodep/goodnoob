@@ -1,0 +1,43 @@
+#new-post-modal
+  .back.no-gutter
+    button.close.my-custom-close aria-label="Close" data-dismiss="modal" type="button"
+      = image_tag 'cross.png'
+    .col-sm-6.text-container
+      .text-text
+        = image_tag(asset_path 'new-post-image.png')
+        .container-text
+          = image_tag 'good noob_logo.png'
+          .logo-text + new post
+          .small-text 1. Search your gear in our database
+          .small-text 2. Pick your photo/video
+          .small-text 3. Write your comment and help others!
+          .small-text 4. Post it!! =)
+          .big-text
+            |Thank you for your collaboration
+            br
+            br
+            |goodnoob team
+    .col-sm-6.form-container#photo_form
+      = form_for Photo.add_billet, url: photos_path, html: {multipart: true, class: 'form-horizontal'} do |f|
+        .form-group
+          = f.select :product_id, products_for_select_tag, {selected: params[:product_id]},
+                      {class: 'selectpicker form-control', data: {live_search: true, size: 5}, title: t('.search_product')}
+          .form-control.container-list
+            .col-sm-6.open.photo Photo
+            .col-sm-6.closed.video Video
+          = f.fields_for :picture do |fields|
+            = fields.file_field :image, class: 'form-control hidden file-upload-button', accept: 'image/*;capture=camera'
+            = fields.label :image, '+ Upload photo', class: 'btn_upload form-control'
+          = f.text_area :comment, class: 'comment-container form-control', maxlength: 250, placeholder: 'Comment...'
+          = f.submit class: 'btn btn-primary btn-submit', id: 'submit-photo'
+    .col-sm-6.form-container.hidden#video_form
+      = form_for Video.add_billet, url: videos_path, html: {multipart: true, class: 'form-horizontal' } do |f|
+        .form-group
+          = f.select :product_id, products_for_select_tag, {selected: params[:product_id]},
+                  {class: 'selectpicker form-control', data: {live_search: true, size: 5}, title: t('.search_product')}
+          .form-control.container-list
+            .col-sm-6.photo.closed Photo
+            .col-sm-6.video.open Video
+          = f.text_field :url, class: 'url-input form-control', placeholder: 'URL'
+          = f.text_area :comment, class: 'comment-container form-control', maxlength: 250, placeholder: 'Comment...'
+          = f.submit class: 'btn btn-primary btn-submit', id: 'submit-photo'
