@@ -1,55 +1,43 @@
 <div class="main-content-guides-wrapper">
-  <section class="guide-info">
-    <div class="guide-info-overlay">
-      <div class="guide-video-wrapper">
-        <div class="guide-video">
-          <%= guide_video_with_share(@guide) %>
-        </div>
-      </div>
 
-      <div class="guide-description-wrapper">
-        <div class="guide-description">
-          <h1><%= t '.sub_category_guide', name: @sub_category.name&.singularize %></h1>
-          <%= t '.tagline', name: @sub_category.name&.singularize&.downcase %>
-          <div class="compare-products">
-            <%= link_to t('.compare_sub_category', name: @sub_category.name),
-              sub_category_path(@sub_category) %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<%= render partial: 'sub_categories/guide_filter' %>
 
-  <section class="guide-chapters row">
-    <div class="guide-chapters-list-wrapper">
-      <div class="guide-chapters-list short">
-        <div class="guides-list-header"><%= t '.chapters' %></div>
-        <% @sub_category.guides.order(:id).each do |guide| %>
-          <%= link_to guide.header, sub_category_guide_path(@sub_category, guide) %><br/>
-        <% end %>
-        <div class="guides-list-header"><%= t '.other_guides' %></div>
-        <% Category.order(:id).each do |category| %>
-          <% category.sub_categories.where.not(id: @sub_category.id).order(:id).each do |sub_category| %>
-            <% if sub_category.guides.present? %>
-              <%= link_to "#{sub_category.name} buying guide", sub_category_guide_path(sub_category, sub_category.guides.last) %><br/>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
-      <div class="row visible-xs">
-        <div class="toggle-block col-md-3 center-block">
-          <span class="glyphicon glyphicon-menu-down js-toggle-product-details-block" data-block-selector=".guide-chapters-list"></span>
-        </div>
-      </div>
-    </div>
-    <div class="guide-text-wrapper">
-      <h1><%= @guide.header.upcase %></h1>
-      <div class="guide-text col-md-10 center-block">
-        <%= simple_format @guide.description&.html_safe %>
-      </div>
-    </div>
-  </section>
+<div class="title-background-field">
+  <div class='title-field'><%= @sub_category.name %></div>
 </div>
-<style>
-  .guide-info { background: url(<%= image_url @guide.image&.url %>) no-repeat; }
-</style>
+
+<section class="guide-chapters row visible-xs">
+  <div class="guide-chapters-list-wrapper">
+    <div class="guide-chapters-list short toggle-block col-md-3 center-block">
+      <div class="title"><%= t '.chapters' %></div><span class="glyphicon glyphicon-menu-down js-toggle-product-details-block" data-block-selector=".guide-chapters-list"></span>
+      <div class="guides-list-header"></div>
+      <% @sub_category.guides.order(:id).each do |guide| %>
+        <%= link_to guide.header, sub_category_guide_path(@sub_category, guide) %><br/>
+       <% end %>
+    </div>
+  </div>
+</section>
+
+<div class="conten-guides-wrapper">
+  <div class="image-field hidden-xs">
+    <div class="up-arrow"></div>
+      <ul class="slide-container">
+        <% @sub_category.guides.order(:id).each do |guide| %>
+          <li class="slide"><%= link_to guide.header, sub_category_guide_path(@sub_category, guide) %><br/></li>
+        <% end %>
+      </ul>
+    <div class="down-arrow"></div>
+  </div>
+  <div class="guide-header">
+    <div class="sub-category-name">
+      <%= @sub_category.name %> guide
+    </div>
+    <div class="guide-name">
+      - <%= @guide.header_en %>
+    </div>
+  </div>
+  <div class="guide-text-field">
+    <%= simple_format @guide.description&.html_safe %>
+  </div>
+</div>
+</div>

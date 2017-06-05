@@ -40,6 +40,7 @@ gem 'traco'
 gem 'i18n-tasks', '~> 0.9.12'
 gem 'slim'
 gem 'font-awesome-rails'
+gem "jquery-slick-rails"
 
 group :development, :test do
   gem 'byebug'
