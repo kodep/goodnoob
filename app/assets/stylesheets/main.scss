@@ -962,7 +962,7 @@ header {
       font-size: .9em;
       text-decoration: none;
       @media (max-width: 480px) {
-        font-size: .7em;
+        font-size: .75em;
       }
 
       .affix & {
@@ -1115,7 +1115,7 @@ header {
   background-color: #2b3339;
   @media only screen and (max-width: 767px) {
     margin-top: 18vw;
-  }  
+  }
 }
 
 .main-search-wrapper {
