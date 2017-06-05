@@ -2217,6 +2217,7 @@ $upload-button-color: #64b0fc;
 
         .thumb-header-name {
           font-size: 0.9em;
+          color: white;
         }
       }
 
@@ -2227,6 +2228,10 @@ $upload-button-color: #64b0fc;
         justify-content: space-between;
         padding: 10px;
         border-top: 1px solid #f0f2f6;
+        position: absolute;
+        top: 0;
+        z-index: 5;
+        width: 100%;
 
         .thumb-header-abbr {
           display: inline-block;
@@ -2280,6 +2285,11 @@ $upload-button-color: #64b0fc;
       }
 
       .thumb-preview {
+
+        .glyphicon-resize-full {
+          color: white;
+        }
+
         display: flex;
         flex-direction: column;
         height: 300px;
@@ -2640,72 +2650,6 @@ $footer-links-color: #7f7f7f;
     color: #427a6a;
     font-size: 24px;
     font-weight: bold;
-  }
-}
-
-.review-wrapper {
-  background-color: white;
-
-  .header-title {
-    padding: 50px 0;
-  }
-
-  .review-section {
-    padding: 20px 100px;
-
-    @media only screen and (max-width: 767px) {
-      padding: 20px;
-    }
-
-    .review-unit {
-      .review-title {
-        h3,
-        h3 > a {
-          color: #7f8082;
-          font-size: 17px;
-          font-weight: 200;
-          margin: 5px 0;
-        }
-      }
-
-      .review-rating-body {
-        margin-top: 10px;
-
-        .thumb-menu-stripe {
-          float: right;
-        }
-        .review-rating {
-          p {
-            font-family: $flores-heading-font;
-            display: inline-block;
-            color: #232323;
-            font-size: 16px;
-            font-weight: bold;
-          }
-        }
-
-        .review-date {
-          p {
-            font-size: 13px;
-            color: #606060;
-          }
-        }
-      }
-
-      .review-description {
-        margin-bottom: 30px;
-        color: #606060;
-        font-size: 15px;
-
-        a {
-          text-decoration: none;
-          color: #3fa9f5;
-          &:hover {
-            opacity: .8;
-          }
-        }
-      }
-    }
   }
 }
 
@@ -3074,7 +3018,7 @@ $footer-links-color: #7f7f7f;
     .select-wrapper:after{
       content: " ";
       display: inline-block;
-      background: url(/assets/edit-icon.png) no-repeat;
+      background: image-url('edit-icon.png') no-repeat;
       width: 12px;
       height: 15px;
       background-size: cover;
@@ -3189,6 +3133,11 @@ $footer-links-color: #7f7f7f;
 
 .thumb-menu-stripe {
   position: relative;
+
+  .fa-ellipsis-h {
+    color: white;
+  }
+
   .thumb-more-button {
     background: image-url('three-dots-menu.svg') no-repeat scroll center center transparent;
     width: 20px;
@@ -3343,4 +3292,10 @@ $footer-links-color: #7f7f7f;
 .black-search-icon {
   color: black;
   font-size: 6vw;
+}
+
+.image-cover-fit {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
