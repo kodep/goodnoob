@@ -299,10 +299,10 @@ $(document).on('turbolinks:load', function() {
             $('#filters').scrollToFixed({
                 zIndex: 1,
                 marginTop: $('.white-header-stripe').outerHeight(true),
-                limit: function() {
-                    var l = $('.footer-wrapper').offset().top - $('#filters').outerHeight(true)
-                    return l;
-                }
+                // limit: function() {
+                //     var l = $('.footer-wrapper').offset().top - $('#filters').outerHeight(true)
+                //     return l;
+                // }
             });
         } else {
             $('#filters').css('height', $(window).height() - $('.white-header-stripe').outerHeight(true) - $('.side-panel-header').outerHeight(true));
