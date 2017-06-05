@@ -176,6 +176,8 @@ $button-toggle-modal-font: 'Myriad Pro', sans-serif;
 $tabs-list-font: 'DIN Alternate', sans-serif;
 $main-filters-wrapper-font: 'Affogato-Light', sans-serif;
 $button-social-font: 'Myriad Pro Light', sans-serif;
+$mobile-sort-bar-font: 'DIN Alternate', sans-serif;
+$mobile-sort-bar-item-font: 'Myriad Pro Light', sans-serif;
 
 // Font-sizes
 $header-simple-btn-fontsize: 1.1rem;
@@ -1112,6 +1114,7 @@ header {
 }
 
 .main-search-wrapper {
+  background-color: #f9f9f9;
   padding: 25px 16px 0;
   justify-content: center;
   align-items: center;
@@ -1124,7 +1127,7 @@ header {
     a, a:hover, a:visited {
       text-decoration: none;
       color: black;
-      font-size: 18px;
+      font-size: 16px;
     }
     .sort-by-value {
       color: #3cbbe8;
@@ -1415,7 +1418,7 @@ $custom-scrollbar-color: #eee;
 $sidepanel-main-font: 'Myriad Pro', sans-serif;
 $sidepanel-heading-size: 20px;
 $sidepanel-heading-weight: 400;
-$filtername-size: 18px;
+$filtername-size: 17px;
 $filterplus-size: 0.6em;
 $subfilter-size: 0.8em;
 
@@ -1433,7 +1436,7 @@ $subfilter-size: 0.8em;
   border-bottom: 1px solid #f6f6f6;
 
   .side-panel-header {
-    background-color: #3fa9f5;
+    background-color: #00e9cc;
     color: white;
     font-weight: bolder;
     height: 43px;
@@ -2146,6 +2149,7 @@ $upload-button-color: #64b0fc;
   }
 
   .thumbs-matrix-wrapper {
+    background-color: #f9f9f9;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -2196,7 +2200,7 @@ $upload-button-color: #64b0fc;
             &:focus,
             &:active {
               font-family: $flores-heading-font;
-              font-size: 0.8em;
+              font-size: 0.9em;
               color: #000;
               text-decoration: none;
             }
@@ -3297,13 +3301,14 @@ $footer-links-color: #7f7f7f;
   font-size: 1.3rem;
   z-index: 100;
   .mobile-sort-bar-header {
-    background-color: #3fa9f5;
+    font-family: $mobile-sort-bar-font;
+    background-color: #ffffff;
     height: 40px;
     text-align: center;
     font-weight: bolder;
     font-size: 18px;
     font-weight: 800;
-    color: white;
+    color: black;
     text-transform: uppercase;
     height: 40px;
     line-height: 40px;
@@ -3313,12 +3318,12 @@ $footer-links-color: #7f7f7f;
     }
   }
   .mobile-sort-bar-item {
+    font-family: $mobile-sort-bar-item-font;
     cursor: pointer;
     width: 100%;
     height: 40px;
     line-height: 40px;
     text-align: center;
-    border-bottom: 1px solid #dadada;
     &:hover {
       opacity: .7;
     }
