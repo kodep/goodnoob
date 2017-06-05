@@ -341,6 +341,10 @@ $turquoise-active-theme-color: #00fee4;
       .user-avatar {
         height: 29.3vw;
         width: 29.3vw;
+
+        .no-photo {
+          line-height: 29.3vw;
+        }
       }
 
       .user-info {
