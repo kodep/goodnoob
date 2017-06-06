@@ -1,6 +1,8 @@
-$font-family-alternate: "DIN Alternate" , sans-serif;
+$font-family-alternate: 'DIN Alternate' , sans-serif;
 $font-family-sans-serif: 'Myriad Pro', sans-serif;
-$font-family-affogato: "Affogato-Regular" , sans-serif;
+$font-family-affogato: 'Affogato-Regular' , sans-serif;
+$font-family-din-condensed: 'DIN CONDENSED', sans-serif;
+$font-family-affogato-bold: 'Affogato-Bold', sans-serif;
 #new-post-modal {
   .close > img {
     position: absolute;
@@ -52,7 +54,7 @@ $font-family-affogato: "Affogato-Regular" , sans-serif;
             right: 0;
             left: 0;
             margin: 4.5% auto 0;
-            background: #80e2ce;
+            background: #00e9cc;
             color: white;
             text-align: center;
             border: 0;
@@ -71,7 +73,7 @@ $font-family-affogato: "Affogato-Regular" , sans-serif;
             width: 20%;
             font-size: 0.7vw;
             text-align: center;
-            background: #80e2ce;
+            background: #00e9cc;
             border: 0;
           }
           .comment-container {
@@ -133,18 +135,24 @@ $font-family-affogato: "Affogato-Regular" , sans-serif;
             margin: 17% auto 3% auto;
           }
           .big-text {
-            font-family: $font-family-alternate;
-            font-size: 0.7vw;
-            padding-top: 1vh;
+            font-family: $font-family-din-condensed;
+            font-size: 1vw;
+            padding-top: 3vh;
             text-transform: uppercase;
+            line-height: 1.2;
           }
           .small-text {
             font-family: $font-family-affogato;
             font-size: 0.9vw;
             margin-bottom: 1%;
+            .count-li{
+              font-family: $font-family-affogato-bold;
+              display: inline-block;
+              font-weight: 900;
+            }
           }
           .logo-text {
-            font-family: $font-family-alternate;
+            font-family: $font-family-din-condensed;
             font-size: 2vw;
             text-transform: uppercase;
             margin-bottom: 2%;
