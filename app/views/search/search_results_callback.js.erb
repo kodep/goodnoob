@@ -3,6 +3,7 @@
     var $html_button = $("<%=j render partial: 'search/load_more_button', locals: { media: @media } %>");
     <% if params[:page].present? %>
       $('.search-results-container').append($html.find('.search-results-container .thumb-wrapper'));
+      $('#masonry-container').masonry('reloadItems').masonry();
       $('#load_more_but').replaceWith($html_button);
     <% else %>
       $('#products_goes_here').replaceWith($html);

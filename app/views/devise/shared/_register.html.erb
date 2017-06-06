@@ -6,7 +6,7 @@
  <div class="authform row flex-form">
 
    <div class='register-image no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12' >
-     <%= image_tag(asset_path 'register_image.png') %>
+     <%= image_tag 'register_image.png' %>
    </div>
 
    <div class='register-form no-padding col-lg-6 col-md-6 col-sm-12 col-xs-12'>
@@ -34,12 +34,6 @@
          <a class="btn-login" data-dismiss='modal' data-target='#SignInModal' id='btnLogin'>I already have an account...</a>
        </div>
     </div>
-
-       <script>
-           $('#btnRegister_signup').click(function() {
-             send_track_btnRegister_signup();
-           });
-        </script>
 
      <% end %>
    </div>

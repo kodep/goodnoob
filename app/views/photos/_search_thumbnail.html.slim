@@ -1,4 +1,4 @@
-.thumb-wrapper.thumb-photo
+.box.thumb-wrapper.thumb-photo
   .thumb-preview
     .flex.thumb-header
       span.thumb-header-name
@@ -20,22 +20,15 @@
             hr/
             .menu-item
               a.share-button-copylink.js-copylink data-copy-url="#{photo_url(photo)}" = t '.copy_url'
-          span.social_share_group
-            span.share_items
-              a.share_item.share-button-facebook href="https://www.facebook.com/sharer/sharer.php?u=#{photo_url(photo)}" 
-              a.share_item.share-button-twitter href="https://twitter.com/intent/tweet?url=#{photo_url(photo)}" 
-              a.share_item.share-button-whatsapp href="whatsapp://send?text=#{photo_url(photo)}" 
-              span.share_item.share-button-separator
-              a.share_item.share-button-copylink.js-copylink data-copy-url="#{photo_url(photo)}" 
         - else
-          a.toggle-social-share-menu.thumb-more-button.social-share href="#" 
-          span.social_share_group
-            span.share_items
-              a.share_item.share-button-facebook href="https://www.facebook.com/sharer/sharer.php?u=#{photo_url(photo)}" 
-              a.share_item.share-button-twitter href="https://twitter.com/intent/tweet?url=#{photo_url(photo)}" 
-              a.share_item.share-button-whatsapp href="whatsapp://send?text=#{photo_url(photo)}" 
-              span.share_item.share-button-separator
-              a.share_item.share-button-copylink.js-copylink data-copy-url="#{photo_url(photo)}" 
+          a.toggle-social-share-menu.thumb-more-button.social-share href="#"
+        span.social_share_group
+          span.share_items
+            a.share_item.share-button-facebook href="https://www.facebook.com/sharer/sharer.php?u=#{photo_url(photo)}"
+            a.share_item.share-button-twitter href="https://twitter.com/intent/tweet?url=#{photo_url(photo)}"
+            a.share_item.share-button-whatsapp href="whatsapp://send?text=#{photo_url(photo)}"
+            span.share_item.share-button-separator
+            a.share_item.share-button-copylink.js-copylink data-copy-url="#{photo_url(photo)}"
 
     - if photo.picture.present?
       = link_to photo.picture.image.url, class: 'embed-responsive text-hide thumb-bg js-zoom-photo' do
