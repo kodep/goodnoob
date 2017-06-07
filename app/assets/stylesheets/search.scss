@@ -1,6 +1,109 @@
-/*.dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
-}*/
+$font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
+
+
+#search_results{
+  @media only screen and (max-width: 992px) {
+    .thumb-wrapper{
+      width: 91vw;
+      margin: 0 0 3vh 0;
+    }
+    .box {
+      margin: 0 0 4% 0;
+    }
+    .thumb-footer-model a {
+      font-size: 3.5vw;
+    }
+    .thumb-description {
+      font-size: 4vw;
+    }
+    .thumb-description.text-left p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .thumb-wrapper{
+      width: 16.9vw;
+      margin: 0 1.2vw 3vh 0;
+    }
+    .new-post-container {
+      width: 16.9vw;
+    }
+    .box {
+      margin: 0 0 1% 0;
+    }
+    .thumb-footer-model a {
+      font-size: 1vw;
+    }
+    .thumb-description.text-left p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 10vw;
+    }
+  }
+  .thumb-header {
+    padding: 2% 12% 0 2%;
+  }
+  .thumb-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 5% 4%;
+    .thumb-footer-model a {
+      color: black;
+    }
+  }
+  .thumb-description {
+    padding: 4% 5% 0;
+    color: #bdbdbd;
+    min-height: 0;
+  }
+  button {
+    border: 0;
+  }
+  .thumbs-matrix-wrapper {
+    margin: 16px 4.4vw;
+    padding: 0;
+  }
+  .box {
+    border: 0;
+    padding: 0;
+    background: white;
+    .new-post-container {
+      height: 16.8vh;
+      background: #e4e4e4;
+      margin-bottom: 15px;
+      position: relative;
+      border-radius: 10px;
+      .text-post {
+        position: absolute;
+        bottom: 10%;
+        font-size: 1vw;
+        color: #b4b4b4;
+        width: 100%;
+        text-align: center;
+        font-family: $font-family-roboto-regular;
+        .underline {
+          text-decoration: underline;
+        }
+      }
+      .image-post {
+        top: 10%;
+        position: absolute;
+        width: 100%;
+        img {
+          width: 16.3%;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
 
 .thumb-menu-stripe {
     position: relative;
@@ -10,12 +113,6 @@
 .thumb-menu-stripe a:hover {background-color: #f1f1f1}
 
 .social-share {
-    /*background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;*/
     margin: 0px;
     display: block;
     outline: none;
@@ -25,15 +122,12 @@
     display: none;
     position: absolute;
     z-index: 1000;
-    /*margin-right: 15px;*/
 }
 
 .share_items {
     background-color: #fff;
-    /* add in vendor rules */
     position: relative;
     text-align: center;
-    /* adjust social share window position */
     display: inline-block;
     margin-left: -5px;
     margin-top: 15px;
@@ -42,9 +136,6 @@
 .social_share_group > .share_items {
     display: inline-block;
     float: none;
-    /*font-size: 18px;
-    margin-right: 12px;
-    margin-bottom: 12px;*/
     padding: 1px 1px;
 }
 
@@ -56,7 +147,7 @@
     top: 50%;
     position: absolute;
     width: 0;
-    padding: 0px;
+    padding: 0;
 }
 
 .social_share_group > .share_items:before {
@@ -76,26 +167,26 @@
 }
 
 .share_items > .share-button-facebook {
-    background: asset-url('share-icon-facebook.png') no-repeat center center;
+    background: image-url('share-icon-facebook.png') no-repeat center center;
 }
 
 .share_items > .share-button-twitter {
-    background: asset-url('share-icon-twitter.png') no-repeat center center;
+    background: image-url('share-icon-twitter.png') no-repeat center center;
 }
 
 .share_items > .share-button-whatsapp {
     display: none;
-    background: asset-url('share-icon-whatsapp.png') no-repeat center center;
+    background: image-url('share-icon-whatsapp.png') no-repeat center center;
 }
 
 .share_items > .share-button-separator {
-    background: asset-url('share-icon-separator.png') no-repeat center center;
+    background: image-url('share-icon-separator.png') no-repeat center center;
     height: 9px;
-    opacity: 12%;
+    opacity: 0.12;
 }
 
 .share_items > .share-button-copylink {
-    background: asset-url('share-icon-copylink.png') no-repeat center center;
+    background: image-url('share-icon-copylink.png') no-repeat center center;
 }
 
 .loading-spinner {
@@ -127,7 +218,6 @@
   }
 }
 
-// Search-form--inline
 .search-form--inline {
   .suggestions {
     background: #fff;

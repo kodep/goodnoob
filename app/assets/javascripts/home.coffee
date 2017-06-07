@@ -46,3 +46,7 @@ $(document).on 'turbolinks:load', ->
   $('body').on 'click', '.photo', ->
     $('#photo_form').removeClass('hidden')
     $('#video_form').addClass('hidden')
+  $('#masonry-container').masonry
+    itemSelector: '.box'
+    columnWidth: (containerWidth) ->
+      containerWidth / 5

@@ -27,4 +27,12 @@
 //= require bootstrap-wysihtml5/wysihtml5x-toolbar
 //= require bootstrap-wysihtml5/handlebars.runtime.min
 //= require bootstrap-wysihtml5/minimum
+//= require masonry/jquery.masonry
+//= require masonry/jquery.event-drag
+//= require masonry/jquery.imagesloaded.min
+//= require masonry/jquery.infinitescroll.min
+//= require masonry/modernizr-transitions
+//= require masonry/box-maker
+//= require masonry/jquery.loremimages.min
+
 //= require_directory .

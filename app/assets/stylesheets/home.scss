@@ -3,6 +3,24 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
 $font-family-affogato: 'Affogato-Regular' , sans-serif;
 $font-family-din-condensed: 'DIN CONDENSED', sans-serif;
 $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
+#home-search-page {
+  .video-background{
+    position: absolute;
+    overflow: hidden;
+    height: 21.5vh;
+    top: 49px;
+  }
+  .tabs-link.active{
+    font-size: 3em;
+  }
+  .main-tabs-wrapper {
+    height: 21.5vh;
+  }
+  .tabs-list {
+    height: 100%;
+  }
+}
+
 #new-post-modal {
   .close > img {
     position: absolute;
