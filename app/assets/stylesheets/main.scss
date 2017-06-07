@@ -178,6 +178,7 @@ $main-filters-wrapper-font: 'Affogato-Light', sans-serif;
 $button-social-font: 'Myriad Pro Light', sans-serif;
 $mobile-sort-bar-font: 'DIN Alternate', sans-serif;
 $mobile-sort-bar-item-font: 'Myriad Pro Light', sans-serif;
+$guide-title-font: 'DIN Alternate', sans-serif;
 
 // Font-sizes
 $header-simple-btn-fontsize: 1.1rem;
@@ -959,6 +960,7 @@ header {
       color: black;
       padding: 12.5px 15px;
       font-size: .9em;
+      text-decoration: none;
       @media (max-width: 480px) {
         font-size: .7em;
       }
@@ -2861,6 +2863,9 @@ $footer-links-color: #7f7f7f;
     border: none;
     font-size: 2em;
     font-weight: bold;
+    @media only screen and (max-width: 768px) {
+      font-size: 1.5em;
+    }
   }
 }
 

@@ -535,8 +535,9 @@ $(document).on('turbolinks:load', function() {
       var block;
       block = $(this).data('block-selector')
       $(block).toggleClass('short');
-      $(this).toggleClass('glyphicon-menu-down');
-      $(this).toggleClass('glyphicon-menu-up');
+      $(this).toggleClass('glyphicon-menu-down glyphicon-menu-up');
+      $('.guide-chapters-list-wrapper').toggleClass('white-background');
+      $('.guide-chapters-list').toggleClass('color-font-grey');
     })
 
     $('.product-tab-button').on('click', function(e){
@@ -617,6 +618,15 @@ $(document).on('turbolinks:load', function() {
         var msgNode = $('<div class="alert alert-danger">' + message + '</div>');
         modal.find('form').prepend(msgNode)
         modal.one('hide.bs.modal', function(){ msgNode.remove(); });
+    });
+
+    $('.slide-container').slick({
+      vertical: true,
+      infinite: true,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      prevArrow: $('.up-arrow'),
+      nextArrow: $('.down-arrow')
     });
 });
 
