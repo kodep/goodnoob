@@ -2,13 +2,24 @@
   <div class="main-tabs-wrapper">
     <div class="flex tabs-list">
 
-      <span class="tabs-item social-feed-button-wrapper">
+      <span class="tabs-item social-feed-button-wrapper hidden-xs">
         <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link" } %>
+      </span>
+
+      <span class="dropdown dropdown-on-hover tabs-item visible-xs">
+        <button type="button" class="btn btn-link tabs-link active dropdown-toggle" data-toggle="dropdown"><%= link_to t('.learn') %></button>
+        <div class="dropdown-menu buying-guides-block-wrapper">
+          <%= render 'layouts/buying_guides' %>
+        </div>
       </span>
 
       <span class="item-separator"><%= image_tag('l-arrow.png') %></span>
 
-      <span class="dropdown dropdown-on-hover tabs-item">
+      <span class="tabs-item social-feed-button-wrapper visible-xs">
+        <%= link_to t('.share'), search_index_path, {id: 'social-feed-button', class: "btn btn-link tabs-link" } %>
+      </span>
+
+      <span class="dropdown dropdown-on-hover tabs-item hidden-xs">
         <button type="button" class="btn btn-link tabs-link active dropdown-toggle" data-toggle="dropdown"><%= link_to t('.learn') %></button>
         <div class="dropdown-menu buying-guides-block-wrapper">
           <%= render 'layouts/buying_guides' %>
