@@ -29,3 +29,17 @@
 .body-visible {
   overflow: visible !important;
 }
+
+select.form-control {
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0 12px;
+  height: 25px;
+  &:focus {
+    box-shadow: none;
+    border-color: rgb(204, 204, 204);
+  }
+  option:hover {
+    background-color: gray;
+  }
+}
