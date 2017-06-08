@@ -177,7 +177,7 @@ $font-family-alternate: "DIN Alternate" , sans-serif;
       width: 100%;
       right: 0;
       text-align: center;
-      bottom: 5vh;
+      bottom: 6vh;
       font-size: 3vw;
     }
     .margin {
@@ -249,13 +249,13 @@ $font-family-alternate: "DIN Alternate" , sans-serif;
 
       .btn-continue {
         margin-top: 0;
-        font-size: 2vw;
+        font-size: 2vh;
       }
     }
     .authform {
       .form-control {
-        height: 4vh;
-        font-size: 2vh;
+        height: 5vh;
+        font-size: 3vh;
         margin-top: 3vh;
       }
       .padding-top {
@@ -265,8 +265,11 @@ $font-family-alternate: "DIN Alternate" , sans-serif;
         .btn-social {
           font-size: 2.5vw;
         }
+        .wp-btn-font {
+          font-size: 1.8vh;
+        }
         .btn-commit{
-          font-size: 2vw;
+          font-size: 2vh;
         }
         background-color: white;
         padding: 0 10%;
@@ -275,6 +278,7 @@ $font-family-alternate: "DIN Alternate" , sans-serif;
     }
     .text-log {
       z-index: 100;
+      padding: 2.6%;
     }
     .container-images {
       padding: 0 5%;
