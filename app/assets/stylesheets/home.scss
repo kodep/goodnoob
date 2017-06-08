@@ -33,7 +33,7 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
   }
   .back {
     background: white;
-    width: 53.6vw;
+    width: 52vw;
     position: absolute;
     margin: 0 auto;
     left: 0;
@@ -54,7 +54,7 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
           height: 100%;
           padding-top: 10%;
           .bootstrap-select {
-            height: 5%;
+            height: 7%;
             margin-top: 0;
             button {
               padding: 0;
@@ -77,27 +77,29 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
             text-align: center;
             border: 0;
             line-height: normal;
-            height: 6%;
-            font-size: 1vw;
+            height: 8%;
+            font-size: 1.2vw;
             padding: 1% 0;
           }
           .btn-submit {
             font-family: $font-family-alternate;
             padding: 2%;
-            bottom: 10%;
+            bottom: 5%;
             position: absolute;
             right: 10%;
             border-radius: 0;
-            width: 20%;
-            font-size: 0.7vw;
+            width: 27%;
+            font-size: 1.1vw;
             text-align: center;
             background: #00e9cc;
             border: 0;
           }
+          textarea:-moz-placeholder { color: #dfdfdf; }
+          textarea::-webkit-input-placeholder { color: #dfdfdf; }
           .comment-container {
             resize: none;
-            height: 40%;
-            font-size: 1vw;
+            height: 42%;
+            font-size: 1.2vw;
           }
           .url-input{
             height: 6%;
@@ -111,9 +113,9 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
         .container-list {
           border: 0;
           padding: 0;
-          height: 6%;
+          height: 8%;
           text-align: center;
-          font-size: 0.9vw;
+          font-size: 1.3vw;
           .open {
             background: #2b3238;
             border: 1px solid #ccc;
@@ -154,7 +156,7 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
           }
           .big-text {
             font-family: $font-family-din-condensed;
-            font-size: 1vw;
+            font-size: 0.9vw;
             padding-top: 3vh;
             text-transform: uppercase;
             line-height: 1.2;
