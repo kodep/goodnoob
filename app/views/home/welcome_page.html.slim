@@ -109,7 +109,7 @@
                     = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social wp-btn-font wp-btn btn-facebook"
                     = link_to 'Log in with Google+', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social wp-btn-font wp-btn btn-google-plus"
                   .row.padding-top align="center"
-                    = f.submit 'Register', :class => 'btn btn-commit wp-btn-font wp-btn', :id => 'btnRegister_signup'
+                    = f.submit 'Register', :class => 'btn btn-commit wp-btn', :id => 'btnRegister_signup'
                     a#welcome_register_button.btn-login.wp-btn-font I already have an account...
               .continue-container
                 = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-continue"
@@ -126,7 +126,7 @@
                     = link_to 'Log in with Google+', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social wp-btn-font wp-btn btn-google-plus"
                   .row.padding-top align="center"
                     a#welcome_login_button.btn.btn-commit.btn-register Register
-                    = f.submit 'Login', :class => 'btn btn-commit wp-btn-font wp-btn'
+                    = f.submit 'Login', :class => 'btn btn-commit wp-btn'
               = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-continue"
     .text-footer.text-right By entering this page? you are agree to our terms of us and services.
 
