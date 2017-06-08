@@ -2,7 +2,7 @@
 
 <%= render partial: 'sub_categories/guide_filter' %>
 
-<div class="title-background-field">
+<div class="title-background-field" style="<%= @sub_category.picture ? "background-image: url('#{@sub_category.picture.url}')" : 'background-color: grey' %>">
   <div class='title-field'><%= @sub_category.name %></div>
 </div>
 

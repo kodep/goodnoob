@@ -83,6 +83,7 @@ Rails.application.routes.draw do
   resources :sub_categories, only: [:show] do
     resources :guides, only: [:show]
   end
+  resources :guides, only: [:index]
   resources :products, only: [:show] do
     resources :reviews, defaults: { formats: [:json, :html] }
     resource :user_favourite_products, only: [:create, :destroy]
