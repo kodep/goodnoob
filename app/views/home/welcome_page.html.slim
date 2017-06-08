@@ -50,7 +50,16 @@
           .authform.register-form-welcome-page
             .big-image
               #welcome_register_image
-                = image_tag(asset_path 'welcome_register_image.jpg')
+                .visible-lg= image_tag 'welcome_register_image.jpg'
+                .hidden-lg
+                  .opacity-container
+                  .text-image-container
+                    = image_tag 'good noob_logo.png'
+                    .mobile-logo-title
+                      | Welcome to &nbsp
+                      span.logo-text goodnoob
+                    .mobile-logo-text The extreme sports community
+                  =image_tag 'main-photo.png'
               .login-image.hidden#welcome_login_image
                 = image_tag(asset_path 'login_image.png')
               #learn-big.hidden.hidden-lg
@@ -105,9 +114,11 @@
                   = f.password_field :password, class: 'form-control', placeholder: 'Password'
                   = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm password'
                   br
-                  .row align="center"
-                    = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social wp-btn-font wp-btn btn-facebook"
-                    = link_to 'Log in with Google+', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social wp-btn-font wp-btn btn-google-plus"
+                  .row.text-center align="center"
+                    = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path,
+                              class: "text-center btn btn-block btn-welcome-social wp-btn-font wp-btn btn-facebook"
+                    = link_to 'Log in with Google+', user_google_oauth2_omniauth_authorize_path,
+                              class: "text-center btn btn-block btn-welcome-social wp-btn-font wp-btn btn-google-plus"
                   .row.padding-top align="center"
                     = f.submit 'Register', :class => 'btn btn-commit wp-btn', :id => 'btnRegister_signup'
                     a#welcome_register_button.btn-login.wp-btn-font I already have an account...
@@ -122,11 +133,13 @@
                   = f.password_field :password, class: 'form-control', placeholder: 'Password'
                   br
                   .row align="center"
-                    = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social wp-btn-font wp-btn btn-facebook"
-                    = link_to 'Log in with Google+', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social wp-btn-font wp-btn btn-google-plus"
+                    = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path,
+                              class: "text-center btn btn-block btn-welcome-social wp-btn-font wp-btn btn-facebook"
+                    = link_to 'Log in with Google+', user_google_oauth2_omniauth_authorize_path,
+                              class: "text-center btn btn-block btn-welcome-social wp-btn-font wp-btn btn-google-plus"
                   .row.padding-top align="center"
                     a#welcome_login_button.btn.btn-commit.btn-register Register
                     = f.submit 'Login', :class => 'btn btn-commit wp-btn'
               = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-continue"
-    .text-footer.text-right By entering this page? you are agree to our terms of us and services.
+    .text-footer.text-right By entering this page, you are agree to our terms of us and services.
 

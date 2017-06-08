@@ -1,5 +1,7 @@
 $font-family-sans-serif: 'Myriad Pro', sans-serif;
-$font-family-alternate: "DIN Alternate" , sans-serif;
+$font-family-alternate: 'DIN Alternate', sans-serif;
+$font-family-regular: 'DIN REGULAR', sans-serif;
+
 #welcome_page {
   .margin {
     margin-top: 2%;
@@ -56,11 +58,12 @@ $font-family-alternate: "DIN Alternate" , sans-serif;
       color: #fff;
     }
 
-    .btn-social {
+    .btn-welcome-social {
       overflow: initial;
       text-overflow: ellipsis;
       display: inline-block;
       width: 40%;
+      margin: 6px;
     }
 
     .wp-btn-font {
@@ -177,12 +180,22 @@ $font-family-alternate: "DIN Alternate" , sans-serif;
     color: #929292;
   }
   @media only screen and (max-width: 1200px) {
+    .mobile-logo-title {
+      display: block;
+      font-size: 7.2vw;
+      margin-bottom: 2vh;
+      text-transform: uppercase;
+    }
+    .mobile-logo-text {
+      font-size: 4.2vw;
+      text-transform: uppercase;
+    }
     .text-footer {
       display: inline-block;
       width: 100%;
       right: 0;
       text-align: center;
-      bottom: 6vh;
+      bottom: 8vh;
       font-size: 3vw;
     }
     .margin {
@@ -211,7 +224,7 @@ $font-family-alternate: "DIN Alternate" , sans-serif;
         }
         .button-title {
           position: absolute;
-          bottom: 30%;
+          bottom: 26%;
           text-align: center;
           width: 100%;
           a {
@@ -235,11 +248,12 @@ $font-family-alternate: "DIN Alternate" , sans-serif;
             text-transform: uppercase;
           }
           .small-title-text {
+            font-family: $font-family-regular;
             font-size: 4vw;
           }
           img {
             width: 10vw;
-            margin: 15% auto 3% auto;
+            margin: 19% auto 4%;
           }
         }
         #welcome_register_form {
@@ -254,20 +268,20 @@ $font-family-alternate: "DIN Alternate" , sans-serif;
 
       .btn-continue {
         margin-top: 0;
-        font-size: 2vh;
+        font-size: 2.5vh;
       }
     }
     .authform {
       .form-control {
-        height: 5vh;
-        font-size: 3vh;
+        height: 4.5vh;
+        font-size: 2.5vh;
         margin-top: 3vh;
       }
       .padding-top {
         padding: 1vh 0 3vh 0;
       }
       form {
-        .btn-social {
+        .btn-welcome-social {
           font-size: 2.5vw;
         }
         .wp-btn-font {
