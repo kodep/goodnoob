@@ -77,22 +77,21 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
             text-align: center;
             border: 0;
             line-height: normal;
-            height: 8%;
-            font-size: 1.2vw;
-            padding: 1% 0;
           }
           .btn-submit {
             font-family: $font-family-alternate;
-            padding: 2%;
-            bottom: 5%;
+            bottom: 8%;
             position: absolute;
             right: 10%;
             border-radius: 0;
-            width: 27%;
-            font-size: 1.1vw;
+            width: 30%;
             text-align: center;
             background: #00e9cc;
             border: 0;
+          }
+          .form-height {
+            height: 6.5%;
+            font-size: 1.17vw;
           }
           textarea::placeholder { color: #dfdfdf; }
           .comment-container {
@@ -111,10 +110,7 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
         }
         .container-list {
           border: 0;
-          padding: 0;
-          height: 8%;
           text-align: center;
-          font-size: 1.3vw;
           .open {
             background: #2b3238;
             border: 1px solid #ccc;
@@ -155,10 +151,11 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
           }
           .big-text {
             font-family: $font-family-din-condensed;
-            font-size: 0.9vw;
+            font-size: 0.86vw;
             padding-top: 3vh;
             text-transform: uppercase;
             line-height: 1.2;
+            font-weight: 900;
           }
           .small-text {
             font-family: $font-family-affogato;
