@@ -37,6 +37,20 @@ fr:
       about_us: A propos
       we_are_also_in: "Nous sommes aussi sur:"
     header:
+      choose_your_country:  'Choisis ton pays'
+      choose_your_language: 'Choisissez votre langue'
+      choose_your_currency: 'Choisissez votre devise'
+      countries:
+        uk: 'Royaume-Uni'
+        fr: 'France'
+        es: 'Espagne'
+      languages:
+        uk: 'Anglais'
+        fr: 'Français'
+        es: 'Espagnol'
+      currencies:
+        eur: 'Euros (€)'
+        gbp: 'Livre sterling (£)'
       social_feed: "Fil d'actualité"
       compare_products: Comparer les produits
       buying_guides: "Guides d'achat"
@@ -256,7 +270,7 @@ fr:
     photo_thumbnail:
       more_info: "Plus d'Info..."
     review_result:
-      no_reviews: "Vous n'avez pas encore partagé de commentaire" 
+      no_reviews: "Vous n'avez pas encore partagé de commentaire"
     review_thumbnail:
       edit: Editer
       remove: Supprimer

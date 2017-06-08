@@ -15,16 +15,29 @@
                   data-toggle='dropdown' aria-haspopup='true' aria-expanded='true'>
             <%= current_locale %>
           </button>
-
-          <ul class='dropdown-menu header-side-dropdown-button' aria-labelledby='upload-menu'>
+          <ul class="dropdown-menu t-center">
+            <li><%= t('.choose_your_country') %></li>
             <li>
-              <%= link_to 'EN', select_locale_path(locale: :en), method: :patch %>
+              <select class="form-control w-90 m-auto">
+                <option><%= t('.countries.uk') %></option>
+                <option><%= t('.countries.fr') %></option>
+                <option><%= t('.countries.es') %></option>
+              </select>
             </li>
+            <li><%= t('.choose_your_language') %></li>
             <li>
-              <%= link_to 'FR', select_locale_path(locale: :fr), method: :patch %>
+              <select class="form-control w-90 m-auto">
+                <option><%= t('.languages.uk') %></option>
+                <option><%= t('.languages.fr') %></option>
+                <option><%= t('.languages.es') %></option>
+              </select>
             </li>
+            <li><%= t('.choose_your_currency') %></li>
             <li>
-              <%= link_to 'ES', select_locale_path(locale: :es), method: :patch %>
+              <select class="form-control w-90 m-auto ">
+                <option><%= t('.currencies.eur') %></option>
+                <option><%= t('.currencies.gbp') %></option>
+              </select>
             </li>
           </ul>
         </div>
