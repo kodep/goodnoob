@@ -5,6 +5,10 @@ class HomeController < ApplicationController
         set_filters
     end
 
+    def welcome_page
+      redirect_to action: :index if user_signed_in?
+    end
+
     private
 
     def set_categories

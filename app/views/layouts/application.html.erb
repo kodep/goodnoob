@@ -11,9 +11,9 @@
   </head>
   <body>
     <%= render 'modals/modal' %>
-    <div id='navbar_render'>
+    <% if action_name != 'welcome_page' %>
       <%= render 'layouts/header' %>
-     </div>
+    <% end %>
     <section class="main-wrapper">
       <%= content_for?(:messages) ? yield(:messages) : render( 'layouts/messages' ) %>
       <%= yield %>
