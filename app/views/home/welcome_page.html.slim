@@ -106,14 +106,13 @@
                   = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm password'
                   br
                   .row align="center"
-                    .col-lg-1.col-sm-1.col-xs-1
-                    .col-lg-5.col-sm-5.col-xs-5 = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook"
-                    .col-lg-5.col-sm-5.col-xs-5 = link_to 'Log in with Google', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social btn-google-plus"
+                    = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social wp-btn-font wp-btn btn-facebook"
+                    = link_to 'Log in with Google+', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social wp-btn-font wp-btn btn-google-plus"
                   .row.padding-top align="center"
-                    = f.submit 'Register', :class => 'btn btn-commit', :id => 'btnRegister_signup'
-                    a#welcome_register_button.btn-login I already have an account...
+                    = f.submit 'Register', :class => 'btn btn-commit wp-btn-font wp-btn', :id => 'btnRegister_signup'
+                    a#welcome_register_button.btn-login.wp-btn-font I already have an account...
               .continue-container
-               = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-contion"
+                = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-continue"
             .login-form.no-padding.hidden#welcome_login_form
               = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %
                 = devise_error_messages!
@@ -123,12 +122,11 @@
                   = f.password_field :password, class: 'form-control', placeholder: 'Password'
                   br
                   .row align="center"
-                    .col-lg-1
-                    .col-lg-5 = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook"
-                    .col-lg-5 = link_to 'Log in with Google', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social btn-google-plus"
+                    = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social wp-btn-font wp-btn btn-facebook"
+                    = link_to 'Log in with Google+', user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social wp-btn-font wp-btn btn-google-plus"
                   .row.padding-top align="center"
                     a#welcome_login_button.btn.btn-commit.btn-register Register
-                    = f.submit 'Login', :class => 'btn btn-commit'
-              = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-contion"
+                    = f.submit 'Login', :class => 'btn btn-commit wp-btn-font wp-btn'
+              = link_to 'Continue without registration...', home_index_path, class: "btn btn-block btn-continue"
     .text-footer.text-right By entering this page? you are agree to our terms of us and services.
 
