@@ -425,10 +425,11 @@ $(document).on('turbolinks:load', function() {
     if ($('.js-zoom-photo').length) {
       $('.js-zoom-photo').magnificPopup({
         type: 'image',
-        closeBtnInside: false,
-        closeOnContentClick: true,
         image: {
-          verticalFit: true
+          verticalFit: true,
+          titleSrc: function(item) {
+            return $(item.el).siblings('.mpf-desc').html();
+          }
         }
       });
     }
@@ -500,7 +501,7 @@ $(document).on('turbolinks:load', function() {
       $(this).parent().siblings('.applied-filters-wrapper').toggle();
     })
 
-    $('.toggle-social-share-menu').on('click', function(e){
+    $('body').on('click', '.toggle-social-share-menu', function(e){
       e.preventDefault()
       $(this).closest('.thumb-menu-stripe').find('.social_share_group').toggle();
     })

@@ -43,3 +43,42 @@ select.form-control {
     background-color: gray;
   }
 }
+
+.mpf-desc {
+  display: none;
+}
+
+body.mfp-zoom-out-cur {
+  overflow-y: hidden;
+  .mfp-bg, .mfp-bg.mfp-ready {
+    background: rgba(255, 255, 255, 0.65);
+  }
+
+  .mfp-wrap.mfp-ready {
+    display: flex;
+    justify-content: center;
+    .mfp-container {
+      width: 65vh;
+      height: 0;
+      margin-top: 30px;
+      position: static;
+      .mfp-content {
+        vertical-align: initial;
+        .mfp-close {
+          color: #000;
+          font-size: 3em;
+          top: -0.2em;
+        }
+        img.mfp-img {
+          padding: 40px 0 30px 0px;
+        }
+        .mfp-bottom-bar {
+          background: #fff;
+          .mfp-title {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}
