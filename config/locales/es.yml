@@ -37,20 +37,6 @@ es:
       about_us: Sobre nosotros
       we_are_also_in: "Síguenos también en:"
     header:
-      choose_your_country:  'Elige tu país'
-      choose_your_language: 'Elige tu idioma'
-      choose_your_currency: 'Elija su moneda'
-      countries:
-        uk: 'Reino Unido'
-        fr: 'Francia'
-        es: 'España'
-      languages:
-        uk: 'Inglés'
-        fr: 'Francés'
-        es: 'Español'
-      currencies:
-        eur: 'Euros (€)'
-        gbp: 'Libra esterlina (£)'
       social_feed: Social
       compare_products: Comparar Productos
       buying_guides: Guías de Compra
