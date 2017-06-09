@@ -1,4 +1,14 @@
 @font-face{
+  font-family: 'DIN LIGHT';
+  src: font-url('din-light-webfont.eot'); /* IE9 Compat Modes */
+  src: font-url('din-light-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  font-url('din-light-webfont.woff') format('woff'), /* Modern Browsers */
+  font-url('din-light-webfont.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face{
   font-family: 'DIN REGULAR';
   src: font-url('din-regular-webfont.eot'); /* IE9 Compat Modes */
   src: font-url('din-regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
