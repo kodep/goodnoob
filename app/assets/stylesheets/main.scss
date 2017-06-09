@@ -946,7 +946,7 @@ header {
 
   .filter-wrapper {
     color: #fff;
-    flex: 1 0 auto;
+    flex: 0 0 10%;
     text-align: center;
     font-size: 16px;
     white-space: nowrap;
@@ -2805,6 +2805,7 @@ $footer-links-color: #7f7f7f;
 }
 
 .tabs-list {
+  min-height: 60px;
   &::before,
   &::after {
     content: "";
