@@ -4,20 +4,36 @@ $font-family-affogato: 'Affogato-Regular' , sans-serif;
 $font-family-din-condensed: 'DIN CONDENSED', sans-serif;
 $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
 #home-search-page {
-  .video-background{
-    position: absolute;
+  .container-filters {
+    left: 0;
+    right: 0;
+    display: flex;
+  }
+  .video-background {
     overflow: hidden;
     height: 21.5vh;
     top: 49px;
   }
-  .tabs-link.active{
-    font-size: 3em;
+  .tabs-link {
+    font-size: 2vw;
+  }
+  .tabs-link.active {
+    font-size: 3vw;
+  }
+  .social-feed-button-wrapper {
+    margin-left: 1vw;
   }
   .main-tabs-wrapper {
     height: 21.5vh;
+    display: inline-block;
   }
   .tabs-list {
     height: 100%;
+    width: 45%;
+  }
+  .tabs-item {
+    margin-left: 2vw;
+    margin-right: 2vw;
   }
 }
 
