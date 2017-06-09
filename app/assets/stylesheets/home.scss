@@ -151,11 +151,12 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
           }
           .big-text {
             font-family: $font-family-din-condensed;
-            font-size: 0.86vw;
+            font-size: 0.72vw;
             padding-top: 3vh;
             text-transform: uppercase;
             line-height: 1.2;
             font-weight: 900;
+            letter-spacing: 1px;
           }
           .small-text {
             font-family: $font-family-affogato;
