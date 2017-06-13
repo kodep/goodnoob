@@ -96,7 +96,6 @@ $headings-font-family: 'DIN Alternate', sans-serif;
           text-decoration: none;
         }
         .learn-title {
-          width: 60%;
           font-family: $headings-font-family;
           text-transform: uppercase;
           padding: 0 20px;
@@ -108,6 +107,8 @@ $headings-font-family: 'DIN Alternate', sans-serif;
           }
         }
         .learn-description {
+          position: absolute;
+          right: 7%;
           width: 169px;
           font-size: 18px;
           visibility: hidden;
@@ -115,6 +116,7 @@ $headings-font-family: 'DIN Alternate', sans-serif;
             font-size: 14px;
           }
           @media only screen and (max-width: 768px) {
+            width: 80px;
             font-size: 10px;
           }
 
