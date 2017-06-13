@@ -1,3 +1,4 @@
+$font-family-myriad-light: 'Myriad Pro Light', sans-serif;
 .breadcrumb.cover {
   background-color: transparent !important;
   a {
@@ -41,5 +42,43 @@ select.form-control {
   }
   option:hover {
     background-color: gray;
+  }
+
+}
+.upload-btn-wrapper {
+  img {
+    width: 20px;
+  }
+  .area-container {
+    display: inline-flex;
+    border: 1px solid black;
+    border-radius: 0;
+    padding: 0 12px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 12%;
+      margin-right: 5px;
+    }
+    .area-container-text {
+      color: black;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  header .dropdown-menu {
+    position: fixed;
+    top: 9.5vh;
+    color: black;
+    border: none;
+    font-family: $font-family-myriad-light;
+    letter-spacing: 0.5px;
+  }
+  .login-btn-wrapper .btn:active:focus {
+    opacity: 1;
   }
 }

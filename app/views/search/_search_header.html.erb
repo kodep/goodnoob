@@ -1,5 +1,7 @@
 <div id="home-search-page">
-  <div class="video-background w-100 p-absolute" id="header_video">
+  <div class="visible-lg">
+    <div class="video-background w-100 p-absolute" id="header_video">
+    </div>
   </div>
   <div class="subcategory-margin"></div>
   <div class="main-tabs-wrapper w-100">
@@ -29,7 +31,7 @@
   </div>
 
     <div class="flex main-filters-wrapper">
-      <div class="container-filters w-40 m-auto">
+      <div class="container-filters m-auto">
         <% @categories.each do |category| %>
             <%= render partial: 'search/category_filter', locals: {category: category} %>
         <% end %>
