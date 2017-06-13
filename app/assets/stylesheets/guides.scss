@@ -69,6 +69,9 @@ $headings-font-family: 'DIN Alternate', sans-serif;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+      @media only screen and (max-width: 1280px) {
+        height: 250px;
+      }
       @media only screen and (max-width: 768px) {
         height: 46vw;
       }
@@ -104,6 +107,9 @@ $headings-font-family: 'DIN Alternate', sans-serif;
           width: 169px;
           font-size: 18px;
           visibility: hidden;
+          @media only screen and (max-width: 1280px) {
+            font-size: 14px;
+          }
           @media only screen and (max-width: 768px) {
             font-size: 10px;
           }
