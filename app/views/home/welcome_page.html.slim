@@ -50,16 +50,24 @@
           .authform.register-form-welcome-page
             .big-image
               #welcome_register_image
-                .visible-lg= image_tag 'welcome_register_image.jpg'
-                .hidden-lg
-                  .opacity-container
-                  .text-image-container
-                    = image_tag 'good noob_logo.png'
+                .opacity-container
+                .text-image-container
+                  = image_tag 'good noob_logo.png'
+                  .hidden-lg
                     .mobile-logo-title
                       | Welcome to &nbsp
                       span.logo-text goodnoob
                     .mobile-logo-text The extreme sports community
-                  =image_tag 'main-photo.png'
+                  .visible-lg
+                    .mobile-logo-title.w-100
+                      span Join the &nbsp
+                      span.logo-text goodnoob
+                      span &nbspfamily
+                    .w-100.text-center
+                      .mobile-logo-text Register and share your
+                      .mobile-logo-text extreme sports adwantures
+                .visible-lg= image_tag 'welcome_register_image.png'
+                .hidden-lg= image_tag 'main-photo.png'
               .login-image.hidden#welcome_login_image
                 = image_tag(asset_path 'login_image.png')
               #learn-big.hidden.hidden-lg
@@ -109,10 +117,10 @@
               = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f|
                 = devise_error_messages!
                 .form-group
-                  = f.text_field :name, :autofocus => true, class: 'form-control', placeholder: 'Name'
-                  = f.email_field :email, class: 'form-control', placeholder: 'E-mail address'
-                  = f.password_field :password, class: 'form-control', placeholder: 'Password'
-                  = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm password'
+                  = f.text_field :name, :autofocus => true, class: 'form-control b', placeholder: 'Name'
+                  = f.email_field :email, class: 'form-control b', placeholder: 'E-mail address'
+                  = f.password_field :password, class: 'form-control b', placeholder: 'Password'
+                  = f.password_field :password_confirmation, class: 'form-control b', placeholder: 'Confirm password'
                   br
                   .row.text-center align="center"
                     = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path,
@@ -128,9 +136,9 @@
               = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %
                 = devise_error_messages!
                 .form-group
-                  = f.email_field :email, :autofocus => true, class: 'form-control', placeholder: 'Mail address'
+                  = f.email_field :email, :autofocus => true, class: 'form-control b', placeholder: 'Mail address'
                 .form-group
-                  = f.password_field :password, class: 'form-control', placeholder: 'Password'
+                  = f.password_field :password, class: 'form-control b', placeholder: 'Password'
                   br
                   .row align="center"
                     = link_to 'Log in with Facebook', user_facebook_omniauth_authorize_path,
