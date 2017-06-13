@@ -36,7 +36,7 @@
             = fields.file_field :image, class: 'form-control hidden file-upload-button', accept: 'image/*;capture=camera'
             = fields.label :image, '+ Upload photo', class: 'btn_upload form-control form-height no-padding'
           = f.text_area :comment, class: 'comment-container form-control', maxlength: 250, placeholder: 'Comment...'
-          = f.submit class: 'btn-primary btn-submit form-height no-padding', id: 'submit-photo'
+          = f.submit '+ Post', class: 'btn-primary btn-submit form-height no-padding w-20', id: 'submit-photo'
     .col-xs-12.col-sm-6.form-container.hidden#video_form
       = form_for Video.add_billet, url: videos_path, html: {multipart: true, class: 'form-horizontal' } do |f|
         .form-group
@@ -47,4 +47,4 @@
             .col-xs-6.col-sm-6.video.open Video
           = f.text_field :url, class: 'url-input form-control form-height no-padding', placeholder: 'URL'
           = f.text_area :comment, class: 'comment-container form-control', maxlength: 250, placeholder: 'Comment...'
-          = f.submit class: 'btn-primary btn-submit form-height no-padding', id: 'submit-photo form-height'
+          = f.submit '+ Post', class: 'btn-primary btn-submit form-height no-padding w-20', id: 'submit-photo form-height'
