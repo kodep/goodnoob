@@ -4,7 +4,7 @@
      <% @sub_categories.each do |sub_category| %>
        <div class="learn-content w-100 text-center" style="<%= sub_category.picture ? "background-image: url('#{sub_category.picture.url}')" : 'background-color: grey' %>">
          <div class="flex hover-field w-100">
-           <div class="learn-title w-75">
+           <div class="learn-title w-60">
              <%= link_to sub_category_guide_path(sub_category, sub_category.guides.first) do %>
                <%= sub_category.name_en %>
              <% end %>
