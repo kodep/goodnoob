@@ -8,6 +8,7 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
     left: 0;
     right: 0;
     display: flex;
+    width: 50%;
   }
   .video-background {
     overflow: hidden;
@@ -34,6 +35,28 @@ $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
   .tabs-item {
     margin-left: 2vw;
     margin-right: 2vw;
+  }
+  @media only screen and (max-width: 1200px) {
+    .container-filters {
+      width: 100%;
+      .filter-wrapper{
+        font-size: 3.5vw;
+      }
+    }
+    .main-tabs-wrapper {
+      height: inherit;
+      display: inline-block;
+      margin-top: 4vw;
+      .tabs-link {
+        font-size: 5vw;
+      }
+      .tabs-link.active {
+        font-size: 6vw;
+      }
+    }
+    .show-filters a {
+      font-size: 4vw;
+    }
   }
   @media only screen and (min-width: 1200px) {
     .filter-wrapper {
