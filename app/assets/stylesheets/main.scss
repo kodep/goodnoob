@@ -991,7 +991,7 @@ header {
 @media only screen and (min-width: 1200px) {
   .main-filters-wrapper {
     .filter-wrapper {
-      font-size: 25px;
+      font-size: 21px;
     }
   }
 }
@@ -2809,7 +2809,7 @@ $footer-links-color: #7f7f7f;
 }
 
 .tabs-list {
-  min-height: 45px;
+  height: 45px;
   &::before,
   &::after {
     content: "";
@@ -2833,7 +2833,7 @@ $footer-links-color: #7f7f7f;
 
 .tabs-link {
   color: #fff;
-  font-size: 23px;
+  font-size: 20px;
   padding: 6px 4px 3px 4px;
   text-transform: uppercase;
   border: 1px solid white;
@@ -2858,7 +2858,7 @@ $footer-links-color: #7f7f7f;
   &:active {
     color: #3ce1e6;
     border: none;
-    font-size: 2em;
+    font-size: 1.7em;
     text-decoration: none;
     @media (max-width: 1280px) {
       font-size: 1.7em;
