@@ -422,6 +422,23 @@ $(document).on('turbolinks:load', function() {
       }
     });
 
+    var lastScrollTop = 0;
+
+    $(window).scroll(function() {
+      var st = $(this).scrollTop();
+      var  homeSP = $('#home-search-page')
+      if (st > lastScrollTop){
+        homeSP.removeClass('fixed-nav');
+      } else {
+        if (homeSP.height() > $(window).scrollTop()) {
+          homeSP.removeClass('fixed-nav');
+        } else {
+          homeSP.addClass('fixed-nav');
+        }
+      }
+      lastScrollTop = st;
+    });
+
     if ($('.js-zoom-photo').length) {
       $('.js-zoom-photo').magnificPopup({
         type: 'image',

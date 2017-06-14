@@ -3,45 +3,83 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
 $font-family-affogato: 'Affogato-Regular' , sans-serif;
 $font-family-din-condensed: 'DIN CONDENSED', sans-serif;
 $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
-
 .search-image img {
   margin-top: 3px;
   width: 20px;
 }
-
-#home-search-page {
-  .container-filters {
-    left: 0;
-    right: 0;
-    display: flex;
-    width: 50%;
-  }
+#home-search-page.fixed-nav {
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+  top: -5px;
   .video-background {
-    overflow: hidden;
-    height: 21.5vh;
-    top: 49px;
+    visibility: hidden;
   }
   .tabs-link {
-    font-size: 2vw;
+    font-size: 1.3vw;
   }
   .tabs-link.active {
-    font-size: 3vw;
-  }
-  .social-feed-button-wrapper {
-    margin-left: 1vw;
+    font-size: 2vw;
   }
   .main-tabs-wrapper {
-    height: 21.5vh;
-    display: inline-block;
+    height: 8vh;
+    display: block;
   }
-  .tabs-list {
-    height: 100%;
-    width: 45%;
+}
+#home-search-page {
+  .fixed-nav {
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    top: -5px;
+    .video-background {
+      visibility: hidden;
+    }
+    .tabs-link {
+      font-size: 1.3vw;
+    }
+    .tabs-link.active {
+      font-size: 2vw;
+    }
+    .main-tabs-wrapper {
+      height: 8vh;
+      display: block;
+    }
   }
-  .tabs-item {
-    margin-left: 2vw;
-    margin-right: 2vw;
-  }
+    .container-filters {
+      left: 0;
+      right: 0;
+      display: flex;
+      width: 50%;
+    }
+    .video-background {
+      overflow: hidden;
+      height: 21.5vh;
+      top: 49px;
+    }
+
+    .tabs-link {
+      font-size: 2vw;
+    }
+
+    .tabs-link.active {
+      font-size: 3vw;
+    }
+    .social-feed-button-wrapper {
+      margin-left: 1vw;
+    }
+    .main-tabs-wrapper {
+      height: 21.5vh;
+      display: inline-block;
+    }
+    .tabs-list {
+      height: 100%;
+      width: 45%;
+    }
+    .tabs-item {
+      margin-left: 2vw;
+      margin-right: 2vw;
+    }
   @media only screen and (max-width: 1200px) {
     .container-filters {
       width: 100%;
