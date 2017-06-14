@@ -959,7 +959,7 @@ header {
       display: block;
       color: black;
       padding: 12.5px 15px;
-      font-size: .9em;
+      font-size: 1em;
       text-decoration: none;
       @media (max-width: 1280px) {
         padding: 8.5px 15px;
@@ -2857,7 +2857,7 @@ $footer-links-color: #7f7f7f;
   &:active {
     color: #3ce1e6;
     border: none;
-    font-size: 1.7em;
+    padding: 0 11px;
     text-decoration: none;
     @media (max-width: 1280px) {
       font-size: 1.7em;
@@ -2876,6 +2876,9 @@ $footer-links-color: #7f7f7f;
     border: none;
     font-size: 2em;
     font-weight: bold;
+    &:hover {
+      padding: 0 10px;
+    }
     @media only screen and (max-width: 1280px) {
       font-size: 1.8em;
     }
