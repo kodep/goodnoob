@@ -20,7 +20,7 @@
               <%= link_to product, class: 'thumb-preview' do %>
                 <%= image_tag product.picture.url, class: 'thumb-bg' %>
               <% end %>
-              <div class='flex thumb-header'>
+              <div class='flex thumb-product-header p-sm b-t'>
                 <span class='thumb-header-abbr'>
                   <%= link_to product do %>
                       <%= product.name %> <%= "(#{product.year})" if product.year %>
