@@ -3,6 +3,12 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
 $font-family-affogato: 'Affogato-Regular' , sans-serif;
 $font-family-din-condensed: 'DIN CONDENSED', sans-serif;
 $font-family-affogato-bold: 'Affogato-Bold', sans-serif;
+
+.search-image img {
+  margin-top: 3px;
+  width: 20px;
+}
+
 #home-search-page {
   .container-filters {
     left: 0;
