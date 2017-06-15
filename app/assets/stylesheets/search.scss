@@ -268,88 +268,84 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
   }
 }
 
-  .nav-search-icon {
-    cursor: pointer;
-    margin-left: 50px;
-    position: absolute;
-  }
+.nav-search-icon {
+  cursor: pointer;
+  margin-left: 50px;
+  position: absolute;
+}
 
-  button.nav-search-icon {
-    background: transparent;
-    z-index: 6;
-    border: none;
-    height: 49px;
-  }
+button.nav-search-icon {
+  background: transparent;
+  z-index: 6;
+  border: none;
+  height: 49px;
+}
 
+.nav-search-form {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 50px;
+  z-index: 1;
+}
+
+.nav-search-input {
+  width: calc(100% - 49px);
+  height: 49px;
+  top: 0;
+  border: none;
+  position: absolute;
+  outline: none;
+  padding-left: 90px;
+  font-family: "Affogato-Light", sans-serif;
+  font-size: 20px;
+}
+
+.nav-search-input::placeholder {
+  color: #a9a9a9;
+}
+
+.nav-close-icon {
+  height: 49px;
+  width: 49px;
+  border: none;
+  background: #00e9cc;
+  cursor: pointer;
+  display: inline-flex;
+  line-height: 49px;
+  position: absolute;
+  right: 0;
+}
+
+.nav-close-icon i.fa {
+  color: white;
+  margin: auto;
+  font-size: 30px;
+}
+
+.search-blur {
+  background-color: rgba(0,0,0,0.8);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+@media only screen and (max-width: 767px) {
   .nav-search-form {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 50px;
-    z-index: 1;
+    height: 18vw;
   }
 
   .nav-search-input {
-    width: calc(100% - 49px);
-    height: 49px;
-    top: 0;
-    border: none;
-    position: absolute;
-    outline: none;
-    padding-left: 90px;
-    font-family: "Affogato-Light", sans-serif;
-    font-size: 20px;
+    height: 18vw;
+    width: calc(100% - 18vw);
   }
 
-  .nav-search-input::placeholder {
-    color: #a9a9a9;
+  .nav-close-icon { 
+    height: 18vw;
+    width: 18vw;
   }
-
-  .nav-close-icon {
-    height: 49px;
-    width: 49px;
-    border: none;
-    background: #00e9cc;
-    cursor: pointer;
-    display: inline-flex;
-    line-height: 49px;
-    position: absolute;
-    right: 0;
-  }
-
-  .nav-close-icon i.fa {
-    color: white;
-    margin: auto;
-    font-size: 30px;
-  }
-
-  .overflow-hidden {
-    overflow: hidden;
-  }
-
-  .search-blur {
-    background-color: rgba(0,0,0,0.8);
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 5;
-  }
-
-  @media only screen and (max-width: 767px) {
-    .nav-search-form {
-      height: 18vw;
-    }
-
-    .nav-search-input {
-      height: 18vw;
-      width: calc(100% - 18vw);
-    }
-
-    .nav-close-icon { 
-      height: 18vw;
-      width: 18vw;
-    }
-  }
+}
