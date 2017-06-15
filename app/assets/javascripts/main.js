@@ -439,23 +439,24 @@ $(document).on('turbolinks:load', function() {
       lastScrollTop = st;
     });
 
+  magnificFunction = function() {
     if ($('.js-zoom-photo').length) {
       $('.js-zoom-photo').magnificPopup({
         type: 'image',
         image: {
           verticalFit: true,
-          titleSrc: function(item) {
+          titleSrc: function (item) {
             return $(item.el).siblings('.mpf-desc').html();
           }
         }
       });
     }
-
-  if ($('.js-zoom-video').length) {
-    $('.js-zoom-video').magnificPopup({
-      type: 'iframe'
-    });
-  }
+    if ($('.js-zoom-video').length) {
+      $('.js-zoom-video').magnificPopup({
+        type: 'iframe'
+      });
+    }
+  };
 
     $('#btnLogin').on('click', function(e) {
         $('#SignInModal').modal({show: true});
@@ -501,6 +502,7 @@ $(document).on('turbolinks:load', function() {
         $('.wysihtml5').each(function(i, elem) {
             $(elem).wysihtml5();
         });
+       magnificFunction();
     });
 
     // GreenTree
