@@ -387,7 +387,9 @@ $turquoise-active-theme-color: #00fee4;
 
   .white-header-stripe {
     min-height: 18vw;
-    padding: 0 5%
+    padding: 0 5%;
+    align-items: center;
+    display: flex;
   }
 
   .hamburger {

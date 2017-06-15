@@ -1,7 +1,18 @@
-$(document).on 'turbolinks:load', ->
-  $('.check__form').on 'change', ->
-    $('#filter_form').submit()
+$( document ).ready ->
+  winWidth = 767
+  hiddenSearchOrHamburger = (hamburger) ->
+    if $(window).width() <= winWidth
+      if hamburger.hasClass('hidden') then hamburger.removeClass('hidden') else hamburger.addClass('hidden')
 
+  $('.nav-search-icon, .nav-close-icon').click ->
+    hiddenSearchOrHamburger($('#hamburger'))
+
+  $(window).resize ->
+    hamburger = $('#hamburger')
+    if $(window).width() > winWidth
+      if hamburger.hasClass('hidden') then hamburger.removeClass('hidden')
+    else
+      unless $('.nav-search-form').hasClass('hidden') then hamburger.addClass('hidden')
 
   ###
   $('.search-results-container').infinitescroll
