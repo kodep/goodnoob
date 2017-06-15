@@ -35,6 +35,12 @@ $font-family-sans-serif: 'Myriad Pro', sans-serif;
   font-size: 1.2rem;
   text-align: center;
   color: #ffffff;
+  .color-grey {
+    color: #ccc;
+    &:hover {
+      color: #4eb9e8;
+    }
+  }
 }
 
 .product-about-wrapper {
