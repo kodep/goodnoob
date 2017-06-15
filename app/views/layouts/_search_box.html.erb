@@ -2,14 +2,14 @@
   <i class="glyphicon glyphicon-search"></i>
 </div>
 
-<div class="nav-search-form hidden hidden-xs">
+<div class="nav-search-form hidden hidden-xs w-100">
   <%= form_tag search_index_path, method: :get do %>
-    <button class="nav-search-icon" type="submit">
+    <button class="nav-search-icon b-l" type="submit">
       <i class="glyphicon glyphicon-search"></i>
     </button>
     <%= text_field_tag(:search, params[:search], class: 'nav-search-input', placeholder: t('.search')) %>
     <div class="nav-close-icon">
-      <i class="fa fa-times"></i>
+      <i>×</i>
     </div>
   <% end %>
 </div>
