@@ -5,6 +5,7 @@
       $('.search-results-container').append($html.find('.search-results-container .thumb-wrapper'));
       $('#masonry-container').masonry('reloadItems').masonry();
       $('#load_more_but').replaceWith($html_button);
+      magnificFunction();
     <% else %>
       $('#products_goes_here').replaceWith($html);
       $('#load_more_but').replaceWith($html_button);
