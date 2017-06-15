@@ -53,9 +53,7 @@ $(document).on 'turbolinks:load', ->
 
   $('.nav-search-icon').click ->
     $('.nav-search-form, .search-blur').removeClass 'hidden'
-    $('body').addClass 'overflow-hidden'
     $('.hamburger__icon').addClass 'o-20'
   $('.nav-close-icon').click ->
     $('.nav-search-form, .search-blur').addClass 'hidden'
-    $('body').removeClass 'overflow-hidden'
-    $('.hamburger__icon').removeClass 'o-20'    
+    $('.hamburger__icon').removeClass 'o-20'
