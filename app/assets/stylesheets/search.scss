@@ -22,6 +22,10 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
     }
   }
   @media only screen and (min-width: 992px) {
+    .thumb-star-wrapper {
+      text-align: right;
+    }
+
     .thumb-wrapper{
       width: 16.9vw;
       margin: 0 1.2vw 3vh 0;
@@ -30,7 +34,7 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
       width: 16.9vw;
     }
     .box {
-      margin: 0 0 1% 0;
+      margin: 2px 0;
     }
     .thumb-footer-model a {
       font-size: 0.7vw;
@@ -39,11 +43,12 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      padding-right: 10vw;
+      padding-right: 5vw;
+      color: #5a5a5a;
     }
   }
   .thumb-header {
-    padding: 2% 12% 0 2%;
+    padding: 5px 10px 0 10px;
   }
   .thumb-footer {
     display: -webkit-box;
@@ -76,7 +81,6 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
     .new-post-container {
       height: 16.8vh;
       background: #e4e4e4;
-      margin-bottom: 15px;
       position: relative;
       border-radius: 10px;
       .text-post {
