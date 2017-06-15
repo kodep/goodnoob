@@ -451,6 +451,12 @@ $(document).on('turbolinks:load', function() {
       });
     }
 
+  if ($('.js-zoom-video').length) {
+    $('.js-zoom-video').magnificPopup({
+      type: 'iframe'
+    });
+  }
+
     $('#btnLogin').on('click', function(e) {
         $('#SignInModal').modal({show: true});
     });
