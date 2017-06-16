@@ -307,6 +307,7 @@ header {
     }
   }
 
+  .custom-header-flex,
   .header-start,
   .header-end {
     flex-basis: 25%;
@@ -3161,14 +3162,16 @@ $footer-links-color: #7f7f7f;
   }
 
   .thumb-more-button {
-    background: image-url('three-dots-menu.svg') no-repeat scroll center center transparent;
-    width: 20px;
     height:20px;
-    margin: 0px;
+    margin: 0;
     background-size: 20px;
     display: block;
     outline: none;
-
+    .white-search {
+      color: white;
+      font-size: 10px;
+      pointer-events: none;
+    }
   }
 
   .menu-group {

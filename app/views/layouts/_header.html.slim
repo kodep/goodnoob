@@ -1,11 +1,11 @@
 header
-  .flex.white-header-stripe
+  .white-header-stripe
     = render 'layouts/search_box'
     .flex.header-start
       = yield(:mobile_icons)
     .flex.header-center
       = link_to image_tag("header-logo.png", alt: 'main-background'), root_path
-    .flex.header-end
+    .custom-header-flex
       .upload-btn-wrapper class=("#{@show_langs || 'visible'}")
         .dropdown
           button#upload-menu.upload-btn.dropdown-toggle(
@@ -14,7 +14,7 @@ header
             data-toggle="dropdown"
             type="button")
             .visible-lg= current_locale
-            .hidden-lg= image_tag 'new-profile.png'
+            .hidden-lg  = image_tag 'new-profile.png'
           ul.dropdown-menu.t-center.font-xs
             li.hidden-lg.area-container.form-control.w-90.m-auto
               = image_tag 'new-profile.png'

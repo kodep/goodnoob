@@ -5,6 +5,11 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
     .thumb-wrapper{
       width: 91vw;
       margin: 0 0 3vh 0;
+      .thumb-header-name {
+        font-size: 1.1em;
+        color: white;
+        font-weight: bold;
+      }
     }
     .box {
       margin: 0 0 4% 0;
@@ -112,8 +117,6 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
     position: relative;
     display: inline-block;
 }
-
-.thumb-menu-stripe a:hover {background-color: #f1f1f1}
 
 .social-share {
     margin: 0px;
@@ -272,12 +275,16 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
   }
 }
 
+.custom-header-flex {
+  justify-content: flex-end;
+  display: flex;
+}
+
 .nav-search-icon {
   cursor: pointer;
   margin-left: 50px;
   position: absolute;
-  top: 0;
-  line-height: 54px;
+  font-size: 24px;
 
   & > .glyphicon-search {
     -webkit-text-stroke: 1px white;
@@ -291,26 +298,28 @@ button.nav-search-icon {
   border-color: transparent;
   height: 51px;
   border-left-color: rgba(169,169,169,.3);
-  top: -1px;
   padding: 0 15px;
 }
 
 .nav-search-form {
   position: absolute;
   left: 0;
-  top: 0;
-  height: 50px;
+  height: 100%;
   z-index: 1;
+  form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
 }
 
 .nav-search-input {
   width: calc(100% - 49px);
   height: 49px;
-  top: 0;
   border: none;
   position: absolute;
   outline: none;
-  padding-left: 90px;
+  padding-left: 100px;
   font-family: "Affogato-Light", sans-serif;
   font-size: 18px;
 }
@@ -320,13 +329,12 @@ button.nav-search-icon {
 }
 
 .nav-close-icon {
-  height: 49px;
+  height: 100%;
   width: 49px;
   border: none;
   background: #00e9cc;
   cursor: pointer;
   display: inline-flex;
-  line-height: 49px;
   position: absolute;
   right: 0;
   justify-content: center;
@@ -349,17 +357,27 @@ button.nav-search-icon {
 }
 
 @media only screen and (max-width: 767px) {
-  .nav-search-form {
-    height: 18vw;
-  }
-
-  .nav-search-input {
-    height: 18vw;
-    width: calc(100% - 18vw);
-  }
-
-  .nav-close-icon { 
-    height: 18vw;
+  .nav-close-icon {
     width: 18vw;
+  }
+  .custom-header-flex {
+    justify-content: center;
+  }
+  .nav-search-icon {
+    right: 16px;
+
+    & > .glyphicon-search {
+      -webkit-text-stroke: 2px white;
+    }
+  }
+  .nav-search-form {
+    .nav-search-input {
+      padding-left: 55px;
+      font-size: 15px;
+    }
+    button.nav-search-icon {
+      margin-left: 0;
+      left: 0;
+    }
   }
 }
