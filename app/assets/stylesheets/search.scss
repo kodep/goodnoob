@@ -1,12 +1,12 @@
 $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
 
 #search_results{
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 767px) {
     .thumb-wrapper{
       width: 91vw;
       margin: 0 0 3vh 0;
       .thumb-header-name {
-        font-size: 1.1em;
+        font-size: 1em;
         color: white;
         font-weight: bold;
       }
@@ -26,7 +26,7 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
       text-overflow: ellipsis;
     }
   }
-  @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 767px) {
     .thumb-star-wrapper {
       text-align: right;
     }
