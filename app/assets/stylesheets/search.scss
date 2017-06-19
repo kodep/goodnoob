@@ -88,9 +88,11 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
       background: #e4e4e4;
       position: relative;
       border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       .text-post {
-        position: absolute;
-        bottom: 10%;
         font-size: 1vw;
         color: #b4b4b4;
         width: 100%;
@@ -101,11 +103,8 @@ $font-family-roboto-regular: 'ROBOTO REGULAR' , sans-serif;
         }
       }
       .image-post {
-        top: 10%;
-        position: absolute;
-        width: 100%;
+        margin-bottom: 8%;
         img {
-          width: 16.3%;
           margin: auto;
         }
       }
