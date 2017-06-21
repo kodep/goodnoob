@@ -318,6 +318,10 @@ GEM
     paperclip-optimizer (2.0.0)
       image_optim (~> 0.19)
       paperclip (>= 3.4)
+    papercrop (0.3.0)
+      jquery-rails
+      paperclip (>= 3.4)
+      rails (>= 3.1)
     parser (2.4.0.0)
       ast (~> 2.2)
     pg (0.18.4)
@@ -534,6 +538,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   paperclip (~> 4.3)
   paperclip-optimizer
+  papercrop
   pg
   pry
   pry-byebug

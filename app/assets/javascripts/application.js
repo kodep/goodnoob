@@ -10,10 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery.jcrop
+//= require papercrop
 //= require jquery-ui
 //= require turbolinks
 //= require jquery.slick

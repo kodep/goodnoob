@@ -161,7 +161,12 @@ $turquoise-active-theme-color: #00fee4;
       overflow: hidden;
       float: left;
       border: 2px solid white;
-
+      button {
+        border: 0;
+        background: none;
+        height: 100%;
+        padding: 0;
+      }
       a {
         color: white;
         text-decoration: none;
