@@ -12,7 +12,7 @@ module Paperclip
       mime = MIME::Types[@file.content_type.to_s.strip].first
       ext = mime.try(:extensions).try(:first) || File.extname(filename)
       ext = ".#{ext}" if ext.present? && ext.first != '.'
-      "#{SecureRandom.hex}#{ext}"
+      "#{filename}"
     end
 
     default_options.merge!({

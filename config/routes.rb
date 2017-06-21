@@ -89,7 +89,7 @@ Rails.application.routes.draw do
     resource :user_favourite_products, only: [:create, :destroy]
   end
 
-  resource :pictures, format: false, only: :create
+  resource :pictures, only: [:create, :update]
   resources :photos, only: [:create, :show, :edit, :update, :destroy]
   resources :videos, format: false, only: [:create, :show, :edit, :update, :destroy]
 

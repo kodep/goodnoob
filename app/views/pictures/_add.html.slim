@@ -1,0 +1,15 @@
+.modal-content
+  .modal-header
+    h5#exampleModalLongTitle.modal-title Select an image file to upload
+    button.close aria-label="Close" data-dismiss="modal" type="button"
+      span aria-hidden="true"  &times;
+  .modal-body
+    = addendum_storage 'picture'
+    - @picture = current_user.picture || current_user.build_picture
+    = form_for @picture, url: pictures_path, html: { multipart: true} do |f|
+      - if current_user.picture.persisted?
+        div
+          #pictureAvatar= f.cropbox :image, width: 250
+      .flex-col
+        = f.file_field :image, class: 'form-control', id: 'newPictureForAvatar'
+        .submit-btn= f.submit

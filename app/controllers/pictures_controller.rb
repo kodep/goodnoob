@@ -15,11 +15,11 @@
 
 class PicturesController < ApplicationController
   include ImitateDelay
-  imitate_delay only: :create
-  before_filter :destroy_old_picture, only: :create
+  imitate_delay only: [:create, :update]
+  before_filter :destroy_old_picture, only: [:create, :update]
 
   def create
-    picture = Picture.new creation_params
+    picture = current_user.build_picture image_params
     if picture.save
       redirect_to edit_user_registration_path
     else
@@ -27,10 +27,28 @@ class PicturesController < ApplicationController
     end
   end
 
+  def update
+    if current_user.picture.update(image_params)
+      redirect_to :back
+    else
+      render :edit
+    end
+  end
+
   private
 
   def creation_params
-    params.require(:picture).permit %i(title imageable_type imageable_id image)
+    params.require(:picture).permit %i(title image)
+  end
+
+  def image_params
+    params.require(:picture).permit(:title, :image,
+                                            :image_original_w,
+                                            :image_original_h,
+                                            :image_crop_x,
+                                            :image_crop_y,
+                                            :image_crop_w,
+                                            :image_crop_h)
   end
 
   def destroy_old_picture

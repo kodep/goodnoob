@@ -4,11 +4,12 @@ class Picture < ActiveRecord::Base
   belongs_to :imageable, polymorphic: true
 
   has_attached_file :image,
-                    processors: [:thumbnail, :paperclip_optimizer],
-                    styles: { subcatcover: '1500x844#',
-                              thumbnail: '250x190>',
-                              medium: '470x300#',
-                              avatar: '165x165#' }
+                    styles: { subcatcover: {geometry: '1500x844#'},
+                              thumbnail: {geometry:'250x190>'},
+                              medium: {geometry:'470x300#'},
+                              avatar: {geometry:'165x165#'}}
+
+  crop_attached_file :image, :aspect => "1:1"
 
   validates_attachment :image,
                        presence: true,
@@ -21,13 +22,13 @@ end
 #
 # Table name: pictures
 #
-#  id                 :integer          not null, primary key
-#  imageable_id       :integer
-#  imageable_type     :string
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  image_file_name    :string
-#  image_content_type :string
-#  image_file_size    :integer
-#  image_updated_at   :datetime
+#  id                      :integer          not null, primary key
+#  imageable_id            :integer
+#  imageable_type          :string
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
+#  image_file_name         :string
+#  image_content_type      :string
+#  image_file_size         :integer
+#  image_updated_at        :datetime
 #
